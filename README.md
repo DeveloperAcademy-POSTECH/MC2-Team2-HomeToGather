@@ -1,1 +1,1 @@
-# MC2-Team2-HomeTogether
+# MC2-Team2-HomeToGather
