@@ -14,6 +14,14 @@ extension Color {
     static let partyYellow = Color(hex: "FFD250")
     static let partyPurple = Color(hex: "A84FFF")
     static let partyBlue = Color(hex:"54D7FF")
+    
+    
+    static let backgroundColor = Color(hex: "#0B0019")
+    static let brandColor = Color(hex: "#A84FFF")
+    static let cardBackgroundColor = Color(hex: "1D1C1D")
+    static let card1Color = Color(hex: "#FC9467")
+    static let card2Color = Color(hex: "#FFD250")
+    static let card3Color = Color(hex: "#54D7FF")
 }
 extension Color {
     
