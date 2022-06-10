@@ -6,16 +6,30 @@
 //
 
 import SwiftUI
+import Firebase
+import AuthenticationServices
 
 struct ContentView: View {
+    @Environment(\.window) var window: UIWindow?
+    @State private var appleLoginCoordinator: AppleAuthCoordinator?
+    @State var isSuccess: Bool = Auth.auth().currentUser != nil ? false : true
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        MainView()
+            .fullScreenCover(isPresented: $isSuccess, content: {
+                VStack {
+                    Spacer()
+                    QuickSignInWithApple()
+                            .frame(width: 280, height: 60, alignment: .center)
+                            .onTapGesture {
+                                appleLogin()
+                            }
+                }
+            })
     }
-}
+    func appleLogin() {
+        appleLoginCoordinator = AppleAuthCoordinator(window: window, isSuccess: $isSuccess)
+        appleLoginCoordinator?.startAppleLogin()
+    }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
 }
