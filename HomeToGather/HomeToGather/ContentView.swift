@@ -19,12 +19,21 @@ struct ContentView: View {
             .fullScreenCover(isPresented: $isSuccess, content: {
                 VStack {
                     Spacer()
+                    Image("LoginViewImage")
+                        .resizable()
+                        .aspectRatio(1.0, contentMode: .fit)
+                        .padding(.horizontal, 17)
+                        .padding(.bottom, 140)
                     QuickSignInWithApple()
-                            .frame(width: 280, height: 60, alignment: .center)
-                            .onTapGesture {
-                                appleLogin()
-                            }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 56, alignment: .center)
+                        .onTapGesture {
+                            appleLogin()
+                        }
+                        .padding(.bottom, 60)
+                        .padding(.horizontal, 17)
                 }
+                .background(Color.backgroundColor).ignoresSafeArea()
             })
     }
     func appleLogin() {
