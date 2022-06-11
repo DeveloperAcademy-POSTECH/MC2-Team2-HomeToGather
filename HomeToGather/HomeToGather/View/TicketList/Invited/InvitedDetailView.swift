@@ -20,11 +20,11 @@ struct InvitedDetailView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
                     ZStack {
-                        // 랜덤 이미지 위치
                         RoundedRectangle(cornerRadius: 4)
                             .fill(Color.cardBackgroundColor)
                         
                         VStack(alignment: .leading, spacing: 0) {
+                            // 랜덤 이미지 위치
                             RoundedRectangle(cornerRadius: 4)
                                 .frame(height: 150)
                                 .cornerRadius(4)

@@ -10,6 +10,12 @@ import SwiftUI
 struct HostedListView: View {
     let screenWidth = UIScreen.main.bounds.width
     
+    // 나중에 네비게이션으로 여길 열어야 한다면, init()에 직접 변수를 넣어야 함
+    // https://stackoverflow.com/questions/56910854/swiftui-views-with-a-custom-init
+    init() {
+        UINavigationBar.appearance().tintColor = .white
+    }
+    
     var body: some View {
         // 테스트용 네비게이션뷰
         NavigationView {
@@ -21,7 +27,7 @@ struct HostedListView: View {
                     VStack(spacing: 0) {
                         ForEach(data, id: \.self) { host in
                             NavigationLink {
-                                HostedDetailView()
+                                HostedDetailView(hostData: host)
                             } label: {
                                 // 티켓 이미지
                                 RoundedRectangle(cornerRadius: 4)
