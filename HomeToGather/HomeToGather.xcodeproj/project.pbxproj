@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96C41805B25642421B11E3C3 /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F553FF6E6CB4595EAE2279F2 /* Pods_HomeToGather.framework */; };
+		285A60C7F02A528466E5F453 /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107A925B6F7C5A45D93F69F8 /* Pods_HomeToGather.framework */; };
 		E26A386F2851F40300AD8EFF /* AppleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A386E2851F40300AD8EFF /* AppleLogin.swift */; };
 		E26A38832851F50D00AD8EFF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A38822851F50D00AD8EFF /* MainView.swift */; };
 		E26A38852851F6E400AD8EFF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E26A38842851F6E400AD8EFF /* GoogleService-Info.plist */; };
@@ -36,11 +36,14 @@
 		E47738FF28533A2000C1403F /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47738FE28533A2000C1403F /* TicketView.swift */; };
 		E477390128533A2700C1403F /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477390028533A2700C1403F /* CreateView.swift */; };
 		E477390428533A6900C1403F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477390328533A6900C1403F /* Color.swift */; };
+		E4D1028D28547D8000F72FCA /* ticketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D1028C28547D8000F72FCA /* ticketView.swift */; };
+		E4D1028F28548ED400F72FCA /* expanedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D1028E28548ED400F72FCA /* expanedTicketView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1971262C2D08B886A5349309 /* Pods-HomeToGather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.release.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.release.xcconfig"; sourceTree = "<group>"; };
-		682948D23B041018B1FD98FD /* Pods-HomeToGather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.debug.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.debug.xcconfig"; sourceTree = "<group>"; };
+		107A925B6F7C5A45D93F69F8 /* Pods_HomeToGather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeToGather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37B1BE4354A3355BC3DC052B /* Pods-HomeToGather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.release.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.release.xcconfig"; sourceTree = "<group>"; };
+		C742D7F290A470A4464D4E94 /* Pods-HomeToGather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.debug.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.debug.xcconfig"; sourceTree = "<group>"; };
 		E26A386E2851F40300AD8EFF /* AppleLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLogin.swift; sourceTree = "<group>"; };
 		E26A38822851F50D00AD8EFF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E26A38842851F6E400AD8EFF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -72,7 +75,8 @@
 		E47738FE28533A2000C1403F /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
 		E477390028533A2700C1403F /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		E477390328533A6900C1403F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		F553FF6E6CB4595EAE2279F2 /* Pods_HomeToGather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeToGather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4D1028C28547D8000F72FCA /* ticketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ticketView.swift; sourceTree = "<group>"; };
+		E4D1028E28548ED400F72FCA /* expanedTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = expanedTicketView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,17 +84,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96C41805B25642421B11E3C3 /* Pods_HomeToGather.framework in Frameworks */,
+				285A60C7F02A528466E5F453 /* Pods_HomeToGather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F2292058AD551396F6F044B /* Frameworks */ = {
+		49F49CE72D31230DDB4C53ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F553FF6E6CB4595EAE2279F2 /* Pods_HomeToGather.framework */,
+				107A925B6F7C5A45D93F69F8 /* Pods_HomeToGather.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,7 +133,7 @@
 				E403DD702851DFE9004C8391 /* HomeToGather */,
 				E403DD6F2851DFE9004C8391 /* Products */,
 				F20556BFAAF2510972E9D22C /* Pods */,
-				2F2292058AD551396F6F044B /* Frameworks */,
+				49F49CE72D31230DDB4C53ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				E26A38822851F50D00AD8EFF /* MainView.swift */,
+				E4D1028C28547D8000F72FCA /* ticketView.swift */,
+				E4D1028E28548ED400F72FCA /* expanedTicketView.swift */,
 				E26A38C42853ABCA00AD8EFF /* SettingView.swift */,
 				E26A38C62853ABE800AD8EFF /* SettingDetailView.swift */,
 			);
@@ -241,8 +247,8 @@
 		F20556BFAAF2510972E9D22C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				682948D23B041018B1FD98FD /* Pods-HomeToGather.debug.xcconfig */,
-				1971262C2D08B886A5349309 /* Pods-HomeToGather.release.xcconfig */,
+				C742D7F290A470A4464D4E94 /* Pods-HomeToGather.debug.xcconfig */,
+				37B1BE4354A3355BC3DC052B /* Pods-HomeToGather.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -254,11 +260,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E403DD7C2851DFEA004C8391 /* Build configuration list for PBXNativeTarget "HomeToGather" */;
 			buildPhases = (
-				64679747FE9E25BFC7E3AC71 /* [CP] Check Pods Manifest.lock */,
+				B515078C95018E9E10ABE1C1 /* [CP] Check Pods Manifest.lock */,
 				E403DD6A2851DFE9004C8391 /* Sources */,
 				E403DD6B2851DFE9004C8391 /* Frameworks */,
 				E403DD6C2851DFE9004C8391 /* Resources */,
-				DAB256E0070A88CE7469D4F1 /* [CP] Embed Pods Frameworks */,
+				A7CC7A9E5DA98F30CB5FCDD7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -328,7 +334,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		64679747FE9E25BFC7E3AC71 /* [CP] Check Pods Manifest.lock */ = {
+		A7CC7A9E5DA98F30CB5FCDD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeToGather/Pods-HomeToGather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeToGather/Pods-HomeToGather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HomeToGather/Pods-HomeToGather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B515078C95018E9E10ABE1C1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -350,23 +373,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DAB256E0070A88CE7469D4F1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HomeToGather/Pods-HomeToGather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HomeToGather/Pods-HomeToGather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HomeToGather/Pods-HomeToGather-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -374,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D1028D28547D8000F72FCA /* ticketView.swift in Sources */,
 				E26A38882853076800AD8EFF /* ViewModel.swift in Sources */,
 				E403DD742851DFE9004C8391 /* ContentView.swift in Sources */,
 				E26A38C72853ABE800AD8EFF /* SettingDetailView.swift in Sources */,
@@ -382,6 +389,7 @@
 				E26A388C2853081E00AD8EFF /* ImagePicker.swift in Sources */,
 				E477390128533A2700C1403F /* CreateView.swift in Sources */,
 				E47738A2285320F800C1403F /* Font.swift in Sources */,
+				E4D1028F28548ED400F72FCA /* expanedTicketView.swift in Sources */,
 				E26A388A2853077A00AD8EFF /* Model.swift in Sources */,
 				E47738FF28533A2000C1403F /* TicketView.swift in Sources */,
 				E26A38C52853ABCA00AD8EFF /* SettingView.swift in Sources */,
@@ -509,7 +517,7 @@
 		};
 		E403DD7D2851DFEA004C8391 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 682948D23B041018B1FD98FD /* Pods-HomeToGather.debug.xcconfig */;
+			baseConfigurationReference = C742D7F290A470A4464D4E94 /* Pods-HomeToGather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -543,7 +551,7 @@
 		};
 		E403DD7E2851DFEA004C8391 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1971262C2D08B886A5349309 /* Pods-HomeToGather.release.xcconfig */;
+			baseConfigurationReference = 37B1BE4354A3355BC3DC052B /* Pods-HomeToGather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
