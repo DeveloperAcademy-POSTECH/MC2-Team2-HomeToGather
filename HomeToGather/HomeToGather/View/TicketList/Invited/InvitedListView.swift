@@ -66,7 +66,7 @@ struct InvitedListView: View {
                     VStack(spacing: 0) {
                         ForEach(data, id: \.self) { invitation in
                             NavigationLink {
-                                InvitedDetailView()
+                                InvitedDetailView(invitationData: invitation)
                             } label: {
                                 // 티켓 이미지
                                 RoundedRectangle(cornerRadius: 4)
