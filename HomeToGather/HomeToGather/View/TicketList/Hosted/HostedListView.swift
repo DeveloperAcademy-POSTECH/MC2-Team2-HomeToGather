@@ -8,8 +8,34 @@
 import SwiftUI
 
 struct HostedListView: View {
+    let screenWidth = UIScreen.main.bounds.width
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        // 테스트용 네비게이션뷰
+        NavigationView {
+            ZStack {
+                Color.backgroundColor
+                    .ignoresSafeArea()
+                
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 0) {
+                        ForEach(data, id: \.self) { host in
+                            NavigationLink {
+                                HostedDetailView()
+                            } label: {
+                                // 티켓 이미지
+                                RoundedRectangle(cornerRadius: 4)
+                                    .frame(width: screenWidth - 40, height: 155)
+                                    .padding(.bottom, 20)
+                            }
+                        }
+                    }
+                }
+                .padding(20)
+            }
+            .navigationTitle("주최한 파티 리스트")
+            .preferredColorScheme(.dark)
+        }
     }
 }
 
