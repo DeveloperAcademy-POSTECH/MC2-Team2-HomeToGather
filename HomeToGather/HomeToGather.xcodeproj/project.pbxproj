@@ -26,6 +26,8 @@
 		E26A38BF28539D4B00AD8EFF /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E26A38B928539D4B00AD8EFF /* NotoSansKR-Medium.otf */; };
 		E26A38C028539D4B00AD8EFF /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E26A38BA28539D4B00AD8EFF /* NotoSansKR-Regular.otf */; };
 		E26A38C128539D4B00AD8EFF /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = E26A38BB28539D4B00AD8EFF /* NotoSansKR-Thin.otf */; };
+		E26A38C52853ABCA00AD8EFF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A38C42853ABCA00AD8EFF /* SettingView.swift */; };
+		E26A38C72853ABE800AD8EFF /* SettingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A38C62853ABE800AD8EFF /* SettingDetailView.swift */; };
 		E403DD722851DFE9004C8391 /* HomeToGatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E403DD712851DFE9004C8391 /* HomeToGatherApp.swift */; };
 		E403DD742851DFE9004C8391 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E403DD732851DFE9004C8391 /* ContentView.swift */; };
 		E403DD762851DFEA004C8391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E403DD752851DFEA004C8391 /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		E26A38B928539D4B00AD8EFF /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		E26A38BA28539D4B00AD8EFF /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		E26A38BB28539D4B00AD8EFF /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
+		E26A38C42853ABCA00AD8EFF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		E26A38C62853ABE800AD8EFF /* SettingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailView.swift; sourceTree = "<group>"; };
 		E403DD6E2851DFE9004C8391 /* HomeToGather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeToGather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E403DD712851DFE9004C8391 /* HomeToGatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeToGatherApp.swift; sourceTree = "<group>"; };
 		E403DD732851DFE9004C8391 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				E26A38822851F50D00AD8EFF /* MainView.swift */,
+				E26A38C42853ABCA00AD8EFF /* SettingView.swift */,
+				E26A38C62853ABE800AD8EFF /* SettingDetailView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -370,6 +376,7 @@
 			files = (
 				E26A38882853076800AD8EFF /* ViewModel.swift in Sources */,
 				E403DD742851DFE9004C8391 /* ContentView.swift in Sources */,
+				E26A38C72853ABE800AD8EFF /* SettingDetailView.swift in Sources */,
 				E477390428533A6900C1403F /* Color.swift in Sources */,
 				E26A38832851F50D00AD8EFF /* MainView.swift in Sources */,
 				E26A388C2853081E00AD8EFF /* ImagePicker.swift in Sources */,
@@ -377,6 +384,7 @@
 				E47738A2285320F800C1403F /* Font.swift in Sources */,
 				E26A388A2853077A00AD8EFF /* Model.swift in Sources */,
 				E47738FF28533A2000C1403F /* TicketView.swift in Sources */,
+				E26A38C52853ABCA00AD8EFF /* SettingView.swift in Sources */,
 				E26A386F2851F40300AD8EFF /* AppleLogin.swift in Sources */,
 				E403DD722851DFE9004C8391 /* HomeToGatherApp.swift in Sources */,
 			);
