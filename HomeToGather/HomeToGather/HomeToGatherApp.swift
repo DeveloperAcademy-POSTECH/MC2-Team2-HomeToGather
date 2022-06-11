@@ -17,8 +17,8 @@ struct HomeToGatherApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            MainView()
+            ContentView()
+//            MainView()
         }
     }
 }

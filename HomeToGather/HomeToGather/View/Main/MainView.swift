@@ -67,29 +67,6 @@ struct MainView: View {
                                 .background(Color.gray)
                                 .cornerRadius(4)
                         }).offset(y: -15)
-                            .toolbar {
-                                ToolbarItem(placement: .navigationBarLeading) {
-                                    Button {
-                                        showSettings.toggle()
-                                    } label: {
-                                        Image("setting")
-                                    }.fullScreenCover(isPresented: $showSettings) {
-                                        SettingView(isSuccess:$isSuccess)
-                                    }
-
-                                }
-                                ToolbarItem(placement: .navigationBarTrailing) {
-                                    Button {
-                                        showSettings.toggle()
-                                    } label: {
-                                        Image("CreateTicket")
-                                    }.fullScreenCover(isPresented: $showSettings) {
-//                                        SettingView(isSuccess: false)
-                                    }
-                                }
-                                
-                                
-                            }
                     }
                     
                     

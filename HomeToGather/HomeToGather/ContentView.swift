@@ -43,7 +43,7 @@ struct ContentView: View {
                     NavigationLink(destination: {
                         SettingView(isSuccess: $isSuccess)
                     }, label: {
-                        Text("설정")
+                        Image("setting")
                     })
                 })
             }
