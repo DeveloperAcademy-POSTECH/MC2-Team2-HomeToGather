@@ -77,8 +77,10 @@ struct CardView: View {
                             .frame(maxWidth: screenWidth, maxHeight: 50)
                         
                         HStack {
-                            TextField("피드백 보내기", text: $feedback)
-                                .font(.system(size: 16))
+                            TextField("", text: $feedback)
+                                .placeholder(when: feedback.isEmpty) {
+                                    Text("피드백을 입력해주세요.").foregroundColor(.white)
+                                }
                             
                             Spacer()
                             
