@@ -11,6 +11,7 @@
 		B95077FC28548D2C00F7825A /* InvitedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95077FB28548D2C00F7825A /* InvitedListView.swift */; };
 		B95077FE28548D3D00F7825A /* InvitedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95077FD28548D3D00F7825A /* InvitedDetailView.swift */; };
 		B95078002854992000F7825A /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95077FF2854992000F7825A /* ParticipantView.swift */; };
+		B950780228549A8700F7825A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950780128549A8700F7825A /* CardView.swift */; };
 		E26A386F2851F40300AD8EFF /* AppleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A386E2851F40300AD8EFF /* AppleLogin.swift */; };
 		E26A38832851F50D00AD8EFF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A38822851F50D00AD8EFF /* MainView.swift */; };
 		E26A38852851F6E400AD8EFF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E26A38842851F6E400AD8EFF /* GoogleService-Info.plist */; };
@@ -47,6 +48,7 @@
 		B95077FB28548D2C00F7825A /* InvitedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedListView.swift; sourceTree = "<group>"; };
 		B95077FD28548D3D00F7825A /* InvitedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedDetailView.swift; sourceTree = "<group>"; };
 		B95077FF2854992000F7825A /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
+		B950780128549A8700F7825A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E26A386E2851F40300AD8EFF /* AppleLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLogin.swift; sourceTree = "<group>"; };
 		E26A38822851F50D00AD8EFF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E26A38842851F6E400AD8EFF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				B95077FB28548D2C00F7825A /* InvitedListView.swift */,
 				B95077FD28548D3D00F7825A /* InvitedDetailView.swift */,
+				B950780128549A8700F7825A /* CardView.swift */,
 			);
 			path = Invited;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				E47738FF28533A2000C1403F /* TicketView.swift in Sources */,
 				E26A38C52853ABCA00AD8EFF /* SettingView.swift in Sources */,
 				E26A386F2851F40300AD8EFF /* AppleLogin.swift in Sources */,
+				B950780228549A8700F7825A /* CardView.swift in Sources */,
 				E403DD722851DFE9004C8391 /* HomeToGatherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
