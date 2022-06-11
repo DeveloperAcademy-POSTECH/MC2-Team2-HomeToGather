@@ -36,9 +36,7 @@ struct InvitedDetailView: View {
                                 
                                 HStack(spacing: -5) {
                                     ForEach(invitationData.participantName!, id: \.self) { name in // 강제 언래핑 수정하기
-                                        // 초대된 사람 원 위치
-                                        Circle()
-                                            .frame(width: 50, height: 50)
+                                        ParticipantView(name: name)
                                     }
                                 }
                                 .padding(.top, 7)
