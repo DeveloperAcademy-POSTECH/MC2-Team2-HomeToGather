@@ -64,6 +64,10 @@ struct InvitedDetailView: View {
                         }
                     }
                     .frame(maxWidth: screenWidth)
+                    
+                    CardView(title: "규칙", contents: invitationData.rule)
+                    
+                    CardView(title: "메뉴", contents: invitationData.food)
                 }
                 .padding(20)
             }
