@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HostedDetailView: View {
     var hostData: Invitation
+    @State private var isConfirmationDialogShow: Bool = false
     
     let screenWidth = UIScreen.main.bounds.width
     
@@ -63,6 +64,22 @@ struct HostedDetailView: View {
                     FeedbackCardView(title: "메뉴", contents: hostData.food, feedbackContents: hostData.foodFeedback)
                 }
                 .padding(20)
+            }
+        }
+        .toolbar {
+            ToolbarItem {
+                Button(role: .destructive, action: {
+                    isConfirmationDialogShow = true
+                }, label: {
+                    Image(systemName: "ellipsis.circle")
+                        .foregroundColor(.white)
+                })
+                .confirmationDialog("confirmationDialog", isPresented: $isConfirmationDialogShow, titleVisibility: .hidden) {
+                    Button("공유하기") {}
+                    Button("수정하기") {}
+                    Button("삭제하기", role: .destructive) {}
+                    Button("취소하기", role: .cancel) {}
+                }
             }
         }
         .preferredColorScheme(.dark)
