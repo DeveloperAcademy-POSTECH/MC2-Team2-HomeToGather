@@ -57,6 +57,10 @@ struct HostedDetailView: View {
                         }
                     }
                     .frame(maxWidth: screenWidth)
+                    
+                    FeedbackCardView(title: "규칙", contents: hostData.rule, feedbackContents: hostData.ruleFeedback)
+                    
+                    FeedbackCardView(title: "메뉴", contents: hostData.food, feedbackContents: hostData.foodFeedback)
                 }
                 .padding(20)
             }
