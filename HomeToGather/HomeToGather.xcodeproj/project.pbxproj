@@ -16,6 +16,7 @@
 		B95078002854992000F7825A /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95077FF2854992000F7825A /* ParticipantView.swift */; };
 		B950780228549A8700F7825A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950780128549A8700F7825A /* CardView.swift */; };
 		B95078042854D9FA00F7825A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95078032854D9F900F7825A /* View.swift */; };
+		B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0FC002856505500D5BCC3 /* InvitationView.swift */; };
 		E217AB4D28561F5B00242BAD /* ticketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217AB4C28561F5A00242BAD /* ticketView.swift */; };
 		E217AB4F28561F6300242BAD /* expanedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217AB4E28561F6300242BAD /* expanedTicketView.swift */; };
 		E26A386F2851F40300AD8EFF /* AppleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A386E2851F40300AD8EFF /* AppleLogin.swift */; };
@@ -59,6 +60,7 @@
 		B95077FF2854992000F7825A /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		B950780128549A8700F7825A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		B95078032854D9F900F7825A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		B9D0FC002856505500D5BCC3 /* InvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
 		E217AB4C28561F5A00242BAD /* ticketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ticketView.swift; sourceTree = "<group>"; };
 		E217AB4E28561F6300242BAD /* expanedTicketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = expanedTicketView.swift; sourceTree = "<group>"; };
 		E26A386E2851F40300AD8EFF /* AppleLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLogin.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				B95078052855034900F7825A /* Hosted */,
 				B95077FA28548D0500F7825A /* Invited */,
 				B95077FF2854992000F7825A /* ParticipantView.swift */,
+				B9D0FC002856505500D5BCC3 /* InvitationView.swift */,
 			);
 			path = TicketList;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */,
 				B95077FE28548D3D00F7825A /* InvitedDetailView.swift in Sources */,
 				E26A38882853076800AD8EFF /* ViewModel.swift in Sources */,
 				E403DD742851DFE9004C8391 /* ContentView.swift in Sources */,
