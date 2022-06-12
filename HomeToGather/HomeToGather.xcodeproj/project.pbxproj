@@ -10,6 +10,7 @@
 		96C41805B25642421B11E3C3 /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F553FF6E6CB4595EAE2279F2 /* Pods_HomeToGather.framework */; };
 		B93869D92855043500320855 /* HostedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869D82855043500320855 /* HostedListView.swift */; };
 		B93869DB2855044200320855 /* HostedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DA2855044200320855 /* HostedDetailView.swift */; };
+		B93869DD2855D8B100320855 /* FeedbackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DC2855D8B100320855 /* FeedbackCardView.swift */; };
 		B95077FC28548D2C00F7825A /* InvitedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95077FB28548D2C00F7825A /* InvitedListView.swift */; };
 		B95077FE28548D3D00F7825A /* InvitedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95077FD28548D3D00F7825A /* InvitedDetailView.swift */; };
 		B95078002854992000F7825A /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95077FF2854992000F7825A /* ParticipantView.swift */; };
@@ -50,6 +51,7 @@
 		682948D23B041018B1FD98FD /* Pods-HomeToGather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.debug.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.debug.xcconfig"; sourceTree = "<group>"; };
 		B93869D82855043500320855 /* HostedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedListView.swift; sourceTree = "<group>"; };
 		B93869DA2855044200320855 /* HostedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedDetailView.swift; sourceTree = "<group>"; };
+		B93869DC2855D8B100320855 /* FeedbackCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCardView.swift; sourceTree = "<group>"; };
 		B95077FB28548D2C00F7825A /* InvitedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedListView.swift; sourceTree = "<group>"; };
 		B95077FD28548D3D00F7825A /* InvitedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedDetailView.swift; sourceTree = "<group>"; };
 		B95077FF2854992000F7825A /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				B93869D82855043500320855 /* HostedListView.swift */,
 				B93869DA2855044200320855 /* HostedDetailView.swift */,
+				B93869DC2855D8B100320855 /* FeedbackCardView.swift */,
 			);
 			path = Hosted;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				E26A388A2853077A00AD8EFF /* Model.swift in Sources */,
 				E47738FF28533A2000C1403F /* TicketView.swift in Sources */,
 				E26A38C52853ABCA00AD8EFF /* SettingView.swift in Sources */,
+				B93869DD2855D8B100320855 /* FeedbackCardView.swift in Sources */,
 				B93869D92855043500320855 /* HostedListView.swift in Sources */,
 				B95078042854D9FA00F7825A /* View.swift in Sources */,
 				E26A386F2851F40300AD8EFF /* AppleLogin.swift in Sources */,
