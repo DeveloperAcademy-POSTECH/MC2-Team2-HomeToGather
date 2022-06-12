@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96C41805B25642421B11E3C3 /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F553FF6E6CB4595EAE2279F2 /* Pods_HomeToGather.framework */; };
+		AAD16A64A6D9C76CACCABBA6 /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504B49DF6EAC1E592D0B7035 /* Pods_HomeToGather.framework */; };
 		B93869D92855043500320855 /* HostedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869D82855043500320855 /* HostedListView.swift */; };
 		B93869DB2855044200320855 /* HostedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DA2855044200320855 /* HostedDetailView.swift */; };
 		B93869DD2855D8B100320855 /* FeedbackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DC2855D8B100320855 /* FeedbackCardView.swift */; };
@@ -16,6 +16,8 @@
 		B95078002854992000F7825A /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95077FF2854992000F7825A /* ParticipantView.swift */; };
 		B950780228549A8700F7825A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950780128549A8700F7825A /* CardView.swift */; };
 		B95078042854D9FA00F7825A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95078032854D9F900F7825A /* View.swift */; };
+		E217AB4D28561F5B00242BAD /* ticketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217AB4C28561F5A00242BAD /* ticketView.swift */; };
+		E217AB4F28561F6300242BAD /* expanedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217AB4E28561F6300242BAD /* expanedTicketView.swift */; };
 		E26A386F2851F40300AD8EFF /* AppleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A386E2851F40300AD8EFF /* AppleLogin.swift */; };
 		E26A38832851F50D00AD8EFF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A38822851F50D00AD8EFF /* MainView.swift */; };
 		E26A38852851F6E400AD8EFF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E26A38842851F6E400AD8EFF /* GoogleService-Info.plist */; };
@@ -41,16 +43,14 @@
 		E403DD762851DFEA004C8391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E403DD752851DFEA004C8391 /* Assets.xcassets */; };
 		E403DD792851DFEA004C8391 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E403DD782851DFEA004C8391 /* Preview Assets.xcassets */; };
 		E47738A2285320F800C1403F /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47738A1285320F800C1403F /* Font.swift */; };
-		E47738FF28533A2000C1403F /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47738FE28533A2000C1403F /* TicketView.swift */; };
 		E477390128533A2700C1403F /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477390028533A2700C1403F /* CreateView.swift */; };
 		E477390428533A6900C1403F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477390328533A6900C1403F /* Color.swift */; };
-		E4D1028D28547D8000F72FCA /* ticketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D1028C28547D8000F72FCA /* ticketView.swift */; };
-		E4D1028F28548ED400F72FCA /* expanedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D1028E28548ED400F72FCA /* expanedTicketView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1971262C2D08B886A5349309 /* Pods-HomeToGather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.release.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.release.xcconfig"; sourceTree = "<group>"; };
-		682948D23B041018B1FD98FD /* Pods-HomeToGather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.debug.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.debug.xcconfig"; sourceTree = "<group>"; };
+		105C0FAE265EF599FB610EB3 /* Pods-HomeToGather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.debug.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.debug.xcconfig"; sourceTree = "<group>"; };
+		504B49DF6EAC1E592D0B7035 /* Pods_HomeToGather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeToGather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AB3CCD1430627BD489BAADF /* Pods-HomeToGather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.release.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.release.xcconfig"; sourceTree = "<group>"; };
 		B93869D82855043500320855 /* HostedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedListView.swift; sourceTree = "<group>"; };
 		B93869DA2855044200320855 /* HostedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedDetailView.swift; sourceTree = "<group>"; };
 		B93869DC2855D8B100320855 /* FeedbackCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCardView.swift; sourceTree = "<group>"; };
@@ -59,6 +59,8 @@
 		B95077FF2854992000F7825A /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		B950780128549A8700F7825A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		B95078032854D9F900F7825A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		E217AB4C28561F5A00242BAD /* ticketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ticketView.swift; sourceTree = "<group>"; };
+		E217AB4E28561F6300242BAD /* expanedTicketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = expanedTicketView.swift; sourceTree = "<group>"; };
 		E26A386E2851F40300AD8EFF /* AppleLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLogin.swift; sourceTree = "<group>"; };
 		E26A38822851F50D00AD8EFF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E26A38842851F6E400AD8EFF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -87,11 +89,8 @@
 		E403DD782851DFEA004C8391 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E47738A1285320F800C1403F /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		E47738A3285321EA00C1403F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		E47738FE28533A2000C1403F /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
 		E477390028533A2700C1403F /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		E477390328533A6900C1403F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		E4D1028C28547D8000F72FCA /* ticketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ticketView.swift; sourceTree = "<group>"; };
-		E4D1028E28548ED400F72FCA /* expanedTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = expanedTicketView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				285A60C7F02A528466E5F453 /* Pods_HomeToGather.framework in Frameworks */,
+				AAD16A64A6D9C76CACCABBA6 /* Pods_HomeToGather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +108,7 @@
 		49F49CE72D31230DDB4C53ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				107A925B6F7C5A45D93F69F8 /* Pods_HomeToGather.framework */,
+				504B49DF6EAC1E592D0B7035 /* Pods_HomeToGather.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,10 +208,10 @@
 		E477389D2853195400C1403F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E217AB4E28561F6300242BAD /* expanedTicketView.swift */,
 				E26A38822851F50D00AD8EFF /* MainView.swift */,
-				E4D1028C28547D8000F72FCA /* ticketView.swift */,
-				E4D1028E28548ED400F72FCA /* expanedTicketView.swift */,
 				E26A38C42853ABCA00AD8EFF /* SettingView.swift */,
+				E217AB4C28561F5A00242BAD /* ticketView.swift */,
 				E26A38C62853ABE800AD8EFF /* SettingDetailView.swift */,
 			);
 			path = Main;
@@ -223,7 +222,6 @@
 			children = (
 				B95078052855034900F7825A /* Hosted */,
 				B95077FA28548D0500F7825A /* Invited */,
-				E47738FE28533A2000C1403F /* TicketView.swift */,
 				B95077FF2854992000F7825A /* ParticipantView.swift */,
 			);
 			path = TicketList;
@@ -286,8 +284,8 @@
 		F20556BFAAF2510972E9D22C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C742D7F290A470A4464D4E94 /* Pods-HomeToGather.debug.xcconfig */,
-				37B1BE4354A3355BC3DC052B /* Pods-HomeToGather.release.xcconfig */,
+				105C0FAE265EF599FB610EB3 /* Pods-HomeToGather.debug.xcconfig */,
+				9AB3CCD1430627BD489BAADF /* Pods-HomeToGather.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -426,12 +424,13 @@
 				E477390428533A6900C1403F /* Color.swift in Sources */,
 				E26A38832851F50D00AD8EFF /* MainView.swift in Sources */,
 				E26A388C2853081E00AD8EFF /* ImagePicker.swift in Sources */,
+				E217AB4D28561F5B00242BAD /* ticketView.swift in Sources */,
 				B95077FC28548D2C00F7825A /* InvitedListView.swift in Sources */,
 				E477390128533A2700C1403F /* CreateView.swift in Sources */,
 				E47738A2285320F800C1403F /* Font.swift in Sources */,
 				B95078002854992000F7825A /* ParticipantView.swift in Sources */,
+				E217AB4F28561F6300242BAD /* expanedTicketView.swift in Sources */,
 				E26A388A2853077A00AD8EFF /* Model.swift in Sources */,
-				E47738FF28533A2000C1403F /* TicketView.swift in Sources */,
 				E26A38C52853ABCA00AD8EFF /* SettingView.swift in Sources */,
 				B93869DD2855D8B100320855 /* FeedbackCardView.swift in Sources */,
 				B93869D92855043500320855 /* HostedListView.swift in Sources */,
@@ -562,7 +561,7 @@
 		};
 		E403DD7D2851DFEA004C8391 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C742D7F290A470A4464D4E94 /* Pods-HomeToGather.debug.xcconfig */;
+			baseConfigurationReference = 105C0FAE265EF599FB610EB3 /* Pods-HomeToGather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -596,7 +595,7 @@
 		};
 		E403DD7E2851DFEA004C8391 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37B1BE4354A3355BC3DC052B /* Pods-HomeToGather.release.xcconfig */;
+			baseConfigurationReference = 9AB3CCD1430627BD489BAADF /* Pods-HomeToGather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
