@@ -46,10 +46,12 @@ struct CardView: View {
                 .padding(.top, 12)
                 
                 VStack(alignment: .leading, spacing: 0) {
-                    ForEach(contents!, id: \.self) { content in // 강제 언래핑 수정하기
-                        HStack(spacing: 0) {
-                            Text("· ")
-                            Text(content)
+                    if contents != nil {
+                        ForEach(contents!, id: \.self) { content in
+                            HStack(spacing: 0) {
+                                Text("· ")
+                                Text(content)
+                            }
                         }
                     }
                 }

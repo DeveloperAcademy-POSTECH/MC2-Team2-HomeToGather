@@ -50,40 +50,38 @@ struct expanedTicketView: View {
                             VStack(alignment:.leading,spacing: 5) {
                                 
                                 Text(partyName)
-                                    .bold()
-                                    .font(.system(size:28))
+                                    .font(.notoSans(withStyle: .Bold, size: 28))
                                     .foregroundColor(.white)
                                 Spacer()
                                     .frame(width: 1, height: 20)
                                 Text(partySubtitle)
-                                    .bold()
-                                    .font(.system(size:24))
+                                    .font(.notoSans(withStyle: .Bold, size: 24))
                                     .foregroundColor(.white)
                                 Spacer()
                                     .frame(width: 1, height: 20)
                                 VStack(alignment:.leading,spacing: 3)  {
                                     Text(date)
-                                        .font(.system(size:12))
+                                        .font(.notoSans(withStyle: .Regular, size: 12))
                                         .foregroundColor(.white)
                                     HStack(alignment: .center, spacing: 2){
                                         Text(startTime)
-                                            .font(.system(size:12))
+                                            .font(.notoSans(withStyle: .Regular, size: 12))
                                             .foregroundColor(.white)
                                         Text(endTime)
-                                            .font(.system(size:12))
+                                            .font(.notoSans(withStyle: .Regular, size: 12))
                                             .foregroundColor(.white)
                                     }
                                     
                                 }
                                 Text(location)
                                     .bold()
-                                    .font(.system(size:12))
+                                    .font(.notoSans(withStyle: .Regular, size: 12))
                                     .foregroundColor(.white)
-                            }.offset(x: -170,y:-60)
+                            }.offset(x: -150,y:-50)
                         }.frame(width: 500, height: 300, alignment: .center)
                             .rotationEffect(.degrees(90))
                         
-                        Image("미러볼")
+                        Image("mirrorBall")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 158, height: 316, alignment: .leading)
@@ -109,18 +107,17 @@ struct expanedTicketView: View {
                         
                         VStack(alignment:.leading,spacing:6) {
                             Text(partyName)
-                                .bold()
-                                .font(.system(size:16))
+                                .font(.notoSans(withStyle: .Bold, size: 22))
                                 .foregroundColor(.black)
                             Divider().frame(width: 234, height: 1, alignment: .center)
                                 .background(Color.black)
                             HStack {
                                 VStack(alignment: .leading, spacing: 13) {
                                     Text(timeLabel)
-                                        .font(.system(size:8))
+                                        .font(.notoSans(withStyle: .Regular, size: 14))
                                         .foregroundColor(.black)
                                     Text(placeLabel)
-                                        .font(.system(size:8))
+                                        .font(.notoSans(withStyle: .Regular, size: 14))
                                         .foregroundColor(.black)
                                 }
                                 Spacer()
@@ -131,10 +128,10 @@ struct expanedTicketView: View {
                                     .frame(width: 15, height: 1, alignment: .trailing)
                                 VStack(alignment: .leading, spacing: 13) {
                                     Text(month)
-                                        .font(.system(size:8))
+                                        .font(.notoSans(withStyle: .Regular, size: 14))
                                         .foregroundColor(.black)
                                     Text(place)
-                                        .font(.system(size:8))
+                                        .font(.notoSans(withStyle: .Regular, size: 14))
                                         .foregroundColor(.black)
                                 }
                             }

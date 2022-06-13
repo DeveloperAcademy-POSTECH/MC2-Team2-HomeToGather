@@ -9,6 +9,18 @@ import Foundation
 import SwiftUI
 
 extension Color {
+    
+//    티켓 색상 선택하는 함수
+    static func getColor(color:String) -> Color {
+        switch color {
+        case "red" : return Color(hex: "#FF4F4F")
+        case "yellow" : return Color(hex: "FFD250")
+        case "blue" : return Color(hex:"54D7FF")
+        case "green" : return Color(hex: "#4FFFAE")
+        default : return Color(hex: "A84FFF")
+        }
+    }
+    
     static let partyRed = Color(hex: "#FF4F4F")
     static let partyGreen = Color(hex: "#4FFFAE")
     static let partyYellow = Color(hex: "FFD250")
@@ -22,6 +34,8 @@ extension Color {
     static let card1Color = Color(hex: "#FC9467")
     static let card2Color = Color(hex: "#FFD250")
     static let card3Color = Color(hex: "#54D7FF")
+    static let buttonColor = Color(hex:"1e1e1e")
+    
 }
 extension Color {
     

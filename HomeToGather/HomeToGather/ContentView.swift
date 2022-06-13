@@ -14,10 +14,16 @@ struct ContentView: View {
     @State private var appleLoginCoordinator: AppleAuthCoordinator?
     @State var isSuccess: Bool = Auth.auth().currentUser != nil ? false : true
     
+    @State var isTouchedTicket: Bool = false
+    
+    init() {
+        UINavigationBar.appearance().tintColor = .white
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
-                MainView()
+                MainView(isTouchedTicket: $isTouchedTicket)
                     .fullScreenCover(isPresented: $isSuccess, content: {
                         VStack {
                             Spacer()
@@ -39,12 +45,34 @@ struct ContentView: View {
                     })
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading, content: {
-                    NavigationLink(destination: {
-                        SettingView(isSuccess: $isSuccess)
-                    }, label: {
-                        Image("setting")
-                    })
+                ToolbarItem(placement: .navigationBarLeading) {
+                    if isTouchedTicket {
+                        Button {
+                            withAnimation(.easeInOut(duration: 1.2)) {
+                                isTouchedTicket.toggle()
+                            }
+                        } label: {
+                            Image(systemName: "xmark")
+                                .foregroundColor(.white)
+                        }
+                    } else {
+                        NavigationLink(destination: {
+                            SettingView(isSuccess: $isSuccess)
+                        }, label: {
+                            Image(systemName: "gearshape.circle")
+                                .foregroundColor(.white)
+                        })
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                    if !isTouchedTicket {
+                        NavigationLink(destination: {
+                            FirstCreateView()
+                        }, label: {
+                            Image(systemName: "plus.square")
+                                .foregroundColor(.white)
+                        })
+                    }
                 })
             }
             .navigationBarTitle("", displayMode: .inline)

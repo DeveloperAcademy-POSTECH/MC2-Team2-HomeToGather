@@ -36,8 +36,10 @@ struct HostedDetailView: View {
                                     .padding(.top, 18)
                                 
                                 HStack(spacing: -5) {
-                                    ForEach(hostData.participantName!, id: \.self) { name in // 강제 언래핑 수정하기
-                                        ParticipantView(name: name)
+                                    if let participants = hostData.participantName {
+                                        ForEach(participants, id: \.self) { name in
+                                            ParticipantView(name: name)
+                                        }
                                     }
                                 }
                                 .padding(.top, 7)

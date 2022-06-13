@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct InvitedDetailView: View {
+    @State private var buttonText = "doc.on.clipboard"
+    
     var invitationData: Invitation
     
     let screenWidth = UIScreen.main.bounds.width
@@ -35,8 +37,10 @@ struct InvitedDetailView: View {
                                     .padding(.top, 18)
                                 
                                 HStack(spacing: -5) {
-                                    ForEach(invitationData.participantName!, id: \.self) { name in // 강제 언래핑 수정하기
-                                        ParticipantView(name: name)
+                                    if let participants = invitationData.participantName {
+                                        ForEach(participants, id: \.self) { name in
+                                            ParticipantView(name: name)
+                                        }
                                     }
                                 }
                                 .padding(.top, 7)
@@ -51,9 +55,9 @@ struct InvitedDetailView: View {
                                     Text("PLACE: ")
                                     Text(invitationData.place)
                                     Button(action:{
-                                        UIPasteboard.general.setValue(invitationData.place, forPasteboardType: "public.plain-text")
+                                        copyToClipboard()
                                     }, label: {
-                                        Image(systemName: "doc.on.doc")
+                                        Image(systemName: buttonText)
                                             .foregroundColor(.white)
                                     })
                                     .padding(.leading, 6)
@@ -73,6 +77,15 @@ struct InvitedDetailView: View {
             }
         }
         .preferredColorScheme(.dark)
+    }
+    
+    func copyToClipboard() {
+        UIPasteboard.general.string = invitationData.place
+        self.buttonText = "doc.on.clipboard.fill"
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
+            self.buttonText = "doc.on.clipboard"
+        }
     }
 }
 
