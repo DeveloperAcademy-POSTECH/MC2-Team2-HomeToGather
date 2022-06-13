@@ -563,7 +563,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 105C0FAE265EF599FB610EB3 /* Pods-HomeToGather.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HomeToGather/HomeToGather.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -589,7 +589,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "MC2 Team i!";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -597,7 +597,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9AB3CCD1430627BD489BAADF /* Pods-HomeToGather.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HomeToGather/HomeToGather.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -623,7 +623,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "MC2 Team i!";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
