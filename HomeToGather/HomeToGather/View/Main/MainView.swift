@@ -8,6 +8,14 @@ struct MainView: View {
     
     @State var showSettings = false
     @State var isSuccess = false
+    
+    let viewModel: ViewModel = ViewModel()
+    
+    // Deeplink Property
+    let deeplinkManager = DeeplinkManager()
+    @State private var invitationCardData: Invitation? = nil
+    @State private var invitationCardViewToggle: Bool = false
+    
     var body: some View {
         
         NavigationView {
@@ -68,15 +76,38 @@ struct MainView: View {
                                 .cornerRadius(4)
                         }).offset(y: -15)
                     }
-                    
-                    
-                    
-                    
                 }
-                
+
+                // Deep Link로 들어왔을 때 초대장 뷰 띄우기
+                // 뷰 수정 필요
+                NavigationLink(isActive: $invitationCardViewToggle) {
+                    DEBUG_InvitationCardView(invitationCardData: self.invitationCardData ?? nil)
+                } label: {
+                    EmptyView()
+                }
+
             }
-            
-            
+            .onOpenURL { url in
+                let deeplink = deeplinkManager.manage(url: url)
+                let target = deeplink
+                
+                print("onOpenURL_DEBUG : URL로 들어옴")
+                
+                switch target {
+                case .main:
+                    print("onOpenURL_DEBUG : 메인 뷰로 들어가기")
+                    
+                case .invitation(id: let id):
+                    print("onOpenURL_DEBUG : 초대장 뷰로 들어가기")
+                    viewModel.findInvitation(id: id, { data in
+                        
+                        if data != nil {
+                            self.invitationCardData = data!
+                            invitationCardViewToggle.toggle()
+                        }
+                    })
+                }
+            }
         }
     }
 }

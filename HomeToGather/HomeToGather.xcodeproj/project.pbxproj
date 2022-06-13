@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */; };
+		345DE3A828570A3D007CEC3B /* DEBUG_InvitationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345DE3A728570A3D007CEC3B /* DEBUG_InvitationCardView.swift */; };
 		AAD16A64A6D9C76CACCABBA6 /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504B49DF6EAC1E592D0B7035 /* Pods_HomeToGather.framework */; };
 		B93869D92855043500320855 /* HostedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869D82855043500320855 /* HostedListView.swift */; };
 		B93869DB2855044200320855 /* HostedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DA2855044200320855 /* HostedDetailView.swift */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		105C0FAE265EF599FB610EB3 /* Pods-HomeToGather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.debug.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.debug.xcconfig"; sourceTree = "<group>"; };
+		345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
+		345DE3A728570A3D007CEC3B /* DEBUG_InvitationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_InvitationCardView.swift; sourceTree = "<group>"; };
 		504B49DF6EAC1E592D0B7035 /* Pods_HomeToGather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeToGather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AB3CCD1430627BD489BAADF /* Pods-HomeToGather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.release.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.release.xcconfig"; sourceTree = "<group>"; };
 		B93869D82855043500320855 /* HostedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedListView.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 				E26A386E2851F40300AD8EFF /* AppleLogin.swift */,
 				E26A38872853076800AD8EFF /* ViewModel.swift */,
 				E26A388B2853081E00AD8EFF /* ImagePicker.swift */,
+				345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				B95078052855034900F7825A /* Hosted */,
 				B95077FA28548D0500F7825A /* Invited */,
 				B95077FF2854992000F7825A /* ParticipantView.swift */,
+				345DE3A728570A3D007CEC3B /* DEBUG_InvitationCardView.swift */,
 			);
 			path = TicketList;
 			sourceTree = "<group>";
@@ -418,11 +424,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B95077FE28548D3D00F7825A /* InvitedDetailView.swift in Sources */,
+				345DE3A828570A3D007CEC3B /* DEBUG_InvitationCardView.swift in Sources */,
 				E26A38882853076800AD8EFF /* ViewModel.swift in Sources */,
 				E403DD742851DFE9004C8391 /* ContentView.swift in Sources */,
 				E26A38C72853ABE800AD8EFF /* SettingDetailView.swift in Sources */,
 				E477390428533A6900C1403F /* Color.swift in Sources */,
 				E26A38832851F50D00AD8EFF /* MainView.swift in Sources */,
+				345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */,
 				E26A388C2853081E00AD8EFF /* ImagePicker.swift in Sources */,
 				E217AB4D28561F5B00242BAD /* ticketView.swift in Sources */,
 				B95077FC28548D2C00F7825A /* InvitedListView.swift in Sources */,
@@ -586,7 +594,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doyun.HomeToGather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "MC2 Team i!";
+				PROVISIONING_PROFILE_SPECIFIER = "Team2 I!";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -620,7 +628,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doyun.HomeToGather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "MC2 Team i!";
+				PROVISIONING_PROFILE_SPECIFIER = "Team2 I!";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
