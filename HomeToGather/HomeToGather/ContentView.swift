@@ -43,7 +43,16 @@ struct ContentView: View {
                     NavigationLink(destination: {
                         SettingView(isSuccess: $isSuccess)
                     }, label: {
-                        Image("setting")
+                        Image(systemName: "gearshape.circle")
+                            .foregroundColor(.white)
+                    })
+                })
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                    NavigationLink(destination: {
+                        CreateView()
+                    }, label: {
+                        Image(systemName: "plus.square")
+                            .foregroundColor(.white)
                     })
                 })
             }

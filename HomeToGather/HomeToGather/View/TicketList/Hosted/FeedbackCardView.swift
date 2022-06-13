@@ -31,30 +31,34 @@ struct FeedbackCardView: View {
                 .padding(.top, 12)
                 
                 VStack(alignment: .leading, spacing: 0) {
-                    ForEach(contents!, id: \.self) { content in // 강제 언래핑 수정하기
-                        HStack(spacing: 0) {
-                            Text("· ")
-                            Text(content)
+                    if contents != nil {
+                        ForEach(contents!, id: \.self) { content in
+                            HStack(spacing: 0) {
+                                Text("· ")
+                                Text(content)
+                            }
                         }
                     }
                 }
                 .padding(.top, 28)
                 .padding(.bottom, 22)
                 
-                Rectangle()
-                    .fill(Color.gray)
-                    .frame(maxWidth: screenWidth, maxHeight: 0.5)
+                if feedbackContents != nil {
+                    Rectangle()
+                        .fill(Color.gray)
+                        .frame(maxWidth: screenWidth, maxHeight: 0.5)
                 
-                VStack(alignment: .leading, spacing: 0) {
-                    ForEach(feedbackContents!, id: \.self) { feedback in // 강제 언래핑 수정하기
-                        HStack(spacing: 0) {
-                            Text("· ")
-                            Text(feedback)
+                    VStack(alignment: .leading, spacing: 0) {
+                        ForEach(feedbackContents!, id: \.self) { feedback in
+                            HStack(spacing: 0) {
+                                Text("· ")
+                                Text(feedback)
+                            }
                         }
                     }
+                    .padding(.top, 22)
+                    .padding(.bottom, 17)
                 }
-                .padding(.top, 22)
-                .padding(.bottom, 17)
             }
             .padding(20)
         }
