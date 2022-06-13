@@ -84,7 +84,7 @@ struct ListTicketView: View {
                             .offset(x: 92, y: -77)
                         
                         Triangle()
-                            .fill(Color.black)
+                            .fill(Color.backgroundColor)
                             .frame(width: 24, height: 24,alignment: .trailing)
                             .rotationEffect(.degrees(-45))
                             .offset(x: 92, y: -78)
@@ -134,7 +134,7 @@ struct ListTicketView: View {
                         }
                         
                         Triangle()
-                            .fill(Color.black)
+                            .fill(Color.backgroundColor)
                             .frame(width: 24, height: 24,alignment: .trailing)
                             .rotationEffect(.degrees(45))
                             .offset(x: 78, y: -38)
@@ -144,7 +144,7 @@ struct ListTicketView: View {
                     .opacity(isTearTicket ? 0 : 1)
                     
                     Rectangle()
-                        .fill(.black)
+                        .fill(Color.backgroundColor)
                         .frame(width: 50, height: 50)
                         .offset(x: 117, y: -53)
                         .opacity(isTearTicket ? 1 : 0)
