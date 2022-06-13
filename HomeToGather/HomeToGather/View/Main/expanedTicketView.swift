@@ -81,7 +81,7 @@ struct expanedTicketView: View {
                         }.frame(width: 500, height: 300, alignment: .center)
                             .rotationEffect(.degrees(90))
                         
-                        Image("미러볼")
+                        Image("mirrorBall")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 158, height: 316, alignment: .leading)
@@ -107,17 +107,17 @@ struct expanedTicketView: View {
                         
                         VStack(alignment:.leading,spacing:6) {
                             Text(partyName)
-                                .font(.notoSans(withStyle: .Bold, size: 16))
+                                .font(.notoSans(withStyle: .Bold, size: 22))
                                 .foregroundColor(.black)
                             Divider().frame(width: 234, height: 1, alignment: .center)
                                 .background(Color.black)
                             HStack {
                                 VStack(alignment: .leading, spacing: 13) {
                                     Text(timeLabel)
-                                        .font(.notoSans(withStyle: .Regular, size: 8))
+                                        .font(.notoSans(withStyle: .Regular, size: 14))
                                         .foregroundColor(.black)
                                     Text(placeLabel)
-                                        .font(.notoSans(withStyle: .Regular, size: 8))
+                                        .font(.notoSans(withStyle: .Regular, size: 14))
                                         .foregroundColor(.black)
                                 }
                                 Spacer()
@@ -128,10 +128,10 @@ struct expanedTicketView: View {
                                     .frame(width: 15, height: 1, alignment: .trailing)
                                 VStack(alignment: .leading, spacing: 13) {
                                     Text(month)
-                                        .font(.notoSans(withStyle: .Regular, size: 8))
+                                        .font(.notoSans(withStyle: .Regular, size: 14))
                                         .foregroundColor(.black)
                                     Text(place)
-                                        .font(.notoSans(withStyle: .Regular, size: 8))
+                                        .font(.notoSans(withStyle: .Regular, size: 14))
                                         .foregroundColor(.black)
                                 }
                             }

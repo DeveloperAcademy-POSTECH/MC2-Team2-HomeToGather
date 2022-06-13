@@ -24,7 +24,7 @@ struct MainView: View {
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarLeading) {
                                     Button {
-                                        withAnimation(.easeInOut(duration: 1.2)) {
+                                        withAnimation(.easeInOut(duration:  0.8)) {
                                             isTouchedTicket.toggle()
                                         }
                                     } label: {
@@ -40,7 +40,7 @@ struct MainView: View {
                     ticketView(isTicketGesture: isTicketGesture)
                         .offset(y: -100)
                         .onTapGesture {
-                            withAnimation(.easeInOut(duration: 1.2)) {
+                            withAnimation(.easeInOut(duration: 0.8)) {
                                 isTouchedTicket.toggle()
                             }
                             
@@ -53,7 +53,7 @@ struct MainView: View {
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 4)
-                                    .fill(Color.backgroundColor)
+                                    .fill(Color.buttonColor)
                                     .frame(width: 170, height: 60)
                                 
                                 Text("초대된 파티")
@@ -67,7 +67,7 @@ struct MainView: View {
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 4)
-                                    .fill(Color.backgroundColor)
+                                    .fill(Color.buttonColor)
                                     .frame(width: 170, height: 60)
                                 
                                 Text("주최한 파티")

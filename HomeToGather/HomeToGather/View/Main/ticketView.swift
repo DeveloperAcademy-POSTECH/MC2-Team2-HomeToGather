@@ -98,7 +98,7 @@ struct ticketView: View {
                     }.frame(width: 388, height: 258, alignment: .center)
                         .rotationEffect(.degrees(90))
                     
-                    Image("미러볼")
+                    Image("mirrorBall")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 135, height: 253, alignment: .leading)
