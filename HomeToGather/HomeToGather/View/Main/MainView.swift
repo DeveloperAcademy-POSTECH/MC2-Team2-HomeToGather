@@ -4,16 +4,10 @@ struct MainView: View {
     @State var isTicketGesture = false
     @State var isTouched = false
     @State var showExpanedTicket = false
-    @State var isTouchedTicket = false
+    @Binding var isTouchedTicket: Bool
     
     @State var showSettings = false
     @State var isSuccess = false
-    
-    // 나중에 네비게이션으로 여길 열어야 한다면, init()에 직접 변수를 넣어야 함
-    // https://stackoverflow.com/questions/56910854/swiftui-views-with-a-custom-init
-    init() {
-        UINavigationBar.appearance().tintColor = .white
-    }
     
     var body: some View {
         ZStack {
@@ -81,9 +75,10 @@ struct MainView: View {
                                     .foregroundColor(.white)
                             }
                         }
-                    }).offset(y: -15)
+                    })
                 }
             }
+            .padding(.top, 100)
             .preferredColorScheme(.dark)
         }
     }
