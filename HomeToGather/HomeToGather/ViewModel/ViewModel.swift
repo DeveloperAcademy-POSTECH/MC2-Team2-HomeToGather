@@ -184,4 +184,54 @@ class ViewModel: ObservableObject {
         let _ = db.collection("ii").document(invitation.id).delete()
     }
 
+    
+    // Deeplink
+    // ID 값으로 Invitation 구조체 생성해 전달
+    func findInvitation(id: String, _ completion: @escaping (_ data: Invitation?) -> Void ) {
+        
+        let docRef = Firestore.firestore().collection("ii").document(id)
+        
+        print("Find : DocsID is \(docRef.documentID)")
+        
+        var newInvitation: Invitation?
+
+        let g = DispatchGroup()
+        g.enter()
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+    
+                newInvitation = Invitation(id: document["id"] as? String ?? "empty",
+                                        uid: document["uid"] as? String ?? "empty",
+                                        organizerName: document["organizerName"] as? String ?? "empty",
+                                        participantName: document["participantName"] as? [String] ?? [],
+                                        participantUid: document["participantUid"] as? [String] ?? [],
+                                        title: document["title"] as? String ?? "empty",
+                                        date: document["date"] as? String ?? "empty",
+                                        place: document["place"] as? String ?? "empty",
+                                        description: document["description"] as? String ?? "empty",
+                                        rule: document["rule"] as? [String] ?? [],
+                                        cost: document["cost"] as? String ?? "empty",
+                                        food: document["food"] as? [String] ?? [],
+                                        etc: document["etc"] as? [String] ?? [],
+                                        image: document["image"] as? String ?? "empty",
+                                        ruleFeedback: document["ruleFeedback"] as? [String] ?? [],
+                                        foodFeedback: document["foodFeedback"] as? [String] ?? [],
+                                        color: document["color"] as? String ?? "empty")
+                
+                g.leave()
+                
+            } else {
+                print("Document does not exist")
+                g.leave()
+            }
+        }
+        
+        g.notify(queue:.main) {
+            print("NEW Card: \(newInvitation?.title)")
+            completion(newInvitation)
+        }
+        
+        return
+    }
 }

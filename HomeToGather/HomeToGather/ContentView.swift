@@ -78,6 +78,7 @@ struct ContentView: View {
             .navigationBarTitle("", displayMode: .inline)
         }
     }
+    
     func appleLogin() {
         appleLoginCoordinator = AppleAuthCoordinator(window: window, isSuccess: $isSuccess)
         appleLoginCoordinator?.startAppleLogin()

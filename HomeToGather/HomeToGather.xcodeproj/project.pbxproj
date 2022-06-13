@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */; };
+		345DE3A828570A3D007CEC3B /* DEBUG_InvitationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345DE3A728570A3D007CEC3B /* DEBUG_InvitationCardView.swift */; };
 		39EB7778D8B6F5526352FC05 /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5EE6D7BA0BBEC21A086B561 /* Pods_HomeToGather.framework */; };
 		75D68050285714340097B97A /* SecondCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6804F285714340097B97A /* SecondCreateView.swift */; };
 		75D6805228571C970097B97A /* FirstCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805128571C970097B97A /* FirstCreateView.swift */; };
@@ -56,6 +58,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
+		345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
+		345DE3A728570A3D007CEC3B /* DEBUG_InvitationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_InvitationCardView.swift; sourceTree = "<group>"; };
 		75D6804F285714340097B97A /* SecondCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCreateView.swift; sourceTree = "<group>"; };
 		75D6805128571C970097B97A /* FirstCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCreateView.swift; sourceTree = "<group>"; };
 		75D6805328571CD60097B97A /* FirstInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstInfo.swift; sourceTree = "<group>"; };
@@ -184,6 +189,7 @@
 				E26A386E2851F40300AD8EFF /* AppleLogin.swift */,
 				E26A38872853076800AD8EFF /* ViewModel.swift */,
 				E26A388B2853081E00AD8EFF /* ImagePicker.swift */,
+				345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 				B95078052855034900F7825A /* Hosted */,
 				B95077FA28548D0500F7825A /* Invited */,
 				B95077FF2854992000F7825A /* ParticipantView.swift */,
+				345DE3A728570A3D007CEC3B /* DEBUG_InvitationCardView.swift */,
 				B9D0FC002856505500D5BCC3 /* InvitationView.swift */,
 			);
 			path = TicketList;
@@ -468,11 +475,13 @@
 				B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */,
 				75D6805E28571E6A0097B97A /* SearchAddressButton.swift in Sources */,
 				B95077FE28548D3D00F7825A /* InvitedDetailView.swift in Sources */,
+				345DE3A828570A3D007CEC3B /* DEBUG_InvitationCardView.swift in Sources */,
 				E26A38882853076800AD8EFF /* ViewModel.swift in Sources */,
 				E403DD742851DFE9004C8391 /* ContentView.swift in Sources */,
 				E26A38C72853ABE800AD8EFF /* SettingDetailView.swift in Sources */,
 				E477390428533A6900C1403F /* Color.swift in Sources */,
 				E26A38832851F50D00AD8EFF /* MainView.swift in Sources */,
+				345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */,
 				75D6805C28571DD00097B97A /* PartyData.swift in Sources */,
 				E26A388C2853081E00AD8EFF /* ImagePicker.swift in Sources */,
 				E217AB4D28561F5B00242BAD /* ticketView.swift in Sources */,
