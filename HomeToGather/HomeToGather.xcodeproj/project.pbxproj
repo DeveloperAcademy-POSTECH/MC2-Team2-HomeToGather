@@ -13,6 +13,8 @@
 		75D6805828571D100097B97A /* TitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805728571D100097B97A /* TitleRow.swift */; };
 		75D6805A28571D380097B97A /* SubTitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805928571D380097B97A /* SubTitleRow.swift */; };
 		75D6805C28571DD00097B97A /* PartyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805B28571DD00097B97A /* PartyData.swift */; };
+		75D6805E28571E6A0097B97A /* SearchAddressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805D28571E6A0097B97A /* SearchAddressButton.swift */; };
+		75D6806028571EAC0097B97A /* AdressWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805F28571EAC0097B97A /* AdressWebView.swift */; };
 		AAD16A64A6D9C76CACCABBA6 /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504B49DF6EAC1E592D0B7035 /* Pods_HomeToGather.framework */; };
 		B93869D92855043500320855 /* HostedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869D82855043500320855 /* HostedListView.swift */; };
 		B93869DB2855044200320855 /* HostedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DA2855044200320855 /* HostedDetailView.swift */; };
@@ -62,6 +64,8 @@
 		75D6805728571D100097B97A /* TitleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRow.swift; sourceTree = "<group>"; };
 		75D6805928571D380097B97A /* SubTitleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTitleRow.swift; sourceTree = "<group>"; };
 		75D6805B28571DD00097B97A /* PartyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyData.swift; sourceTree = "<group>"; };
+		75D6805D28571E6A0097B97A /* SearchAddressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressButton.swift; sourceTree = "<group>"; };
+		75D6805F28571EAC0097B97A /* AdressWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressWebView.swift; sourceTree = "<group>"; };
 		9AB3CCD1430627BD489BAADF /* Pods-HomeToGather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.release.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.release.xcconfig"; sourceTree = "<group>"; };
 		B93869D82855043500320855 /* HostedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedListView.swift; sourceTree = "<group>"; };
 		B93869DA2855044200320855 /* HostedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedDetailView.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 			children = (
 				75D6805128571C970097B97A /* FirstCreateView.swift */,
 				75D6805328571CD60097B97A /* FirstInfo.swift */,
+				75D6805F28571EAC0097B97A /* AdressWebView.swift */,
+				75D6805D28571E6A0097B97A /* SearchAddressButton.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -460,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */,
+				75D6805E28571E6A0097B97A /* SearchAddressButton.swift in Sources */,
 				B95077FE28548D3D00F7825A /* InvitedDetailView.swift in Sources */,
 				E26A38882853076800AD8EFF /* ViewModel.swift in Sources */,
 				E403DD742851DFE9004C8391 /* ContentView.swift in Sources */,
@@ -475,6 +482,7 @@
 				E47738A2285320F800C1403F /* Font.swift in Sources */,
 				B95078002854992000F7825A /* ParticipantView.swift in Sources */,
 				E217AB4F28561F6300242BAD /* expanedTicketView.swift in Sources */,
+				75D6806028571EAC0097B97A /* AdressWebView.swift in Sources */,
 				E26A388A2853077A00AD8EFF /* Model.swift in Sources */,
 				E26A38C52853ABCA00AD8EFF /* SettingView.swift in Sources */,
 				B93869DD2855D8B100320855 /* FeedbackCardView.swift in Sources */,

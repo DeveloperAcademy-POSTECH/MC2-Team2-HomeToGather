@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-struct InfoView: View {
+struct FirstInfo: View {
     
     //    @ObservedObject var partyData = PartyData
     
@@ -45,7 +45,7 @@ struct InfoView: View {
                 DatePicker(selection: /*@START_MENU_TOKEN@*/.constant(Date())/*@END_MENU_TOKEN@*/
                            , label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
                 SubTitleRow(text: "장소")
-                SearchButtonView()
+                SearchAddressButton()
                 TextField("ex) 상세주소를 입력해주세요.", text: $detailAddress)
                     .foregroundColor(.white)
                     .padding(EdgeInsets(top: 0, leading: 6, bottom: 0, trailing: 6))
