@@ -24,6 +24,7 @@
 		B95078002854992000F7825A /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95077FF2854992000F7825A /* ParticipantView.swift */; };
 		B950780228549A8700F7825A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950780128549A8700F7825A /* CardView.swift */; };
 		B95078042854D9FA00F7825A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95078032854D9F900F7825A /* View.swift */; };
+		B9CF5CA528572D50002B69FB /* ListTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CF5CA428572D50002B69FB /* ListTicketView.swift */; };
 		B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0FC002856505500D5BCC3 /* InvitationView.swift */; };
 		E217AB4D28561F5B00242BAD /* ticketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217AB4C28561F5A00242BAD /* ticketView.swift */; };
 		E217AB4F28561F6300242BAD /* expanedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217AB4E28561F6300242BAD /* expanedTicketView.swift */; };
@@ -75,6 +76,7 @@
 		B95077FF2854992000F7825A /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		B950780128549A8700F7825A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		B95078032854D9F900F7825A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		B9CF5CA428572D50002B69FB /* ListTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTicketView.swift; sourceTree = "<group>"; };
 		B9D0FC002856505500D5BCC3 /* InvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
 		E217AB4C28561F5A00242BAD /* ticketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ticketView.swift; sourceTree = "<group>"; };
 		E217AB4E28561F6300242BAD /* expanedTicketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = expanedTicketView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				B95077FA28548D0500F7825A /* Invited */,
 				B95077FF2854992000F7825A /* ParticipantView.swift */,
 				B9D0FC002856505500D5BCC3 /* InvitationView.swift */,
+				B9CF5CA428572D50002B69FB /* ListTicketView.swift */,
 			);
 			path = TicketList;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				75D6805A28571D380097B97A /* SubTitleRow.swift in Sources */,
 				75D6805428571CD60097B97A /* FirstInfo.swift in Sources */,
 				B95078042854D9FA00F7825A /* View.swift in Sources */,
+				B9CF5CA528572D50002B69FB /* ListTicketView.swift in Sources */,
 				E26A386F2851F40300AD8EFF /* AppleLogin.swift in Sources */,
 				B950780228549A8700F7825A /* CardView.swift in Sources */,
 				B93869DB2855044200320855 /* HostedDetailView.swift in Sources */,

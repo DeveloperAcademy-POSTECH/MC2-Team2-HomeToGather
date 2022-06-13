@@ -21,9 +21,8 @@ struct HostedListView: View {
                         NavigationLink {
                             HostedDetailView(hostData: host)
                         } label: {
-                            // 티켓 이미지
-                            RoundedRectangle(cornerRadius: 4)
-                                .frame(width: screenWidth - 40, height: 155)
+                            ListTicketView()
+                                .frame(maxWidth: screenWidth)
                                 .padding(.bottom, 20)
                         }
                     }
@@ -40,5 +39,6 @@ struct HostedListView: View {
 struct HostedListView_Previews: PreviewProvider {
     static var previews: some View {
         HostedListView()
+            .previewDevice("iPhone 13 Pro")
     }
 }
