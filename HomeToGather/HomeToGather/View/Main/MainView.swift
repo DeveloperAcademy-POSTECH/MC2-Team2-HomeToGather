@@ -24,7 +24,7 @@ struct MainView: View {
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarLeading) {
                                     Button {
-                                        withAnimation(.easeInOut(duration: 1.2)) {
+                                        withAnimation(.easeInOut(duration:  0.8)) {
                                             isTouchedTicket.toggle()
                                         }
                                     } label: {
@@ -40,7 +40,7 @@ struct MainView: View {
                     ticketView(isTicketGesture: isTicketGesture)
                         .offset(y: -100)
                         .onTapGesture {
-                            withAnimation(.easeInOut(duration: 1.2)) {
+                            withAnimation(.easeInOut(duration: 0.8)) {
                                 isTouchedTicket.toggle()
                             }
                             
