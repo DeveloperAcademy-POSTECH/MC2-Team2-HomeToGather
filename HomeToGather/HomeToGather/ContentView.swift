@@ -49,7 +49,7 @@ struct ContentView: View {
                 })
                 ToolbarItem(placement: .navigationBarTrailing, content: {
                     NavigationLink(destination: {
-                        CreateView()
+                        FirstCreateView()
                     }, label: {
                         Image(systemName: "plus.square")
                             .foregroundColor(.white)
