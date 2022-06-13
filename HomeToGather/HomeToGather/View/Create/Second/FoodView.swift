@@ -26,12 +26,6 @@ struct FoodView: View {
     .frame(width: size)
     .background(Color(.gray))
     .cornerRadius(4)
-    .padding(20)
-    }
-}
-
-struct FoodView_Previews: PreviewProvider {
-    static var previews: some View {
-        FoodView()
+//    .padding(20)
     }
 }

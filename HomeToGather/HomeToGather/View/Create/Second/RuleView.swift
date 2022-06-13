@@ -31,17 +31,10 @@ struct RuleView: View {
         .frame(width: size)
         .background(Color(.gray))
         .cornerRadius(4)
-        .padding(20)
+//        .padding(20)
         
     }
     
 }
-
-struct RuleView_Previews: PreviewProvider {
-    static var previews: some View {
-        RuleView()
-    }
-}
-
 
 
