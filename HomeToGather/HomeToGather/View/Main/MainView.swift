@@ -8,11 +8,18 @@ struct MainView: View {
     
     @State var showSettings = false
     @State var isSuccess = false
+    
+    // 나중에 네비게이션으로 여길 열어야 한다면, init()에 직접 변수를 넣어야 함
+    // https://stackoverflow.com/questions/56910854/swiftui-views-with-a-custom-init
+    init() {
+        UINavigationBar.appearance().tintColor = .white
+    }
+    
     var body: some View {
         
         NavigationView {
             ZStack {
-                Color.black
+                Color.backgroundColor
                     .ignoresSafeArea()
                 VStack {
                     
@@ -46,37 +53,39 @@ struct MainView: View {
                             }
                         
                         HStack(alignment: .center, spacing: 10, content: {
-                            Button {
-                                //
+                            
+                            NavigationLink {
+                                InvitedListView()
                             } label: {
-                                Text("초대한 파티")
-                                    .bold()
-                                    .foregroundColor(Color.white)
-                                    .font(.system(size: 17))
-                            }.frame(width: 170, height: 60)
-                                .background(Color.gray)
-                                .cornerRadius(4)
-                            Button {
-                                //
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .fill(Color.backgroundColor)
+                                        .frame(width: 170, height: 60)
+                                    
+                                    Text("초대된 파티")
+                                        .font(.notoSans(withStyle: .Bold, size: 17))
+                                        .foregroundColor(.white)
+                                }
+                            }
+                            
+                            NavigationLink {
+                                HostedListView()
                             } label: {
-                                Text("초대된 파티")
-                                    .bold()
-                                    .foregroundColor(Color.white)
-                                    .font(.system(size: 17))
-                            }.frame(width: 170, height: 60)
-                                .background(Color.gray)
-                                .cornerRadius(4)
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .fill(Color.backgroundColor)
+                                        .frame(width: 170, height: 60)
+                                    
+                                    Text("주최한 파티")
+                                        .font(.notoSans(withStyle: .Bold, size: 17))
+                                        .foregroundColor(.white)
+                                }
+                            }
                         }).offset(y: -15)
                     }
-                    
-                    
-                    
-                    
                 }
-                
             }
-            
-            
+            .preferredColorScheme(.dark)
         }
     }
 }
