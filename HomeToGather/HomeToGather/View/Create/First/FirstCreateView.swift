@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct FirstCreateView: View {
+    
+    @State private var isDisabled = true
+    
     init()
     {UINavigationBar.appearance().tintColor = .white}
     
@@ -30,9 +33,9 @@ struct FirstCreateView: View {
                            SecondCreateView()
                         }, label: {
                            Text("다음")
-                                .foregroundColor(.white)
-                        })
-                    }
+                                .foregroundColor(isDisabled ? .gray : .white)
+                        }).disabled(isDisabled)
+                }
                 }
         }
     }

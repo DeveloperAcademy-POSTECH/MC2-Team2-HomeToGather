@@ -11,15 +11,15 @@ import Combine
 struct FirstInfo: View {
     
     @EnvironmentObject var partyData: PartyData
-
     @State private var date = Date()
-    @State var partyName = ""
-    @State var detailAddress = ""
     
-    let textLimit = 20
     let color: Color = Color.borderColor
     let width: CGFloat = 0.5
     let size: CGFloat = UIScreen.main.bounds.width - 40
+    
+    init() {
+        UITextView.appearance().backgroundColor = .clear
+    }
     
     var body: some View {
         ProgressBar(num: 1)
@@ -31,40 +31,38 @@ struct FirstInfo: View {
                 SubTitleRow(text: "파티 이름")
                 TextField("ex) 파티명을 적어주세요.", text: $partyData.title)
                     .foregroundColor(.white)
-                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 7, trailing: 20))
-                    .onReceive(Just($partyName)) { _ in limitText(textLimit) }
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 7, trailing: 20))
+                    .onReceive(Just($partyData.title)) { _ in limitText(input: partyData.title, upper: 20)}
                 Rectangle()
                     .fill(color)
                     .frame(height: width)
                     .edgesIgnoringSafeArea(.horizontal)
                 HStack{
                     Spacer()
-                    Text("\(partyName.count)/20")
+                    Text("\(partyData.title.count)/20")
                         .foregroundColor(.white)
                         .font(.notoSans(withStyle: .Light, size: 10))
                 }
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
                 
                 SubTitleRow(text: "소개")
-                ZStack(alignment: .leading){
+                ZStack(alignment: .topLeading){
                     if partyData.description.isEmpty {
-                        Text("파티를 소개해보세요.")
+                        Text("ex) 모두 함께 보아요.")
                             .font(.notoSans(withStyle: .Light, size: 16))
                             .foregroundColor(.gray)
+                            .lineSpacing(3) //줄 간격
                             .padding(.all)
                     }
-                    
                     TextEditor(text: $partyData.description)
-                        .padding()
-                        .foregroundColor(.white)
-                    //                        .background(Color.cardBackgroundColor)
-                        .background(Color.white)
                         .font(.notoSans(withStyle: .Light, size: 16))
+                        .foregroundColor(.white)
                         .lineSpacing(3) //줄 간격
-                        .frame(width: 309, height: 85)
-                    //                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 200)
-                    //                        .border(color, width: 1)
-                    
+                        .padding(.all)
+                    //                        .frame(width: 309)
+                        .frame(minHeight: 90)
+                        .overlay(RoundedRectangle(cornerRadius: 4)
+                            .stroke(color, lineWidth: 1))
                 }
             }
             .padding(EdgeInsets(top: 0, leading: 20, bottom: 30, trailing: 20))
@@ -80,9 +78,9 @@ struct FirstInfo: View {
                 
                 SubTitleRow(text: "장소")
                 SearchAddressButton()
-                TextField("ex) 상세주소를 입력해주세요.", text: $detailAddress)
+                TextField("ex) 상세주소를 입력해주세요.", text: $partyData.place)
                     .foregroundColor(.white)
-                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 7, trailing: 20))
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 7, trailing: 20))
                 Rectangle()
                     .fill(color)
                     .frame(height: width)
@@ -93,11 +91,15 @@ struct FirstInfo: View {
         .frame(width: size)
         .background(Color.cardBackgroundColor)
         .cornerRadius(4)
-        //        .padding(EdgeInsets(top: 65, leading: 20, bottom: 50, trailing: 20))
+        .onTapGesture {
+            hideKeyboard()
+        }
     }
-    func limitText(_ upper: Int) {
-        if partyName.count > upper {
-            partyName = String(partyName.prefix(upper))
+    
+    func limitText(input: String, upper: Int) {
+        var text = input
+        if text.count > upper {
+            text = String(text.prefix(upper))
         }
     }
     

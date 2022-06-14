@@ -144,6 +144,7 @@
 		75D6804C285711200097B97A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				75D6805D28571E6A0097B97A /* SearchAddressButton.swift */,
 				75D6805728571D100097B97A /* TitleRow.swift */,
 				75D6805928571D380097B97A /* SubTitleRow.swift */,
 				75D6805B28571DD00097B97A /* PartyData.swift */,
@@ -155,10 +156,9 @@
 		75D6804D285711280097B97A /* First */ = {
 			isa = PBXGroup;
 			children = (
+				75D6805F28571EAC0097B97A /* AdressWebView.swift */,
 				75D6805128571C970097B97A /* FirstCreateView.swift */,
 				75D6805328571CD60097B97A /* FirstInfo.swift */,
-				75D6805F28571EAC0097B97A /* AdressWebView.swift */,
-				75D6805D28571E6A0097B97A /* SearchAddressButton.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";

@@ -55,7 +55,7 @@ struct ProgressBar: View {
                         .bold()
                 }
                 Spacer()
-            }        .padding(EdgeInsets(top: 37, leading: 20, bottom: 17, trailing: 20))
+            }        .padding(EdgeInsets(top: 47, leading: 20, bottom: 17, trailing: 20))
 
     }
 }
