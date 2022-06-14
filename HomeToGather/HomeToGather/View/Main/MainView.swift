@@ -42,6 +42,7 @@ struct MainView: View {
                             }
                         
                     }
+                    
                 } else {
                     ticketView(isTicketGesture: isTicketGesture)
                         .offset(y: -100)
@@ -115,6 +116,8 @@ struct MainView: View {
                     }
                 })
             }
+            .padding(.top, 100)
+            .preferredColorScheme(.dark)
         }
     }
 }

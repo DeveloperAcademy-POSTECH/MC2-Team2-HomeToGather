@@ -27,24 +27,17 @@ class DeeplinkManager {
         
         // URL에 'invitation'이 포함되어 있지 않으면 main으로 가도록 타겟 반환
         // 'invitation'이 포함되어 있다면 유효한 초대장 링크라고 판단
-        if components!.string!.contains("invitation") == false {
+        if components!.string!.contains("id=") == false {
             return .main
         }
         
-        // 가져온 링크의 쿼리 중 "id=" 이 포함되어 있는 항목에서 invitationId를 추출해내기
+        // 가져온 링크의 쿼리 중 "id" 항목에서  invitationId를 추출해내기
         let queryItems = components!.queryItems
-        print(queryItems)
-        
-        invitationId = queryItems![0].value!
-        
+                
         for item in queryItems! {
-            print("query : \(item.value)")
-            if(item.value!.contains("id=")) {
-                let range = item.value!.range(of: "id=")
-
-                let endWordIndex = item.value![range!].endIndex
-                invitationId = String(item.value![endWordIndex ..< item.value!.endIndex])
-
+            print("query : \(item.value ?? "")")
+            if item.name == "id" {
+                invitationId = item.value!
                 break
             }
         }
@@ -57,38 +50,36 @@ class DeeplinkManager {
     
     // 공유를 위한 URL 생성
     // 링크는 https://*App_Domain*.page.link/invitation?id=*Invitation_Card_ID* 의 형태로 생성되어 반환됨
-    func createURL(id: String) -> URL{
-
-// ********************************
-//      앱스토어 ID 추가해주어야 함
-        
-        let dynamicLinksDomainURIPrefix = "https://hometogather.page.link"
-        let link = URL(string: "/invitation?id=\(id)")!
-        let linkBuilder = DynamicLinkComponents(link: link, domainURIPrefix: dynamicLinksDomainURIPrefix)
-
-
-        linkBuilder!.iOSParameters = DynamicLinkIOSParameters(bundleID: "com.doyun.HomeToGather")
-        linkBuilder!.iOSParameters?.appStoreID = "100000"
-        
-//        안드로이드 대응을 위한 파라미터
-//        linkBuilder!.androidParameters = DynamicLinkAndroidParameters(packageName: "com.xxx.xxxandroid")
-        
-//        링크 상세 설정(제목,이미지)
-//        링크에 SNS를 통해 공유할 때 함께 생성될 디테일 정보를 파라미터로 추가할 수 있음
-//        linkBuilder!.socialMetaTagParameters = DynamicLinkSocialMetaTagParameters()
-//        linkBuilder!.socialMetaTagParameters?.title = "저의 홈파티에 초대합니다!"
-//        linkBuilder!.socialMetaTagParameters?.imageURL = URL(string: "https://www.hankyung.com/economy/article/201809145531g")
-        
-        // 긴 URL 생성됨
-        var createdDynamicLink = linkBuilder!.url!
-        
-        // 아래를 거치면 조금 더 짧은 URL 생성할 수 있음
-        linkBuilder!.shorten() { url, warnings, error in
-            guard let url = url, error == nil else { return }
-            
-            createdDynamicLink = url
-        }
-        
-        return createdDynamicLink
-    }
+//    func createURL(id: String) -> URL{
+//
+//        let dynamicLinksDomainURIPrefix = "https://hometogather.page.link"
+//        let link = URL(string: "/invitation?id=\(id)")!
+//        let linkBuilder = DynamicLinkComponents(link: link, domainURIPrefix: dynamicLinksDomainURIPrefix)
+//
+//
+//        linkBuilder!.iOSParameters = DynamicLinkIOSParameters(bundleID: "com.doyun.HomeToGather")
+//        linkBuilder!.iOSParameters?.appStoreID = "100000"
+//        linkBuilder!.iOSParameters?.fallbackURL = URL(fileURLWithPath: "https://etst.tistory.com")
+//
+////        안드로이드 대응을 위한 파라미터
+////        linkBuilder!.androidParameters = DynamicLinkAndroidParameters(packageName: "com.xxx.xxxandroid")
+//
+////        링크 상세 설정(제목,이미지)
+////        링크에 SNS를 통해 공유할 때 함께 생성될 디테일 정보를 파라미터로 추가할 수 있음
+////        linkBuilder!.socialMetaTagParameters = DynamicLinkSocialMetaTagParameters()
+////        linkBuilder!.socialMetaTagParameters?.title = "저의 홈파티에 초대합니다!"
+////        linkBuilder!.socialMetaTagParameters?.imageURL = URL(string: "https://www.hankyung.com/economy/article/201809145531g")
+//
+//        // 긴 URL 생성됨
+//        var createdDynamicLink = linkBuilder!.url!
+//
+//        // 아래를 거치면 조금 더 짧은 URL 생성할 수 있음
+//        linkBuilder!.shorten() { url, warnings, error in
+//            guard let url = url, error == nil else { return }
+//
+//            createdDynamicLink = url
+//        }
+//
+//        return createdDynamicLink
+//    }
 }

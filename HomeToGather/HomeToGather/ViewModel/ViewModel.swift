@@ -192,11 +192,8 @@ class ViewModel: ObservableObject {
     // Deeplink
     // ID 값으로 Invitation 구조체 생성해 전달
     func findInvitation(id: String, _ completion: @escaping (_ data: Invitation?) -> Void ) {
-        
         let docRef = Firestore.firestore().collection("ii").document(id)
-        
-        print("Find : DocsID is \(docRef.documentID)")
-        
+                
         var newInvitation: Invitation?
 
         let g = DispatchGroup()
@@ -227,12 +224,12 @@ class ViewModel: ObservableObject {
                 
             } else {
                 print("Document does not exist")
+                completion(nil)
                 g.leave()
             }
         }
         
         g.notify(queue:.main) {
-            print("NEW Card: \(newInvitation?.title)")
             completion(newInvitation)
         }
         
