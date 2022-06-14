@@ -23,7 +23,7 @@ struct FirstInfo: View {
     let size: CGFloat = UIScreen.main.bounds.width - 40
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 30) {
+        VStack(alignment: .leading) {
             TitleRow(text: "홈파티 소개")
                 .padding(EdgeInsets(top: 65, leading: 20, bottom: 50, trailing: 36))
             VStack(alignment: .leading){
@@ -40,8 +40,8 @@ struct FirstInfo: View {
                     Spacer()
                     Text("\(partyName.count)/20")
                         .foregroundColor(.white)
-                        .font(.system(size: 10       , weight: .light))
-                }
+                        .font(.system(size: 10no, weight: .light))
+                }.padding(EdgeInsets(top: 0, leading: 0, bottom: 26, trailing: 0))
                 SubTitleRow(text: "소개")
                 ZStack(alignment: .leading){
                     if partyData.description == "" {
