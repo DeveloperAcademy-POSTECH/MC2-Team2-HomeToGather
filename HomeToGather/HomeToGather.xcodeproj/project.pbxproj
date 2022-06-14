@@ -28,6 +28,8 @@
 		B95078042854D9FA00F7825A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95078032854D9F900F7825A /* View.swift */; };
 		B9CF5CA528572D50002B69FB /* ListTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CF5CA428572D50002B69FB /* ListTicketView.swift */; };
 		B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0FC002856505500D5BCC3 /* InvitationView.swift */; };
+		D760C181285857F6004D9D10 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760C180285857F6004D9D10 /* HideKeyboard.swift */; };
+		D760C18328585861004D9D10 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760C18228585861004D9D10 /* ProgressBar.swift */; };
 		E217AB4D28561F5B00242BAD /* ticketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217AB4C28561F5A00242BAD /* ticketView.swift */; };
 		E217AB4F28561F6300242BAD /* expanedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217AB4E28561F6300242BAD /* expanedTicketView.swift */; };
 		E26A386F2851F40300AD8EFF /* AppleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A386E2851F40300AD8EFF /* AppleLogin.swift */; };
@@ -59,7 +61,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
 		345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
 		345DE3A728570A3D007CEC3B /* DEBUG_InvitationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_InvitationCardView.swift; sourceTree = "<group>"; };
 		75D6804F285714340097B97A /* SecondCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCreateView.swift; sourceTree = "<group>"; };
@@ -83,6 +84,8 @@
 		B9CF5CA428572D50002B69FB /* ListTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTicketView.swift; sourceTree = "<group>"; };
 		B9D0FC002856505500D5BCC3 /* InvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
 		C5EE6D7BA0BBEC21A086B561 /* Pods_HomeToGather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeToGather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D760C180285857F6004D9D10 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		D760C18228585861004D9D10 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		E217AB4C28561F5A00242BAD /* ticketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ticketView.swift; sourceTree = "<group>"; };
 		E217AB4E28561F6300242BAD /* expanedTicketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = expanedTicketView.swift; sourceTree = "<group>"; };
 		E26A386E2851F40300AD8EFF /* AppleLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLogin.swift; sourceTree = "<group>"; };
@@ -134,6 +137,7 @@
 				75D6805728571D100097B97A /* TitleRow.swift */,
 				75D6805928571D380097B97A /* SubTitleRow.swift */,
 				75D6805B28571DD00097B97A /* PartyData.swift */,
+				D760C18228585861004D9D10 /* ProgressBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -299,6 +303,7 @@
 				E47738A42853223200C1403F /* Font */,
 				E477390328533A6900C1403F /* Color.swift */,
 				B95078032854D9F900F7825A /* View.swift */,
+				D760C180285857F6004D9D10 /* HideKeyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -483,10 +488,12 @@
 				E403DD742851DFE9004C8391 /* ContentView.swift in Sources */,
 				E26A38C72853ABE800AD8EFF /* SettingDetailView.swift in Sources */,
 				E477390428533A6900C1403F /* Color.swift in Sources */,
+				D760C181285857F6004D9D10 /* HideKeyboard.swift in Sources */,
 				E26A38832851F50D00AD8EFF /* MainView.swift in Sources */,
 				345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */,
 				75D6805C28571DD00097B97A /* PartyData.swift in Sources */,
 				E26A388C2853081E00AD8EFF /* ImagePicker.swift in Sources */,
+				D760C18328585861004D9D10 /* ProgressBar.swift in Sources */,
 				E217AB4D28561F5B00242BAD /* ticketView.swift in Sources */,
 				75D68050285714340097B97A /* SecondCreateView.swift in Sources */,
 				B95077FC28548D2C00F7825A /* InvitedListView.swift in Sources */,
