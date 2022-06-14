@@ -10,9 +10,8 @@ import Combine
 
 struct FirstInfo: View {
     
-    //    @ObservedObject var partyData = PartyData
     @EnvironmentObject var partyData: PartyData
-    
+
     @State private var date = Date()
     @State var partyName = ""
     @State var detailAddress = ""
@@ -72,6 +71,9 @@ struct FirstInfo: View {
             VStack(alignment: .leading){
                 SubTitleRow(text: "날짜/시간")
                 DatePicker(selection: $date, label: {Image(systemName: "calendar")})
+                    .onChange(of: self.date) { date in
+                        dateToString(date: date)
+                    }
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
                     .accentColor(Color.partyPurple)
                 
@@ -96,6 +98,14 @@ struct FirstInfo: View {
         if partyName.count > upper {
             partyName = String(partyName.prefix(upper))
         }
+    }
+    
+    func dateToString(date: Date) {
+        let dateFormatter = DateFormatter()
+        //    // Set Date Format
+        dateFormatter.dateFormat = "yyyy-MM-dd'Time'HH:mm"
+        //    // Convert Date to String
+        partyData.date = dateFormatter.string(from: date)
     }
 }
 
