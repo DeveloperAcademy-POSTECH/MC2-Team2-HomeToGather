@@ -27,8 +27,9 @@ import Combine
 //    var color: String               // 초대장 색상
 
 class PartyData: ObservableObject {
-    @Published var ruleLists = [String]()
-    @Published var foodLists = [String]()
+    @Published var rule = [String]()
+    @Published var food = [String]()
+    @Published var cost = ""
     @Published var title = ""
     @Published var date = ""
     @Published var place = ""
