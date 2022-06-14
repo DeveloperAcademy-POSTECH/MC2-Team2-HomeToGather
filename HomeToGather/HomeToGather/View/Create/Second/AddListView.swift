@@ -53,6 +53,7 @@ struct AddListView: View {
                     
                     if item != "" {
                         Button(action: {
+                            hideKeyboard()
                             lists.append(item)
                             item = ""
                             print(lists)
