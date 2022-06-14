@@ -1,3 +1,9 @@
+//
+//  ColorPickerView.swift
+//  HomeToGather
+//
+//  Created by Doyun Park on 2022/06/13.
+//
 
 import SwiftUI
 
