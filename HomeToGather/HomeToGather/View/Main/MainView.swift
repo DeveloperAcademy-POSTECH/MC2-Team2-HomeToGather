@@ -21,7 +21,7 @@ struct MainView: View {
     // Deeplink Property
     let deeplinkManager = DeeplinkManager()
     @State private var invitationCardData: Invitation?
-    @State private var invitationCardViewToggle: Bool = false
+    @State private var invitationCardViewToggle = false
     
 //    init() {
 //        viewModel.fetchInvitation()
