@@ -100,7 +100,7 @@ class ViewModel: ObservableObject {
             }
             var received = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")]
             received = documents.map({ (queryDocumentSnapshot) -> Invitation in
-                if queryDocumentSnapshot.data()["uid"] as? String ?? "" != Auth.auth().currentUser!.uid {
+                if queryDocumentSnapshot.data()["uid"] as? String ?? "" == invitationUid {
                     let data = queryDocumentSnapshot.data()
                     let id = data["id"] as? String ?? "blank id"
                     let uid = data["uid"] as? String ?? "blank uid"
@@ -126,7 +126,7 @@ class ViewModel: ObservableObject {
                 }
             })
             
-            self.invitationsReceived = received.filter { $0.id != "" }
+            self.invitationsReceived = received.filter { $0.uid != "" }
         }
     }
     
