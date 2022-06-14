@@ -77,23 +77,7 @@ struct CardView: View {
                         RoundedRectangle(cornerRadius: screenWidth)
                             .strokeBorder()
                             .frame(maxWidth: screenWidth, maxHeight: 50)
-                        
-                        HStack {
-                            TextField("", text: $feedback)
-                                .placeholder(when: feedback.isEmpty) {
-                                    Text("피드백을 입력해주세요.").foregroundColor(.white)
-                                }
-                            
-                            Spacer()
-                            
-                            Button(action: {
-                                isModalPresent.toggle()
-                            }, label: {
-                                Image(systemName: "paperplane.circle.fill")
-                                    .foregroundColor(.white)
-                            })
-                        }
-                        .padding(20)
+                        FocusView(isModalPresent: $isModalPresent)
                     }
                     .padding(20)
                 }
@@ -118,6 +102,36 @@ struct BackgroundClearView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: UIView, context: Context) {}
+}
+
+struct FocusView: View {
+    @FocusState private var isFocused: Bool
+    @State private var feedback: String = ""
+    @Binding var isModalPresent: Bool
+    
+    var body: some View {
+        
+        HStack {
+            TextField("피드백을 입력해주세요.", text: $feedback)
+                .foregroundColor(.white)
+                .focused($isFocused)
+            
+            Spacer()
+            
+            Button {
+                isModalPresent = false
+            } label: {
+                Image(systemName: "paperplane.circle.fill")
+            }
+            .foregroundColor(.white)
+        }
+        .padding(20)
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                self.isFocused = true
+            }
+        }
+    }
 }
 
 struct CardView_Previews: PreviewProvider {
