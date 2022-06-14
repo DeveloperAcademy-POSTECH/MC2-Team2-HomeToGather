@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HostedListView: View {
     let screenWidth = UIScreen.main.bounds.width
-    let uid = Auth.auth().currentUser!.uid
+    let uid = getUserUid()
     
     @State var viewModel = ViewModel()
     

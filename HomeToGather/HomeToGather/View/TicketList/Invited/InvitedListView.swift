@@ -49,7 +49,7 @@ let data: [Invitation] = [
 
 struct InvitedListView: View {
     let screenWidth = UIScreen.main.bounds.width
-    let uid = Auth.auth().currentUser!.uid
+    let uid = getUserUid()
     
     @State var viewModel = ViewModel()
     

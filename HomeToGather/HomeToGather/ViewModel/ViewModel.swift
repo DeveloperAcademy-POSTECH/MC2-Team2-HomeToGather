@@ -13,7 +13,7 @@ class ViewModel: ObservableObject {
 
     func uploadInvitation(_ invitation: Invitation, _ image: UIImage) {
         
-        let uid = Auth.auth().currentUser!.uid
+        let uid = getUserUid()
         let id = UUID().uuidString
         let imageName = UUID().uuidString
         
@@ -238,4 +238,9 @@ class ViewModel: ObservableObject {
         
         return
     }
+}
+
+func getUserUid() -> String {
+        guard let user = Auth.auth().currentUser else { return "" }
+        return user.uid
 }
