@@ -67,7 +67,8 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing, content: {
                     if !isTouchedTicket {
                         NavigationLink(destination: {
-                            FirstCreateView()
+//                            FirstCreateView()
+                            SecondCreateView()
                         }, label: {
                             Image(systemName: "plus.square")
                                 .foregroundColor(.white)
