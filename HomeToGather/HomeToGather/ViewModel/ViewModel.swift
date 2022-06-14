@@ -98,9 +98,9 @@ class ViewModel: ObservableObject {
                 print("No Documents")
                 return
             }
-            
-            self.invitationsReceived = documents.map({ (queryDocumentSnapshot) -> Invitation in
-                if queryDocumentSnapshot.data()["uid"] as? String ?? "" == Auth.auth().currentUser!.uid {
+            var received = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")]
+            received = documents.map({ (queryDocumentSnapshot) -> Invitation in
+                if queryDocumentSnapshot.data()["uid"] as? String ?? "" != Auth.auth().currentUser!.uid {
                     let data = queryDocumentSnapshot.data()
                     let id = data["id"] as? String ?? "blank id"
                     let uid = data["uid"] as? String ?? "blank uid"
@@ -125,6 +125,8 @@ class ViewModel: ObservableObject {
                     return Invitation(id: "", uid: "", organizerName: "", title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")
                 }
             })
+            
+            self.invitationsReceived = received.filter { $0.id != "" }
         }
     }
     
@@ -134,15 +136,15 @@ class ViewModel: ObservableObject {
                 print("No Documents")
                 return
             }
-            
-            self.invitationsSent = documents.map({ (queryDocumentSnapshot) -> Invitation in
-                if (queryDocumentSnapshot.data()["paricipantUid"] as? [String] ?? [""]).contains(Auth.auth().currentUser!.uid) {
+            var sent = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")]
+            sent = documents.map({ (queryDocumentSnapshot) -> Invitation in
+                if (queryDocumentSnapshot.data()["participantUid"] as? [String] ?? [""]).contains(invitationUid) {
                     let data = queryDocumentSnapshot.data()
                     let id = data["id"] as? String ?? "blank id"
                     let uid = data["uid"] as? String ?? "blank uid"
                     let organizerName = data["organizerName"] as? String ?? "blank organizerName"
                     let participantName = data["participantName"] as? [String] ?? ["blank participantName"]
-                    let participantUid = data["paricipantUid"] as? [String] ?? ["blank paricipantUid"]
+                    let participantUid = data["participantUid"] as? [String] ?? ["blank participantUid"]
                     let title = data["title"] as? String ?? "blank title"
                     let date = data["date"] as? String ?? "blank date"
                     let place = data["place"] as? String ?? "blank place"
@@ -161,6 +163,8 @@ class ViewModel: ObservableObject {
                     return Invitation(id: "", uid: "", organizerName: "", title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")
                 }
             })
+            
+            self.invitationsSent = sent.filter { $0.id != "" }
         }
     }
     
