@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 let data: [Invitation] = [
     Invitation(
@@ -48,6 +49,13 @@ let data: [Invitation] = [
 
 struct InvitedListView: View {
     let screenWidth = UIScreen.main.bounds.width
+    let uid = Auth.auth().currentUser!.uid
+    
+    @State var viewModel: ViewModel = ViewModel()
+    
+    init() {
+        viewModel.fetchInvitationsSent(uid)
+    }
     
     var body: some View {
         ZStack {
@@ -56,7 +64,7 @@ struct InvitedListView: View {
             
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
-                    ForEach(data, id: \.self) { invitation in
+                    ForEach(viewModel.invitationsSent, id: \.self) { invitation in
                         NavigationLink {
                             InvitedDetailView(invitationData: invitation)
                         } label: {

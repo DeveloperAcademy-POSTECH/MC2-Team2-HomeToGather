@@ -6,9 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct HostedListView: View {
     let screenWidth = UIScreen.main.bounds.width
+    let uid = Auth.auth().currentUser!.uid
+    
+    @State var viewModel: ViewModel = ViewModel()
+    
+    init() {
+        viewModel.fetchInvitationsReceived(uid)
+    }
     
     var body: some View {
         ZStack {
@@ -17,7 +25,7 @@ struct HostedListView: View {
             
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
-                    ForEach(data, id: \.self) { host in
+                    ForEach(viewModel.invitationsReceived, id: \.self) { host in
                         NavigationLink {
                             HostedDetailView(hostData: host)
                         } label: {
