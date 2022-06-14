@@ -1,12 +1,24 @@
 
-import Foundation
-
 import SwiftUI
 
-struct ColorPickerView: View {
-    var colors = ["red","blue","green","yellow"]
+enum PartyColors:String,CaseIterable {
+    case red,blue,green,yellow
     
-    @State var selectedColor = "red"
+    init?(rawValue: String) {
+        switch rawValue {
+        case "red" : self = .red
+        case "blue" : self = .blue
+        case "yellow": self = .yellow
+        case "green": self = .green
+        default: return nil
+        }
+    }
+}
+
+
+struct ColorPickerView: View {
+    
+    @State private var selectedColor:PartyColors = .red
     
     var body: some View {
         ZStack {
@@ -16,7 +28,7 @@ struct ColorPickerView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false, content: {
                     HStack {
-                        ForEach(colors,id:\.self) { color in
+                        ForEach(PartyColors.allCases,id:\.self) { color in
                             ColorView(color: color, selectedColor: $selectedColor)
                                 .onTapGesture {
                                     selectedColor = color
@@ -24,12 +36,11 @@ struct ColorPickerView: View {
                         }
                     }
                 }).background(Color.backgroundColor)
-                //
+                
                 ticketView(isTicketGesture: false, color: $selectedColor)
                     .background(Color.clear)
                 
                 Button {
-                    
                 } label: {
                     Text("만들기")
                         .font(.system(size: 18))
@@ -37,8 +48,6 @@ struct ColorPickerView: View {
                     .background(Color.partyPurple)
                     .cornerRadius(8)
                     .foregroundColor(.white)
-                
-                
             }
         }
         

@@ -11,13 +11,12 @@ import SwiftUI
 extension Color {
     
 //    티켓 색상 선택하는 함수
-    static func getColor(color:String) -> Color {
+    static func getColor(color:PartyColors) -> Color {
         switch color {
-        case "red" : return Color(hex: "#FF4F4F")
-        case "yellow" : return Color(hex: "FFD250")
-        case "blue" : return Color(hex:"54D7FF")
-        case "green" : return Color(hex: "#4FFFAE")
-        default : return Color(hex: "A84FFF")
+        case .blue : return Color(hex:"54D7FF")
+        case .yellow : return Color(hex: "FFD250")
+        case .green : return Color(hex: "#4FFFAE")
+        case .red : return Color(hex: "#FF4F4F")
         }
     }
     

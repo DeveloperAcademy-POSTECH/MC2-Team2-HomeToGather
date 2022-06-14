@@ -39,7 +39,7 @@ struct ticketView: View {
     @State var isTearTicket = false
     
     @State var isTicketGesture: Bool
-    @Binding var color: String
+    @Binding var color: PartyColors
     
     //    false면 왼쪽에서 드래그, true면 오른쪽에서 드래그
     @State var direction = false
@@ -61,7 +61,7 @@ struct ticketView: View {
                         ZStack {
                             
                             RoundedRectangle(cornerRadius: 4)
-                                .fill(LinearGradient(gradient: Gradient(colors: [.purple, Color.getColor(color: color)]),
+                                .fill(LinearGradient(gradient: Gradient(colors: [.purple, Color.getColor(color:color)]),
                                                      startPoint: .leading, endPoint: .trailing))
                             VStack(alignment:.leading,spacing: 5) {
                                 
@@ -191,9 +191,3 @@ struct ticketView: View {
         
     }
 }
-
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ticketView(isTicketGesture: <#T##Binding<Bool>#>)
-//    }
-//}

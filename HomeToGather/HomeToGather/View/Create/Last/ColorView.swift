@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct ColorView: View {
-    @State var color: String
-    @Binding var selectedColor: String
+    @State var color: PartyColors
+    @Binding var selectedColor: PartyColors
     
     var body: some View {
         ZStack {
@@ -11,7 +11,7 @@ struct ColorView: View {
                 .fill(Color.getColor(color: color))
                 .frame(width: 50, height: 50)
             
-            if selectedColor == color {
+            if selectedColor.rawValue == color.rawValue {
                 Image(systemName:"checkmark")
                     .frame(width: 35, height: 35)
                     .clipShape(Circle())

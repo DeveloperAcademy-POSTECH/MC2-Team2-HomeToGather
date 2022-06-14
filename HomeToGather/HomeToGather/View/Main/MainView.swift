@@ -8,14 +8,22 @@ struct MainView: View {
     
     @State var showSettings = false
     @State var isSuccess = false
-    @State var defaultColor = "red"
+    @State var defaultColor: PartyColors = .red
     let viewModel: ViewModel = ViewModel()
     
     // Deeplink Property
     let deeplinkManager = DeeplinkManager()
-    @State private var invitationCardData: Invitation? = nil
+    @State private var invitationCardData: Invitation?
     @State private var invitationCardViewToggle: Bool = false
-
+    
+//    init() {
+//        viewModel.fetchInvitation()
+//        invitationCardData = viewModel.invitations[0]
+//        
+//        defaultColor = self.invitationCardData?.color ?? "red"
+//
+//    }
+    
     var body: some View {
         ZStack {
             Color.backgroundColor
@@ -43,7 +51,7 @@ struct MainView: View {
                         
                     }
                 } else {
-                    ticketView(isTicketGesture: isTicketGesture, color: invitationCardData == nil ? defaultColor : invitationCardData!.color)
+                    ticketView(isTicketGesture: isTicketGesture, color: $defaultColor)
                         .offset(y: -100)
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.8)) {
