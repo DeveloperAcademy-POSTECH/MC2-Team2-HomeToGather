@@ -86,9 +86,8 @@ struct MainView: View {
                 }
                 
                 // Deep Link로 들어왔을 때 초대장 뷰 띄우기
-                // 뷰 수정 필요
                 NavigationLink(isActive: $invitationCardViewToggle) {
-                    DEBUG_InvitationCardView(invitationCardData: self.invitationCardData ?? nil)
+                    InvitationView(invitationData: self.invitationCardData ?? Invitation.emptyInvitation)
                 } label: {
                     EmptyView()
                 }
@@ -116,8 +115,6 @@ struct MainView: View {
                     }
                 })
             }
-            .padding(.top, 100)
-            .preferredColorScheme(.dark)
         }
     }
 }

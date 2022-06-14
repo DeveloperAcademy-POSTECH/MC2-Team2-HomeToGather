@@ -15,7 +15,6 @@ struct HomeToGatherApp: App {
     init() {
         FirebaseApp.configure()
         KakaoSDK.initSDK(appKey: "2bd893959bf8ef85a7a905cdd7f47c3b")
-
     }
     
     var body: some Scene {
