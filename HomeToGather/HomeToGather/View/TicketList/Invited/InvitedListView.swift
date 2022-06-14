@@ -5,8 +5,8 @@
 //  Created by 정지혁 on 2022/06/11.
 //
 
-import SwiftUI
 import Firebase
+import SwiftUI
 
 let data: [Invitation] = [
     Invitation(
@@ -51,7 +51,7 @@ struct InvitedListView: View {
     let screenWidth = UIScreen.main.bounds.width
     let uid = Auth.auth().currentUser!.uid
     
-    @State var viewModel: ViewModel = ViewModel()
+    @State var viewModel = ViewModel()
     
     init() {
         viewModel.fetchInvitationsSent(uid)

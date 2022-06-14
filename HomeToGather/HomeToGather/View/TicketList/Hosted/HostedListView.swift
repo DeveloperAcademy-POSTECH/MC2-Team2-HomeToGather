@@ -5,14 +5,14 @@
 //  Created by 정지혁 on 2022/06/12.
 //
 
-import SwiftUI
 import Firebase
+import SwiftUI
 
 struct HostedListView: View {
     let screenWidth = UIScreen.main.bounds.width
     let uid = Auth.auth().currentUser!.uid
     
-    @State var viewModel: ViewModel = ViewModel()
+    @State var viewModel = ViewModel()
     
     init() {
         viewModel.fetchInvitationsReceived(uid)
