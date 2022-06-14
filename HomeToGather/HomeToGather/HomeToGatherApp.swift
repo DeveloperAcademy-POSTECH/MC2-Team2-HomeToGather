@@ -11,6 +11,8 @@ import Firebase
 @main
 struct HomeToGatherApp: App {
     
+    @StateObject var partyData = PartyData()
+    
     init() {
         FirebaseApp.configure()
     }
@@ -18,7 +20,7 @@ struct HomeToGatherApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-//            MainView()
+                .environmentObject(partyData)
         }
     }
 }

@@ -23,9 +23,17 @@ struct FirstCreateView: View {
                 }
             }
             .navigationBarTitle("초대장 만들기", displayMode: .inline)
-//            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(trailing: Button("다음")
-                                { /*code*/ } )
+            .foregroundColor(.white)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: {
+                           SecondCreateView()
+                        }, label: {
+                           Text("다음")
+                                .foregroundColor(.white)
+                        })
+                    }
+                }
         }
     }
 

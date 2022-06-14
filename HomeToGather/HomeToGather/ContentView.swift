@@ -12,10 +12,8 @@ import AuthenticationServices
 struct ContentView: View {
     @Environment(\.window) var window: UIWindow?
     
-    @StateObject var partyData = PartyData()
     @State private var appleLoginCoordinator: AppleAuthCoordinator?
     @State var isSuccess: Bool = Auth.auth().currentUser != nil ? false : true
-    
     @State var isTouchedTicket: Bool = false
     
     init() {
@@ -70,7 +68,6 @@ struct ContentView: View {
                     if !isTouchedTicket {
                         NavigationLink(destination: {
                             FirstCreateView()
-                                .environmentObject(partyData)
                         }, label: {
                             Image(systemName: "plus.square")
                                 .foregroundColor(.white)

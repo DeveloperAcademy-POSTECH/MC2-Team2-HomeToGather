@@ -22,6 +22,7 @@ struct FirstInfo: View {
     let size: CGFloat = UIScreen.main.bounds.width - 40
     
     var body: some View {
+        ProgressBar(num: 1)
         VStack(alignment: .leading) {
             TitleRow(text: "홈파티 소개")
                 .padding(EdgeInsets(top: 65, leading: 20, bottom: 36, trailing: 20))
