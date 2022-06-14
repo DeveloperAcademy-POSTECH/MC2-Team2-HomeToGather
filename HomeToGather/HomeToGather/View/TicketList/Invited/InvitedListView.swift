@@ -51,10 +51,10 @@ struct InvitedListView: View {
     let screenWidth = UIScreen.main.bounds.width
     let uid = getUserUid()
     
-    @State var viewModel = ViewModel()
+    @State var invitedViewModel = InvitedViewModel()
     
     init() {
-        viewModel.fetchInvitationsSent(uid)
+        invitedViewModel.fetchInvitationsSent(uid)
     }
     
     var body: some View {
@@ -64,7 +64,7 @@ struct InvitedListView: View {
             
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
-                    ForEach(viewModel.invitationsSent, id: \.self) { invitation in
+                    ForEach(invitedViewModel.invitationsSent, id: \.self) { invitation in
                         NavigationLink {
                             InvitedDetailView(invitationData: invitation)
                         } label: {

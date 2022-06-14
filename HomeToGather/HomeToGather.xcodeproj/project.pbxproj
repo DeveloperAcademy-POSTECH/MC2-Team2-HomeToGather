@@ -26,6 +26,8 @@
 		B95078002854992000F7825A /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95077FF2854992000F7825A /* ParticipantView.swift */; };
 		B950780228549A8700F7825A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950780128549A8700F7825A /* CardView.swift */; };
 		B95078042854D9FA00F7825A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95078032854D9F900F7825A /* View.swift */; };
+		B9BF1D632858A8570081DC4A /* HostedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BF1D622858A8570081DC4A /* HostedViewModel.swift */; };
+		B9BF1D652858A86D0081DC4A /* InvitedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BF1D642858A86D0081DC4A /* InvitedViewModel.swift */; };
 		B9CF5CA528572D50002B69FB /* ListTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CF5CA428572D50002B69FB /* ListTicketView.swift */; };
 		B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0FC002856505500D5BCC3 /* InvitationView.swift */; };
 		E217AB4D28561F5B00242BAD /* ticketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217AB4C28561F5A00242BAD /* ticketView.swift */; };
@@ -59,7 +61,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
 		345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
 		345DE3A728570A3D007CEC3B /* DEBUG_InvitationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_InvitationCardView.swift; sourceTree = "<group>"; };
 		75D6804F285714340097B97A /* SecondCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCreateView.swift; sourceTree = "<group>"; };
@@ -80,6 +81,8 @@
 		B95077FF2854992000F7825A /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		B950780128549A8700F7825A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		B95078032854D9F900F7825A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		B9BF1D622858A8570081DC4A /* HostedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedViewModel.swift; sourceTree = "<group>"; };
+		B9BF1D642858A86D0081DC4A /* InvitedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedViewModel.swift; sourceTree = "<group>"; };
 		B9CF5CA428572D50002B69FB /* ListTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTicketView.swift; sourceTree = "<group>"; };
 		B9D0FC002856505500D5BCC3 /* InvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
 		C5EE6D7BA0BBEC21A086B561 /* Pods_HomeToGather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeToGather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +195,8 @@
 				E26A38872853076800AD8EFF /* ViewModel.swift */,
 				E26A388B2853081E00AD8EFF /* ImagePicker.swift */,
 				345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */,
+				B9BF1D622858A8570081DC4A /* HostedViewModel.swift */,
+				B9BF1D642858A86D0081DC4A /* InvitedViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				B95077FC28548D2C00F7825A /* InvitedListView.swift in Sources */,
 				75D6805228571C970097B97A /* FirstCreateView.swift in Sources */,
 				E47738A2285320F800C1403F /* Font.swift in Sources */,
+				B9BF1D632858A8570081DC4A /* HostedViewModel.swift in Sources */,
 				B95078002854992000F7825A /* ParticipantView.swift in Sources */,
 				E217AB4F28561F6300242BAD /* expanedTicketView.swift in Sources */,
 				75D6806028571EAC0097B97A /* AdressWebView.swift in Sources */,
@@ -499,6 +505,7 @@
 				E26A38C52853ABCA00AD8EFF /* SettingView.swift in Sources */,
 				B93869DD2855D8B100320855 /* FeedbackCardView.swift in Sources */,
 				B93869D92855043500320855 /* HostedListView.swift in Sources */,
+				B9BF1D652858A86D0081DC4A /* InvitedViewModel.swift in Sources */,
 				75D6805A28571D380097B97A /* SubTitleRow.swift in Sources */,
 				75D6805428571CD60097B97A /* FirstInfo.swift in Sources */,
 				B95078042854D9FA00F7825A /* View.swift in Sources */,

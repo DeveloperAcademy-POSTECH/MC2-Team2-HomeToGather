@@ -12,10 +12,10 @@ struct HostedListView: View {
     let screenWidth = UIScreen.main.bounds.width
     let uid = getUserUid()
     
-    @State var viewModel = ViewModel()
+    @State var hostedViewModel = HostedViewModel()
     
     init() {
-        viewModel.fetchInvitationsReceived(uid)
+        hostedViewModel.fetchInvitationsReceived(uid)
     }
     
     var body: some View {
@@ -25,7 +25,7 @@ struct HostedListView: View {
             
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
-                    ForEach(viewModel.invitationsReceived, id: \.self) { host in
+                    ForEach(hostedViewModel.invitationsReceived, id: \.self) { host in
                         NavigationLink {
                             HostedDetailView(hostData: host)
                         } label: {
