@@ -27,6 +27,8 @@ struct ParticipantView: View {
                 .font(.system(size: 8))
                 .foregroundColor(.black)
                 .lineLimit(1)
+                .truncationMode(.tail)
+                .frame(width: 23)
         }
     }
 }

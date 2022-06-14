@@ -7,13 +7,10 @@ class ViewModel: ObservableObject {
     private var db = Firestore.firestore()
     private var storage = Storage.storage()
     @Published var invitations = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")]
-    @Published var invitationsReceived = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")]
-    @Published var invitationsSent = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")]
     @Published var images: [String:UIImage] = ["test":UIImage(systemName: "pencil")!]
 
     func uploadInvitation(_ invitation: Invitation, _ image: UIImage) {
-        
-        let uid = Auth.auth().currentUser!.uid
+        let uid = getUserUid()
         let id = UUID().uuidString
         let imageName = UUID().uuidString
         
@@ -22,7 +19,6 @@ class ViewModel: ObservableObject {
         let invitation = Invitation(id: id, uid: uid, organizerName: invitation.organizerName, participantName: invitation.participantName, participantUid: invitation.participantUid, title: invitation.title, date: invitation.date, place: invitation.place, description: invitation.description, rule: invitation.rule, cost: invitation.cost, food: invitation.food, etc: invitation.etc, image: imageName, ruleFeedback: [""], foodFeedback: [""], color: invitation.color)
         
         let _ = db.collection("ii").document(id).setData(invitation.dictionary)
-
     }
 
     func uploadImage(_ image: UIImage, _ name: String) {
@@ -89,83 +85,6 @@ class ViewModel: ObservableObject {
                 self.images[imageName] = image
             }
         }
-        
-    }
-    
-    func fetchInvitationsReceived(_ invitationUid: String) {
-        db.collection("ii").addSnapshotListener { (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else {
-                print("No Documents")
-                return
-            }
-            var received = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")]
-            received = documents.map({ (queryDocumentSnapshot) -> Invitation in
-                if queryDocumentSnapshot.data()["uid"] as? String ?? "" != Auth.auth().currentUser!.uid {
-                    let data = queryDocumentSnapshot.data()
-                    let id = data["id"] as? String ?? "blank id"
-                    let uid = data["uid"] as? String ?? "blank uid"
-                    let organizerName = data["organizerName"] as? String ?? "blank organizerName"
-                    let participantName = data["participantName"] as? [String] ?? ["blank participantName"]
-                    let participantUid = data["paricipantUid"] as? [String] ?? ["blank paricipantUid"]
-                    let title = data["title"] as? String ?? "blank title"
-                    let date = data["date"] as? String ?? "blank date"
-                    let place = data["place"] as? String ?? "blank place"
-                    let description = data["description"] as? String ?? "blank description"
-                    let rule = data["rule"] as? [String] ?? ["blank rule"]
-                    let cost = data["cost"] as? String ?? "blank cost"
-                    let food = data["food"] as? [String] ?? ["blank food"]
-                    let etc = data["etc"] as? [String] ?? ["blank etc"]
-                    let image = data["image"] as? String ?? "blank image"
-                    let ruleFeedback = data["ruleFeedback"] as? [String] ?? [""]
-                    let foodFeedback = data["foodFeedback"] as? [String] ?? [""]
-                    let color = data["color"] as? String ?? "blank color"
-                    self.fetchImage(id, image)
-                    return Invitation(id: id, uid: uid, organizerName: organizerName, participantName: participantName, participantUid: participantUid, title: title, date: date, place: place, description: description, rule: rule, cost: cost, food: food, etc: etc, image: image, ruleFeedback: ruleFeedback, foodFeedback: foodFeedback, color: color)
-                } else {
-                    return Invitation(id: "", uid: "", organizerName: "", title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")
-                }
-            })
-            
-            self.invitationsReceived = received.filter { $0.id != "" }
-        }
-    }
-    
-    func fetchInvitationsSent(_ invitationUid: String) {
-        db.collection("ii").addSnapshotListener { (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else {
-                print("No Documents")
-                return
-            }
-            var sent = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")]
-            sent = documents.map({ (queryDocumentSnapshot) -> Invitation in
-                if (queryDocumentSnapshot.data()["participantUid"] as? [String] ?? [""]).contains(invitationUid) {
-                    let data = queryDocumentSnapshot.data()
-                    let id = data["id"] as? String ?? "blank id"
-                    let uid = data["uid"] as? String ?? "blank uid"
-                    let organizerName = data["organizerName"] as? String ?? "blank organizerName"
-                    let participantName = data["participantName"] as? [String] ?? ["blank participantName"]
-                    let participantUid = data["participantUid"] as? [String] ?? ["blank participantUid"]
-                    let title = data["title"] as? String ?? "blank title"
-                    let date = data["date"] as? String ?? "blank date"
-                    let place = data["place"] as? String ?? "blank place"
-                    let description = data["description"] as? String ?? "blank description"
-                    let rule = data["rule"] as? [String] ?? ["blank rule"]
-                    let cost = data["cost"] as? String ?? "blank cost"
-                    let food = data["food"] as? [String] ?? ["blank food"]
-                    let etc = data["etc"] as? [String] ?? ["blank etc"]
-                    let image = data["image"] as? String ?? "blank image"
-                    let ruleFeedback = data["ruleFeedback"] as? [String] ?? [""]
-                    let foodFeedback = data["foodFeedback"] as? [String] ?? [""]
-                    let color = data["color"] as? String ?? "blank color"
-                    self.fetchImage(id, image)
-                    return Invitation(id: id, uid: uid, organizerName: organizerName, participantName: participantName, participantUid: participantUid, title: title, date: date, place: place, description: description, rule: rule, cost: cost, food: food, etc: etc, image: image, ruleFeedback: ruleFeedback, foodFeedback: foodFeedback, color: color)
-                } else {
-                    return Invitation(id: "", uid: "", organizerName: "", title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")
-                }
-            })
-            
-            self.invitationsSent = sent.filter { $0.id != "" }
-        }
     }
     
     func correctionInvitation(_ invitation: Invitation) {
@@ -187,7 +106,6 @@ class ViewModel: ObservableObject {
     func deleteInvitation(_ invitation: Invitation) {
         let _ = db.collection("ii").document(invitation.id).delete()
     }
-
     
     // Deeplink
     // ID 값으로 Invitation 구조체 생성해 전달
@@ -238,4 +156,9 @@ class ViewModel: ObservableObject {
         
         return
     }
+}
+
+func getUserUid() -> String {
+    guard let user = Auth.auth().currentUser else { return "" }
+    return user.uid
 }
