@@ -40,7 +40,7 @@ struct FirstInfo: View {
                     Spacer()
                     Text("\(partyName.count)/20")
                         .foregroundColor(.white)
-                        .font(.system(size: 10no, weight: .light))
+                        .font(.notoSans(withStyle: .Light, size: 10))
                 }.padding(EdgeInsets(top: 0, leading: 0, bottom: 26, trailing: 0))
                 SubTitleRow(text: "소개")
                 ZStack(alignment: .leading){

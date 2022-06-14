@@ -12,23 +12,23 @@ struct SecondCreateView: View {
     var body: some View {
         
         VStack(alignment: .center, spacing: 20) {
-            
-            ProgressBar(num: 2)
-                .padding(.leading, 40)
-                
-            
+//
+//            ProgressBar(num: 2)
+//                .padding(.leading, 40)
+//
+//
             ZStack {
                 ScrollView {
                     VStack(alignment: .center, spacing: 22) {
-                        RuleView()
+//                        RuleView()
                             
 
-                        FoodView()
+//                        FoodView()
                     }
                 }
             }
             .onTapGesture {
-                hideKeyboard()
+//                hideKeyboard()
                 if partyData.cost != "" {
                     if Int(partyData.cost) != nil {
                         let numberFormatter = NumberFormatter()
