@@ -56,7 +56,6 @@ extension Invitation {
                                             cost: "dummy_cost",
                                             food: ["dummy_food"],
                                             etc: ["dummy_etc"],
-                                            image: "dummy_image",
                                             ruleFeedback: ["dummy_rulefeedback"],
                                             foodFeedback: ["dummy_foodfeedback"],
                                             color: "dummy_color")
