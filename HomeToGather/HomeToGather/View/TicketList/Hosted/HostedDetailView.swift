@@ -88,9 +88,3 @@ struct HostedDetailView: View {
         .preferredColorScheme(.dark)
     }
 }
-
-struct HostedDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        HostedDetailView(hostData: data[0])
-    }
-}

@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct SecondCreateView: View {
+    
+    // 툴바 버튼에 이전뷰 전활을 위한 변수
+    @Environment(\.dismiss) var dismiss
+    
     @EnvironmentObject var partyData: PartyData
     @State private var isDisabled = false
     
@@ -39,6 +43,21 @@ struct SecondCreateView: View {
         }
         .navigationBarTitle("초대장 만들기", displayMode: .inline)
         .foregroundColor(.white)
+        
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image(systemName: "chevron.backward")
+                    Text("이전")
+                        .padding(.leading, -5)
+                })
+                .foregroundColor(.white)
+            }
+        }
+        
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink(destination: {

@@ -45,9 +45,3 @@ struct InvitationView: View {
         }
     }
 }
-
-struct InvitationView_Previews: PreviewProvider {
-    static var previews: some View {
-        InvitationView(invitationData: data[0])
-    }
-}

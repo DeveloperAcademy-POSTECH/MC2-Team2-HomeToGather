@@ -27,10 +27,12 @@ struct ColorPickerView: View {
     @State private var selectedColor:PartyColors = .red
     @State private var viewModel = ViewModel()
     @EnvironmentObject var partyData: PartyData
+        @Environment(\.dismiss) var dismiss
     
     init() {
         viewModel.getUserName(getUserUid())
     }
+
     
     var body: some View {
         ScrollView{
@@ -66,5 +68,21 @@ struct ColorPickerView: View {
                 }
             }
         }
+        .navigationBarTitle("초대장 테마 설정", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .foregroundColor(.white)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image(systemName: "chevron.backward")
+                    Text("이전")
+                        .padding(.leading, -5)
+                })
+                .foregroundColor(.white)
+            }
+        }
     }
+    
 }

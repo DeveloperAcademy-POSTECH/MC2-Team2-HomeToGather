@@ -89,9 +89,3 @@ struct InvitedDetailView: View {
         }
     }
 }
-
-struct InvitedDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        InvitedDetailView(invitationData: data[0])
-    }
-}
