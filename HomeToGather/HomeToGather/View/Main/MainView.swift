@@ -17,11 +17,7 @@ struct MainView: View {
     @State var isSuccess = false
     @State var defaultColor: PartyColors = .red
     let viewModel = ViewModel()
-    
-    // Deeplink Property
-    let deeplinkManager = DeeplinkManager()
-    @State private var invitationCardData: Invitation?
-    @State private var invitationCardViewToggle = false
+
     
 //    init() {
 //        viewModel.fetchInvitation()
@@ -97,34 +93,9 @@ struct MainView: View {
                         }
                     })
                 }
-                
-                // Deep Link로 들어왔을 때 초대장 뷰 띄우기
-                NavigationLink(isActive: $invitationCardViewToggle) {
-                    InvitationView(invitationData: self.invitationCardData ?? Invitation.dummyInvitation)
-                } label: {
-                    EmptyView()
-                }
             }
             .padding(.top, 100)
             .preferredColorScheme(.dark)
-        }
-        .onOpenURL { url in
-            let target = deeplinkManager.getDeeplinkTarget(url: url)
-            
-            switch target {
-            case .main:
-                print("onOpenURL_DEBUG : 메인 뷰로 들어가기")
-                
-            case .invitation(id: let id):
-                print("onOpenURL_DEBUG : 초대장 뷰로 들어가기")
-                viewModel.findInvitation(id: id, { data in
-                    
-                    if data != nil {
-                        self.invitationCardData = data!
-                        invitationCardViewToggle.toggle()
-                    }
-                })
-            }
         }
     }
 }

@@ -27,6 +27,7 @@ import Combine
 //    var color: String               // 초대장 색상
 
 class PartyData: ObservableObject {
+    @Published var id = UUID().uuidString
     @Published var rule = [String]()
     @Published var food = [String]()
     @Published var cost = ""

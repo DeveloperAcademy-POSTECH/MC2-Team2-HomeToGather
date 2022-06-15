@@ -9,13 +9,20 @@ class AppleAuthCoordinator: NSObject {
     var currentNonce: String?
     let window: UIWindow?
     @Binding var isSuccess: Bool
+    @Binding var invitationCardViewToggle: Bool
+    
+    var isEnteredWithLink: Bool
+    var invitationID: String?
+
     
     let db = Firestore.firestore()
     
-    init(window: UIWindow?, isSuccess: Binding<Bool>) {
+    init(window: UIWindow?, isSuccess: Binding<Bool>, isEnteredWithLink: Bool, invitationID: String?, invitationCardViewToggle: Binding<Bool>) {
         self.window = window
         self._isSuccess = isSuccess
-        
+        self.isEnteredWithLink = isEnteredWithLink
+        self.invitationID = invitationID
+        self._invitationCardViewToggle = invitationCardViewToggle
     }
     
     // Apple의 응답을 처리하는 대리자 클래스와 nonce의 SHA256 해시를 요청에 포함하는 것으로 Apple의 로그인 과정을 시작
@@ -98,22 +105,56 @@ extension AppleAuthCoordinator: ASAuthorizationControllerDelegate {
                                                       rawNonce: nonce)
             
             //Firebase 작업
-            Auth.auth().signIn(with: credential) { (authResult, error) in
-                if error != nil {
-                    print(error!.localizedDescription)
-                    return
-                }
-                if appleIDCredential.fullName?.familyName != nil && Auth.auth().currentUser?.uid != nil {
-                    self.db.collection("user").document(getUserUid()).setData(["\(getUserUid())": ["uid": getUserUid(), "name":"\(appleIDCredential.fullName!.familyName!)"+"\(appleIDCredential.fullName!.givenName!)"]])
+            firebaseSigning(appleIDCredential: appleIDCredential, credential: credential) { data in
+                if self.isEnteredWithLink {
+                    
+                    let viewModel = InvitedViewModel()
+                    
+                    viewModel.getUserName(data) { userName in
+                        
+                        print("\(data), \(userName), \(self.invitationID)")
+                        viewModel.findInvitation(id: self.invitationID!) { invitation in
+                            viewModel.acceptInvitation(data, userName, invitation!)
+                        }
+                        
+                        self.invitationCardViewToggle.toggle()
+                    }
                 }
             }
-            if let _ = appleIDCredential.email {
-                print("111111 ================= 첫 로그인")
-                isSuccess = false
-            } else {
-                print("222222 ================== 로그인 했었음")
-                isSuccess = false
+        }
+    }
+    
+    func firebaseSigning(appleIDCredential: ASAuthorizationAppleIDCredential ,credential: OAuthCredential, _ completion: @escaping (_ data: String) -> Void) {
+        
+        print("DEBUG_ dispatch")
+        let g = DispatchGroup()
+        g.enter()
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if error != nil {
+                print("DEBUG_ error")
+                print(error!.localizedDescription)
+                g.leave()
+                return
             }
+            if appleIDCredential.fullName?.familyName != nil && Auth.auth().currentUser?.uid != nil {
+                self.db.collection("user").document(getUserUid()).setData(["uid": getUserUid(), "name":"\(appleIDCredential.fullName!.familyName!)"+"\(appleIDCredential.fullName!.givenName!)"])
+            }
+            
+            print("DEBUG_ \(getUserUid())")
+            g.leave()
+        }
+        
+        if let _ = appleIDCredential.email {
+            print("111111 ================= 첫 로그인")
+            isSuccess = false
+        } else {
+            print("222222 ================== 로그인 했었음")
+            isSuccess = false
+        }
+        
+        g.notify(queue:.main) {
+            completion(getUserUid())
         }
     }
 }
