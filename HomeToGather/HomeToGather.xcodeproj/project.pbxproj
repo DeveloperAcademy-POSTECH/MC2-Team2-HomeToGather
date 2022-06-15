@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */; };
+		34E0F8552859ABA8002A8A42 /* ShareCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F8542859ABA8002A8A42 /* ShareCardView.swift */; };
 		39EB7778D8B6F5526352FC05 /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5EE6D7BA0BBEC21A086B561 /* Pods_HomeToGather.framework */; };
 		75D68050285714340097B97A /* SecondCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6804F285714340097B97A /* SecondCreateView.swift */; };
 		75D6805228571C970097B97A /* FirstCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805128571C970097B97A /* FirstCreateView.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
+		34E0F8542859ABA8002A8A42 /* ShareCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardView.swift; sourceTree = "<group>"; };
 		75D6804F285714340097B97A /* SecondCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCreateView.swift; sourceTree = "<group>"; };
 		75D6805128571C970097B97A /* FirstCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCreateView.swift; sourceTree = "<group>"; };
 		75D6805328571CD60097B97A /* FirstInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstInfo.swift; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34E0F8532859AB15002A8A42 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				34E0F8542859ABA8002A8A42 /* ShareCardView.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		75D6804C285711200097B97A /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +318,7 @@
 		E477389F28531B9200C1403F /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				34E0F8532859AB15002A8A42 /* Share */,
 				75D6804E285714190097B97A /* Second */,
 				75D6804D285711280097B97A /* First */,
 				75D6804C285711200097B97A /* Components */,
@@ -509,6 +520,7 @@
 				E26A38C72853ABE800AD8EFF /* SettingDetailView.swift in Sources */,
 				E477390428533A6900C1403F /* Color.swift in Sources */,
 				D760C181285857F6004D9D10 /* HideKeyboard.swift in Sources */,
+				34E0F8552859ABA8002A8A42 /* ShareCardView.swift in Sources */,
 				E26A38832851F50D00AD8EFF /* MainView.swift in Sources */,
 				345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */,
 				75D6805C28571DD00097B97A /* PartyData.swift in Sources */,
