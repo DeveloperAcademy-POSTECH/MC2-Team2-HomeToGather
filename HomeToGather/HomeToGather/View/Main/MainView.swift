@@ -58,7 +58,7 @@ struct MainView: View {
                         
                     }
                 } else {
-                    ticketView(isTicketGesture: isTicketGesture, color: $defaultColor)
+                    ticketView(color: $defaultColor)
                         .offset(y: -100)
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.8)) {
