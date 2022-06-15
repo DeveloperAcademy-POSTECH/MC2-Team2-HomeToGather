@@ -18,31 +18,32 @@ struct SettingView: View {
         self.presentationMode.wrappedValue.dismiss()
         }) {
             Text("< 메인")
+                .foregroundColor(Color.white)
         }
     }
     
     var body: some View {
         VStack {
-            List {
-                NavigationLink(destination: {
-                    SettingDetailView(title: RelatedInformationList[0])
-                }, label: {
-                    Text("\(RelatedInformationList[0])")
-                })
-                .listRowSeparator(.hidden, edges: .top)
-                NavigationLink(destination: {
-                    SettingDetailView(title: RelatedInformationList[1])
-                }, label: {
-                    Text("\(RelatedInformationList[1])")
-                })
-                NavigationLink(destination: {
-                    SettingDetailView(title: RelatedInformationList[2])
-                }, label: {
-                    Text("\(RelatedInformationList[2])")
-                })
-            }
-            .listStyle(.plain)
-            .padding(.bottom, 30)
+//            List {
+//                NavigationLink(destination: {
+//                    SettingDetailView(title: RelatedInformationList[0])
+//                }, label: {
+//                    Text("\(RelatedInformationList[0])")
+//                })
+//                .listRowSeparator(.hidden, edges: .top)
+//                NavigationLink(destination: {
+//                    SettingDetailView(title: RelatedInformationList[1])
+//                }, label: {
+//                    Text("\(RelatedInformationList[1])")
+//                })
+//                NavigationLink(destination: {
+//                    SettingDetailView(title: RelatedInformationList[2])
+//                }, label: {
+//                    Text("\(RelatedInformationList[2])")
+//                })
+//            }
+//            .listStyle(.plain)
+//            .padding(.bottom, 30)
             List {
                 Text("버전 정보")
                     .badge(Text("최신 버전"))
