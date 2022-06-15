@@ -43,7 +43,7 @@ struct FeedbackCardView: View {
                 .padding(.top, 28)
                 .padding(.bottom, 22)
                 
-                if feedbackContents != nil {
+                if feedbackContents != [""] {
                     Rectangle()
                         .fill(Color.gray)
                         .frame(maxWidth: screenWidth, maxHeight: 0.5)

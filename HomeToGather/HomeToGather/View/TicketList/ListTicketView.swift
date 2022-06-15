@@ -70,7 +70,7 @@ struct ListTicketView: View {
                         }
                         .offset(x: -95, y: -20)
                         
-                        Image("미러볼")
+                        Image("mirrorBall")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 250, height: 150, alignment: .leading)
