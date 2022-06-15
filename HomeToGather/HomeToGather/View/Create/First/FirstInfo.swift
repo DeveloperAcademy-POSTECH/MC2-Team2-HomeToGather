@@ -106,7 +106,7 @@ struct FirstInfo: View {
     func dateToString(date: Date) {
         let dateFormatter = DateFormatter()
         //    // Set Date Format
-        dateFormatter.dateFormat = "yyyy-MM-dd'Time'HH:mm"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         //    // Convert Date to String
         partyData.date = dateFormatter.string(from: date)
     }
