@@ -28,6 +28,9 @@ struct ColorPickerView: View {
     @State private var viewModel = ViewModel()
     @EnvironmentObject var partyData: PartyData
     
+    // 툴바 버튼에 이전뷰 전활을 위한 변수
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         ScrollView{
             ProgressBar(num: 3)
@@ -62,5 +65,21 @@ struct ColorPickerView: View {
                 }
             }
         }
+        .navigationBarTitle("초대장 테마 설정", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .foregroundColor(.white)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image(systemName: "chevron.backward")
+                    Text("이전")
+                        .padding(.leading, -5)
+                })
+                .foregroundColor(.white)
+            }
+        }
     }
+    
 }
