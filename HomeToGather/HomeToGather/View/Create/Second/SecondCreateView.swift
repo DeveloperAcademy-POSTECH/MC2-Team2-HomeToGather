@@ -26,6 +26,7 @@ struct SecondCreateView: View {
                 
                 RuleView()
                     .padding(.bottom, 20)
+
                 FoodView()
             }
         }
@@ -61,6 +62,7 @@ struct SecondCreateView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink(destination: {
                    ColorPickerView()
+                        .environmentObject(partyData)
                 }, label: {
                     Text("다음")
                         .foregroundColor(isDisabled ? .gray : .white)

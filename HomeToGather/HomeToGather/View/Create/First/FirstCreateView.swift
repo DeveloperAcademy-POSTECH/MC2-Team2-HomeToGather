@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct FirstCreateView: View {
-    
+    @StateObject var partyData = PartyData()
     @State private var isDisabled = false
+      @Environment(\.dismiss) var dismiss
     
+    init(){
+        UINavigationBar.appearance().tintColor = .white
+    }
     // 툴바 버튼에 이전뷰 전활을 위한 변수
-    @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var partyData: PartyData
+  
     
     
-    init()
-    {UINavigationBar.appearance().tintColor = .white}
     
     var body: some View {
         ZStack {
@@ -27,6 +28,7 @@ struct FirstCreateView: View {
             ScrollView {
                 VStack{
                     FirstInfo()
+                        .environmentObject(partyData)
                 }
             }
         }
@@ -54,6 +56,7 @@ struct FirstCreateView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink(destination: {
                     SecondCreateView()
+                        .environmentObject(partyData)
                 }, label: {
                     Text("다음")
                         .foregroundColor(isDisabled ? .gray : .white)
