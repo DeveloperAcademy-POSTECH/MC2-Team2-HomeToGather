@@ -133,9 +133,3 @@ struct FocusView: View {
         }
     }
 }
-
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(title: "규칙", contents: ["1번", "2번"])
-    }
-}

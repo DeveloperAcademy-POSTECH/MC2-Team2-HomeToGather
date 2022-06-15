@@ -153,10 +153,3 @@ struct ListTicketView: View {
         }
     }
 }
-
-struct ListTicketView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListTicketView()
-            .preferredColorScheme(.dark)
-    }
-}

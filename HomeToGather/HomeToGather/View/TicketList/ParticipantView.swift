@@ -16,8 +16,6 @@ struct ParticipantView: View {
     ]
     
     var body: some View {
-        let index: Int = Int.random(in: 0..<colors.count)
-        
         ZStack {
             Circle()
                 .strokeBorder(Color.cardBackgroundColor, lineWidth: 2)
@@ -33,11 +31,5 @@ struct ParticipantView: View {
                 .truncationMode(.tail)
                 .frame(width: 23)
         }
-    }
-}
-
-struct ParticipantView_Previews: PreviewProvider {
-    static var previews: some View {
-        ParticipantView(name: "정지혁", indexNum: 0)
     }
 }

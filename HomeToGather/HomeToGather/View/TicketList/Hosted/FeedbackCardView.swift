@@ -66,9 +66,3 @@ struct FeedbackCardView: View {
         .padding(.top, 22)
     }
 }
-
-struct FeedbackCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedbackCardView(title: "규칙", contents: ["1번", "2번"], feedbackContents: ["1번 피드백", "2번 피드백"])
-    }
-}
