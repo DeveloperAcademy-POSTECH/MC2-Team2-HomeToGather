@@ -43,10 +43,3 @@ struct HostedListView: View {
         .preferredColorScheme(.dark)
     }
 }
-
-struct HostedListView_Previews: PreviewProvider {
-    static var previews: some View {
-        HostedListView()
-            .previewDevice("iPhone 13 Pro")
-    }
-}

@@ -43,7 +43,7 @@ struct FeedbackCardView: View {
                 .padding(.top, 28)
                 .padding(.bottom, 22)
                 
-                if feedbackContents != nil {
+                if feedbackContents != [""] {
                     Rectangle()
                         .fill(Color.gray)
                         .frame(maxWidth: screenWidth, maxHeight: 0.5)
@@ -64,11 +64,5 @@ struct FeedbackCardView: View {
         }
         .frame(maxWidth: screenWidth)
         .padding(.top, 22)
-    }
-}
-
-struct FeedbackCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedbackCardView(title: "규칙", contents: ["1번", "2번"], feedbackContents: ["1번 피드백", "2번 피드백"])
     }
 }

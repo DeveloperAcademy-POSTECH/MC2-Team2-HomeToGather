@@ -21,7 +21,7 @@ struct Triangle : Shape {
     }
 }
 
-struct ticketView: View {
+struct TicketView: View {
     
     @State var partyTitle = "PARTY TITLE"
     @State var partySubtitle = "SUBTITLE"
@@ -36,13 +36,7 @@ struct ticketView: View {
     @State var month = "JUNE 03"
     @State var place = "서울 서초구 사임당로 130"
     
-    @State var isTearTicket = false
-    
-    @State var isTicketGesture: Bool
     @Binding var color: PartyColors
-    
-    //    false면 왼쪽에서 드래그, true면 오른쪽에서 드래그
-    @State var direction = false
     
     var body: some View {
         VStack {
@@ -99,7 +93,7 @@ struct ticketView: View {
                         }.frame(width: 388, height: 258, alignment: .center)
                             .rotationEffect(.degrees(90))
                         
-                        Image("미러볼")
+                        Image("mirrorBall")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 135, height: 253, alignment: .leading)
@@ -160,31 +154,8 @@ struct ticketView: View {
                             .offset(x: 125, y: -42)
                         
                     }.frame(width: 270, height: 70, alignment: .center)
-                        .offset(x:isTearTicket ? 100 : 0,y: isTearTicket ? 150 : 15)
-                        .rotationEffect(.degrees(direction ? (isTearTicket ? 45 : 0) : (isTearTicket ? -45 : 0)))
-                        .opacity(isTearTicket ? 0 : 1)
-                    
                 }.frame(width: 260, height: 472, alignment: .center)
-                    .gesture(
-                        
-                        DragGesture()
-                            .onChanged { gesture in
-                                if gesture.translation.width > 0 {
-                                    direction = false
-                                    withAnimation(.easeInOut(duration: 0.8)) {
-                                        isTearTicket = true
-                                    }
-                                    
-                                } else {
-                                    direction = true
-                                    withAnimation(.easeInOut(duration: 0.8)) {
-                                        isTearTicket = true
-                                    }
-                                }
-                            }
-                        
-                        
-                    )
+
             }
             
         }

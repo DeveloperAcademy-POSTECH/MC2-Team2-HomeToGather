@@ -25,6 +25,8 @@ enum PartyColors:String,CaseIterable {
 struct ColorPickerView: View {
     
     @State private var selectedColor:PartyColors = .red
+    @State private var viewModel = ViewModel()
+    @EnvironmentObject var partyData: PartyData
     
     // 툴바 버튼에 이전뷰 전활을 위한 변수
     @Environment(\.dismiss) var dismiss
@@ -44,13 +46,14 @@ struct ColorPickerView: View {
                         }
                         Spacer()
                     }
-                    .padding(EdgeInsets(top: 23, leading: 20, bottom: 42, trailing: 20))
+                    .padding(EdgeInsets(top: 13, leading: 20, bottom: 22, trailing: 20))
                     .background(Color.backgroundColor)
                     
-                    ticketView(isTicketGesture: false, color: $selectedColor)
+                    TicketView(color: $selectedColor)
                         .background(Color.clear)
                     
                     Button {
+                        viewModel.uploadInvitation(Invitation(uid: getUserUid(), organizerName: "디박test", title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: "red"))
                     } label: {
                         Text("만들기")
                             .font(.system(size: 18))
@@ -58,6 +61,7 @@ struct ColorPickerView: View {
                         .background(Color.partyPurple)
                         .cornerRadius(8)
                         .foregroundColor(.white)
+                        .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
                 }
             }
         }
