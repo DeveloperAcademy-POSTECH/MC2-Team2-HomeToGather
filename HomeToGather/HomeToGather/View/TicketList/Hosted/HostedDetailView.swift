@@ -10,7 +10,15 @@ import SwiftUI
 struct HostedDetailView: View {
     var hostData: Invitation
     @State private var isConfirmationDialogShow: Bool = false
+    @State var viewModel = ViewModel()
+    var partyData: PartyData = PartyData()
     
+    init(hostData: Invitation) {
+        self.hostData = hostData
+        self.partyData = PartyData(rule: hostData.rule, food: hostData.food, cost: hostData.cost, title: hostData.title, date: hostData.date, place: hostData.place, description: hostData.description, color: hostData.color, isModifying: true)
+    }
+    
+    private let randomImageName: [String] = ["partyIamge1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]
     let screenWidth = UIScreen.main.bounds.width
     
     var body: some View {
@@ -25,8 +33,9 @@ struct HostedDetailView: View {
                             .fill(Color.cardBackgroundColor)
                         
                         VStack(alignment: .leading, spacing: 0) {
-                            // 랜덤 이미지 위치
-                            RoundedRectangle(cornerRadius: 4)
+                            Image(randomImageName[Int.random(in: 0..<randomImageName.count)])
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
                                 .frame(height: 150)
                                 .cornerRadius(4)
                             
@@ -67,6 +76,13 @@ struct HostedDetailView: View {
                     FeedbackCardView(title: "규칙", contents: hostData.rule, feedbackContents: hostData.ruleFeedback)
                     
                     FeedbackCardView(title: "메뉴", contents: hostData.food, feedbackContents: hostData.foodFeedback)
+                    
+                    NavigationLink {
+                        ModifyView()
+                            .environmentObject(partyData)
+                    } label: {
+                        Image(systemName: "ellipsis.circle.fill")
+                    }
                 }
                 .padding(20)
             }
@@ -82,7 +98,9 @@ struct HostedDetailView: View {
                 .confirmationDialog("confirmationDialog", isPresented: $isConfirmationDialogShow, titleVisibility: .hidden) {
                     Button("공유하기") {}
                     Button("수정하기") {}
-                    Button("삭제하기", role: .destructive) {}
+                    Button("삭제하기", role: .destructive) {
+                        viewModel.deleteInvitation(hostData.id)
+                    }
                     Button("취소하기", role: .cancel) {}
                 }
             }

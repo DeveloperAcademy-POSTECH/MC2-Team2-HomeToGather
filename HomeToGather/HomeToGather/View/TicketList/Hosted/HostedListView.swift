@@ -29,7 +29,7 @@ struct HostedListView: View {
                         NavigationLink {
                             HostedDetailView(hostData: host)
                         } label: {
-                            ListTicketView()
+                            ListTicketView(invitationData: host)
                                 .frame(maxWidth: screenWidth)
                                 .padding(.bottom, 20)
                         }
