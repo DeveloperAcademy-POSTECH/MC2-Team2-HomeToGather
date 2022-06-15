@@ -9,16 +9,6 @@ import SwiftUI
 
 enum PartyColors:String,CaseIterable {
     case red,blue,green,yellow
-    
-    init?(rawValue: String) {
-        switch rawValue {
-        case "red" : self = .red
-        case "blue" : self = .blue
-        case "yellow": self = .yellow
-        case "green": self = .green
-        default: return nil
-        }
-    }
 }
 
 
