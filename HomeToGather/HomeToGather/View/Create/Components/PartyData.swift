@@ -34,4 +34,5 @@ class PartyData: ObservableObject {
     @Published var date = ""
     @Published var place = ""
     @Published var description = ""
+    @Published var color = "red"
 }
