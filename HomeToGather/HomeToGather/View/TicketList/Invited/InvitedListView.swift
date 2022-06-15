@@ -5,6 +5,7 @@
 //  Created by 정지혁 on 2022/06/11.
 //
 
+import Firebase
 import SwiftUI
 
 let data: [Invitation] = [
@@ -48,6 +49,13 @@ let data: [Invitation] = [
 
 struct InvitedListView: View {
     let screenWidth = UIScreen.main.bounds.width
+    let uid = getUserUid()
+    
+    @State var invitedViewModel = InvitedViewModel()
+    
+    init() {
+        invitedViewModel.fetchInvitationsSent(uid)
+    }
     
     var body: some View {
         ZStack {
@@ -56,7 +64,7 @@ struct InvitedListView: View {
             
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
-                    ForEach(data, id: \.self) { invitation in
+                    ForEach(invitedViewModel.invitationsSent, id: \.self) { invitation in
                         NavigationLink {
                             InvitedDetailView(invitationData: invitation)
                         } label: {
