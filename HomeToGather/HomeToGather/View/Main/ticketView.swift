@@ -21,7 +21,7 @@ struct Triangle : Shape {
     }
 }
 
-struct ticketView: View {
+struct TicketView: View {
     
     @State var partyTitle = "PARTY TITLE"
     @State var partySubtitle = "SUBTITLE"
