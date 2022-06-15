@@ -30,8 +30,8 @@ struct InvitedListView: View {
                             InvitedDetailView(invitationData: invitation)
                         } label: {
                             ListTicketView()
-                              .frame(maxWidth: screenWidth)
-                              .padding(.bottom, 20)
+                                .frame(maxWidth: screenWidth)
+                                .padding(.bottom, 20)
                         }
                     }
                 }
