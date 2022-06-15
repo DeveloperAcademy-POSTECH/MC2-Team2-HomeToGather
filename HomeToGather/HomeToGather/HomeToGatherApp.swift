@@ -12,8 +12,6 @@ import Firebase
 struct HomeToGatherApp: App {
     @StateObject var partyData = PartyData()
     
-    @StateObject var partyData = PartyData()
-    
     init() {
         FirebaseApp.configure()
     }
