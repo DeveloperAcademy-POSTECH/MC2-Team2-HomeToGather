@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+func getColorCase(color: String) -> Color {
+    switch color {
+    case "blue":
+        return Color.card1Color
+    case "red":
+        return Color.card2Color
+    case "green":
+        return Color.card3Color
+    default:
+        return Color.brandColor
+    }
+}
+
 struct ListTicketView: View {
     var invitationData: Invitation
     
@@ -26,7 +39,7 @@ struct ListTicketView: View {
                     
                     ZStack() {
                         RoundedRectangle(cornerRadius: 4)
-                            .fill(LinearGradient(gradient: Gradient(colors: [.purple, Color.init(red: 88/255.0, green: 209/255.0, blue: 255/255.0)]),
+                            .fill(LinearGradient(gradient: Gradient(colors: [.purple, getColorCase(color: invitationData.color)]),
                                                  startPoint: .leading, endPoint: .trailing))
                             .frame(width: 259, height: 148)
                             .offset(x: -41)
