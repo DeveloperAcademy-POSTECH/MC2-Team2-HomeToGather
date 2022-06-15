@@ -27,12 +27,11 @@ struct ColorPickerView: View {
     @State private var selectedColor:PartyColors = .red
     
     var body: some View {
-        ZStack {
-            Color.backgroundColor.ignoresSafeArea()
-            
-            VStack(spacing:0){
-                
-                ScrollView(.horizontal, showsIndicators: false, content: {
+        ScrollView{
+            ProgressBar(num: 3)
+            ZStack {
+                Color.backgroundColor.ignoresSafeArea()
+                VStack(spacing:0){
                     HStack {
                         ForEach(PartyColors.allCases,id:\.self) { color in
                             ColorView(color: color, selectedColor: $selectedColor)
@@ -40,23 +39,24 @@ struct ColorPickerView: View {
                                     selectedColor = color
                                 }
                         }
+                        Spacer()
                     }
-                }).background(Color.backgroundColor)
-                
-                ticketView(isTicketGesture: false, color: $selectedColor)
-                    .background(Color.clear)
-                
-                Button {
-                } label: {
-                    Text("만들기")
-                        .font(.system(size: 18))
-                }.frame(width: 350, height: 50, alignment: .center)
-                    .background(Color.partyPurple)
-                    .cornerRadius(8)
-                    .foregroundColor(.white)
+                    .padding(EdgeInsets(top: 23, leading: 20, bottom: 42, trailing: 20))
+                    .background(Color.backgroundColor)
+                    
+                    ticketView(isTicketGesture: false, color: $selectedColor)
+                        .background(Color.clear)
+                    
+                    Button {
+                    } label: {
+                        Text("만들기")
+                            .font(.system(size: 18))
+                    }.frame(width: 350, height: 50, alignment: .center)
+                        .background(Color.partyPurple)
+                        .cornerRadius(8)
+                        .foregroundColor(.white)
+                }
             }
         }
-        
-        
     }
 }
