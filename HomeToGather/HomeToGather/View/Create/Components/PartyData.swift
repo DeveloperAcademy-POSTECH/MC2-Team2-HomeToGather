@@ -35,6 +35,7 @@ class PartyData: ObservableObject {
     @Published var place = ""
     @Published var description = ""
     @Published var color = "red"
+
 }
 
 //if partyData.rule != [String](), partyData.food != [String](), partyData.cost != "" {

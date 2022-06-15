@@ -11,7 +11,6 @@ struct SecondCreateView: View {
     
     // 툴바 버튼에 이전뷰 전활을 위한 변수
     @Environment(\.dismiss) var dismiss
-    
     @EnvironmentObject var partyData: PartyData
     
     init()

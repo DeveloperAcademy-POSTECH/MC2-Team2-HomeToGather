@@ -182,9 +182,9 @@
 			children = (
 				75D6804F285714340097B97A /* SecondCreateView.swift */,
 				D7A1253028585CE100F68084 /* RuleView.swift */,
+				D7A1252628585C3A00F68084 /* AddListView.swift */,
 				D7A1252828585C6300F68084 /* CostView.swift */,
 				D7A1252C28585CB600F68084 /* FoodView.swift */,
-				D7A1252628585C3A00F68084 /* AddListView.swift */,
 				D7A1252E28585CCD00F68084 /* ListView.swift */,
 			);
 			path = Second;
@@ -321,8 +321,6 @@
 			children = (
 				34E0F8532859AB15002A8A42 /* Share */,
 				E48CDB082858722400786DB2 /* Last */,
-				75D6804E285714190097B97A /* Second */,
-				75D6804D285711280097B97A /* First */,
 				75D6804C285711200097B97A /* Components */,
 				75D6804D285711280097B97A /* First */,
 				75D6804E285714190097B97A /* Second */,
