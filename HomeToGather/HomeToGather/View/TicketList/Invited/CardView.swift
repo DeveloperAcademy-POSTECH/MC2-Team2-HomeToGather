@@ -31,7 +31,8 @@ struct CardView: View {
                             .frame(width: 50, height: 15)
                         
                         Text(title)
-                            .font(.system(size: 24, weight: .bold))
+//                            .font(.system(size: 24, weight: .bold))
+                            .font(.notoSans(withStyle: .Medium, size: 24))
                     }
                     Spacer()
                     Button(action: {
@@ -50,6 +51,7 @@ struct CardView: View {
                             HStack(spacing: 0) {
                                 Text("· ")
                                 Text(content)
+                                    .font(content.guessLanguage() == "한국어" ? .notoSans(withStyle: .Light, size: 14) : .montserrat(withStyle: .Light, size: 14))
                             }
                         }
                     }

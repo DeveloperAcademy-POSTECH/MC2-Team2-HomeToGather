@@ -12,6 +12,7 @@ struct InvitedDetailView: View {
     
     var invitationData: Invitation
     
+    private let randomImageName: [String] = ["partyIamge1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]
     let screenWidth = UIScreen.main.bounds.width
     
     var body: some View {
@@ -26,14 +27,15 @@ struct InvitedDetailView: View {
                             .fill(Color.cardBackgroundColor)
                         
                         VStack(alignment: .leading, spacing: 0) {
-                            // 랜덤 이미지 위치
-                            RoundedRectangle(cornerRadius: 4)
+                            Image(randomImageName[Int.random(in: 0..<randomImageName.count)])
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
                                 .frame(height: 150)
                                 .cornerRadius(4)
                             
                             VStack(alignment: .leading, spacing: 0) {
                                 Text(invitationData.title)
-                                    .font(.system(size: 24, weight: .bold))
+                                    .font(invitationData.title.guessLanguage() == "한국어" ? .notoSans(withStyle: .Bold, size: 24) : .montserrat(withStyle: .Bold, size: 24))
                                     .padding(.top, 18)
                                 
                                 HStack(spacing: -5) {
@@ -50,11 +52,13 @@ struct InvitedDetailView: View {
                                     Text("TIME: ")
                                     Text(invitationData.date)
                                 }
+                                .font(.montserrat(withStyle: .Light, size: 14))
                                 .padding(.top, 50)
                                 
                                 HStack(alignment: .top, spacing: 0) {
                                     Text("PLACE: ")
                                     Text(invitationData.place)
+                                    
                                     Button(action:{
                                         copyToClipboard()
                                     }, label: {
@@ -63,7 +67,8 @@ struct InvitedDetailView: View {
                                     })
                                     .padding(.leading, 6)
                                 }
-                                    .padding(.bottom, 20)
+                                .font(invitationData.place.guessLanguage() == "한국어" ? .notoSans(withStyle: .Light, size: 14) : .montserrat(withStyle: .Light, size: 14))
+                                .padding(.bottom, 20)
                             }
                             .padding(20)
                         }
