@@ -22,7 +22,7 @@ class DeeplinkManager {
     // URL의 유효성과 데이터를 받아들일 함수
     // 앱 링크 형식은 적절하지만, 유효하지 않은 링크라면 메인 뷰를 호출
     // id 값을 통해 적절한 초대장 뷰를 호출
-    func manage(url: URL) -> DeeplinkTarget {
+    func getDeeplinkTarget(url: URL) -> DeeplinkTarget {
         var invitationId: String = ""
         
         // URL 가져오기
