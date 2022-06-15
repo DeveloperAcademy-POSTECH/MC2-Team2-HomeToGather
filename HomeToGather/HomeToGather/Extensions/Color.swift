@@ -35,6 +35,7 @@ extension Color {
     static let card3Color = Color(hex: "#54D7FF")
     static let borderColor = Color(hex: "494949")
     static let buttonColor = Color(hex:"1e1e1e")
+    static let placeholderColor = Color(hex: "#5B5A5F")
     
 }
 extension Color {
