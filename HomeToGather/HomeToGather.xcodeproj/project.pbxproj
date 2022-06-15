@@ -188,9 +188,9 @@
 			children = (
 				75D6804F285714340097B97A /* SecondCreateView.swift */,
 				D7A1253028585CE100F68084 /* RuleView.swift */,
+				D7A1252628585C3A00F68084 /* AddListView.swift */,
 				D7A1252828585C6300F68084 /* CostView.swift */,
 				D7A1252C28585CB600F68084 /* FoodView.swift */,
-				D7A1252628585C3A00F68084 /* AddListView.swift */,
 				D7A1252E28585CCD00F68084 /* ListView.swift */,
 			);
 			path = Second;

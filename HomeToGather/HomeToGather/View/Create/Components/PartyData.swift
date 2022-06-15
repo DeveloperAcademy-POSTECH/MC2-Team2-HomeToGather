@@ -51,3 +51,11 @@ class PartyData: ObservableObject {
         self.isModifying = isModifying
     }
 }
+
+//if partyData.rule != [String](), partyData.food != [String](), partyData.cost != "" {
+//    is
+//}
+//if partyData.title != "", partyData.date != "", partyData.place == "", partyData.description == "" {
+//    isDisabled = false
+//}
+

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FirstCreateView: View {
     @StateObject var partyData = PartyData()
-    @State private var isDisabled = false
     @Environment(\.dismiss) var dismiss
     
     init(){
@@ -23,6 +22,7 @@ struct FirstCreateView: View {
             
             ScrollView {
                 VStack{
+                    
                     FirstInfo()
                         .environmentObject(partyData)
                 }
@@ -51,12 +51,21 @@ struct FirstCreateView: View {
                 NavigationLink(destination: {
                     SecondCreateView()
                         .environmentObject(partyData)
+                    
+                    
                 }, label: {
                     Text("다음")
-                        .foregroundColor(isDisabled ? .gray : .white)
-                }).disabled(isDisabled)
+                        .foregroundColor(isDisabled() ? .gray : .white)
+                }).disabled(isDisabled())
             }
         }
+    }
+    
+    func isDisabled() -> Bool {
+        if partyData.title != "", partyData.date != "", partyData.place != "", partyData.description != "" {
+            return false
+        } 
+        return true
     }
 }
 

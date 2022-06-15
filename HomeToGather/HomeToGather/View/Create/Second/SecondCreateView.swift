@@ -11,9 +11,7 @@ struct SecondCreateView: View {
     
     // 툴바 버튼에 이전뷰 전활을 위한 변수
     @Environment(\.dismiss) var dismiss
-    
     @EnvironmentObject var partyData: PartyData
-    @State private var isDisabled = false
     
     init()
     {UINavigationBar.appearance().tintColor = .white}
@@ -21,12 +19,9 @@ struct SecondCreateView: View {
     var body: some View {
         ScrollView {
             VStack() {
-                
                 ProgressBar(num: 2)
-                
                 RuleView()
                     .padding(.bottom, 20)
-
                 FoodView()
             }
         }
@@ -65,9 +60,16 @@ struct SecondCreateView: View {
                         .environmentObject(partyData)
                 }, label: {
                     Text("다음")
-                        .foregroundColor(isDisabled ? .gray : .white)
-                }).disabled(isDisabled)
+                        .foregroundColor(isDisabled() ? .gray : .white)
+                }).disabled(isDisabled())
             }
+        }
+    }
+    func isDisabled() -> Bool {
+        if partyData.rule != [String](), partyData.food != [String]() {
+            return false
+        } else {
+            return true
         }
     }
 }
