@@ -68,7 +68,7 @@ struct ListTicketView: View {
     @State var placeLabel = "PLACE"
     @State var timeLabel = "TIME"
     
-    @State var isTearTicket = false
+    @State var isOutdated = false
     
     var body: some View {
         HStack(spacing: 0) {
@@ -89,6 +89,7 @@ struct ListTicketView: View {
                         Text(invitationData.description)
                             .foregroundColor(.white)
                             .font(.montserrat(withStyle: .Medium, size: 20))
+                            .lineLimit(1)
                         
                         Text(invitationData.date)
                             .foregroundColor(.white)
@@ -105,140 +106,89 @@ struct ListTicketView: View {
                 .frame(maxHeight: 148)
                 .padding(5)
                 
-                Image("mirrorBallRotate")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 160, height: 77)
+                VStack(spacing: 0) {
+                    Spacer()
+                    
+                    HStack(spacing: 0) {
+                        Spacer()
+                        
+                        Image("mirrorBallRotate")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 160, height: 77)
+                    }
+                }
+                .padding(5)
             }
             
-            RoundedRectangle(cornerRadius: 4)
-                .fill(.white)
-                .frame(maxWidth: 83, maxHeight: 155)
+            ZStack {
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(.white)
+                    .frame(maxWidth: 83, maxHeight: 155)
+                
+                ZStack {
+                    Triangle()
+                        .fill(Color.white)
+                        .frame(width: 30, height: 30,alignment: .trailing)
+                        .rotationEffect(.degrees(-45))
+                        .offset(x: -42, y: -77)
+                    
+                    Triangle()
+                        .fill(Color.black)
+                        .frame(width: 24, height: 24,alignment: .trailing)
+                        .rotationEffect(.degrees(-45))
+                        .offset(x: -42, y: -78)
+                }
+                
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(invitationData.title)
+                        .foregroundColor(.black)
+                        .font(.montserrat(withStyle: .Medium, size: 14))
+                    
+                    Divider()
+                        .frame(width: 135, height: 1)
+                        .background(.black)
+                    
+                    HStack(spacing: 0) {
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text("TIME")
+                                .font(.montserrat(withStyle: .Light, size: 6))
+                                .foregroundColor(.black)
+                                .padding(.bottom, 6)
+                            
+                            Text("PLACE")
+                                .font(.montserrat(withStyle: .Light, size: 6))
+                                .foregroundColor(.black)
+                        }
+                        .padding(.trailing, 6)
+                        
+                        Divider()
+                            .frame(width: 1, height: 25)
+                            .background(.gray)
+                        
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text(invitationData.date)
+                                .font(.montserrat(withStyle: .Light, size: 6))
+                                .foregroundColor(.black)
+                                .padding(.bottom, 6)
+                                .lineLimit(1)
+                            
+                            Text(invitationData.place)
+                                .font(.montserrat(withStyle: .Light, size: 6))
+                                .foregroundColor(.black)
+                                .lineLimit(1)
+                        }
+                        .padding(.leading, 6)
+                    }
+                    .padding(.top, 6)
+                }
+                .frame(width: 83, height: 155)
+                .rotationEffect(.degrees(-90))
+            }
+            .opacity(isOutdated ? 0 : 1)
         }
+        .frame(height: 155)
         .preferredColorScheme(.dark)
-//        VStack {
-//            VStack(spacing: 2) {
-//                ZStack {
-//                    RoundedRectangle(cornerRadius: 4)
-//                        .fill(.white)
-//                        .frame(width: 266, height: 155, alignment: .center)
-//                        .offset(x: -41)
-//
-//                    ZStack() {
-//                        RoundedRectangle(cornerRadius: 4)
-//                            .fill(LinearGradient(gradient: Gradient(colors: [.purple, getColorCase(color: invitationData.color)]),
-//                                                 startPoint: .leading, endPoint: .trailing))
-//                            .frame(width: 259, height: 148)
-//                            .offset(x: -41)
-//
-//                        VStack(alignment: .leading, spacing: 5) {
-//                            Text(invitationData.title)
-//                                .font(.montserrat(withStyle: .Bold, size: 22))
-//                                .foregroundColor(.white)
-//
-//                            Text(invitationData.description)
-//                                .font(.montserrat(withStyle: .Bold, size: 20))
-//                                .foregroundColor(.white)
-//
-//                            VStack(alignment: .leading, spacing: 3) {
-//                                Text(invitationData.date)
-//                                    .font(.montserrat(withStyle: .Light, size: 10))
-//                                    .foregroundColor(.white)
-//
-//                                HStack(spacing: 2) {
-//                                    Text(invitationData.date)
-//                                        .font(.montserrat(withStyle: .Light, size: 10))
-//                                        .foregroundColor(.white)
-//                                }
-//
-//                                Text(invitationData.place)
-//                                    .font(.notoSans(withStyle: .Light, size: 10))
-//                                    .foregroundColor(.white)
-//                            }
-//                        }
-//                        .offset(x: -95, y: -20)
-//
-//                        Image("mirrorBall")
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fit)
-//                            .frame(width: 250, height: 150, alignment: .leading)
-//                            .rotationEffect(.degrees(-90))
-//                            .offset(y: -50)
-//
-//                        Triangle()
-//                            .fill(Color.white)
-//                            .frame(width: 30, height: 30,alignment: .trailing)
-//                            .rotationEffect(.degrees(-45))
-//                            .offset(x: 92, y: -77)
-//
-//                        Triangle()
-//                            .fill(Color.backgroundColor)
-//                            .frame(width: 24, height: 24,alignment: .trailing)
-//                            .rotationEffect(.degrees(-45))
-//                            .offset(x: 92, y: -78)
-//                    }
-//
-//                    ZStack {
-//                        RoundedRectangle(cornerRadius: 4)
-//                            .fill(.white)
-//                            .frame(width: 155, height: 83)
-//
-//                        VStack(alignment: .leading, spacing: 6) {
-//                            Text(invitationData.title)
-//                                .font(.montserrat(withStyle: .Bold, size: 14))
-//                                .foregroundColor(.black)
-//
-//                            Divider()
-//                                .frame(width: 134, height: 1)
-//                                .background(.black)
-//
-//                            HStack {
-//                                VStack(alignment: .leading, spacing: 0) {
-//                                    Text(timeLabel)
-//                                        .font(.montserrat(withStyle: .Light, size: 6))
-//                                        .foregroundColor(.black)
-//                                        .padding(.bottom, 8)
-//
-//                                    Text(placeLabel)
-//                                        .font(.montserrat(withStyle: .Light, size: 6))
-//                                        .foregroundColor(.black)
-//                                }
-//
-//                                Divider()
-//                                    .frame(width: 1, height: 25)
-//                                    .background(.gray)
-//
-//                                VStack(alignment: .leading, spacing: 0) {
-//                                    Text(invitationData.date)
-//                                        .font(.montserrat(withStyle: .Light, size: 6))
-//                                        .foregroundColor(.black)
-//                                        .padding(.bottom, 8)
-//
-//                                    Text(invitationData.place)
-//                                        .font(.montserrat(withStyle: .Light, size: 6))
-//                                        .foregroundColor(.black)
-//                                }
-//                            }
-//                        }
-//
-//                        Triangle()
-//                            .fill(Color.backgroundColor)
-//                            .frame(width: 24, height: 24,alignment: .trailing)
-//                            .rotationEffect(.degrees(45))
-//                            .offset(x: 78, y: -38)
-//                    }
-//                    .rotationEffect(.degrees(-90))
-//                    .offset(x: 130)
-//                    .opacity(isTearTicket ? 0 : 1)
-//
-//                    Rectangle()
-//                        .fill(Color.backgroundColor)
-//                        .frame(width: 50, height: 50)
-//                        .offset(x: 117, y: -53)
-//                        .opacity(isTearTicket ? 1 : 0)
-//                }
-//            }
-//        }
     }
 }
 
