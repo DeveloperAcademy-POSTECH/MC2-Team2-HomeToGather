@@ -27,45 +27,44 @@ struct ColorPickerView: View {
     @State private var selectedColor:PartyColors = .red
     @State private var viewModel = ViewModel()
     @EnvironmentObject var partyData: PartyData
-        @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss
     
     init() {
         viewModel.getUserName(getUserUid())
     }
-
+    
     
     var body: some View {
-        ScrollView{
-            ProgressBar(num: 3)
-            ZStack {
-                Color.backgroundColor.ignoresSafeArea()
-                VStack(spacing:0){
-                    HStack {
-                        ForEach(PartyColors.allCases,id:\.self) { color in
-                            ColorView(color: color, selectedColor: $selectedColor)
-                                .onTapGesture {
-                                    selectedColor = color
-                                }
-                        }
-                        Spacer()
+        ProgressBar(num: 3)
+        ZStack {
+            Color.backgroundColor.ignoresSafeArea()
+            VStack(spacing:0){
+                HStack {
+                    ForEach(PartyColors.allCases,id:\.self) { color in
+                        ColorView(color: color, selectedColor: $selectedColor)
+                            .onTapGesture {
+                                selectedColor = color
+                                partyData.color = color.rawValue
+                            }
                     }
-                    .padding(EdgeInsets(top: 13, leading: 20, bottom: 22, trailing: 20))
-                    .background(Color.backgroundColor)
-                    
-                    TicketView(color: $selectedColor)
-                        .background(Color.clear)
-                    
-                    Button {
-                        viewModel.uploadInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color))
-                    } label: {
-                        Text("만들기")
-                            .font(.system(size: 18))
-                    }.frame(width: 350, height: 50, alignment: .center)
-                        .background(Color.partyPurple)
-                        .cornerRadius(8)
-                        .foregroundColor(.white)
-                        .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
+                    Spacer()
                 }
+                .padding(EdgeInsets(top: 13, leading: 20, bottom: 22, trailing: 20))
+                .background(Color.backgroundColor)
+                
+                TicketView(color: $selectedColor)
+                    .background(Color.clear)
+                
+                Button {
+                    viewModel.uploadInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color))
+                } label: {
+                    Text("만들기")
+                        .font(.system(size: 18))
+                }.frame(width: 350, height: 50, alignment: .center)
+                    .background(Color.partyPurple)
+                    .cornerRadius(8)
+                    .foregroundColor(.white)
+                    .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
             }
         }
         .navigationBarTitle("초대장 테마 설정", displayMode: .inline)
