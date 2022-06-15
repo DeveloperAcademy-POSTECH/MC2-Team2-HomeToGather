@@ -8,18 +8,10 @@
 import SwiftUI
 
 struct ListTicketView: View {
-    @State var partyTitle = "PARTY TITLE"
-    @State var partySubtitle = "SUBTITLE"
-    @State var date = "03 / 06 / 22 "
-    @State var startTime = "18:00"
-    @State var endTime = "23:00"
-    @State var location = "D-park House"
+    var invitationData: Invitation
     
-    @State var partyName = "Party Name"
     @State var placeLabel = "PLACE"
     @State var timeLabel = "TIME"
-    @State var month = "JUNE 03"
-    @State var place = "서울 서초구 사임당로 130"
     
     @State var isTearTicket = false
     
@@ -40,30 +32,26 @@ struct ListTicketView: View {
                             .offset(x: -41)
                         
                         VStack(alignment: .leading, spacing: 5) {
-                            Text(partyName)
+                            Text(invitationData.title)
                                 .font(.montserrat(withStyle: .Bold, size: 22))
                                 .foregroundColor(.white)
                             
-                            Text(partySubtitle)
+                            Text(invitationData.description)
                                 .font(.montserrat(withStyle: .Bold, size: 20))
                                 .foregroundColor(.white)
                             
                             VStack(alignment: .leading, spacing: 3) {
-                                Text(date)
+                                Text(invitationData.date)
                                     .font(.montserrat(withStyle: .Light, size: 10))
                                     .foregroundColor(.white)
                                 
                                 HStack(spacing: 2) {
-                                    Text(startTime)
-                                        .font(.montserrat(withStyle: .Light, size: 10))
-                                        .foregroundColor(.white)
-                                    
-                                    Text(endTime)
+                                    Text(invitationData.date)
                                         .font(.montserrat(withStyle: .Light, size: 10))
                                         .foregroundColor(.white)
                                 }
                                 
-                                Text(location)
+                                Text(invitationData.place)
                                     .font(.notoSans(withStyle: .Light, size: 10))
                                     .foregroundColor(.white)
                             }
@@ -96,7 +84,7 @@ struct ListTicketView: View {
                             .frame(width: 155, height: 83)
                         
                         VStack(alignment: .leading, spacing: 6) {
-                            Text(partyName)
+                            Text(invitationData.title)
                                 .font(.montserrat(withStyle: .Bold, size: 14))
                                 .foregroundColor(.black)
                             
@@ -121,12 +109,12 @@ struct ListTicketView: View {
                                     .background(.gray)
                                 
                                 VStack(alignment: .leading, spacing: 0) {
-                                    Text(month)
+                                    Text(invitationData.date)
                                         .font(.montserrat(withStyle: .Light, size: 6))
                                         .foregroundColor(.black)
                                         .padding(.bottom, 8)
                                     
-                                    Text(place)
+                                    Text(invitationData.place)
                                         .font(.montserrat(withStyle: .Light, size: 6))
                                         .foregroundColor(.black)
                                 }
