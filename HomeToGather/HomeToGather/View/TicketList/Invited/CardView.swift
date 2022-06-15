@@ -64,6 +64,7 @@ struct CardView: View {
                 Color.black
                     .opacity(0.6)
                     .ignoresSafeArea()
+                
                 VStack(spacing: 0) {
                     Rectangle()
                         .fill(.black)
@@ -76,6 +77,7 @@ struct CardView: View {
                         RoundedRectangle(cornerRadius: screenWidth)
                             .strokeBorder()
                             .frame(maxWidth: screenWidth, maxHeight: 50)
+                        
                         FocusView(isModalPresent: $isModalPresent)
                     }
                     .padding(20)
@@ -109,7 +111,6 @@ struct FocusView: View {
     @Binding var isModalPresent: Bool
     
     var body: some View {
-        
         HStack {
             TextField("피드백을 입력해주세요.", text: $feedback)
                 .foregroundColor(.white)
@@ -126,15 +127,9 @@ struct FocusView: View {
         }
         .padding(20)
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.isFocused = true
             }
         }
-    }
-}
-
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(title: "규칙", contents: ["1번", "2번"])
     }
 }
