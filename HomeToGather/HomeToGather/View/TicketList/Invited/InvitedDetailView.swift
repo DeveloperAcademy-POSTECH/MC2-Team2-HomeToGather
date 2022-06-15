@@ -12,6 +12,7 @@ struct InvitedDetailView: View {
     
     var invitationData: Invitation
     
+    private let randomImageName: [String] = ["partyIamge1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]
     let screenWidth = UIScreen.main.bounds.width
     
     var body: some View {
@@ -26,8 +27,9 @@ struct InvitedDetailView: View {
                             .fill(Color.cardBackgroundColor)
                         
                         VStack(alignment: .leading, spacing: 0) {
-                            // 랜덤 이미지 위치
-                            RoundedRectangle(cornerRadius: 4)
+                            Image(randomImageName[Int.random(in: 0..<randomImageName.count)])
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
                                 .frame(height: 150)
                                 .cornerRadius(4)
                             

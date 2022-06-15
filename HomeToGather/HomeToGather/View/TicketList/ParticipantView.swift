@@ -19,7 +19,7 @@ struct ParticipantView: View {
         ZStack {
             Circle()
                 .strokeBorder(Color.cardBackgroundColor, lineWidth: 2)
-                .background(Circle().foregroundColor(colors[indexNum%(colors.count)]))
+                .background(Circle().foregroundColor(colors[indexNum % (colors.count)]))
                 .frame(width: 35, height: 35)
         
             Text(name)
