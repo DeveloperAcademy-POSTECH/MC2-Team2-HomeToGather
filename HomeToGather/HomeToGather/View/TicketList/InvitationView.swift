@@ -6,8 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
+import AuthenticationServices
 
 struct InvitationView: View {
+    @Environment(\.window) var window: UIWindow?
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State private var appleLoginCoordinator: AppleAuthCoordinator?
+    @State var isSuccess: Bool = Auth.auth().currentUser != nil ? false : true
+    
+    
     var invitationData: Invitation
     
     var body: some View {
@@ -15,7 +24,9 @@ struct InvitationView: View {
             InvitedDetailView(invitationData: invitationData)
             
             HStack(spacing: 0) {
-                Button(action: {}, label: {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 4)
                             .fill(Color.cardBackgroundColor)
@@ -28,7 +39,15 @@ struct InvitationView: View {
                 })
                 .padding(.trailing, 5)
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    // 애플 로그인 함수
+//                    if isSuccess { appleLogin() }
+//                    else {
+//                        // 데이터 넘기기
+//
+//                    }
+                    // 참여한다고 데이터 전달하기
+                }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 4)
                             .fill(Color.brandColor)
@@ -40,8 +59,14 @@ struct InvitationView: View {
                     }
                 })
                 .padding(.leading, 5)
+
             }
             .padding(20)
         }
     }
+    
+//    func appleLogin() {
+//        appleLoginCoordinator = AppleAuthCoordinator(window: window, isSuccess: $isSuccess, isEnteredWithLink: false, )
+//        appleLoginCoordinator?.startAppleLogin()
+//    }
 }

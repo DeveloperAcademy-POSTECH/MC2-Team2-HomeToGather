@@ -50,7 +50,12 @@ struct ColorPickerView: View {
                         .background(Color.clear)
                     
                     Button {
-                        viewModel.uploadInvitation(Invitation(uid: getUserUid(), organizerName: "디박test", title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: "red"))
+                        let newInvitation = Invitation(uid: getUserUid(), organizerName: "디박test", title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: "red")
+                        
+                        viewModel.uploadInvitation(newInvitation)
+                        
+                        let deeplink = DeeplinkManager()
+                        deeplink.shareLinkToKakao(invitationID: "2A3A5E21-26BC-4D8F-B56A-677945469C69")
                     } label: {
                         Text("만들기")
                             .font(.system(size: 18))

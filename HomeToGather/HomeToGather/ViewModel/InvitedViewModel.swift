@@ -14,6 +14,7 @@ class InvitedViewModel: ObservableObject {
     private var storage = Storage.storage()
     
     @Published var invitationsSent = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
+    @Published var userName = ""
     
     func fetchInvitationsSent(_ invitationUid: String) {
         db.collection("ii").addSnapshotListener { (querySnapshot, error) in
@@ -49,5 +50,85 @@ class InvitedViewModel: ObservableObject {
             
             self.invitationsSent = sent.filter { $0.id != "" }
         }
+    }
+    
+    func acceptInvitation(_ uid: String, _ name: String, _ invitation: Invitation) {
+        var acceptInvitation = invitation
+        acceptInvitation.participantUid?.append(getUserUid())
+        acceptInvitation.participantName?.append(name)
+        let _ = db.collection("ii").document(acceptInvitation.id).setData(acceptInvitation.dictionary)
+    }
+    
+    func getUserName(_ uid: String, completion: @escaping (_ data: String) -> Void) {
+        
+        let g = DispatchGroup()
+        g.enter()
+        
+        let ref = db.collection("user").document(uid)
+        print("userid : \(uid)")
+        
+        ref.getDocument { document, error in
+            
+            if let error = error as NSError? {
+                print(error)
+                g.leave()
+            }
+            else {
+                if let document = document {
+                    let data = document.data()
+                    let name = data?["name"]
+                    self.userName = name as! String
+                }
+                g.leave()
+            }
+        }
+        
+        g.notify(queue: .main) {
+            completion(self.userName)
+        }
+    }
+    
+    func findInvitation(id: String, _ completion: @escaping (_ data: Invitation?) -> Void ) {
+        let docRef = Firestore.firestore().collection("ii").document(id)
+                
+        var newInvitation: Invitation?
+
+        let g = DispatchGroup()
+        g.enter()
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+    
+                newInvitation = Invitation(id: document["id"] as? String ?? "empty",
+                                        uid: document["uid"] as? String ?? "empty",
+                                        organizerName: document["organizerName"] as? String ?? "empty",
+                                        participantName: document["participantName"] as? [String] ?? [],
+                                        participantUid: document["participantUid"] as? [String] ?? [],
+                                        title: document["title"] as? String ?? "empty",
+                                        date: document["date"] as? String ?? "empty",
+                                        place: document["place"] as? String ?? "empty",
+                                        description: document["description"] as? String ?? "empty",
+                                        rule: document["rule"] as? [String] ?? [],
+                                        cost: document["cost"] as? String ?? "empty",
+                                        food: document["food"] as? [String] ?? [],
+                                        etc: document["etc"] as? [String] ?? [],
+                                        ruleFeedback: document["ruleFeedback"] as? [String] ?? [],
+                                        foodFeedback: document["foodFeedback"] as? [String] ?? [],
+                                        color: document["color"] as? String ?? "empty")
+                
+                g.leave()
+                
+            } else {
+                print("Document does not exist")
+                completion(nil)
+                g.leave()
+            }
+        }
+        
+        g.notify(queue:.main) {
+            completion(newInvitation)
+        }
+        
+        return
     }
 }
