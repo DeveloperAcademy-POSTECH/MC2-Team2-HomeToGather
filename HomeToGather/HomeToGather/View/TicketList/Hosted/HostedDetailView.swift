@@ -11,6 +11,12 @@ struct HostedDetailView: View {
     var hostData: Invitation
     @State private var isConfirmationDialogShow: Bool = false
     @State var viewModel = ViewModel()
+    var partyData: PartyData = PartyData()
+    
+    init(hostData: Invitation) {
+        self.hostData = hostData
+        self.partyData = PartyData(rule: hostData.rule, food: hostData.food, cost: hostData.cost, title: hostData.title, date: hostData.date, place: hostData.place, description: hostData.description, color: hostData.color, isModifying: true)
+    }
     
     private let randomImageName: [String] = ["partyIamge1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]
     let screenWidth = UIScreen.main.bounds.width
@@ -68,33 +74,19 @@ struct HostedDetailView: View {
                     FeedbackCardView(title: "규칙", contents: hostData.rule, feedbackContents: hostData.ruleFeedback)
                     
                     FeedbackCardView(title: "메뉴", contents: hostData.food, feedbackContents: hostData.foodFeedback)
+                    
+                    NavigationLink {
+                        ModifyView()
+                            .environmentObject(partyData)
+                    } label: {
+                        Image(systemName: "ellipsis.circle.fill")
+                    }
                 }
                 .padding(20)
             }
         }
         .toolbar {
             ToolbarItem {
-                
-                
-                Button(role: .destructive, action: {
-                    var partyData = PartyData()
-                    partyData.title = hostData.title
-                    partyData.description = hostData.description
-                    partyData.date = hostData.date
-                    partyData.place = hostData.place
-                    partyData.rule = hostData.rule
-                    partyData.food = hostData.food
-                    partyData.cost = hostData.cost
-                    
-                    
-                }, label: {
-                    NavigationLink {
-                        FirstCreateView()
-                    } label: {
-                        Image(systemName: "ellipsis.circle.fill")
-                    }
-                })
-                
                 Button(role: .destructive, action: {
                     isConfirmationDialogShow = true
                 }, label: {

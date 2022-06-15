@@ -35,4 +35,19 @@ class PartyData: ObservableObject {
     @Published var place = ""
     @Published var description = ""
     @Published var color = "red"
+    @Published var isModifying = false
+    
+    init() {}
+    
+    init(rule: [String], food: [String], cost: String, title: String, date: String, place: String, description: String, color: String, isModifying: Bool) {
+        self.rule = rule
+        self.food = food
+        self.cost = cost
+        self.title = title
+        self.date = date
+        self.place = place
+        self.description = description
+        self.color = color
+        self.isModifying = isModifying
+    }
 }

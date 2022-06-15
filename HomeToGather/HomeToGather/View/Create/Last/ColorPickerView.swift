@@ -56,9 +56,14 @@ struct ColorPickerView: View {
                     .background(Color.clear)
                 
                 Button {
-                    viewModel.uploadInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color))
+                    if !partyData.isModifying {
+                        viewModel.uploadInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color))
+                    } else {
+                        print("Hello! \(partyData.isModifying)")
+                        viewModel.correctionInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color))
+                    }
                 } label: {
-                    Text("만들기")
+                    Text(partyData.isModifying ? "수정하기" : "만들기")
                         .font(.system(size: 18))
                 }.frame(width: 350, height: 50, alignment: .center)
                     .background(Color.partyPurple)
