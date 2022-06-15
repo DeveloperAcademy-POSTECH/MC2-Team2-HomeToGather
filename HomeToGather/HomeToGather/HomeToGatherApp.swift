@@ -11,7 +11,6 @@ import Firebase
 
 @main
 struct HomeToGatherApp: App {
-    
     @StateObject var partyData = PartyData()
     
     init() {

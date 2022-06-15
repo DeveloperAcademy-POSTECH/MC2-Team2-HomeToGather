@@ -11,9 +11,9 @@ import AuthenticationServices
 
 struct ContentView: View {
     @Environment(\.window) var window: UIWindow?
+    
     @State private var appleLoginCoordinator: AppleAuthCoordinator?
     @State var isSuccess: Bool = Auth.auth().currentUser != nil ? false : true
-    
     @State var isTouchedTicket: Bool = false
     
     init() {
@@ -83,5 +83,5 @@ struct ContentView: View {
         appleLoginCoordinator = AppleAuthCoordinator(window: window, isSuccess: $isSuccess)
         appleLoginCoordinator?.startAppleLogin()
     }
-
+    
 }
