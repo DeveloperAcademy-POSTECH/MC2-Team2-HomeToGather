@@ -16,7 +16,7 @@ class InvitedViewModel: ObservableObject {
     @Published var invitationsSent = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
     
     func fetchInvitationsSent(_ invitationUid: String) {
-        db.collection("ii").addSnapshotListener { (querySnapshot, error) in
+        db.collection("ii").order(by: "date", descending: true).addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
                 print("No Documents")
                 return
