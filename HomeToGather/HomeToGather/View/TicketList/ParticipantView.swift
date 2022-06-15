@@ -23,7 +23,8 @@ struct ParticipantView: View {
                 .frame(width: 35, height: 35)
         
             Text(name)
-                .font(.system(size: 8))
+//                .font(.system(size: 8))
+                .font(name.guessLanguage() == "한국어" ? .notoSans(withStyle: .Regular, size: 8) : .montserrat(withStyle: .Regular, size: 8))
                 .foregroundColor(.black)
                 .lineLimit(1)
                 .truncationMode(.tail)

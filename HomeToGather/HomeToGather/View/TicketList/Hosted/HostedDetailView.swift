@@ -32,7 +32,7 @@ struct HostedDetailView: View {
                             
                             VStack(alignment: .leading, spacing: 0) {
                                 Text(hostData.title)
-                                    .font(.system(size: 24, weight: .bold))
+                                    .font(hostData.title.guessLanguage() == "한국어" ? .notoSans(withStyle: .Bold, size: 24) : .montserrat(withStyle: .Bold, size: 24))
                                     .padding(.top, 18)
                                 
                                 HStack(spacing: -5) {
@@ -49,13 +49,15 @@ struct HostedDetailView: View {
                                     Text("TIME: ")
                                     Text(hostData.date)
                                 }
+                                .font(.montserrat(withStyle: .Light, size: 14))
                                 .padding(.top, 50)
                                 
                                 HStack(alignment: .top, spacing: 0) {
                                     Text("PLACE: ")
                                     Text(hostData.place)
                                 }
-                                    .padding(.bottom, 20)
+                                .font(hostData.place.guessLanguage() == "한국어" ? .notoSans(withStyle: .Light, size: 14) : .montserrat(withStyle: .Light, size: 14))
+                                .padding(.bottom, 20)
                             }
                             .padding(20)
                         }

@@ -33,7 +33,7 @@ struct InvitedDetailView: View {
                             
                             VStack(alignment: .leading, spacing: 0) {
                                 Text(invitationData.title)
-                                    .font(.system(size: 24, weight: .bold))
+                                    .font(invitationData.title.guessLanguage() == "한국어" ? .notoSans(withStyle: .Bold, size: 24) : .montserrat(withStyle: .Bold, size: 24))
                                     .padding(.top, 18)
                                 
                                 HStack(spacing: -5) {
@@ -50,11 +50,13 @@ struct InvitedDetailView: View {
                                     Text("TIME: ")
                                     Text(invitationData.date)
                                 }
+                                .font(.montserrat(withStyle: .Light, size: 14))
                                 .padding(.top, 50)
                                 
                                 HStack(alignment: .top, spacing: 0) {
                                     Text("PLACE: ")
                                     Text(invitationData.place)
+                                    
                                     Button(action:{
                                         copyToClipboard()
                                     }, label: {
@@ -63,7 +65,8 @@ struct InvitedDetailView: View {
                                     })
                                     .padding(.leading, 6)
                                 }
-                                    .padding(.bottom, 20)
+                                .font(invitationData.place.guessLanguage() == "한국어" ? .notoSans(withStyle: .Light, size: 14) : .montserrat(withStyle: .Light, size: 14))
+                                .padding(.bottom, 20)
                             }
                             .padding(20)
                         }
