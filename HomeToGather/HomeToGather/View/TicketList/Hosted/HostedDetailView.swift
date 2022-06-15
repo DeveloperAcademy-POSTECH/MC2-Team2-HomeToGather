@@ -74,6 +74,27 @@ struct HostedDetailView: View {
         }
         .toolbar {
             ToolbarItem {
+                
+                
+                Button(role: .destructive, action: {
+                    var partyData = PartyData()
+                    partyData.title = hostData.title
+                    partyData.description = hostData.description
+                    partyData.date = hostData.date
+                    partyData.place = hostData.place
+                    partyData.rule = hostData.rule
+                    partyData.food = hostData.food
+                    partyData.cost = hostData.cost
+                    
+                    
+                }, label: {
+                    NavigationLink {
+                        FirstCreateView()
+                    } label: {
+                        Image(systemName: "ellipsis.circle.fill")
+                    }
+                })
+                
                 Button(role: .destructive, action: {
                     isConfirmationDialogShow = true
                 }, label: {
