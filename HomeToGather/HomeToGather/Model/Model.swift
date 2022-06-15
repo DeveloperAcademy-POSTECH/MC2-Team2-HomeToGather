@@ -19,7 +19,7 @@ struct Invitation: Hashable {
     var image: String = ""          // 이미지
     var ruleFeedback: [String] = [""] // 규칙 피드백
     var foodFeedback: [String] = [""] // 메뉴 피드백
-    var color: String               // 초대장 색상
+    var color: String               // 초대장 색상get
     
     var dictionary: [String: Any] {
             return [

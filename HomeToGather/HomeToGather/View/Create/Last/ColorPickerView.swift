@@ -25,6 +25,7 @@ enum PartyColors:String,CaseIterable {
 struct ColorPickerView: View {
     
     @State private var selectedColor:PartyColors = .red
+
     
     var body: some View {
         ScrollView{
