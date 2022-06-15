@@ -171,6 +171,7 @@ struct ListTicketView: View {
                                 .font(.montserrat(withStyle: .Light, size: 6))
                                 .foregroundColor(.black)
                                 .padding(.bottom, 6)
+                                .lineLimit(1)
                             
                             Text(invitationData.place)
                                 .font(.montserrat(withStyle: .Light, size: 6))
