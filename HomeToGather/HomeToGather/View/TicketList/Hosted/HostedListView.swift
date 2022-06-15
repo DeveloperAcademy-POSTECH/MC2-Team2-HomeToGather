@@ -29,9 +29,8 @@ struct HostedListView: View {
                         NavigationLink {
                             HostedDetailView(hostData: host)
                         } label: {
-                            // 티켓 이미지
-                            RoundedRectangle(cornerRadius: 4)
-                                .frame(width: screenWidth - 40, height: 155)
+                            ListTicketView()
+                                .frame(maxWidth: screenWidth)
                                 .padding(.bottom, 20)
                         }
                     }
