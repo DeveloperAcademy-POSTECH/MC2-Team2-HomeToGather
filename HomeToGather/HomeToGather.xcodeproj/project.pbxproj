@@ -44,7 +44,6 @@
 		E26A38852851F6E400AD8EFF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E26A38842851F6E400AD8EFF /* GoogleService-Info.plist */; };
 		E26A38882853076800AD8EFF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A38872853076800AD8EFF /* ViewModel.swift */; };
 		E26A388A2853077A00AD8EFF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A38892853077A00AD8EFF /* Model.swift */; };
-		E26A388C2853081E00AD8EFF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A388B2853081E00AD8EFF /* ImagePicker.swift */; };
 		E26A38B028539D2600AD8EFF /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E26A38AA28539D2600AD8EFF /* Montserrat-Medium.ttf */; };
 		E26A38B128539D2600AD8EFF /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E26A38AB28539D2600AD8EFF /* Montserrat-Thin.ttf */; };
 		E26A38B228539D2600AD8EFF /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E26A38AC28539D2600AD8EFF /* Montserrat-Light.ttf */; };
@@ -110,7 +109,6 @@
 		E26A38862851F71D00AD8EFF /* HomeToGather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeToGather.entitlements; sourceTree = "<group>"; };
 		E26A38872853076800AD8EFF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E26A38892853077A00AD8EFF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		E26A388B2853081E00AD8EFF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E26A38AA28539D2600AD8EFF /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.ttf"; path = "HomeToGather/Extensions/Font/montserrat/Montserrat-Medium.ttf"; sourceTree = SOURCE_ROOT; };
 		E26A38AB28539D2600AD8EFF /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Thin.ttf"; path = "HomeToGather/Extensions/Font/montserrat/Montserrat-Thin.ttf"; sourceTree = SOURCE_ROOT; };
 		E26A38AC28539D2600AD8EFF /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.ttf"; path = "HomeToGather/Extensions/Font/montserrat/Montserrat-Light.ttf"; sourceTree = SOURCE_ROOT; };
@@ -225,7 +223,6 @@
 			children = (
 				E26A386E2851F40300AD8EFF /* AppleLogin.swift */,
 				E26A38872853076800AD8EFF /* ViewModel.swift */,
-				E26A388B2853081E00AD8EFF /* ImagePicker.swift */,
 				345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */,
 				B9BF1D622858A8570081DC4A /* HostedViewModel.swift */,
 				B9BF1D642858A86D0081DC4A /* InvitedViewModel.swift */,
@@ -529,7 +526,6 @@
 				E26A38832851F50D00AD8EFF /* MainView.swift in Sources */,
 				345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */,
 				75D6805C28571DD00097B97A /* PartyData.swift in Sources */,
-				E26A388C2853081E00AD8EFF /* ImagePicker.swift in Sources */,
 				D760C18328585861004D9D10 /* ProgressBar.swift in Sources */,
 				E217AB4D28561F5B00242BAD /* ticketView.swift in Sources */,
 				75D68050285714340097B97A /* SecondCreateView.swift in Sources */,
