@@ -596,6 +596,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - Alamofire (5.6.1)
   - BoringSSL-GRPC (0.0.24):
     - BoringSSL-GRPC/Implementation (= 0.0.24)
     - BoringSSL-GRPC/Interface (= 0.0.24)
@@ -772,6 +773,38 @@ PODS:
     - Libuv-gRPC (= 0.0.10)
   - gRPC-Core/Interface (1.44.0)
   - GTMSessionFetcher/Core (2.0.0)
+  - KakaoSDK (2.9.1):
+    - KakaoSDKAuth (= 2.9.1)
+    - KakaoSDKCommon (= 2.9.1)
+    - KakaoSDKLink (= 2.9.1)
+    - KakaoSDKNavi (= 2.9.1)
+    - KakaoSDKStory (= 2.9.1)
+    - KakaoSDKTalk (= 2.9.1)
+    - KakaoSDKTemplate (= 2.9.1)
+    - KakaoSDKUser (= 2.9.1)
+  - KakaoSDKAuth (2.9.1):
+    - KakaoSDKCommon (= 2.9.1)
+  - KakaoSDKCommon (2.9.1):
+    - KakaoSDKCommon/Common (= 2.9.1)
+    - KakaoSDKCommon/Network (= 2.9.1)
+  - KakaoSDKCommon/Common (2.9.1)
+  - KakaoSDKCommon/Network (2.9.1):
+    - Alamofire (~> 5.1)
+    - KakaoSDKCommon/Common (= 2.9.1)
+  - KakaoSDKLink (2.9.1):
+    - KakaoSDKCommon (= 2.9.1)
+    - KakaoSDKTemplate (= 2.9.1)
+  - KakaoSDKNavi (2.9.1):
+    - KakaoSDKCommon/Common (= 2.9.1)
+  - KakaoSDKStory (2.9.1):
+    - KakaoSDKUser (= 2.9.1)
+  - KakaoSDKTalk (2.9.1):
+    - KakaoSDKTemplate (= 2.9.1)
+    - KakaoSDKUser (= 2.9.1)
+  - KakaoSDKTemplate (2.9.1):
+    - KakaoSDKCommon/Common (= 2.9.1)
+  - KakaoSDKUser (2.9.1):
+    - KakaoSDKAuth (= 2.9.1)
   - leveldb-library (1.22.1)
   - Libuv-gRPC (0.0.10):
     - Libuv-gRPC/Implementation (= 0.0.10)
@@ -792,10 +825,12 @@ DEPENDENCIES:
   - FirebaseDynamicLinks
   - FirebaseFirestore
   - FirebaseStorage
+  - KakaoSDK (= 2.9.1)
 
 SPEC REPOS:
   trunk:
     - abseil
+    - Alamofire
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAnalytics
@@ -817,6 +852,15 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - KakaoSDK
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKLink
+    - KakaoSDKNavi
+    - KakaoSDKStory
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
+    - KakaoSDKUser
     - leveldb-library
     - Libuv-gRPC
     - nanopb
@@ -824,6 +868,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   Firebase: 91c243d75573ac6e7c9735ec859b72bffb61347d
   FirebaseAnalytics: bf11064790ac96804df1df9ddc0ae45af950d9fc
@@ -845,11 +890,20 @@ SPEC CHECKSUMS:
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
   gRPC-Core: 943e491cb0d45598b0b0eb9e910c88080369290b
   GTMSessionFetcher: 681175626052e03fdde7952f7e9c7a9785719506
+  KakaoSDK: 863b75c045a01065faf1dd67393b62dfe2b4ce3a
+  KakaoSDKAuth: 8ec514e64f57f405735e92483fdae1cc2830d351
+  KakaoSDKCommon: c4b08131fdba6770a280ffe83916048174f329bf
+  KakaoSDKLink: d138ac61dc3103d15f5b3ceafae9a29073b04bd4
+  KakaoSDKNavi: 2bf83faa1a841467d7f398c714652cb5b0e22611
+  KakaoSDKStory: 423a381e0e9686c2b4e3058f0fc62befa4bc73bd
+  KakaoSDKTalk: b4ba0628c770e1781307296b1ccaabec34327799
+  KakaoSDKTemplate: 816a1c24855b30f1ad337e754963c8b17ad5053d
+  KakaoSDKUser: 3b82c8f4b7bdd8584b296cf91d1be4b4a84102fb
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
 
-PODFILE CHECKSUM: 18fd57e51048b099c0acc1ccaa69ff1b5a9803b9
+PODFILE CHECKSUM: 17f871b5c7284911d2eebf6f99144e698609050e
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

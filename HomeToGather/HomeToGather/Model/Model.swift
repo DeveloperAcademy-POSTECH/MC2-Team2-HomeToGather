@@ -16,10 +16,9 @@ struct Invitation: Hashable {
     var cost: String                // 파티 비용
     var food: [String]              // 메뉴
     var etc: [String]               // 기타
-    var image: String = ""          // 이미지
     var ruleFeedback: [String] = [""] // 규칙 피드백
     var foodFeedback: [String] = [""] // 메뉴 피드백
-    var color: String               // 초대장 색상
+    var color: String               // 초대장 색상get
     
     var dictionary: [String: Any] {
             return [
@@ -36,7 +35,6 @@ struct Invitation: Hashable {
                 "cost": cost,
                 "food": food,
                 "etc": etc,
-                "image": image,
                 "ruleFeedback": ruleFeedback,
                 "foodFeedback": foodFeedback,
                 "color": color,
@@ -44,3 +42,21 @@ struct Invitation: Hashable {
         }
 }
 
+extension Invitation {
+    static let dummyInvitation = Invitation(id: "dummy_id",
+                                            uid: "dummy_uid",
+                                            organizerName: "dummy_orga",
+                                            participantName: ["dummy_name"],
+                                            participantUid: ["dummy_uid"],
+                                            title: "dummy_title",
+                                            date: "dummy_date",
+                                            place: "dummy_place",
+                                            description: "dummy_description",
+                                            rule: ["dummy_rule"],
+                                            cost: "dummy_cost",
+                                            food: ["dummy_food"],
+                                            etc: ["dummy_etc"],
+                                            ruleFeedback: ["dummy_rulefeedback"],
+                                            foodFeedback: ["dummy_foodfeedback"],
+                                            color: "dummy_color")
+}

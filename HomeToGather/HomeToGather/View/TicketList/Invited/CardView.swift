@@ -21,8 +21,9 @@ struct CardView: View {
         ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 4)
                 .fill(Color.cardBackgroundColor)
-            
+
             VStack(alignment: .leading, spacing: 0) {
+                
                 HStack {
                     ZStack(alignment: .bottomLeading) {
                         RoundedRectangle(cornerRadius: 15)
@@ -32,9 +33,7 @@ struct CardView: View {
                         Text(title)
                             .font(.system(size: 24, weight: .bold))
                     }
-                    
                     Spacer()
-                    
                     Button(action: {
                         isModalPresent.toggle()
                     }, label: {

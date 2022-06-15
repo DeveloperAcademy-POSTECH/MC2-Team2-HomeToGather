@@ -10,14 +10,14 @@ import CoreGraphics
 
 struct ProgressBar: View {
 
-    let size:CGFloat = UIScreen.main.bounds.width / 4
+    let progressBarBasicSize: CGFloat = UIScreen.main.bounds.width / 4
     var num: Int
 
     var body: some View {
             HStack {
                 ZStack {
                     Circle()
-                        .frame(width: size / 4, height: size / 4)
+                        .frame(width: progressBarBasicSize / 4, height: progressBarBasicSize / 4)
                         .foregroundColor(.purple)
                     Text("1")
                         .foregroundColor(.white)
@@ -25,14 +25,14 @@ struct ProgressBar: View {
                 }
 
                 Rectangle()
-                    .frame(width: size, height: 5)
+                    .frame(width: progressBarBasicSize, height: 5)
                     .foregroundColor(num > 1 ? .purple : .gray)
-                    .padding(.leading, (size / 4) * -1 + (size / 6))
-                    .padding(.trailing, (size / 4) * -1)
+                    .padding(.leading, (progressBarBasicSize / 4) * -1 + (progressBarBasicSize / 6))
+                    .padding(.trailing, (progressBarBasicSize / 4) * -1)
 
                 ZStack {
                     Circle()
-                        .frame(width: size / 4, height: size / 4)
+                        .frame(width: progressBarBasicSize / 4, height: progressBarBasicSize / 4)
                         .foregroundColor(num > 1 ? .purple : .gray)
 
                     Text("2")
@@ -41,21 +41,21 @@ struct ProgressBar: View {
                 }
 
                 Rectangle()
-                    .frame(width: size, height: 5)
+                    .frame(width: progressBarBasicSize, height: 5)
                     .foregroundColor(num > 2 ? .purple : .gray)
-                    .padding(.leading, (size / 4) * -1 + (size / 6))
-                    .padding(.trailing, (size / 4) * -1)
+                    .padding(.leading, (progressBarBasicSize / 4) * -1 + (progressBarBasicSize / 6))
+                    .padding(.trailing, (progressBarBasicSize / 4) * -1)
 
                 ZStack {
                     Circle()
-                        .frame(width: size / 4, height: size / 4)
+                        .frame(width: progressBarBasicSize / 4, height: progressBarBasicSize / 4)
                         .foregroundColor(num > 2 ? .purple : .gray)
                     Text("3")
                         .foregroundColor(.white)
                         .bold()
                 }
                 Spacer()
-            }
+            }        .padding(EdgeInsets(top: 47, leading: 20, bottom: 17, trailing: 20))
 
     }
 }

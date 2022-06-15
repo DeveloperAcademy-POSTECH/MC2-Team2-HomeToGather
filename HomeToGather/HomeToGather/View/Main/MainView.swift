@@ -16,7 +16,7 @@ struct MainView: View {
     @State var showSettings = false
     @State var isSuccess = false
     @State var defaultColor: PartyColors = .red
-    let viewModel: ViewModel = ViewModel()
+    let viewModel = ViewModel()
     
     // Deeplink Property
     let deeplinkManager = DeeplinkManager()
@@ -25,8 +25,8 @@ struct MainView: View {
     
 //    init() {
 //        viewModel.fetchInvitation()
-//        invitationCardData = viewModel.invitations[0]
-//        
+//        invitationCardData = viewMode8l.invitations[0]
+//
 //        defaultColor = self.invitationCardData?.color ?? "red"
 //
 //    }
@@ -35,12 +35,10 @@ struct MainView: View {
         ZStack {
             Color.backgroundColor
                 .ignoresSafeArea()
-            
             VStack {
-                
                 if isTouchedTicket {
                     VStack {
-                        expanedTicketView(flag: $isTouchedTicket)
+                        ExpanedTicketView(color: $defaultColor)
                             .offset(y: -50)
                             .background(Color.white)
                             .toolbar {
@@ -57,8 +55,9 @@ struct MainView: View {
                             }
                         
                     }
+                    
                 } else {
-                    ticketView(isTicketGesture: isTicketGesture, color: $defaultColor)
+                    TicketView(color: $defaultColor)
                         .offset(y: -100)
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.8)) {
@@ -100,9 +99,8 @@ struct MainView: View {
                 }
                 
                 // Deep Link로 들어왔을 때 초대장 뷰 띄우기
-                // 뷰 수정 필요
                 NavigationLink(isActive: $invitationCardViewToggle) {
-                    DEBUG_InvitationCardView(invitationCardData: self.invitationCardData ?? nil)
+                    InvitationView(invitationData: self.invitationCardData ?? Invitation.dummyInvitation)
                 } label: {
                     EmptyView()
                 }
@@ -111,10 +109,7 @@ struct MainView: View {
             .preferredColorScheme(.dark)
         }
         .onOpenURL { url in
-            let deeplink = deeplinkManager.manage(url: url)
-            let target = deeplink
-            
-            print("onOpenURL_DEBUG : URL로 들어옴")
+            let target = deeplinkManager.getDeeplinkTarget(url: url)
             
             switch target {
             case .main:
