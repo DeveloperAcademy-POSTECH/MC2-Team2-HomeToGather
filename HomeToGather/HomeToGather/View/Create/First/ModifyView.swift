@@ -1,8 +1,8 @@
 //
-//  ModifyView.swift
+//  ModiftView.swift
 //  HomeToGather
 //
-//  Created by 정지혁 on 2022/06/15.
+//  Created by JungHoonPark on 2022/06/15.
 //
 
 import SwiftUI
@@ -61,8 +61,5 @@ struct ModifyView: View {
     }
 }
 
-struct ModifyView_Previews: PreviewProvider {
-    static var previews: some View {
-        ModifyView()
-    }
-}
+
+

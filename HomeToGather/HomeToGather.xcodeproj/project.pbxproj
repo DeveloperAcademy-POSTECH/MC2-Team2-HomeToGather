@@ -17,6 +17,7 @@
 		75D6805C28571DD00097B97A /* PartyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805B28571DD00097B97A /* PartyData.swift */; };
 		75D6805E28571E6A0097B97A /* SearchAddressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805D28571E6A0097B97A /* SearchAddressButton.swift */; };
 		75D6806028571EAC0097B97A /* AdressWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805F28571EAC0097B97A /* AdressWebView.swift */; };
+		75E65DD12859F5D600D92381 /* ModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E65DD02859F5D600D92381 /* ModifyView.swift */; };
 		A09DB8583B01A4B2E4388F3D /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FAA5D46AD3172154946160 /* Pods_HomeToGather.framework */; };
 		B93869D92855043500320855 /* HostedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869D82855043500320855 /* HostedListView.swift */; };
 		B93869DB2855044200320855 /* HostedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DA2855044200320855 /* HostedDetailView.swift */; };
@@ -82,6 +83,7 @@
 		75D6805B28571DD00097B97A /* PartyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyData.swift; sourceTree = "<group>"; };
 		75D6805D28571E6A0097B97A /* SearchAddressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressButton.swift; sourceTree = "<group>"; };
 		75D6805F28571EAC0097B97A /* AdressWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressWebView.swift; sourceTree = "<group>"; };
+		75E65DD02859F5D600D92381 /* ModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyView.swift; sourceTree = "<group>"; };
 		B93869D82855043500320855 /* HostedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedListView.swift; sourceTree = "<group>"; };
 		B93869DA2855044200320855 /* HostedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedDetailView.swift; sourceTree = "<group>"; };
 		B93869DC2855D8B100320855 /* FeedbackCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCardView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				75D6805F28571EAC0097B97A /* AdressWebView.swift */,
 				75D6805128571C970097B97A /* FirstCreateView.swift */,
+				75E65DD02859F5D600D92381 /* ModifyView.swift */,
 				75D6805328571CD60097B97A /* FirstInfo.swift */,
 				B9C1AA3A285A0024002C6516 /* ModifyView.swift */,
 			);
@@ -323,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				34E0F8532859AB15002A8A42 /* Share */,
+				E48CDB082858722400786DB2 /* Third */,
 				E48CDB082858722400786DB2 /* Last */,
 				75D6804C285711200097B97A /* Components */,
 				75D6804D285711280097B97A /* First */,
@@ -378,13 +382,13 @@
 			path = Montserrat;
 			sourceTree = "<group>";
 		};
-		E48CDB082858722400786DB2 /* Last */ = {
+		E48CDB082858722400786DB2 /* Third */ = {
 			isa = PBXGroup;
 			children = (
 				E48CDB092858725200786DB2 /* ColorView.swift */,
 				E48CDB0B2858726600786DB2 /* ColorPickerView.swift */,
 			);
-			path = Last;
+			path = Third;
 			sourceTree = "<group>";
 		};
 		F20556BFAAF2510972E9D22C /* Pods */ = {
@@ -555,6 +559,7 @@
 				B93869D92855043500320855 /* HostedListView.swift in Sources */,
 				B9BF1D652858A86D0081DC4A /* InvitedViewModel.swift in Sources */,
 				75D6805A28571D380097B97A /* SubTitleRow.swift in Sources */,
+				75E65DD12859F5D600D92381 /* ModifyView.swift in Sources */,
 				75D6805428571CD60097B97A /* FirstInfo.swift in Sources */,
 				B95078042854D9FA00F7825A /* View.swift in Sources */,
 				D7A1252F28585CCD00F68084 /* ListView.swift in Sources */,
