@@ -63,8 +63,8 @@ class ViewModel: ObservableObject {
         let _ = db.collection("ii").document(invitation.id).setData(["foodFeedback":feedback])
     }
     
-    func deleteInvitation(_ invitation: Invitation) {
-        let _ = db.collection("ii").document(invitation.id).delete()
+    func deleteInvitation(_ invitationId: String) {
+        let _ = db.collection("ii").document(invitationId).delete()
     }
     
     func getUserName(_ uid: String) {

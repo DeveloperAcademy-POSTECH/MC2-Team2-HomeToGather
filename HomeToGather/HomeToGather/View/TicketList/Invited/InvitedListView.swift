@@ -29,9 +29,9 @@ struct InvitedListView: View {
                         NavigationLink {
                             InvitedDetailView(invitationData: invitation)
                         } label: {
-                            ListTicketView()
-                              .frame(maxWidth: screenWidth)
-                              .padding(.bottom, 20)
+                            ListTicketView(invitationData: invitation)
+                                .frame(maxWidth: screenWidth)
+                                .padding(.bottom, 20)
                         }
                     }
                 }

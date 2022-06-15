@@ -29,7 +29,7 @@ struct AddListView: View {
 
             ForEach(0..<lists.count, id: \.self) { num in
                 ListView(lists: $lists, item: $item, text: lists[num] , index: num)
-                    .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 20))
+                    .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
 
             }
             VStack {
@@ -47,21 +47,22 @@ struct AddListView: View {
                             }
 
                         }
-                        .onReceive(Just($item)) { _ in limitText(10) }
+                        .onReceive(Just($item)) { _ in limitText(50) }
                     
                     
                     
                     if item != "" {
                         Button(action: {
-                            hideKeyboard()
+//                            hideKeyboard()
                             lists.append(item)
                             item = ""
                             print(lists)
                         }, label: {
-                            Image(systemName: "plus.circle")
+                            Image(systemName: "plus.square")
                                 .foregroundColor(.white)
 
                         })
+                        
                     }
 
                 }
@@ -69,13 +70,14 @@ struct AddListView: View {
                 Divider()
                 HStack{
                     Spacer()
-                    Text("\(item.count)/10")
+                    Text("\(item.count)/50")
                         .foregroundColor(.white)
-                        .font(.system(size: 10       , weight: .light))
+                        .font(.system(size: 10, weight: .light))
                 }
                     
             }
         }
+
     }
     func limitText(_ upper: Int) {
         if item.count > upper {

@@ -26,7 +26,7 @@ struct ListView: View {
                 lists.remove(at: index)
                 print((lists))
             }, label: {
-                Image(systemName: "minus")
+                Image(systemName: "minus.square")
                     .foregroundColor(.white)
             })
         }
