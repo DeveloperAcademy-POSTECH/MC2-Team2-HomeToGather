@@ -43,7 +43,7 @@ struct ColorPickerView: View {
                     }
                 }).background(Color.backgroundColor)
                 
-                ticketView(color: $selectedColor)
+                TicketView(color: $selectedColor)
                     .background(Color.clear)
                 
                 Button {
