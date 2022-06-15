@@ -6,6 +6,7 @@ class ViewModel: ObservableObject {
     private var db = Firestore.firestore()
     private var storage = Storage.storage()
     @Published var invitations = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
+    @Published var userName = ""
 
     func uploadInvitation(_ invitation: Invitation) {
         let uid = getUserUid()
@@ -64,6 +65,22 @@ class ViewModel: ObservableObject {
     
     func deleteInvitation(_ invitation: Invitation) {
         let _ = db.collection("ii").document(invitation.id).delete()
+    }
+    
+    func getUserName(_ uid: String) {
+        let ref = db.collection("user").document(uid)
+        ref.getDocument { document, error in
+            if let error = error as NSError? {
+                print(error)
+            }
+            else {
+                if let document = document {
+                    let data = document.data()
+                    let name = data?["name"] as? String ?? "no name"
+                    self.userName = name
+                }
+            }
+        }
     }
     
     // Deeplink
