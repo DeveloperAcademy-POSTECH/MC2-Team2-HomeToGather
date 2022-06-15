@@ -16,7 +16,7 @@ struct MainView: View {
     @State var showSettings = false
     @State var isSuccess = false
     @State var defaultColor: PartyColors = .red
-    let viewModel: ViewModel = ViewModel()
+    let viewModel = ViewModel()
     
     // Deeplink Property
     let deeplinkManager = DeeplinkManager()
@@ -25,8 +25,8 @@ struct MainView: View {
     
 //    init() {
 //        viewModel.fetchInvitation()
-//        invitationCardData = viewModel.invitations[0]
-//        
+//        invitationCardData = viewMode8l.invitations[0]
+//
 //        defaultColor = self.invitationCardData?.color ?? "red"
 //
 //    }
@@ -35,12 +35,10 @@ struct MainView: View {
         ZStack {
             Color.backgroundColor
                 .ignoresSafeArea()
-            
             VStack {
-                
                 if isTouchedTicket {
                     VStack {
-                        expanedTicketView(flag: $isTouchedTicket)
+                        ExpanedTicketView(color: $defaultColor)
                             .offset(y: -50)
                             .background(Color.white)
                             .toolbar {
@@ -58,7 +56,7 @@ struct MainView: View {
                         
                     }
                 } else {
-                    ticketView(color: $defaultColor)
+                    TicketView(color: $defaultColor)
                         .offset(y: -100)
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.8)) {
