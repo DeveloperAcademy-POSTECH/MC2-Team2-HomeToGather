@@ -47,7 +47,7 @@ struct AddListView: View {
                             }
 
                         }
-                        .onReceive(Just($item)) { _ in limitText(10) }
+                        .onReceive(Just($item)) { _ in limitText(50) }
                     
                     
                     
@@ -69,7 +69,7 @@ struct AddListView: View {
                 Divider()
                 HStack{
                     Spacer()
-                    Text("\(item.count)/10")
+                    Text("\(item.count)/50")
                         .foregroundColor(.white)
                         .font(.system(size: 10       , weight: .light))
                 }
