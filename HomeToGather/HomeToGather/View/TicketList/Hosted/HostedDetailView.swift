@@ -10,6 +10,7 @@ import SwiftUI
 struct HostedDetailView: View {
     var hostData: Invitation
     @State private var isConfirmationDialogShow: Bool = false
+    @State var viewModel = ViewModel()
     
     let screenWidth = UIScreen.main.bounds.width
     
@@ -80,7 +81,9 @@ struct HostedDetailView: View {
                 .confirmationDialog("confirmationDialog", isPresented: $isConfirmationDialogShow, titleVisibility: .hidden) {
                     Button("공유하기") {}
                     Button("수정하기") {}
-                    Button("삭제하기", role: .destructive) {}
+                    Button("삭제하기", role: .destructive) {
+                        viewModel.deleteInvitation(hostData.id)
+                    }
                     Button("취소하기", role: .cancel) {}
                 }
             }
