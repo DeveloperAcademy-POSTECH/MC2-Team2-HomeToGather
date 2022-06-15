@@ -8,14 +8,12 @@
 import SwiftUI
 import Firebase
 import FirebaseFirestore
-import FirebaseStorage
 
 class HostedViewModel: ObservableObject {
     private var db = Firestore.firestore()
     private var storage = Storage.storage()
     
-    @Published var invitationsReceived = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")]
-    @Published var images: [String:UIImage] = ["test":UIImage(systemName: "pencil")!]
+    @Published var invitationsReceived = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
     
     func fetchInvitationsReceived(_ invitationUid: String) {
         db.collection("ii").addSnapshotListener { (querySnapshot, error) in
@@ -23,7 +21,7 @@ class HostedViewModel: ObservableObject {
                 print("No Documents")
                 return
             }
-            var received = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")]
+            var received = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
             received = documents.map({ (queryDocumentSnapshot) -> Invitation in
                 if queryDocumentSnapshot.data()["uid"] as? String ?? "" == invitationUid {
                     let data = queryDocumentSnapshot.data()
@@ -40,32 +38,16 @@ class HostedViewModel: ObservableObject {
                     let cost = data["cost"] as? String ?? "blank cost"
                     let food = data["food"] as? [String] ?? ["blank food"]
                     let etc = data["etc"] as? [String] ?? ["blank etc"]
-                    let image = data["image"] as? String ?? "blank image"
                     let ruleFeedback = data["ruleFeedback"] as? [String] ?? [""]
                     let foodFeedback = data["foodFeedback"] as? [String] ?? [""]
                     let color = data["color"] as? String ?? "blank color"
-                    self.fetchImage(id, image)
-                    return Invitation(id: id, uid: uid, organizerName: organizerName, participantName: participantName, participantUid: participantUid, title: title, date: date, place: place, description: description, rule: rule, cost: cost, food: food, etc: etc, image: image, ruleFeedback: ruleFeedback, foodFeedback: foodFeedback, color: color)
+                    return Invitation(id: id, uid: uid, organizerName: organizerName, participantName: participantName, participantUid: participantUid, title: title, date: date, place: place, description: description, rule: rule, cost: cost, food: food, etc: etc, ruleFeedback: ruleFeedback, foodFeedback: foodFeedback, color: color)
                 } else {
-                    return Invitation(id: "", uid: "", organizerName: "", title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")
+                    return Invitation(id: "", uid: "", organizerName: "", title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")
                 }
             })
             
             self.invitationsReceived = received.filter { $0.uid != "" }
-        }
-    }
-    
-    func fetchImage(_ invitationId: String, _ imageName: String) {
-        let ref = storage.reference().child("images/\(invitationId)/\(imageName)")
-        
-        ref.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if let error = error {
-                print("error while downloading image\n\(error.localizedDescription)")
-                return
-            } else {
-                let image = UIImage(data: data!)
-                self.images[imageName] = image
-            }
         }
     }
 }
