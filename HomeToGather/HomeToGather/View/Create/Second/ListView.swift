@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+
 struct ListView: View {
 
     @EnvironmentObject var partyData: PartyData
@@ -19,12 +20,13 @@ struct ListView: View {
         HStack {
             Text("•")
             Text(text)
+                .font(.notoSans(withStyle: .Light, size: 16))
             Spacer()
             Button(action: {
                 lists.remove(at: index)
                 print((lists))
             }, label: {
-                Image(systemName: "minus.circle")
+                Image(systemName: "minus")
                     .foregroundColor(.white)
             })
         }
