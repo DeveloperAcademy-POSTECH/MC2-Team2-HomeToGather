@@ -39,7 +39,8 @@ struct InvitedDetailView: View {
                                 HStack(spacing: -5) {
                                     if let participants = invitationData.participantName {
                                         ForEach(participants, id: \.self) { name in
-                                            ParticipantView(name: name)
+                                            let indexNum = invitationData.participantName?.firstIndex(of: name)
+                                            ParticipantView(name: name, indexNum: indexNum ?? 0)
                                         }
                                     }
                                 }

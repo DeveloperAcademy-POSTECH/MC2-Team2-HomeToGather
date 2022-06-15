@@ -1,3 +1,10 @@
+//
+//  MainView.swift
+//  HomeToGather
+//
+//  Created by Doyun Park on 2022/06/08.
+//
+
 import SwiftUI
 
 struct MainView: View {
@@ -8,24 +15,30 @@ struct MainView: View {
     
     @State var showSettings = false
     @State var isSuccess = false
-    
-    let viewModel: ViewModel = ViewModel()
+    @State var defaultColor: PartyColors = .red
+    let viewModel = ViewModel()
     
     // Deeplink Property
     let deeplinkManager = DeeplinkManager()
-    @State private var invitationCardData: Invitation? = nil
-    @State private var invitationCardViewToggle: Bool = false
+    @State private var invitationCardData: Invitation?
+    @State private var invitationCardViewToggle = false
+    
+//    init() {
+//        viewModel.fetchInvitation()
+//        invitationCardData = viewMode8l.invitations[0]
+//
+//        defaultColor = self.invitationCardData?.color ?? "red"
+//
+//    }
     
     var body: some View {
         ZStack {
             Color.backgroundColor
                 .ignoresSafeArea()
-            
             VStack {
-                
                 if isTouchedTicket {
                     VStack {
-                        expanedTicketView(flag: $isTouchedTicket)
+                        ExpanedTicketView(color: $defaultColor)
                             .offset(y: -50)
                             .background(Color.white)
                             .toolbar {
@@ -44,7 +57,7 @@ struct MainView: View {
                     }
                     
                 } else {
-                    ticketView(isTicketGesture: isTicketGesture)
+                    TicketView(color: $defaultColor)
                         .offset(y: -100)
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.8)) {

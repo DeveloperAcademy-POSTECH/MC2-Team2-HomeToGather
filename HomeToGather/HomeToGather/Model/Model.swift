@@ -16,7 +16,6 @@ struct Invitation: Hashable {
     var cost: String                // 파티 비용
     var food: [String]              // 메뉴
     var etc: [String]               // 기타
-    var image: String = ""          // 이미지
     var ruleFeedback: [String] = [""] // 규칙 피드백
     var foodFeedback: [String] = [""] // 메뉴 피드백
     var color: String               // 초대장 색상
@@ -36,7 +35,6 @@ struct Invitation: Hashable {
                 "cost": cost,
                 "food": food,
                 "etc": etc,
-                "image": image,
                 "ruleFeedback": ruleFeedback,
                 "foodFeedback": foodFeedback,
                 "color": color,

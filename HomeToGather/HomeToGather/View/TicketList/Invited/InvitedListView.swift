@@ -22,7 +22,6 @@ let data: [Invitation] = [
         cost: "10,000원",
         food: ["치킨", "도넛", "연어", "토스트"],
         etc: ["기타 사항 없앴슴미당"],
-        image: "party",
         ruleFeedback: ["어쩔티비도 쓰고 싶어요.", "Nice Nice도 리액션으로 추가해주세요"],
         foodFeedback: ["피자 시러요", "무 안 먹어요", "피클 안 먹음."],
         color: "brandColor"
@@ -40,7 +39,6 @@ let data: [Invitation] = [
         cost: "",
         food: ["치킨", "광어", "삼겹살"],
         etc: ["기타 사항 없앴슴미당"],
-        image: "party",
         ruleFeedback: ["어쩔티비도 쓰고 싶어요.", "Nice Nice도 리액션으로 추가해주세요"],
         foodFeedback: ["피자 시러요", "무 안 먹어요", "피클 안 먹음."],
         color: "card1Color"

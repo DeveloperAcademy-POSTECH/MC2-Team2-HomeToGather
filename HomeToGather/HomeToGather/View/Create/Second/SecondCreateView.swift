@@ -10,23 +10,18 @@ import SwiftUI
 struct SecondCreateView: View {
     @EnvironmentObject var partyData: PartyData
     var body: some View {
-
-        VStack(alignment: .center, spacing: 20) {
-
-            ProgressBar(num: 2)
-                .padding(.leading, 40)
-
-
-            ZStack {
+        VStack() {
                 ScrollView {
-                    VStack(alignment: .center, spacing: 22) {
+                    VStack() {
+                        
+                        ProgressBar(num: 2)
+                        
                         RuleView()
-
-
+                            .padding(.bottom, 20)
                         FoodView()
                     }
                 }
-            }
+            
             .onTapGesture {
                 hideKeyboard()
                 if partyData.cost != "" {

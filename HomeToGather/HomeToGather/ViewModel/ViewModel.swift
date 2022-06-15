@@ -1,46 +1,21 @@
 import SwiftUI
 import Firebase
 import FirebaseFirestore
-import FirebaseStorage
 
 class ViewModel: ObservableObject {
     private var db = Firestore.firestore()
     private var storage = Storage.storage()
-    @Published var invitations = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], image: "", ruleFeedback: [""], foodFeedback: [""], color: "")]
-    @Published var images: [String:UIImage] = ["test":UIImage(systemName: "pencil")!]
+    @Published var invitations = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
 
-    func uploadInvitation(_ invitation: Invitation, _ image: UIImage) {
+    func uploadInvitation(_ invitation: Invitation) {
         let uid = getUserUid()
         let id = UUID().uuidString
-        let imageName = UUID().uuidString
         
-        uploadImage(image, (id + "/" + imageName))
-        
-        let invitation = Invitation(id: id, uid: uid, organizerName: invitation.organizerName, participantName: invitation.participantName, participantUid: invitation.participantUid, title: invitation.title, date: invitation.date, place: invitation.place, description: invitation.description, rule: invitation.rule, cost: invitation.cost, food: invitation.food, etc: invitation.etc, image: imageName, ruleFeedback: [""], foodFeedback: [""], color: invitation.color)
+        let invitation = Invitation(id: id, uid: uid, organizerName: invitation.organizerName, participantName: invitation.participantName, participantUid: invitation.participantUid, title: invitation.title, date: invitation.date, place: invitation.place, description: invitation.description, rule: invitation.rule, cost: invitation.cost, food: invitation.food, etc: invitation.etc, ruleFeedback: [""], foodFeedback: [""], color: invitation.color)
         
         let _ = db.collection("ii").document(id).setData(invitation.dictionary)
     }
-
-    func uploadImage(_ image: UIImage, _ name: String) {
-        let storageRef = storage.reference().child("images/\(name)")
-            let data = image.jpegData(compressionQuality: 0.1)
-            let metadata = StorageMetadata()
-            metadata.contentType = "image/jpg"
-            
-            // uploda data
-            if let data = data {
-                storageRef.putData(data, metadata: metadata) { (metadata, err) in
-                    if let err = err {
-                        print("err when uploading jpg\n\(err)")
-                    }
-                    
-                    if let metadata = metadata {
-                        print("metadata: \(metadata)")
-                    }
-                }
-            }
-    }
-
+    
     func fetchInvitation() {
         db.collection("ii").addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
@@ -63,27 +38,11 @@ class ViewModel: ObservableObject {
                 let cost = data["cost"] as? String ?? "blank cost"
                 let food = data["food"] as? [String] ?? ["blank food"]
                 let etc = data["etc"] as? [String] ?? ["blank etc"]
-                let image = data["image"] as? String ?? "blank image"
                 let ruleFeedback = data["ruleFeedback"] as? [String] ?? [""]
                 let foodFeedback = data["foodFeedback"] as? [String] ?? [""]
                 let color = data["color"] as? String ?? "blank color"
-                self.fetchImage(id, image)
-                return Invitation(id: id, uid: uid, organizerName: organizerName, participantName: participantName, participantUid: participantUid, title: title, date: date, place: place, description: description, rule: rule, cost: cost, food: food, etc: etc, image: image, ruleFeedback: ruleFeedback, foodFeedback: foodFeedback, color: color)
+                return Invitation(id: id, uid: uid, organizerName: organizerName, participantName: participantName, participantUid: participantUid, title: title, date: date, place: place, description: description, rule: rule, cost: cost, food: food, etc: etc, ruleFeedback: ruleFeedback, foodFeedback: foodFeedback, color: color)
             })
-        }
-    }
-    
-    func fetchImage(_ invitationId: String, _ imageName: String) {
-        let ref = storage.reference().child("images/\(invitationId)/\(imageName)")
-        
-        ref.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if let error = error {
-                print("error while downloading image\n\(error.localizedDescription)")
-                return
-            } else {
-                let image = UIImage(data: data!)
-                self.images[imageName] = image
-            }
         }
     }
     
@@ -133,7 +92,6 @@ class ViewModel: ObservableObject {
                                         cost: document["cost"] as? String ?? "empty",
                                         food: document["food"] as? [String] ?? [],
                                         etc: document["etc"] as? [String] ?? [],
-                                        image: document["image"] as? String ?? "empty",
                                         ruleFeedback: document["ruleFeedback"] as? [String] ?? [],
                                         foodFeedback: document["foodFeedback"] as? [String] ?? [],
                                         color: document["color"] as? String ?? "empty")

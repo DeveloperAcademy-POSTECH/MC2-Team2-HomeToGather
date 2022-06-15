@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct expanedTicketView: View {
+struct ExpanedTicketView: View {
     
     @State var partyTitle = "PARTY TITLE"
     @State var partySubtitle = "SUBTITLE"
@@ -23,12 +23,9 @@ struct expanedTicketView: View {
     @State var place = "서울 서초구 사임당로 130"
     
     @State var isTearTicket = false
-    
-    
-    
+    @Binding var color: PartyColors
     //    false면 왼쪽에서 드래그, true면 오른쪽에서 드래그
     @State var direction = false
-    @Binding var flag: Bool
     
     var body: some View {
         VStack {
@@ -40,12 +37,10 @@ struct expanedTicketView: View {
                             .fill(Color.white)
                             .frame(width: 314, height: 514, alignment: .center)
                         
-                        
-                        
                         ZStack {
                             
                             RoundedRectangle(cornerRadius: 4)
-                                .fill(LinearGradient(gradient: Gradient(colors: [.purple, Color.init(red: 88/255.0, green: 209/255.0, blue: 255/255.0)]),
+                                .fill(LinearGradient(gradient: Gradient(colors: [.purple, Color.getColor(color:color)]),
                                                      startPoint: .leading, endPoint: .trailing))
                             VStack(alignment:.leading,spacing: 5) {
                                 

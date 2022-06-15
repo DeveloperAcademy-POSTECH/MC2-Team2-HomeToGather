@@ -5,41 +5,40 @@
 //  Created by KoJeongseok on 2022/06/14.
 //
 import SwiftUI
+import Combine
 
 struct AddListView: View {
 
     @EnvironmentObject var partyData: PartyData
-
     @Binding var lists: [String]
     @State var item: String = ""
     var text: String
     var placeholder: String
     let size: CGFloat = UIScreen.main.bounds.width
-
+    //        .font(.notoSans(withStyle: .Bold, size: 28))
     var body: some View {
         VStack {
             HStack {
                 Text(text)
-                    .font(.system(size: 16))
+                    .font(.notoSans(withStyle: .Light, size: 16))
+                    .foregroundColor(.white)
 
                 Spacer()
             }
+            .padding(.bottom, 5)
 
             ForEach(0..<lists.count, id: \.self) { num in
                 ListView(lists: $lists, item: $item, text: lists[num] , index: num)
-                    .padding(.top, 20)
+                    .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 20))
 
             }
             VStack {
 
                 HStack {
-                    TextField("", text: $item)
-                        .placeholder(when: item.isEmpty) {
-                            Text(placeholder)
-                                .foregroundColor(Color.gray)
-                                .font(.system(size: 16))
-
-                        }
+                    TextField(placeholder, text: $item)
+                        .font(.notoSans(withStyle: .Light, size: 16))
+                        .foregroundColor(.white)
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 7, trailing: 20))
                         .onSubmit {
                             if item != ""{
                                 lists.append(item)
@@ -48,8 +47,13 @@ struct AddListView: View {
                             }
 
                         }
+                        .onReceive(Just($item)) { _ in limitText(10) }
+                    
+                    
+                    
                     if item != "" {
                         Button(action: {
+                            hideKeyboard()
                             lists.append(item)
                             item = ""
                             print(lists)
@@ -63,8 +67,19 @@ struct AddListView: View {
                 }
 
                 Divider()
+                HStack{
+                    Spacer()
+                    Text("\(item.count)/10")
+                        .foregroundColor(.white)
+                        .font(.system(size: 10       , weight: .light))
+                }
+                    
             }
-            .padding(.top, 20)
+        }
+    }
+    func limitText(_ upper: Int) {
+        if item.count > upper {
+            item = String(item.prefix(upper))
         }
     }
 }
