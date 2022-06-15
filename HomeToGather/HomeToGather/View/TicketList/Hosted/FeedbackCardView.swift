@@ -36,6 +36,7 @@ struct FeedbackCardView: View {
                             HStack(spacing: 0) {
                                 Text("· ")
                                 Text(content)
+                                    .font(content.guessLanguage() == "한국어" ? .notoSans(withStyle: .Light, size: 14) : .montserrat(withStyle: .Light, size: 14))
                             }
                         }
                     }
@@ -53,6 +54,7 @@ struct FeedbackCardView: View {
                             HStack(spacing: 0) {
                                 Text("· ")
                                 Text(feedback)
+                                    .font(feedback.guessLanguage() == "한국어" ? .notoSans(withStyle: .Medium, size: 12) : .montserrat(withStyle: .Medium, size: 12))
                             }
                         }
                     }

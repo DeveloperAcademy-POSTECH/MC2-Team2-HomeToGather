@@ -27,3 +27,13 @@ extension Font {
       return .custom("Montserrat-\(family)", size: size)
     }
 }
+
+extension String {
+    func guessLanguage() -> String {
+        let length = self.utf16.count
+        let languageCode = CFStringTokenizerCopyBestStringLanguage(self as CFString, CFRange(location: 0, length: length)) as String? ?? ""
+
+        let locale = Locale(identifier: languageCode)
+        return locale.localizedString(forLanguageCode: languageCode) ?? "Unknown"
+    }
+}

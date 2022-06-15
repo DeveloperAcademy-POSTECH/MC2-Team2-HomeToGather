@@ -23,7 +23,8 @@ struct InvitationView: View {
                         
                         Text("불참")
                             .foregroundColor(.white)
-                            .font(.system(size: 17, weight: .bold))
+//                            .font(.system(size: 17, weight: .bold))
+                            .font(.montserrat(withStyle: .Bold, size: 17))
                     }
                 })
                 .padding(.trailing, 5)
@@ -36,7 +37,8 @@ struct InvitationView: View {
                         
                         Text("참여")
                             .foregroundColor(.white)
-                            .font(.system(size: 17, weight: .bold))
+//                            .font(.system(size: 17, weight: .bold))
+                            .font(.montserrat(withStyle: .Bold, size: 17))
                     }
                 })
                 .padding(.leading, 5)
