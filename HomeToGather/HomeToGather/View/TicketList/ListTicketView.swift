@@ -105,16 +105,30 @@ struct ListTicketView: View {
                 .frame(maxHeight: 148)
                 .padding(5)
                 
-                Image("mirrorBallRotate")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 160, height: 77)
+                VStack(spacing: 0) {
+                    Spacer()
+                    
+                    HStack(spacing: 0) {
+                        Spacer()
+                        
+                        Image("mirrorBallRotate")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 160, height: 77)
+                    }
+                }
+                .padding(5)
             }
             
-            RoundedRectangle(cornerRadius: 4)
-                .fill(.white)
-                .frame(maxWidth: 83, maxHeight: 155)
+            ZStack {
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(.white)
+                    .frame(maxWidth: 83, maxHeight: 155)
+                
+                
+            }
         }
+        .frame(height: 155)
         .preferredColorScheme(.dark)
 //        VStack {
 //            VStack(spacing: 2) {
