@@ -22,6 +22,7 @@ struct SecondCreateView: View {
                 
                 RuleView()
                     .padding(.bottom, 20)
+
                 FoodView()
             }
         }

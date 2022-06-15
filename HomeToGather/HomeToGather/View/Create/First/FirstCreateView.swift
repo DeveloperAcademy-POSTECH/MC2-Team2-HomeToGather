@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct FirstCreateView: View {
-    
+    @StateObject var partyData = PartyData()
     @State private var isDisabled = false
     
-    init()
-    {UINavigationBar.appearance().tintColor = .white}
+    init(){
+        UINavigationBar.appearance().tintColor = .white
+    }
     
     var body: some View {
         ZStack {
@@ -22,6 +23,7 @@ struct FirstCreateView: View {
             ScrollView {
                 VStack{
                     FirstInfo()
+                        .environmentObject(partyData)
                 }
             }
         }
@@ -31,6 +33,7 @@ struct FirstCreateView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink(destination: {
                     SecondCreateView()
+                        .environmentObject(partyData)
                 }, label: {
                     Text("다음")
                         .foregroundColor(isDisabled ? .gray : .white)

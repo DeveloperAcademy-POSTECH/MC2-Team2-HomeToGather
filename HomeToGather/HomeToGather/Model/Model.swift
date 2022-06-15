@@ -21,25 +21,25 @@ struct Invitation: Hashable {
     var color: String               // 초대장 색상get
     
     var dictionary: [String: Any] {
-            return [
-                "id": id,
-                "uid": uid,
-                "organizerName": organizerName,
-                "participantName": participantName != nil ? participantName! : [""],
-                "participantUid": participantUid != nil ? participantUid! : [""],
-                "title": title,
-                "date": date,
-                "place": place,
-                "description": description,
-                "rule": rule,
-                "cost": cost,
-                "food": food,
-                "etc": etc,
-                "ruleFeedback": ruleFeedback,
-                "foodFeedback": foodFeedback,
-                "color": color,
-            ]
-        }
+        return [
+            "id": id,
+            "uid": uid,
+            "organizerName": organizerName,
+            "participantName": participantName != nil ? participantName! : [""],
+            "participantUid": participantUid != nil ? participantUid! : [""],
+            "title": title,
+            "date": date,
+            "place": place,
+            "description": description,
+            "rule": rule,
+            "cost": cost,
+            "food": food,
+            "etc": etc,
+            "ruleFeedback": ruleFeedback,
+            "foodFeedback": foodFeedback,
+            "color": color,
+        ]
+    }
 }
 
 extension Invitation {

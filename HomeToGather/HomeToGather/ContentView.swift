@@ -65,14 +65,12 @@ struct ContentView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing, content: {
-                    if !isTouchedTicket {
                         NavigationLink(destination: {
                             FirstCreateView()
                         }, label: {
                             Image(systemName: "plus.square")
                                 .foregroundColor(.white)
                         })
-                    }
                 })
             }
             .navigationBarTitle("", displayMode: .inline)
