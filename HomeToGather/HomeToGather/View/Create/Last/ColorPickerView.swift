@@ -43,7 +43,7 @@ struct ColorPickerView: View {
                         }
                         Spacer()
                     }
-                    .padding(EdgeInsets(top: 23, leading: 20, bottom: 42, trailing: 20))
+                    .padding(EdgeInsets(top: 13, leading: 20, bottom: 22, trailing: 20))
                     .background(Color.backgroundColor)
                     
                     TicketView(color: $selectedColor)
@@ -58,7 +58,7 @@ struct ColorPickerView: View {
                         .background(Color.partyPurple)
                         .cornerRadius(8)
                         .foregroundColor(.white)
-                        .padding(EdgeInsets(top: 23, leading: 20, bottom: 42, trailing: 20))
+                        .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
                 }
             }
         }
