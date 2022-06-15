@@ -52,15 +52,19 @@ class ViewModel: ObservableObject {
     }
     
     func correctionRuleFeedback(_ invitation: Invitation,_ ruleFeedback: String) {
+        var correctionInvitation = invitation
         var feedback: [String] = invitation.ruleFeedback
         feedback.append(ruleFeedback)
-        let _ = db.collection("ii").document(invitation.id).setData(["ruleFeedback":feedback])
+        correctionInvitation.ruleFeedback = feedback
+        let _ = db.collection("ii").document(invitation.id).setData(correctionInvitation.dictionary)
     }
     
     func correctionFoodFeedback(_ invitation: Invitation,_ foodFeedback: String) {
+        var correctioinInvitation = invitation
         var feedback: [String] = invitation.foodFeedback
         feedback.append(foodFeedback)
-        let _ = db.collection("ii").document(invitation.id).setData(["foodFeedback":feedback])
+        correctioinInvitation.foodFeedback = feedback
+        let _ = db.collection("ii").document(invitation.id).setData(correctioinInvitation.dictionary)
     }
     
     func deleteInvitation(_ invitationId: String) {
