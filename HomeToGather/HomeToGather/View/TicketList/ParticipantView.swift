@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ParticipantView: View {
     var name: String
+    var indexNum: Int
     
     let colors: [Color] = [
         Color.brandColor, Color.card1Color, Color.card2Color, Color.card3Color
@@ -20,10 +21,12 @@ struct ParticipantView: View {
         ZStack {
             Circle()
                 .strokeBorder(Color.cardBackgroundColor, lineWidth: 2)
-                .background(Circle().foregroundColor(colors[index]))
+                .background(Circle().foregroundColor(colors[indexNum%(colors.count)]))
                 .frame(width: 35, height: 35)
         
             Text(name)
+                .frame(width: 23)
+                .truncationMode(.tail)
                 .font(.system(size: 8))
                 .foregroundColor(.black)
                 .lineLimit(1)
@@ -35,6 +38,6 @@ struct ParticipantView: View {
 
 struct ParticipantView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticipantView(name: "정지혁")
+        ParticipantView(name: "정지혁", indexNum: 0)
     }
 }
