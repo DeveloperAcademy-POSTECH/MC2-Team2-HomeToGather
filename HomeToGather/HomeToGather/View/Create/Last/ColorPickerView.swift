@@ -43,7 +43,7 @@ struct ColorPickerView: View {
                     }
                 }).background(Color.backgroundColor)
                 
-                ticketView(isTicketGesture: false, color: $selectedColor)
+                ticketView(color: $selectedColor)
                     .background(Color.clear)
                 
                 Button {
