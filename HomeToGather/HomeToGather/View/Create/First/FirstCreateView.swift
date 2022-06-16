@@ -10,6 +10,7 @@ import SwiftUI
 struct FirstCreateView: View {
     @StateObject var partyData = PartyData()
     @Environment(\.dismiss) var dismiss
+    @State var changeAni: Bool = false
     
     init(){
         UINavigationBar.appearance().tintColor = .white
@@ -34,7 +35,6 @@ struct FirstCreateView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
-                    print("PartyDataReset")
                     dismiss()
                 }, label: {
                     Image(systemName: "chevron.backward")
@@ -45,20 +45,20 @@ struct FirstCreateView: View {
             }
         }
         
-        
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink(destination: {
                     SecondCreateView()
                         .environmentObject(partyData)
-                    
-                    
                 }, label: {
                     Text("다음")
                         .foregroundColor(isDisabled() ? .gray : .white)
-                }).disabled(isDisabled())
+                })
+                .disabled(isDisabled())
             }
+            
         }
+        
     }
     
     func isDisabled() -> Bool {
