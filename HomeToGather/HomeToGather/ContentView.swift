@@ -136,6 +136,13 @@ struct ContentView: View {
                     EmptyView()
                 }
             }
+//            .onAppear{
+//                UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation") //forcing the rotation to portrait
+//                
+//                AppDelegate.orientationLock = .portrait
+//            }.onDisappear{
+//                AppDelegate.orientationLock = .all
+//            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     if isTouchedTicket {

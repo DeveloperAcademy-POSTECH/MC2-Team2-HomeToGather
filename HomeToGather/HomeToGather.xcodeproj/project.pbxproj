@@ -30,6 +30,7 @@
 		B9BF1D632858A8570081DC4A /* HostedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BF1D622858A8570081DC4A /* HostedViewModel.swift */; };
 		B9BF1D652858A86D0081DC4A /* InvitedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BF1D642858A86D0081DC4A /* InvitedViewModel.swift */; };
 		B9C1AA3B285A0024002C6516 /* ModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1AA3A285A0024002C6516 /* ModifyView.swift */; };
+		B9C1AA3D285AFDD1002C6516 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1AA3C285AFDD1002C6516 /* Date.swift */; };
 		B9CF5CA528572D50002B69FB /* ListTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CF5CA428572D50002B69FB /* ListTicketView.swift */; };
 		B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0FC002856505500D5BCC3 /* InvitationView.swift */; };
 		D760C181285857F6004D9D10 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760C180285857F6004D9D10 /* HideKeyboard.swift */; };
@@ -101,6 +102,7 @@
 		B9BF1D622858A8570081DC4A /* HostedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedViewModel.swift; sourceTree = "<group>"; };
 		B9BF1D642858A86D0081DC4A /* InvitedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedViewModel.swift; sourceTree = "<group>"; };
 		B9C1AA3A285A0024002C6516 /* ModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyView.swift; sourceTree = "<group>"; };
+		B9C1AA3C285AFDD1002C6516 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		B9CF5CA428572D50002B69FB /* ListTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTicketView.swift; sourceTree = "<group>"; };
 		B9D0FC002856505500D5BCC3 /* InvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
 		D760C180285857F6004D9D10 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
@@ -196,7 +198,6 @@
 				75D6805128571C970097B97A /* FirstCreateView.swift */,
 				75E65DD02859F5D600D92381 /* ModifyView.swift */,
 				75D6805328571CD60097B97A /* FirstInfo.swift */,
-				B9C1AA3A285A0024002C6516 /* ModifyView.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -351,8 +352,10 @@
 				34E0F8532859AB15002A8A42 /* Share */,
 				E48CDB082858722400786DB2 /* Third */,
 				75D6804C285711200097B97A /* Components */,
+				34E0F8532859AB15002A8A42 /* Share */,
 				75D6804D285711280097B97A /* First */,
 				75D6804E285714190097B97A /* Second */,
+				E48CDB082858722400786DB2 /* Third */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				E477390328533A6900C1403F /* Color.swift */,
 				B95078032854D9F900F7825A /* View.swift */,
 				D760C180285857F6004D9D10 /* HideKeyboard.swift */,
+				B9C1AA3C285AFDD1002C6516 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -556,7 +560,6 @@
 				D7A1252928585C6300F68084 /* CostView.swift in Sources */,
 				B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */,
 				75D6805E28571E6A0097B97A /* SearchAddressButton.swift in Sources */,
-				B9C1AA3B285A0024002C6516 /* ModifyView.swift in Sources */,
 				B95077FE28548D3D00F7825A /* InvitedDetailView.swift in Sources */,
 				E26A38882853076800AD8EFF /* ViewModel.swift in Sources */,
 				E403DD742851DFE9004C8391 /* ContentView.swift in Sources */,
@@ -568,6 +571,7 @@
 				E26A38832851F50D00AD8EFF /* MainView.swift in Sources */,
 				345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */,
 				75D6805C28571DD00097B97A /* PartyData.swift in Sources */,
+				B9C1AA3D285AFDD1002C6516 /* Date.swift in Sources */,
 				D760C18328585861004D9D10 /* ProgressBar.swift in Sources */,
 				E252A789285AFF82007EE497 /* LicenseModel.swift in Sources */,
 				E217AB4D28561F5B00242BAD /* TicketView.swift in Sources */,
@@ -739,7 +743,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortrait UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -871,7 +875,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortrait UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

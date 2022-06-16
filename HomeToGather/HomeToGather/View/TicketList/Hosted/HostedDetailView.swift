@@ -11,11 +11,13 @@ struct HostedDetailView: View {
     var hostData: Invitation
     @State private var isConfirmationDialogShow: Bool = false
     @State var viewModel = ViewModel()
+    @State var changeData: Bool = false
+    
     var partyData: PartyData = PartyData()
     
     init(hostData: Invitation) {
         self.hostData = hostData
-        self.partyData = PartyData(rule: hostData.rule, food: hostData.food, cost: hostData.cost, title: hostData.title, date: hostData.date, place: hostData.place, description: hostData.description, color: hostData.color, isModifying: true)
+        self.partyData = PartyData(rule: hostData.rule, food: hostData.food, cost: hostData.cost, title: hostData.title, date: hostData.date, place: hostData.place, description: hostData.description, color: hostData.color, isModifying: true, hostId: hostData.id)
     }
     
     private let randomImageName: [String] = ["partyIamge1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]
@@ -77,14 +79,10 @@ struct HostedDetailView: View {
                     
                     FeedbackCardView(title: "메뉴", contents: hostData.food, feedbackContents: hostData.foodFeedback)
                     
-                    NavigationLink {
-                        ModifyView()
-                            .environmentObject(partyData)
-                    } label: {
-                        Image(systemName: "ellipsis.circle.fill")
-                    }
                 }
                 .padding(20)
+                
+                NavigationLink(destination: ModifyView().environmentObject(partyData), isActive: self.$changeData){EmptyView()}.disabled(true)
             }
         }
         .toolbar {
@@ -97,7 +95,9 @@ struct HostedDetailView: View {
                 })
                 .confirmationDialog("confirmationDialog", isPresented: $isConfirmationDialogShow, titleVisibility: .hidden) {
                     Button("공유하기") {}
-                    Button("수정하기") {}
+                    Button("수정하기") {
+                        self.changeData = true
+                    }
                     Button("삭제하기", role: .destructive) {
                         viewModel.deleteInvitation(hostData.id)
                     }

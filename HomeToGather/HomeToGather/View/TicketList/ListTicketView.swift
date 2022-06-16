@@ -29,7 +29,7 @@ let data: [Invitation] = [
         participantName: ["최은지", "정지혁", "박성민", "고정석", "정우영", "박도윤"],
         participantUid: ["Alice", "Jayden", "LED", "Journey", "Hatchlilng", "Dino"],
         title: "i!",
-        date: "2022. 06. 20",
+        date: "2022-06-17 14:13",
         place: "경북 포항시 지곡로 83(포스빌) 0동 000호",
         description: "디박이네 집들이",
         rule: ["말 끝마다 Assertive 필수", "리액션은 'Good Good'로 하기"],
@@ -46,7 +46,7 @@ let data: [Invitation] = [
         participantName: ["최은지", "고정석", "정우영", "박도윤"],
         participantUid: ["Alice", "Journey", "Hatchlilng", "Dino"],
         title: "i!!i",
-        date: "2022. 06. 24",
+        date: "2022-06-02 14:13",
         place: "경북 포항시 지곡로 83(포스빌) 0동 000호",
         description: "기념일",
         rule: ["말 끝마다 Assertive 금지", "리액션은 'Good Good'로 안하기"],
@@ -67,8 +67,6 @@ struct ListTicketView: View {
     
     @State var placeLabel = "PLACE"
     @State var timeLabel = "TIME"
-    
-    @State var isOutdated = false
     
     var body: some View {
         HStack(spacing: 0) {
@@ -119,6 +117,28 @@ struct ListTicketView: View {
                     }
                 }
                 .padding(5)
+                
+                ZStack {
+                    HStack(spacing: 0) {
+                        Spacer()
+                        
+                        VStack(spacing: 0) {
+                            ZStack(alignment: .bottomLeading) {
+                                Triangle()
+                                    .fill(Color.white)
+                                    .frame(width: 24, height: 24,alignment: .trailing)
+                                
+                                Triangle()
+                                    .fill(Color.black)
+                                    .frame(width: 17, height: 17,alignment: .trailing)
+                            }
+                            .rotationEffect(.degrees(180))
+                            
+                            Spacer()
+                        }
+                    }
+                }
+                .frame(maxWidth: screenWidth, maxHeight: screenWidth)
             }
             
             ZStack {
@@ -185,7 +205,7 @@ struct ListTicketView: View {
                 .frame(width: 83, height: 155)
                 .rotationEffect(.degrees(-90))
             }
-            .opacity(isOutdated ? 0 : 1)
+            .opacity(Date().dateCompare(fromDate: invitationData.date.toDate() ?? Date()) == .orderedAscending ? 0 : 1)
         }
         .frame(height: 155)
         .preferredColorScheme(.dark)
@@ -195,6 +215,9 @@ struct ListTicketView: View {
 struct ListTicket_Previews: PreviewProvider {
     static var previews: some View {
         ListTicketView(invitationData: data[0])
+            .previewDevice("iPhone 13 Pro")
+        
+        ListTicketView(invitationData: data[1])
             .previewDevice("iPhone 13 Pro")
     }
 }
