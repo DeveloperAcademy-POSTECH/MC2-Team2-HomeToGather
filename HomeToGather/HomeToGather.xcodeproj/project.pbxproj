@@ -74,6 +74,7 @@
 		E477390428533A6900C1403F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477390328533A6900C1403F /* Color.swift */; };
 		E48CDB0A2858725200786DB2 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48CDB092858725200786DB2 /* ColorView.swift */; };
 		E48CDB0C2858726700786DB2 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48CDB0B2858726600786DB2 /* ColorPickerView.swift */; };
+		E4CB512F285B02B8007F6C00 /* TicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB512E285B02B8007F6C00 /* TicketViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +150,7 @@
 		E477390328533A6900C1403F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E48CDB092858725200786DB2 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		E48CDB0B2858726600786DB2 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		E4CB512E285B02B8007F6C00 /* TicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 			children = (
 				E26A386E2851F40300AD8EFF /* AppleLogin.swift */,
 				E26A38872853076800AD8EFF /* ViewModel.swift */,
+				E4CB512E285B02B8007F6C00 /* TicketViewModel.swift */,
 				345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */,
 				B9BF1D622858A8570081DC4A /* HostedViewModel.swift */,
 				B9BF1D642858A86D0081DC4A /* InvitedViewModel.swift */,
@@ -603,6 +606,7 @@
 				E48CDB0C2858726700786DB2 /* ColorPickerView.swift in Sources */,
 				E403DD722851DFE9004C8391 /* HomeToGatherApp.swift in Sources */,
 				D7A1253128585CE100F68084 /* RuleView.swift in Sources */,
+				E4CB512F285B02B8007F6C00 /* TicketViewModel.swift in Sources */,
 				75D6805828571D100097B97A /* TitleRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
