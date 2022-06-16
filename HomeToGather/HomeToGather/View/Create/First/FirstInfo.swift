@@ -22,7 +22,7 @@ struct FirstInfo: View {
     }
     
     var body: some View {
-        ProgressBar(num: 1)
+        ProgressBar(counter: 0.0)
         VStack(alignment: .leading) {
             TitleRow(text: "홈파티 소개")
                 .padding(EdgeInsets(top: 65, leading: 20, bottom: 36, trailing: 20))
@@ -106,11 +106,8 @@ struct FirstInfo: View {
     
     func dateToString(date: Date) {
         let dateFormatter = DateFormatter()
-        //    // Set Date Format
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        //    // Convert Date to String
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
         partyData.date = dateFormatter.string(from: date)
-        print(partyData.date)
     }
 }
 
