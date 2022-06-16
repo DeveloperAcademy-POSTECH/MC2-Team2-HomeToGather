@@ -69,7 +69,8 @@ struct FirstInfo: View {
             
             VStack(alignment: .leading){
                 SubTitleRow(text: "날짜/시간")
-                DatePicker(selection: $date, label: {Image(systemName: "calendar")})
+                DatePicker(selection: $date, in: Date()...,
+                           displayedComponents: [.date, .hourAndMinute], label: {Image(systemName: "calendar")})
                     .onChange(of: self.date) { date in
                         dateToString(date: date)
                     }
@@ -109,6 +110,7 @@ struct FirstInfo: View {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         //    // Convert Date to String
         partyData.date = dateFormatter.string(from: date)
+        print(partyData.date)
     }
 }
 
