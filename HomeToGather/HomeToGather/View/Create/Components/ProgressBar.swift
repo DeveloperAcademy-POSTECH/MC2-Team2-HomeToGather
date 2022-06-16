@@ -4,64 +4,83 @@
 //
 //  Created by KoJeongseok on 2022/06/14.
 //
-
 import SwiftUI
-import CoreGraphics
 
 struct ProgressBar: View {
-
-    let progressBarBasicSize: CGFloat = UIScreen.main.bounds.width / 4
-    var num: Int
-
+    
+    //counter: total값이 100인 프로그레스바의 시점지점
+    @State var counter: Double
+    
+    let circleSize: CGFloat = 30
+    
+    
     var body: some View {
-            HStack {
-                ZStack {
-                    Circle()
-                        .frame(width: progressBarBasicSize / 4, height: progressBarBasicSize / 4)
-                        .foregroundColor(.purple)
-                    Text("1")
-                        .foregroundColor(.white)
-                        .bold()
+        HStack {
+            ZStack {
+                ProgressView(value: counter, total: 100)
+                    .accentColor(.purple)
+                    .scaleEffect(x: 1, y: 1.5, anchor: .center)
+                    .onAppear {
+                        if counter != 0.0 {
+                            self.runCounter(counter: self.$counter, start: counter - 50.0, end: counter, speed: 0.02)
+                        }
+                        
+                        
+                    }
+                
+                HStack {
+                    
+                    ZStack {
+                        Circle()
+                            .frame(width: circleSize, height: circleSize)
+                            .foregroundColor(.partyPurple)
+                        Text(String("1"))
+                            .foregroundColor(.white)
+                    }
+                    
+                    Spacer()
+                    
+                    ZStack {
+                        Circle()
+                            .frame(width: circleSize, height: circleSize)
+                            .foregroundColor($counter.wrappedValue >= 40.0 ? .partyPurple : .placeholderColor)
+                        Text(String("2"))
+                            .foregroundColor(.white)
+                        
+                    }
+                    Spacer()
+                    
+                    ZStack {
+                        Circle()
+                            .frame(width: circleSize, height: circleSize)
+                            .foregroundColor($counter.wrappedValue >= 90.0 ? .partyPurple : .placeholderColor)
+                        Text(String("3"))
+                            .foregroundColor(.white)
+                    }
                 }
-
-                Rectangle()
-                    .frame(width: progressBarBasicSize, height: 5)
-                    .foregroundColor(num > 1 ? .purple : .gray)
-                    .padding(.leading, (progressBarBasicSize / 4) * -1 + (progressBarBasicSize / 6))
-                    .padding(.trailing, (progressBarBasicSize / 4) * -1)
-
-                ZStack {
-                    Circle()
-                        .frame(width: progressBarBasicSize / 4, height: progressBarBasicSize / 4)
-                        .foregroundColor(num > 1 ? .purple : .gray)
-
-                    Text("2")
-                        .foregroundColor(.white)
-                        .bold()
-                }
-
-                Rectangle()
-                    .frame(width: progressBarBasicSize, height: 5)
-                    .foregroundColor(num > 2 ? .purple : .gray)
-                    .padding(.leading, (progressBarBasicSize / 4) * -1 + (progressBarBasicSize / 6))
-                    .padding(.trailing, (progressBarBasicSize / 4) * -1)
-
-                ZStack {
-                    Circle()
-                        .frame(width: progressBarBasicSize / 4, height: progressBarBasicSize / 4)
-                        .foregroundColor(num > 2 ? .purple : .gray)
-                    Text("3")
-                        .foregroundColor(.white)
-                        .bold()
-                }
-                Spacer()
-            }        .padding(EdgeInsets(top: 47, leading: 20, bottom: 17, trailing: 20))
-
+            }
+            .frame(width: (UIScreen.main.bounds.width - 40) * 0.6)
+            .padding(EdgeInsets(top: 47, leading: 20, bottom: 17, trailing: 20))
+            
+            Spacer()
+        }
+            
+    }
+    func runCounter(counter: Binding<Double>, start: Double, end: Double, speed: Double) {
+        counter.wrappedValue = start
+        
+        Timer.scheduledTimer(withTimeInterval: speed, repeats: true) { timer in
+            counter.wrappedValue += 1.0
+            if counter.wrappedValue == end {
+                timer.invalidate()
+                
+            }
+        }
     }
 }
 
 struct ProgressBar_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressBar(num: 1)
+        ProgressBar(counter: 50.0)
     }
 }
