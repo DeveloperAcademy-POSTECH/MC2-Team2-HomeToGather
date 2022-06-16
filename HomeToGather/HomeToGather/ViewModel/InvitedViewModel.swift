@@ -65,7 +65,6 @@ class InvitedViewModel: ObservableObject {
         g.enter()
         
         let ref = db.collection("user").document(uid)
-        print("userid : \(uid)")
         
         ref.getDocument { document, error in
             
