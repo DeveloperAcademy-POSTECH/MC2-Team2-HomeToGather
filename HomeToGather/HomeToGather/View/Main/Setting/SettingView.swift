@@ -24,7 +24,7 @@ struct SettingView: View {
     
     var body: some View {
         VStack {
-//            List {
+            List {
 //                NavigationLink(destination: {
 //                    SettingDetailView(title: RelatedInformationList[0])
 //                }, label: {
@@ -36,14 +36,14 @@ struct SettingView: View {
                 }, label: {
                     Text("오픈소스 라이선스")
                 })
+                .listRowSeparator(.hidden, edges: .top)
 //                NavigationLink(destination: {
 //                    SettingDetailView(title: RelatedInformationList[2])
 //                }, label: {
 //                    Text("\(RelatedInformationList[2])")
 //                })
-//            }
-//            .listStyle(.plain)
-//            .padding(.bottom, 30)
+            }
+            .listStyle(.plain)
             List {
                 Text("버전 정보")
                     .badge(Text("최신 버전"))
@@ -59,7 +59,7 @@ struct SettingView: View {
             }
             .listStyle(.plain)
         }
-        .frame(height: 330)
+        .frame(height: 180)
         .navigationBarTitle("설정", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
