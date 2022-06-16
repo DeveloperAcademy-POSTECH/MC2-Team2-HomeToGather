@@ -12,7 +12,7 @@ struct HostedListView: View {
     let screenWidth = UIScreen.main.bounds.width
     let uid = getUserUid()
     
-    @State var hostedViewModel = HostedViewModel()
+    @ObservedObject var hostedViewModel = HostedViewModel()
     
     init() {
         hostedViewModel.fetchInvitationsReceived(uid)

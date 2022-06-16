@@ -12,7 +12,7 @@ struct InvitedListView: View {
     let screenWidth = UIScreen.main.bounds.width
     let uid = getUserUid()
     
-    @State var invitedViewModel = InvitedViewModel()
+    @ObservedObject var invitedViewModel = InvitedViewModel()
     
     init() {
         invitedViewModel.fetchInvitationsSent(uid)

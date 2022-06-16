@@ -19,7 +19,7 @@ struct SecondCreateView: View {
     var body: some View {
         ScrollView {
             VStack() {
-                ProgressBar(num: 2)
+                ProgressBar(counter: 50.0)
                 RuleView()
                     .padding(.bottom, 20)
                 FoodView()

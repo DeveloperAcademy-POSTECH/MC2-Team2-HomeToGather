@@ -12,7 +12,7 @@ struct InvitedDetailView: View {
     
     var invitationData: Invitation
     
-    private let randomImageName: [String] = ["partyIamge1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]
+    private let randomImageName: [String] = ["partyImage1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]
     let screenWidth = UIScreen.main.bounds.width
     
     var body: some View {

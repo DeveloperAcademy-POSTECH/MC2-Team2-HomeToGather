@@ -14,7 +14,7 @@ class ViewModel: ObservableObject {
         
         let invitation = Invitation(id: id, uid: uid, organizerName: invitation.organizerName, participantName: invitation.participantName, participantUid: invitation.participantUid, title: invitation.title, date: invitation.date, place: invitation.place, description: invitation.description, rule: invitation.rule, cost: invitation.cost, food: invitation.food, etc: invitation.etc, ruleFeedback: [""], foodFeedback: [""], color: invitation.color)
         
-        let _ = db.collection("ii").document(id).setData(invitation.dictionary)
+        db.collection("ii").document(id).setData(invitation.dictionary)
     }
     
     func fetchInvitation() {
@@ -47,8 +47,8 @@ class ViewModel: ObservableObject {
         }
     }
     
-    func correctionInvitation(_ invitation: Invitation) {
-        let _ = db.collection("ii").document(invitation.id).setData(invitation.dictionary)
+    func correctionInvitation(_ invitation: Invitation, _ id: String) {
+        db.collection("ii").document(id).setData(invitation.dictionary)
     }
     
     func correctionRuleFeedback(_ invitation: Invitation,_ ruleFeedback: String) {
@@ -56,7 +56,7 @@ class ViewModel: ObservableObject {
         var feedback: [String] = invitation.ruleFeedback
         feedback.append(ruleFeedback)
         correctionInvitation.ruleFeedback = feedback
-        let _ = db.collection("ii").document(invitation.id).setData(correctionInvitation.dictionary)
+        db.collection("ii").document(invitation.id).setData(correctionInvitation.dictionary)
     }
     
     func correctionFoodFeedback(_ invitation: Invitation,_ foodFeedback: String) {
@@ -64,7 +64,7 @@ class ViewModel: ObservableObject {
         var feedback: [String] = invitation.foodFeedback
         feedback.append(foodFeedback)
         correctioinInvitation.foodFeedback = feedback
-        let _ = db.collection("ii").document(invitation.id).setData(correctioinInvitation.dictionary)
+        db.collection("ii").document(invitation.id).setData(correctioinInvitation.dictionary)
     }
     
     func deleteInvitation(_ invitationId: String) {
