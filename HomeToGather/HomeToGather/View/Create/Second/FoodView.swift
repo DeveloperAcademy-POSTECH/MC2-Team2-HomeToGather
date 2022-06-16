@@ -18,7 +18,7 @@ struct FoodView: View {
             TitleRow(text: "홈파티 음식")
                 .padding(EdgeInsets(top: 65, leading: 20, bottom: 36, trailing: 0))
 
-            AddListView(lists: $partyData.food,text: "홈파티 음식 리스트를 적어주세요.", placeholder: "ex)감바스")
+            AddListView(lists: $partyData.food, item: $partyData.foodItem ,text: "홈파티 음식 리스트를 적어주세요.", placeholder: "ex)감바스")
                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 53, trailing: 20))
 
         }

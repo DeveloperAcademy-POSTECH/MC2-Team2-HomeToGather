@@ -27,6 +27,17 @@ struct SecondCreateView: View {
         }
         .onTapGesture {
             hideKeyboard()
+            if partyData.ruleItem != "" {
+                partyData.rule.append(partyData.ruleItem)
+                partyData.ruleItem = ""
+            }
+            if partyData.foodItem != "" {
+                partyData.food.append(partyData.foodItem)
+                partyData.foodItem = ""
+            }
+            
+            
+            
             if partyData.cost != "" {
                 if Int(partyData.cost) != nil {
                     let numberFormatter = NumberFormatter()
@@ -35,6 +46,9 @@ struct SecondCreateView: View {
                     partyData.cost = result! + "원"
                 }
             }
+            
+            
+            
         }
         .navigationBarTitle("초대장 만들기", displayMode: .inline)
         .foregroundColor(.white)
