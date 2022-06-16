@@ -37,10 +37,11 @@ class PartyData: ObservableObject {
     @Published var description = ""
     @Published var color = "red"
     @Published var isModifying = false
+    @Published var hostId = ""
     
     init() {}
     
-    init(rule: [String], food: [String], cost: String, title: String, date: String, place: String, description: String, color: String, isModifying: Bool) {
+    init(rule: [String], food: [String], cost: String, title: String, date: String, place: String, description: String, color: String, isModifying: Bool, hostId: String) {
         self.rule = rule
         self.food = food
         self.cost = cost
@@ -50,13 +51,6 @@ class PartyData: ObservableObject {
         self.description = description
         self.color = color
         self.isModifying = isModifying
+        self.hostId = hostId
     }
 }
-
-//if partyData.rule != [String](), partyData.food != [String](), partyData.cost != "" {
-//    is
-//}
-//if partyData.title != "", partyData.date != "", partyData.place == "", partyData.description == "" {
-//    isDisabled = false
-//}
-
