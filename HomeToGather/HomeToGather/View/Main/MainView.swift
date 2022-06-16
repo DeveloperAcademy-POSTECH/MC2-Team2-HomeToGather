@@ -16,7 +16,7 @@ struct MainView: View {
     @State var showSettings = false
     @State var isSuccess = false
     
-    @ObservedObject var viewModel = InvitedViewModel()
+    @ObservedObject var viewModel = ViewModel()
     
     let userID = getUserUid()
     
@@ -32,7 +32,7 @@ struct MainView: View {
             VStack {
                 if isTouchedTicket {
                     VStack {
-                        ExpanedTicketView(invitation: viewModel.invitationsSent[0])
+                        ExpanedTicketView(invitation: viewModel.recentInvitation)
                             .offset(y: -50)
                             .background(Color.white)
                             .toolbar {
@@ -50,7 +50,7 @@ struct MainView: View {
                         
                     }
                 } else {
-                    TicketView(invitation: viewModel.invitationsSent[0])
+                    TicketView(invitation: viewModel.recentInvitation)
                         .offset(y: -100)
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.8)) {
