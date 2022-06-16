@@ -12,7 +12,14 @@ struct ShareCardView: View {
     
     let deeplinkManager: DeeplinkManager = DeeplinkManager()
     let newInvitation: Invitation
-
+    
+    @State var partyColor: PartyColors = PartyColors.init(rawValue: "red")!
+    
+    init(newInvitaion: Invitation) {
+        self.newInvitation = newInvitaion
+        self.partyColor = PartyColors.init(rawValue: partyData.color)!
+    }
+    
     var body: some View {
         ZStack {
             Color.backgroundColor.ignoresSafeArea()

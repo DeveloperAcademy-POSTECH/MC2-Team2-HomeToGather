@@ -73,7 +73,6 @@ class ViewModel: ObservableObject {
     
     func getUserName(_ uid: String) {
         let ref = db.collection("user").document(uid)
-        print("DEBUG")
         ref.getDocument { document, error in
             if let error = error as NSError? {
                 print("please god\(error)")
@@ -137,6 +136,5 @@ class ViewModel: ObservableObject {
 
 func getUserUid() -> String {
     guard let user = Auth.auth().currentUser else { return "" }
-    print("userid : \(Auth.auth().currentUser!.uid)")
     return user.uid
 }
