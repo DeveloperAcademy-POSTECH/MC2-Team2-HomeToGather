@@ -119,6 +119,28 @@ struct ListTicketView: View {
                     }
                 }
                 .padding(5)
+                
+                ZStack {
+                    HStack(spacing: 0) {
+                        Spacer()
+                        
+                        VStack(spacing: 0) {
+                            ZStack(alignment: .bottomLeading) {
+                                Triangle()
+                                    .fill(Color.white)
+                                    .frame(width: 24, height: 24,alignment: .trailing)
+                                
+                                Triangle()
+                                    .fill(Color.black)
+                                    .frame(width: 17, height: 17,alignment: .trailing)
+                            }
+                            .rotationEffect(.degrees(180))
+                            
+                            Spacer()
+                        }
+                    }
+                }
+                .frame(maxWidth: screenWidth, maxHeight: screenWidth)
             }
             
             ZStack {
