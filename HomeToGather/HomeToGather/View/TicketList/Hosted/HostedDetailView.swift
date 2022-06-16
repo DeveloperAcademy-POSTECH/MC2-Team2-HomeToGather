@@ -11,6 +11,8 @@ struct HostedDetailView: View {
     var hostData: Invitation
     @State private var isConfirmationDialogShow: Bool = false
     @State var viewModel = ViewModel()
+    @State var changeData: Bool = false
+    
     var partyData: PartyData = PartyData()
     
     init(hostData: Invitation) {
@@ -77,14 +79,10 @@ struct HostedDetailView: View {
                     
                     FeedbackCardView(title: "메뉴", contents: hostData.food, feedbackContents: hostData.foodFeedback)
                     
-                    NavigationLink {
-                        ModifyView()
-                            .environmentObject(partyData)
-                    } label: {
-                        Image(systemName: "ellipsis.circle.fill")
-                    }
                 }
                 .padding(20)
+                
+                NavigationLink(destination: ModifyView().environmentObject(partyData), isActive: self.$changeData){EmptyView()}.disabled(true)
             }
         }
         .toolbar {
@@ -97,7 +95,9 @@ struct HostedDetailView: View {
                 })
                 .confirmationDialog("confirmationDialog", isPresented: $isConfirmationDialogShow, titleVisibility: .hidden) {
                     Button("공유하기") {}
-                    Button("수정하기") {}
+                    Button("수정하기") {
+                        self.changeData = true
+                    }
                     Button("삭제하기", role: .destructive) {
                         viewModel.deleteInvitation(hostData.id)
                     }
