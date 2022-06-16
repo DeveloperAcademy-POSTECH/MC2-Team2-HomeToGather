@@ -10,7 +10,6 @@ struct ProgressBar: View {
     
     //counter: total값이 100인 프로그레스바의 시점지점
     @State var counter: Double
-    @EnvironmentObject var partyData: PartyData
     
     let circleSize: CGFloat = 30
     
@@ -22,21 +21,9 @@ struct ProgressBar: View {
                     .accentColor(.purple)
                     .scaleEffect(x: 1, y: 1.5, anchor: .center)
                     .onAppear {
-                        
-                        if partyData.isNextView {
-                            if counter != 0.0 {
-                                self.runCounter(counter: self.$counter, start: counter - 50.0, end: counter, speed: 0.02)
-                            }
-                        } else {
-                            // 뒤로가기
-                                self.backRunCounter(counter: self.$counter, end: counter, start: counter + 50.0, speed: 0.02)
-                            
+                        if counter != 0.0 {
+                            self.runCounter(counter: self.$counter, start: counter - 50.0, end: counter, speed: 0.02)
                         }
-                        
-                        partyData.isNextView = true
-                            
-                       
-                        
                         
                         
                     }
@@ -84,18 +71,6 @@ struct ProgressBar: View {
         
         Timer.scheduledTimer(withTimeInterval: speed, repeats: true) { timer in
             counter.wrappedValue += 1.0
-            if counter.wrappedValue == end {
-                timer.invalidate()
-                
-            }
-        }
-    }
-    
-    func backRunCounter(counter: Binding<Double>, end: Double, start: Double, speed: Double) {
-        counter.wrappedValue = start
-        
-        Timer.scheduledTimer(withTimeInterval: speed, repeats: true) { timer in
-            counter.wrappedValue -= 1.0
             if counter.wrappedValue == end {
                 timer.invalidate()
                 

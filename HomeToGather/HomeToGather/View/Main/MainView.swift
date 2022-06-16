@@ -15,15 +15,17 @@ struct MainView: View {
     
     @State var showSettings = false
     @State var isSuccess = false
+    @State var defaultColor: PartyColors = .red
+    let viewModel = ViewModel()
+
     
-    @ObservedObject var viewModel = ViewModel()
-    
-    let userID = getUserUid()
-    
-    init(isTouchedTicket: Binding<Bool>) {
-        self._isTouchedTicket = isTouchedTicket
-        viewModel.fetchInvitationsSent(userID)
-    }
+//    init() {
+//        viewModel.fetchInvitation()
+//        invitationCardData = viewMode8l.invitations[0]
+//
+//        defaultColor = self.invitationCardData?.color ?? "red"
+//
+//    }
     
     var body: some View {
         ZStack {
@@ -32,7 +34,7 @@ struct MainView: View {
             VStack {
                 if isTouchedTicket {
                     VStack {
-                        ExpanedTicketView(invitation: viewModel.recentInvitation)
+                        ExpanedTicketView(color: $defaultColor)
                             .offset(y: -50)
                             .background(Color.white)
                             .toolbar {
@@ -49,16 +51,17 @@ struct MainView: View {
                             }
                         
                     }
+                    
                 } else {
-                    TicketView(invitation: viewModel.recentInvitation)
+                    TicketView(color: $defaultColor)
                         .offset(y: -100)
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.8)) {
                                 isTouchedTicket.toggle()
                             }
-
+                            
                         }
-//
+                    
                     HStack(alignment: .center, spacing: 10, content: {
                         
                         NavigationLink {
@@ -93,7 +96,6 @@ struct MainView: View {
             }
             .padding(.top, 100)
             .preferredColorScheme(.dark)
-            
         }
     }
 }

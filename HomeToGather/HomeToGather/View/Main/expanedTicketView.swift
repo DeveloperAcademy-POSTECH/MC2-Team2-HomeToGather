@@ -9,16 +9,21 @@ import SwiftUI
 
 struct ExpanedTicketView: View {
     
-    var ticketViewModel: TicketViewModel
+    @State var partyTitle = "PARTY TITLE"
+    @State var partySubtitle = "SUBTITLE"
+    @State var date = "03 / 06 / 22 "
+    @State var startTime = "18:00"
+    @State var endTime = "23:00"
+    @State var location = "D-park House"
     
-    init(invitation: Invitation) {
-        self.ticketViewModel = TicketViewModel(invitation: invitation)
-    }
-    
+    @State var partyName = "Party Name"
     @State var placeLabel = "PLACE"
     @State var timeLabel = "TIME"
-
+    @State var month = "JUNE 03"
+    @State var place = "서울 서초구 사임당로 130"
+    
     @State var isTearTicket = false
+    @Binding var color: PartyColors
     //    false면 왼쪽에서 드래그, true면 오른쪽에서 드래그
     @State var direction = false
     
@@ -35,30 +40,36 @@ struct ExpanedTicketView: View {
                         ZStack {
                             
                             RoundedRectangle(cornerRadius: 4)
-                                .fill(LinearGradient(gradient: Gradient(colors: [.purple, ticketViewModel.color]),
+                                .fill(LinearGradient(gradient: Gradient(colors: [.purple, Color.getColor(color:color)]),
                                                      startPoint: .leading, endPoint: .trailing))
                             VStack(alignment:.leading,spacing: 5) {
                                 
-                                Text(ticketViewModel.partyTitle)
+                                Text(partyName)
                                     .font(.notoSans(withStyle: .Bold, size: 28))
                                     .foregroundColor(.white)
                                 Spacer()
                                     .frame(width: 1, height: 20)
-                                Text(ticketViewModel.subTitle)
+                                Text(partySubtitle)
                                     .font(.notoSans(withStyle: .Bold, size: 24))
                                     .foregroundColor(.white)
                                 Spacer()
                                     .frame(width: 1, height: 20)
                                 VStack(alignment:.leading,spacing: 3)  {
-                                    Text(ticketViewModel.yyyymmdd)
+                                    Text(date)
                                         .font(.notoSans(withStyle: .Regular, size: 12))
                                         .foregroundColor(.white)
-                                    Text(ticketViewModel.time)
-                                        .font(.notoSans(withStyle: .Regular, size: 12))
-                                        .foregroundColor(.white)
+                                    HStack(alignment: .center, spacing: 2){
+                                        Text(startTime)
+                                            .font(.notoSans(withStyle: .Regular, size: 12))
+                                            .foregroundColor(.white)
+                                        Text(endTime)
+                                            .font(.notoSans(withStyle: .Regular, size: 12))
+                                            .foregroundColor(.white)
+                                    }
                                     
                                 }
-                                Text(ticketViewModel.place)
+                                Text(location)
+                                    .bold()
                                     .font(.notoSans(withStyle: .Regular, size: 12))
                                     .foregroundColor(.white)
                             }.offset(x: -150,y:-50)
@@ -90,7 +101,7 @@ struct ExpanedTicketView: View {
                             .fill(Color.white)
                         
                         VStack(alignment:.leading,spacing:6) {
-                            Text(ticketViewModel.partyTitle)
+                            Text(partyName)
                                 .font(.notoSans(withStyle: .Bold, size: 22))
                                 .foregroundColor(.black)
                             Divider().frame(width: 234, height: 1, alignment: .center)
@@ -111,10 +122,10 @@ struct ExpanedTicketView: View {
                                 Spacer()
                                     .frame(width: 15, height: 1, alignment: .trailing)
                                 VStack(alignment: .leading, spacing: 13) {
-                                    Text(ticketViewModel.dateTime)
+                                    Text(month)
                                         .font(.notoSans(withStyle: .Regular, size: 14))
                                         .foregroundColor(.black)
-                                    Text(ticketViewModel.location)
+                                    Text(place)
                                         .font(.notoSans(withStyle: .Regular, size: 14))
                                         .foregroundColor(.black)
                                 }

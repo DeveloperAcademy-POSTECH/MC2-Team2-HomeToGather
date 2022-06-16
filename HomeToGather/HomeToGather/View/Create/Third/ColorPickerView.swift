@@ -15,8 +15,7 @@ enum PartyColors:String,CaseIterable {
 struct ColorPickerView: View {
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
     
-    @State private var selectedColor = PartyColors.red
-    
+    @State private var selectedColor: PartyColors = .red
     @State private var viewModel = ViewModel()
     @EnvironmentObject var partyData: PartyData
     
@@ -45,7 +44,8 @@ struct ColorPickerView: View {
                 .padding(EdgeInsets(top: 13, leading: 20, bottom: 22, trailing: 20))
                 .background(Color.backgroundColor)
                 
-                TicketView(invitation: Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.color, food: partyData.food, etc: [], color: partyData.color))
+                TicketView(color: $selectedColor)
+                    .background(Color.clear)
                 
                 Button {
                     if !partyData.isModifying {
@@ -82,7 +82,6 @@ struct ColorPickerView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
-                    partyData.isNextView = false
                     dismiss()
                 }, label: {
                     Image(systemName: "chevron.backward")

@@ -22,14 +22,21 @@ struct Triangle : Shape {
 }
 
 struct TicketView: View {
-    var ticketViewModel: TicketViewModel
     
-    init(invitation: Invitation) {
-        self.ticketViewModel = TicketViewModel(invitation: invitation)
-    }
+    @State var partyTitle = "PARTY TITLE"
+    @State var partySubtitle = "SUBTITLE"
+    @State var date = "03 / 06 / 22 "
+    @State var startTime = "18:00"
+    @State var endTime = "23:00"
+    @State var location = "D-park House"
     
+    @State var partyName = "Party Name"
     @State var placeLabel = "PLACE"
     @State var timeLabel = "TIME"
+    @State var month = "JUNE 03"
+    @State var place = "서울 서초구 사임당로 130"
+    
+    @Binding var color: PartyColors
     
     var body: some View {
         VStack {
@@ -45,33 +52,40 @@ struct TicketView: View {
                             .fill(Color.white)
                             .frame(width: 270, height: 400, alignment: .center)
                         
-                        ZStack(alignment: .topLeading) {
+                        ZStack {
                             
                             RoundedRectangle(cornerRadius: 4)
-                                .fill(LinearGradient(gradient: Gradient(colors: [.purple,ticketViewModel.color]),
+                                .fill(LinearGradient(gradient: Gradient(colors: [.purple, Color.getColor(color:color)]),
                                                      startPoint: .leading, endPoint: .trailing))
-                            
                             VStack(alignment:.leading,spacing: 5) {
                                 
-                                Text(ticketViewModel.partyTitle)
-                                    .font(.notoSans(withStyle: .Medium, size: 28))
+                                Text(partyName)
+                                    .bold()
+                                    .font(.system(size:28))
                                     .foregroundColor(.white)
-                                
-                                Text(ticketViewModel.subTitle)
-                                    .font(.notoSans(withStyle: .Medium, size: 24))
+                                Spacer()
+                                    .frame(width: 1, height: 20)
+                                Text(partySubtitle)
+                                    .bold()
+                                    .font(.system(size:24))
                                     .foregroundColor(.white)
-                                
+                                Spacer()
+                                    .frame(width: 1, height: 20)
                                 VStack(alignment:.leading,spacing: 3)  {
-                                    Text(ticketViewModel.yyyymmdd)
+                                    Text(date)
                                         .font(.system(size:12))
                                         .foregroundColor(.white)
-                                    
-                                    Text(ticketViewModel.time)
-                                        .font(.system(size:12))
-                                        .foregroundColor(.white)
+                                    HStack(alignment: .center, spacing: 2){
+                                        Text(startTime)
+                                            .font(.system(size:12))
+                                            .foregroundColor(.white)
+                                        Text(endTime)
+                                            .font(.system(size:12))
+                                            .foregroundColor(.white)
+                                    }
                                     
                                 }
-                                Text(ticketViewModel.place)
+                                Text(location)
                                     .bold()
                                     .font(.system(size:12))
                                     .foregroundColor(.white)
@@ -102,7 +116,7 @@ struct TicketView: View {
                             .fill(Color.white)
                         
                         VStack(alignment:.leading,spacing:6) {
-                            Text(ticketViewModel.partyTitle)
+                            Text(partyName)
                                 .bold()
                                 .font(.system(size:16))
                                 .foregroundColor(.black)
@@ -124,10 +138,10 @@ struct TicketView: View {
                                 Spacer()
                                     .frame(width: 15, height: 1, alignment: .trailing)
                                 VStack(alignment: .leading, spacing: 13) {
-                                    Text(ticketViewModel.dateTime)
+                                    Text(month)
                                         .font(.system(size:8))
                                         .foregroundColor(.black)
-                                    Text(ticketViewModel.location)
+                                    Text(place)
                                         .font(.system(size:8))
                                         .foregroundColor(.black)
                                 }
@@ -141,7 +155,7 @@ struct TicketView: View {
                         
                     }.frame(width: 270, height: 70, alignment: .center)
                 }.frame(width: 260, height: 472, alignment: .center)
-                
+
             }
             
         }
