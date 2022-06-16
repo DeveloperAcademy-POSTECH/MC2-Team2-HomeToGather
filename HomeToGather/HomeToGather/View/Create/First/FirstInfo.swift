@@ -22,7 +22,7 @@ struct FirstInfo: View {
     }
     
     var body: some View {
-        ProgressBar(num: 1)
+        ProgressBar(counter: 0.0)
         VStack(alignment: .leading) {
             TitleRow(text: "홈파티 소개")
                 .padding(EdgeInsets(top: 65, leading: 20, bottom: 36, trailing: 20))

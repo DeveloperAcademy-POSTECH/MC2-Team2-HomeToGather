@@ -12,6 +12,7 @@ struct HostedDetailView: View {
     @State private var isConfirmationDialogShow: Bool = false
     @State var viewModel = ViewModel()
     @State var changeData: Bool = false
+    @Environment(\.presentationMode) var presentationMode
     
     var partyData: PartyData = PartyData()
     
@@ -20,7 +21,7 @@ struct HostedDetailView: View {
         self.partyData = PartyData(rule: hostData.rule, food: hostData.food, cost: hostData.cost, title: hostData.title, date: hostData.date, place: hostData.place, description: hostData.description, color: hostData.color, isModifying: true, hostId: hostData.id)
     }
     
-    private let randomImageName: [String] = ["partyIamge1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]
+    private let randomImageName: [String] = ["partyImage1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]
     let screenWidth = UIScreen.main.bounds.width
     
     var body: some View {
@@ -100,6 +101,7 @@ struct HostedDetailView: View {
                     }
                     Button("삭제하기", role: .destructive) {
                         viewModel.deleteInvitation(hostData.id)
+                        presentationMode.wrappedValue.dismiss()
                     }
                     Button("취소하기", role: .cancel) {}
                 }

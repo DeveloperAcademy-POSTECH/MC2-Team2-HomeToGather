@@ -24,7 +24,7 @@ struct ColorPickerView: View {
     }
     
     var body: some View {
-        ProgressBar(num: 3)
+        ProgressBar(counter: 100.0)
         ZStack {
             Color.backgroundColor.ignoresSafeArea()
             VStack(spacing:0){

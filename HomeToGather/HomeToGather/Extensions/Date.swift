@@ -8,20 +8,10 @@
 import Foundation
 
 extension Date {
-    func dateCompare(fromDate: Date) -> ComparisonResult {
-        return self.compare(fromDate)
-    }
-}
-
-extension String {
-    func toDate() -> Date? {
+    func dateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
         dateFormatter.timeZone = TimeZone(identifier: "UTC")
-        if let date = dateFormatter.date(from: self) {
-            return date
-        } else {
-            return nil
-        }
+        return dateFormatter.string(from: date)
     }
 }
