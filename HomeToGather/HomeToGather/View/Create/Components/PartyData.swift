@@ -40,6 +40,8 @@ class PartyData: ObservableObject {
     @Published var hostId = ""
     
     @Published var isNextView = true
+    @Published var ruleItem = ""
+    @Published var foodItem = ""
     
     init() {}
     
