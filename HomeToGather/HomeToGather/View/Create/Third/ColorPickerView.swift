@@ -13,11 +13,14 @@ enum PartyColors:String,CaseIterable {
 
 
 struct ColorPickerView: View {
-    
-    @State private var selectedColor:PartyColors = .red
+    @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
+
+    @State private var selectedColor: PartyColors = .red
     @State private var viewModel = ViewModel()
     @EnvironmentObject var partyData: PartyData
     @Environment(\.dismiss) var dismiss
+    @State private var isCreated = false
+    @State private var isModified = false
     
     init() {
         viewModel.getUserName(getUserUid())
@@ -45,19 +48,37 @@ struct ColorPickerView: View {
                     .background(Color.clear)
                 
                 Button {
+                    print("DEBUG COLOR INV ID : \(partyData.id)")
                     if !partyData.isModifying {
-                        viewModel.uploadInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color))
+                        viewModel.uploadInvitation(Invitation(id: partyData.id, uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color))
                     } else {
                         viewModel.correctionInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color), partyData.hostId)
                     }
+                    
+                    if partyData.isModifying {
+                        self.rootPresentationMode.wrappedValue.dismissRoot()
+                    }
+                    else { isCreated.toggle() }
+                    
                 } label: {
                     Text(partyData.isModifying ? "수정하기" : "만들기")
                         .font(.system(size: 18))
-                }.frame(width: 350, height: 50, alignment: .center)
-                    .background(Color.partyPurple)
-                    .cornerRadius(8)
-                    .foregroundColor(.white)
-                    .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
+                        .frame(width: 350, height: 50, alignment: .center)
+                        .background(Color.partyPurple)
+                        .cornerRadius(8)
+                        .foregroundColor(.white)
+                        .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
+                }
+                
+                NavigationLink(isActive: self.$isCreated) {
+                    ShareCardView(partyColor : $selectedColor)
+                        .environmentObject(partyData)
+                } label: {
+                    EmptyView()
+                }
+
+                
+                
             }
         }
         .navigationBarTitle("초대장 테마 설정", displayMode: .inline)
@@ -77,4 +98,5 @@ struct ColorPickerView: View {
         }
     }
     
+
 }

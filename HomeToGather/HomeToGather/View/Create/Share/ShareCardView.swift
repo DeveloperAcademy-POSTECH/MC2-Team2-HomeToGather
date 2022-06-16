@@ -9,27 +9,23 @@ import SwiftUI
 
 struct ShareCardView: View {
     @EnvironmentObject var partyData: PartyData
+    @Binding var partyColor: PartyColors
+    
+    @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
     
     let deeplinkManager: DeeplinkManager = DeeplinkManager()
-    let newInvitation: Invitation
-    
-    @State var partyColor: PartyColors = PartyColors.init(rawValue: "red")!
-    
-    init(newInvitaion: Invitation) {
-        self.newInvitation = newInvitaion
-        self.partyColor = PartyColors.init(rawValue: partyData.color)!
-    }
     
     var body: some View {
         ZStack {
             Color.backgroundColor.ignoresSafeArea()
             VStack(spacing:0){
                 
-//                TicketView(color: $partyData.color)
-//                    .background(Color.clear)
+                TicketView(color: $partyColor)
+                    .background(Color.clear)
                 
                 Button{
                    // 공유하기
+                    print("DEBUG KAKAO INV ID : \(partyData.id)")
                     deeplinkManager.shareLinkToKakao(invitationID: partyData.id)
 
                 } label: {
@@ -40,6 +36,19 @@ struct ShareCardView: View {
                     .cornerRadius(8)
                     .foregroundColor(.white)
                     .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
+            }
+        }
+        .navigationBarTitle("초대장", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .foregroundColor(.white)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    self.rootPresentationMode.wrappedValue.dismissRoot()
+                }, label: {
+                    Image(systemName: "house.fill")
+                })
+                .foregroundColor(.white)
             }
         }
     }

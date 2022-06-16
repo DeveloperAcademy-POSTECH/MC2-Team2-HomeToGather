@@ -29,7 +29,7 @@ struct ModifyView: View {
                 }
             }
         }
-        .navigationBarTitle("초대장 만들기", displayMode: .inline)
+        .navigationBarTitle("초대장 만들기2", displayMode: .inline)
         .foregroundColor(.white)
         .navigationBarBackButtonHidden(true)
         .toolbar {

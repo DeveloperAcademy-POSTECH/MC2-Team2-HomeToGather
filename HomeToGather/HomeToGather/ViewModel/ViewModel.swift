@@ -9,12 +9,11 @@ class ViewModel: ObservableObject {
     @Published var userName = ""
 
     func uploadInvitation(_ invitation: Invitation) {
-        let uid = getUserUid()
-        let id = UUID().uuidString
+        print("DEBUG UPLOAD INV ID : \(invitation.id)")
         
-        let invitation = Invitation(id: id, uid: uid, organizerName: invitation.organizerName, participantName: invitation.participantName, participantUid: invitation.participantUid, title: invitation.title, date: invitation.date, place: invitation.place, description: invitation.description, rule: invitation.rule, cost: invitation.cost, food: invitation.food, etc: invitation.etc, ruleFeedback: [""], foodFeedback: [""], color: invitation.color)
+        let invitation = Invitation(id: invitation.id, uid: invitation.uid, organizerName: invitation.organizerName, participantName: invitation.participantName, participantUid: invitation.participantUid, title: invitation.title, date: invitation.date, place: invitation.place, description: invitation.description, rule: invitation.rule, cost: invitation.cost, food: invitation.food, etc: invitation.etc, ruleFeedback: [""], foodFeedback: [""], color: invitation.color)
         
-        db.collection("ii").document(id).setData(invitation.dictionary)
+        let _ = db.collection("ii").document(invitation.id).setData(invitation.dictionary)
     }
     
     func fetchInvitation() {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */; };
 		34E0F8552859ABA8002A8A42 /* ShareCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F8542859ABA8002A8A42 /* ShareCardView.swift */; };
+		34E0F857285B0084002A8A42 /* RootPresentationModeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F856285B0084002A8A42 /* RootPresentationModeExtension.swift */; };
 		5527F890564C64DF8F6724B6 /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8B9FB620DCD258CF1044 /* Pods_HomeToGather.framework */; };
 		75D68050285714340097B97A /* SecondCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6804F285714340097B97A /* SecondCreateView.swift */; };
 		75D6805228571C970097B97A /* FirstCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805128571C970097B97A /* FirstCreateView.swift */; };
@@ -79,6 +80,7 @@
 /* Begin PBXFileReference section */
 		345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
 		34E0F8542859ABA8002A8A42 /* ShareCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardView.swift; sourceTree = "<group>"; };
+		34E0F856285B0084002A8A42 /* RootPresentationModeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresentationModeExtension.swift; sourceTree = "<group>"; };
 		38ED8B9FB620DCD258CF1044 /* Pods_HomeToGather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeToGather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7D28927A6C908751A6D0A2 /* Pods-HomeToGather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.debug.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.debug.xcconfig"; sourceTree = "<group>"; };
 		75D6804F285714340097B97A /* SecondCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCreateView.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 		E47738A0285320B500C1403F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				34E0F856285B0084002A8A42 /* RootPresentationModeExtension.swift */,
 				E47738A42853223200C1403F /* Font */,
 				E477390328533A6900C1403F /* Color.swift */,
 				B95078032854D9F900F7825A /* View.swift */,
@@ -579,6 +582,7 @@
 				E252A785285AFBFE007EE497 /* LicenseView.swift in Sources */,
 				B95077FC28548D2C00F7825A /* InvitedListView.swift in Sources */,
 				75D6805228571C970097B97A /* FirstCreateView.swift in Sources */,
+				34E0F857285B0084002A8A42 /* RootPresentationModeExtension.swift in Sources */,
 				E47738A2285320F800C1403F /* Font.swift in Sources */,
 				B9BF1D632858A8570081DC4A /* HostedViewModel.swift in Sources */,
 				B95078002854992000F7825A /* ParticipantView.swift in Sources */,
