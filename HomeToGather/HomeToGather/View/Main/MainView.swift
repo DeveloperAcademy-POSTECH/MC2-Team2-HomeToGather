@@ -15,17 +15,15 @@ struct MainView: View {
     
     @State var showSettings = false
     @State var isSuccess = false
-    @State var defaultColor: PartyColors = .red
-    let viewModel = ViewModel()
-
     
-//    init() {
-//        viewModel.fetchInvitation()
-//        invitationCardData = viewMode8l.invitations[0]
-//
-//        defaultColor = self.invitationCardData?.color ?? "red"
-//
-//    }
+    @ObservedObject var viewModel = InvitedViewModel()
+    
+    let userID = getUserUid()
+    
+    init(isTouchedTicket: Binding<Bool>) {
+        self._isTouchedTicket = isTouchedTicket
+        viewModel.fetchInvitationsSent(userID)
+    }
     
     var body: some View {
         ZStack {
@@ -34,7 +32,7 @@ struct MainView: View {
             VStack {
                 if isTouchedTicket {
                     VStack {
-                        ExpanedTicketView(color: $defaultColor)
+                        ExpanedTicketView(invitation: viewModel.invitationsSent[0])
                             .offset(y: -50)
                             .background(Color.white)
                             .toolbar {
@@ -51,17 +49,16 @@ struct MainView: View {
                             }
                         
                     }
-                    
                 } else {
-                    TicketView(color: $defaultColor)
+                    TicketView(invitation: viewModel.invitationsSent[0])
                         .offset(y: -100)
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.8)) {
                                 isTouchedTicket.toggle()
                             }
-                            
+
                         }
-                    
+//
                     HStack(alignment: .center, spacing: 10, content: {
                         
                         NavigationLink {
@@ -96,6 +93,7 @@ struct MainView: View {
             }
             .padding(.top, 100)
             .preferredColorScheme(.dark)
+            
         }
     }
 }
