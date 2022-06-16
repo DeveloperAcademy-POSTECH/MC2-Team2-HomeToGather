@@ -13,6 +13,7 @@
 		34E0F85B285B2C59002A8A42 /* HostedPresentationModeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F85A285B2C59002A8A42 /* HostedPresentationModeExtension.swift */; };
 		34E0F85E285B522D002A8A42 /* SecondModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F85D285B522D002A8A42 /* SecondModifyView.swift */; };
 		34E0F860285B5259002A8A42 /* ColorPickerModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F85F285B5259002A8A42 /* ColorPickerModifyView.swift */; };
+		34E0F862285B7491002A8A42 /* ModifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F861285B7491002A8A42 /* ModifyViewModel.swift */; };
 		5527F890564C64DF8F6724B6 /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8B9FB620DCD258CF1044 /* Pods_HomeToGather.framework */; };
 		75D68050285714340097B97A /* SecondCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6804F285714340097B97A /* SecondCreateView.swift */; };
 		75D6805228571C970097B97A /* FirstCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805128571C970097B97A /* FirstCreateView.swift */; };
@@ -86,6 +87,7 @@
 		34E0F85A285B2C59002A8A42 /* HostedPresentationModeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedPresentationModeExtension.swift; sourceTree = "<group>"; };
 		34E0F85D285B522D002A8A42 /* SecondModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondModifyView.swift; sourceTree = "<group>"; };
 		34E0F85F285B5259002A8A42 /* ColorPickerModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerModifyView.swift; sourceTree = "<group>"; };
+		34E0F861285B7491002A8A42 /* ModifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyViewModel.swift; sourceTree = "<group>"; };
 		38ED8B9FB620DCD258CF1044 /* Pods_HomeToGather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeToGather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7D28927A6C908751A6D0A2 /* Pods-HomeToGather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.debug.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.debug.xcconfig"; sourceTree = "<group>"; };
 		75D6804F285714340097B97A /* SecondCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCreateView.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				75E65DD02859F5D600D92381 /* FirstModifyView.swift */,
 				34E0F85D285B522D002A8A42 /* SecondModifyView.swift */,
 				34E0F85F285B5259002A8A42 /* ColorPickerModifyView.swift */,
+				34E0F861285B7491002A8A42 /* ModifyViewModel.swift */,
 			);
 			path = Modify;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				E252A78B285B1056007EE497 /* LicenseViewModel.swift in Sources */,
 				E477390428533A6900C1403F /* Color.swift in Sources */,
 				D760C181285857F6004D9D10 /* HideKeyboard.swift in Sources */,
+				34E0F862285B7491002A8A42 /* ModifyViewModel.swift in Sources */,
 				34E0F8552859ABA8002A8A42 /* ShareCardView.swift in Sources */,
 				E26A38832851F50D00AD8EFF /* MainView.swift in Sources */,
 				345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */,

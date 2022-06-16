@@ -13,6 +13,9 @@ struct HostedDetailView: View {
     @State var viewModel = ViewModel()
     @State var changeData: Bool = false
     
+    @ObservedObject var modifyViewModel = ModifyViewModel()
+    @State var isHostedViewActive: Bool = false
+    
     @Environment(\.presentationMode) var presentationMode
     
     var partyData: PartyData = PartyData()
@@ -31,6 +34,17 @@ struct HostedDetailView: View {
         ZStack {
             Color.backgroundColor
                 .ignoresSafeArea()
+            
+            VStack{
+                NavigationLink(isActive: self.$modifyViewModel.didMoveToView1) {
+                    FirstModifyView()
+                        .environmentObject(partyData)
+                } label: {
+                    EmptyView()
+                }
+                    .isDetailLink(false)
+                //                    .disabled(true)
+            }
             
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
@@ -85,14 +99,9 @@ struct HostedDetailView: View {
                     
                 }
                 .padding(20)
-                
-                NavigationLink(destination: FirstModifyView(isModified : $isModified)
-                                            .environmentObject(partyData),
-                               isActive: self.$isModified)
-                                { EmptyView() }
-                                    .disabled(true)
             }
         }
+        
         .toolbar {
             ToolbarItem {
                 Button(role: .destructive, action: {
@@ -107,7 +116,8 @@ struct HostedDetailView: View {
                         deeplinkManager.shareLinkToKakao(invitationID: partyData.id)
                     }
                     Button("수정하기") {
-                        self.isModified = true
+                        self.modifyViewModel.didMoveToView1 = true
+                        //                            self.isHostedViewActive = true
                     }
                     Button("삭제하기", role: .destructive) {
                         viewModel.deleteInvitation(hostData.id)

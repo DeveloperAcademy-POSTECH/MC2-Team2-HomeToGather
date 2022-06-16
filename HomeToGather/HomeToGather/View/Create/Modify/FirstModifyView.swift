@@ -11,10 +11,13 @@ struct FirstModifyView: View {
     
     @EnvironmentObject var partyData: PartyData
     
-    @Binding var isModified: Bool
-
+    @ObservedObject var modifyViewModel: ModifyViewModel
     @State private var isDisabled = false
     @Environment(\.dismiss) var dismiss
+    
+    init() {
+        modifyViewModel = ModifyViewModel()
+    }
     
 //    init(isModified: Binding<Bool>) {
 //        UINavigationBar.appearance().tintColor = .white
@@ -53,10 +56,15 @@ struct FirstModifyView: View {
         
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink(destination: SecondModifyView(isModified: $isModified).environmentObject(partyData),
-                               isActive: $isModified,
+                NavigationLink(destination: SecondModifyView(modifyViewModel: modifyViewModel).environmentObject(partyData),
+                               isActive: self.$modifyViewModel.didMoveToView2,
                                label: { Text("다음").foregroundColor(isDisabled ? .gray : .white)
-                }).disabled(isDisabled)
+                })
+                .isDetailLink(false)
+                .onTapGesture {
+                    self.modifyViewModel.didMoveToView2 = true
+                }
+                .disabled(isDisabled)
             }
         }
     }

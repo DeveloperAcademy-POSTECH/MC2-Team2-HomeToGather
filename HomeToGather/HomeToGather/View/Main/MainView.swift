@@ -91,6 +91,7 @@ struct MainView: View {
                                     .foregroundColor(.white)
                             }
                         }
+                        .isDetailLink(false)
                     })
                 }
             }

@@ -13,6 +13,8 @@ struct HostedListView: View {
     let uid = getUserUid()
     
     @ObservedObject var hostedViewModel = HostedViewModel()
+    @State private var selectedHostedData: Invitation = Invitation.dummyInvitation
+    @State private var clicked: Bool = false
     
     init() {
         hostedViewModel.fetchInvitationsReceived(uid)
@@ -20,21 +22,36 @@ struct HostedListView: View {
     
     var body: some View {
         ZStack {
+            VStack{
+                NavigationLink(isActive: self.$clicked) {
+                    HostedDetailView(hostData: selectedHostedData)
+                } label: {
+                    EmptyView()
+                }
+                .isDetailLink(false)
+            }
+            
             Color.backgroundColor
                 .ignoresSafeArea()
             
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
                     ForEach(hostedViewModel.invitationsReceived, id: \.self) { host in
-                        NavigationLink {
-                            HostedDetailView(hostData: host)
-                        } label: {
-                            ListTicketView(invitationData: host)
-                                .frame(maxWidth: screenWidth)
-                                .padding(.bottom, 20)
-                        }
+                        ListTicketView(invitationData: host)
+                            .frame(maxWidth: screenWidth)
+                            .padding(.bottom, 20)
+                            .onTapGesture {
+                                self.selectedHostedData = host
+                                clicked.toggle()
+                            }
+                        
+                        //                        NavigationLink {
+                        //                            HostedDetailView(hostData: host)
+                        //                        } label: {
+                        
                     }
                 }
+                
             }
             .padding(20)
         }

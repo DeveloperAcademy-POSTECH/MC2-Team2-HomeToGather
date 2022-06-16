@@ -12,14 +12,8 @@ struct SecondModifyView: View {
     // 툴바 버튼에 이전뷰 전활을 위한 변수
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var partyData: PartyData
-    @Binding var isModified: Bool
+    @ObservedObject var modifyViewModel: ModifyViewModel
     
-    
-//    init(isModified : Binding<Bool>) {
-//        self._isModified = isModified
-//        UINavigationBar.appearance().tintColor = .white
-//    }
-
     var body: some View {
         ScrollView {
             VStack() {
@@ -60,12 +54,18 @@ struct SecondModifyView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink(destination:
-                    ColorPickerModifyView(isModified: $isModified)
-                        .environmentObject(partyData)
-                , isActive: $isModified , label: {
+                                ColorPickerModifyView(modifyViewModel: modifyViewModel)
+                    .environmentObject(partyData),
+                               isActive: self.$modifyViewModel.didMoveToView3)
+                {
                     Text("다음")
                         .foregroundColor(isDisabled() ? .gray : .white)
-                }).disabled(isDisabled())
+                }
+                .isDetailLink(false)
+                .onTapGesture {
+                    self.modifyViewModel.didMoveToView3 = true
+                }
+                .disabled(isDisabled())
             }
         }
     }

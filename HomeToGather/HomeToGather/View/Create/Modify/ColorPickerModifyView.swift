@@ -9,12 +9,11 @@ import SwiftUI
 
 
 struct ColorPickerModifyView: View {
-    @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
     
     @State private var selectedColor: PartyColors = .red
     @State private var viewModel = ViewModel()
     @EnvironmentObject var partyData: PartyData
-    @Binding var isModified: Bool
+    @ObservedObject var modifyViewModel: ModifyViewModel
 
     @Environment(\.dismiss) var dismiss
     @State private var isCreated = false
@@ -48,7 +47,10 @@ struct ColorPickerModifyView: View {
                 Button {
                     viewModel.correctionInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color), partyData.hostId)
                     
-                    self.isModified.toggle()
+//                    self.hostedPresentationMode.wrappedValue.dismissHosted()
+                    self.modifyViewModel.didMoveToView1 = false
+//                    self.modifyViewModel.didMoveToView2 = false
+//                    self.modifyViewModel.didMoveToView3 = false
                     
                 } label: {
                     Text("수정하기")
@@ -80,3 +82,4 @@ struct ColorPickerModifyView: View {
     
 
 }
+
