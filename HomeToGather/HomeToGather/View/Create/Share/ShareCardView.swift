@@ -25,8 +25,8 @@ struct ShareCardView: View {
             Color.backgroundColor.ignoresSafeArea()
             VStack(spacing:0){
                 
-                TicketView(color: $partyColor)
-                    .background(Color.clear)
+//                TicketView(color: $partyData.color)
+//                    .background(Color.clear)
                 
                 Button{
                    // 공유하기
