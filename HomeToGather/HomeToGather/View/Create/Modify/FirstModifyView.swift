@@ -7,15 +7,19 @@
 
 import SwiftUI
 
-struct ModifyView: View {
+struct FirstModifyView: View {
     
     @EnvironmentObject var partyData: PartyData
+    
+    @Binding var isModified: Bool
+
     @State private var isDisabled = false
     @Environment(\.dismiss) var dismiss
     
-    init(){
-        UINavigationBar.appearance().tintColor = .white
-    }
+//    init(isModified: Binding<Bool>) {
+//        UINavigationBar.appearance().tintColor = .white
+//        self._isModified = isModified
+//    }
     
     var body: some View {
         ZStack {
@@ -29,14 +33,14 @@ struct ModifyView: View {
                 }
             }
         }
-        .navigationBarTitle("초대장 만들기2", displayMode: .inline)
+        .navigationBarTitle("초대장 수정하기", displayMode: .inline)
         .foregroundColor(.white)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
-                    print("PartyDataReset")
                     dismiss()
+
                 }, label: {
                     Image(systemName: "chevron.backward")
                     Text("이전")
@@ -49,12 +53,9 @@ struct ModifyView: View {
         
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink(destination: {
-                    SecondCreateView()
-                        .environmentObject(partyData)
-                }, label: {
-                    Text("다음")
-                        .foregroundColor(isDisabled ? .gray : .white)
+                NavigationLink(destination: SecondModifyView(isModified: $isModified).environmentObject(partyData),
+                               isActive: $isModified,
+                               label: { Text("다음").foregroundColor(isDisabled ? .gray : .white)
                 }).disabled(isDisabled)
             }
         }

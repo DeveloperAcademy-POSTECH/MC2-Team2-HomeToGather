@@ -15,7 +15,7 @@ struct ContentView: View {
     @State private var appleLoginCoordinator: AppleAuthCoordinator?
     @State var isSuccess: Bool = Auth.auth().currentUser != nil ? false : true
     @State var isTouchedTicket: Bool = false
-    @State private var isActive: Bool = false
+    @State private var isAddViewActive: Bool = false
 
     // Deeplink Property
     let viewModel = ViewModel()
@@ -165,7 +165,7 @@ struct ContentView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing, content: {
-                        NavigationLink(destination: FirstCreateView(), isActive: self.$isActive) {
+                        NavigationLink(destination: FirstCreateView(), isActive: self.$isAddViewActive) {
                             Image(systemName: "plus.square")
                                 .foregroundColor(.white)
                         }
@@ -173,8 +173,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("", displayMode: .inline)
         }
-        .environment(\.rootPresentationMode, self.$isActive)
-        
+        .environment(\.rootPresentationMode, self.$isAddViewActive)
     }
     
     func appleLogin(isEnteredWithLink: Bool, invitationID: String?) {

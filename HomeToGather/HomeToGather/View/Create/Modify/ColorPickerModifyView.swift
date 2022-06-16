@@ -1,30 +1,28 @@
 //
-//  ColorPickerView.swift
+//  ColorPickerModifyView.swift
 //  HomeToGather
 //
-//  Created by Doyun Park on 2022/06/13.
+//  Created by Park Sungmin on 2022/06/16.
 //
 
 import SwiftUI
 
-enum PartyColors:String,CaseIterable {
-    case red,blue,green,yellow
-}
 
-
-struct ColorPickerView: View {
+struct ColorPickerModifyView: View {
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
     
     @State private var selectedColor: PartyColors = .red
     @State private var viewModel = ViewModel()
     @EnvironmentObject var partyData: PartyData
-    
+    @Binding var isModified: Bool
+
     @Environment(\.dismiss) var dismiss
     @State private var isCreated = false
     
-    init() {
-        viewModel.getUserName(getUserUid())
-    }
+//    init(isModified: Binding<Bool>) {
+//        self._isModified = isModified
+//        viewModel.getUserName(getUserUid())
+//    }
     
     var body: some View {
         ProgressBar(counter: 100.0)
@@ -48,15 +46,12 @@ struct ColorPickerView: View {
                     .background(Color.clear)
                 
                 Button {
-                    if !partyData.isModifying {
-                        viewModel.uploadInvitation(Invitation(id: partyData.id, uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color))
-                    } else {
-                        viewModel.correctionInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color), partyData.hostId)
-                    }
-                    isCreated.toggle()
+                    viewModel.correctionInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color), partyData.hostId)
+                    
+                    self.isModified.toggle()
                     
                 } label: {
-                    Text(partyData.isModifying ? "수정하기" : "만들기")
+                    Text("수정하기")
                         .font(.system(size: 18))
                         .frame(width: 350, height: 50, alignment: .center)
                         .background(Color.partyPurple)
@@ -64,19 +59,9 @@ struct ColorPickerView: View {
                         .foregroundColor(.white)
                         .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
                 }
-                
-                NavigationLink(isActive: self.$isCreated) {
-                    ShareCardView(partyColor : $selectedColor)
-                        .environmentObject(partyData)
-                } label: {
-                    EmptyView()
-                }
-
-                
-                
             }
         }
-        .navigationBarTitle("초대장 테마 설정", displayMode: .inline)
+        .navigationBarTitle("초대장 테마 수정", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
         .foregroundColor(.white)
         .toolbar {

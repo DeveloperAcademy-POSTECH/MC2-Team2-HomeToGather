@@ -10,6 +10,9 @@
 		345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */; };
 		34E0F8552859ABA8002A8A42 /* ShareCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F8542859ABA8002A8A42 /* ShareCardView.swift */; };
 		34E0F857285B0084002A8A42 /* RootPresentationModeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F856285B0084002A8A42 /* RootPresentationModeExtension.swift */; };
+		34E0F85B285B2C59002A8A42 /* HostedPresentationModeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F85A285B2C59002A8A42 /* HostedPresentationModeExtension.swift */; };
+		34E0F85E285B522D002A8A42 /* SecondModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F85D285B522D002A8A42 /* SecondModifyView.swift */; };
+		34E0F860285B5259002A8A42 /* ColorPickerModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F85F285B5259002A8A42 /* ColorPickerModifyView.swift */; };
 		5527F890564C64DF8F6724B6 /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ED8B9FB620DCD258CF1044 /* Pods_HomeToGather.framework */; };
 		75D68050285714340097B97A /* SecondCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6804F285714340097B97A /* SecondCreateView.swift */; };
 		75D6805228571C970097B97A /* FirstCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805128571C970097B97A /* FirstCreateView.swift */; };
@@ -19,7 +22,7 @@
 		75D6805C28571DD00097B97A /* PartyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805B28571DD00097B97A /* PartyData.swift */; };
 		75D6805E28571E6A0097B97A /* SearchAddressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805D28571E6A0097B97A /* SearchAddressButton.swift */; };
 		75D6806028571EAC0097B97A /* AdressWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805F28571EAC0097B97A /* AdressWebView.swift */; };
-		75E65DD12859F5D600D92381 /* ModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E65DD02859F5D600D92381 /* ModifyView.swift */; };
+		75E65DD12859F5D600D92381 /* FirstModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E65DD02859F5D600D92381 /* FirstModifyView.swift */; };
 		B93869D92855043500320855 /* HostedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869D82855043500320855 /* HostedListView.swift */; };
 		B93869DB2855044200320855 /* HostedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DA2855044200320855 /* HostedDetailView.swift */; };
 		B93869DD2855D8B100320855 /* FeedbackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DC2855D8B100320855 /* FeedbackCardView.swift */; };
@@ -30,7 +33,6 @@
 		B95078042854D9FA00F7825A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95078032854D9F900F7825A /* View.swift */; };
 		B9BF1D632858A8570081DC4A /* HostedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BF1D622858A8570081DC4A /* HostedViewModel.swift */; };
 		B9BF1D652858A86D0081DC4A /* InvitedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BF1D642858A86D0081DC4A /* InvitedViewModel.swift */; };
-		B9C1AA3B285A0024002C6516 /* ModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1AA3A285A0024002C6516 /* ModifyView.swift */; };
 		B9C1AA3D285AFDD1002C6516 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1AA3C285AFDD1002C6516 /* Date.swift */; };
 		B9CF5CA528572D50002B69FB /* ListTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CF5CA428572D50002B69FB /* ListTicketView.swift */; };
 		B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0FC002856505500D5BCC3 /* InvitationView.swift */; };
@@ -81,6 +83,9 @@
 		345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
 		34E0F8542859ABA8002A8A42 /* ShareCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardView.swift; sourceTree = "<group>"; };
 		34E0F856285B0084002A8A42 /* RootPresentationModeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresentationModeExtension.swift; sourceTree = "<group>"; };
+		34E0F85A285B2C59002A8A42 /* HostedPresentationModeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedPresentationModeExtension.swift; sourceTree = "<group>"; };
+		34E0F85D285B522D002A8A42 /* SecondModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondModifyView.swift; sourceTree = "<group>"; };
+		34E0F85F285B5259002A8A42 /* ColorPickerModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerModifyView.swift; sourceTree = "<group>"; };
 		38ED8B9FB620DCD258CF1044 /* Pods_HomeToGather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeToGather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7D28927A6C908751A6D0A2 /* Pods-HomeToGather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.debug.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.debug.xcconfig"; sourceTree = "<group>"; };
 		75D6804F285714340097B97A /* SecondCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCreateView.swift; sourceTree = "<group>"; };
@@ -91,7 +96,7 @@
 		75D6805B28571DD00097B97A /* PartyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyData.swift; sourceTree = "<group>"; };
 		75D6805D28571E6A0097B97A /* SearchAddressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressButton.swift; sourceTree = "<group>"; };
 		75D6805F28571EAC0097B97A /* AdressWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressWebView.swift; sourceTree = "<group>"; };
-		75E65DD02859F5D600D92381 /* ModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyView.swift; sourceTree = "<group>"; };
+		75E65DD02859F5D600D92381 /* FirstModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModifyView.swift; sourceTree = "<group>"; };
 		92453298268F7CC41C8D5F13 /* Pods-HomeToGather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.release.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.release.xcconfig"; sourceTree = "<group>"; };
 		B93869D82855043500320855 /* HostedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedListView.swift; sourceTree = "<group>"; };
 		B93869DA2855044200320855 /* HostedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedDetailView.swift; sourceTree = "<group>"; };
@@ -103,7 +108,6 @@
 		B95078032854D9F900F7825A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		B9BF1D622858A8570081DC4A /* HostedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedViewModel.swift; sourceTree = "<group>"; };
 		B9BF1D642858A86D0081DC4A /* InvitedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedViewModel.swift; sourceTree = "<group>"; };
-		B9C1AA3A285A0024002C6516 /* ModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyView.swift; sourceTree = "<group>"; };
 		B9C1AA3C285AFDD1002C6516 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		B9CF5CA428572D50002B69FB /* ListTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTicketView.swift; sourceTree = "<group>"; };
 		B9D0FC002856505500D5BCC3 /* InvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
@@ -173,6 +177,16 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
+		34E0F85C285B51C4002A8A42 /* Modify */ = {
+			isa = PBXGroup;
+			children = (
+				75E65DD02859F5D600D92381 /* FirstModifyView.swift */,
+				34E0F85D285B522D002A8A42 /* SecondModifyView.swift */,
+				34E0F85F285B5259002A8A42 /* ColorPickerModifyView.swift */,
+			);
+			path = Modify;
+			sourceTree = "<group>";
+		};
 		386DE07C9CE52D9EE79C0092 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +212,6 @@
 			children = (
 				75D6805F28571EAC0097B97A /* AdressWebView.swift */,
 				75D6805128571C970097B97A /* FirstCreateView.swift */,
-				75E65DD02859F5D600D92381 /* ModifyView.swift */,
 				75D6805328571CD60097B97A /* FirstInfo.swift */,
 			);
 			path = First;
@@ -351,13 +364,12 @@
 		E477389F28531B9200C1403F /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				34E0F8532859AB15002A8A42 /* Share */,
-				E48CDB082858722400786DB2 /* Third */,
+				34E0F85C285B51C4002A8A42 /* Modify */,
 				75D6804C285711200097B97A /* Components */,
-				34E0F8532859AB15002A8A42 /* Share */,
 				75D6804D285711280097B97A /* First */,
 				75D6804E285714190097B97A /* Second */,
 				E48CDB082858722400786DB2 /* Third */,
+				34E0F8532859AB15002A8A42 /* Share */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -366,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				34E0F856285B0084002A8A42 /* RootPresentationModeExtension.swift */,
+				34E0F85A285B2C59002A8A42 /* HostedPresentationModeExtension.swift */,
 				E47738A42853223200C1403F /* Font */,
 				E477390328533A6900C1403F /* Color.swift */,
 				B95078032854D9F900F7825A /* View.swift */,
@@ -594,10 +607,13 @@
 				B93869D92855043500320855 /* HostedListView.swift in Sources */,
 				B9BF1D652858A86D0081DC4A /* InvitedViewModel.swift in Sources */,
 				75D6805A28571D380097B97A /* SubTitleRow.swift in Sources */,
-				75E65DD12859F5D600D92381 /* ModifyView.swift in Sources */,
+				34E0F85E285B522D002A8A42 /* SecondModifyView.swift in Sources */,
+				75E65DD12859F5D600D92381 /* FirstModifyView.swift in Sources */,
 				75D6805428571CD60097B97A /* FirstInfo.swift in Sources */,
+				34E0F85B285B2C59002A8A42 /* HostedPresentationModeExtension.swift in Sources */,
 				B95078042854D9FA00F7825A /* View.swift in Sources */,
 				D7A1252F28585CCD00F68084 /* ListView.swift in Sources */,
+				34E0F860285B5259002A8A42 /* ColorPickerModifyView.swift in Sources */,
 				B9CF5CA528572D50002B69FB /* ListTicketView.swift in Sources */,
 				E26A386F2851F40300AD8EFF /* AppleLogin.swift in Sources */,
 				B950780228549A8700F7825A /* CardView.swift in Sources */,

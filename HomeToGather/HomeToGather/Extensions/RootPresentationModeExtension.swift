@@ -23,7 +23,7 @@ typealias RootPresentationMode = Bool
 
 public extension RootPresentationMode {
   mutating func dismissRoot() {
-    self.toggle()
+    self = false
   }
 }
 

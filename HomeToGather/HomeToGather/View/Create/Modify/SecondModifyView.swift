@@ -1,22 +1,24 @@
 //
-//  Jouney.swift
+//  SecondModifyView.swift
 //  HomeToGather
 //
-//  Created by JungHoonPark on 2022/06/13.
+//  Created by Park Sungmin on 2022/06/16.
 //
 
 import SwiftUI
 
-struct SecondCreateView: View {
+struct SecondModifyView: View {
     
     // 툴바 버튼에 이전뷰 전활을 위한 변수
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var partyData: PartyData
+    @Binding var isModified: Bool
     
     
-    init() {
-        UINavigationBar.appearance().tintColor = .white
-    }
+//    init(isModified : Binding<Bool>) {
+//        self._isModified = isModified
+//        UINavigationBar.appearance().tintColor = .white
+//    }
 
     var body: some View {
         ScrollView {
@@ -38,7 +40,7 @@ struct SecondCreateView: View {
                 }
             }
         }
-        .navigationBarTitle("초대장 만들기", displayMode: .inline)
+        .navigationBarTitle("초대장 수정하기", displayMode: .inline)
         .foregroundColor(.white)
         
         .navigationBarBackButtonHidden(true)
@@ -57,10 +59,10 @@ struct SecondCreateView: View {
         
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink(destination: {
-                    ColorPickerView()
+                NavigationLink(destination:
+                    ColorPickerModifyView(isModified: $isModified)
                         .environmentObject(partyData)
-                }, label: {
+                , isActive: $isModified , label: {
                     Text("다음")
                         .foregroundColor(isDisabled() ? .gray : .white)
                 }).disabled(isDisabled())

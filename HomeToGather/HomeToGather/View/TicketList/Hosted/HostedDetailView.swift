@@ -12,6 +12,7 @@ struct HostedDetailView: View {
     @State private var isConfirmationDialogShow: Bool = false
     @State var viewModel = ViewModel()
     @State var changeData: Bool = false
+    
     @Environment(\.presentationMode) var presentationMode
     
     var partyData: PartyData = PartyData()
@@ -23,6 +24,8 @@ struct HostedDetailView: View {
     
     private let randomImageName: [String] = ["partyImage1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]
     let screenWidth = UIScreen.main.bounds.width
+    
+    @State var isModified = false
     
     var body: some View {
         ZStack {
@@ -83,7 +86,11 @@ struct HostedDetailView: View {
                 }
                 .padding(20)
                 
-                NavigationLink(destination: ModifyView().environmentObject(partyData), isActive: self.$changeData){EmptyView()}.disabled(true)
+                NavigationLink(destination: FirstModifyView(isModified : $isModified)
+                                            .environmentObject(partyData),
+                               isActive: self.$isModified)
+                                { EmptyView() }
+                                    .disabled(true)
             }
         }
         .toolbar {
@@ -95,9 +102,12 @@ struct HostedDetailView: View {
                         .foregroundColor(.white)
                 })
                 .confirmationDialog("confirmationDialog", isPresented: $isConfirmationDialogShow, titleVisibility: .hidden) {
-                    Button("공유하기") {}
+                    Button("공유하기") {
+                        let deeplinkManager = DeeplinkManager()
+                        deeplinkManager.shareLinkToKakao(invitationID: partyData.id)
+                    }
                     Button("수정하기") {
-                        self.changeData = true
+                        self.isModified = true
                     }
                     Button("삭제하기", role: .destructive) {
                         viewModel.deleteInvitation(hostData.id)
@@ -110,3 +120,11 @@ struct HostedDetailView: View {
         .preferredColorScheme(.dark)
     }
 }
+
+//class IsModified : ObservableObject {
+//    @Published var done: Bool = false
+//
+//    init() {
+//        self.done = false
+//    }
+//}
