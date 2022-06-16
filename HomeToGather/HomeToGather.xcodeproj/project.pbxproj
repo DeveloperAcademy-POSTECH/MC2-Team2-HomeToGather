@@ -19,7 +19,6 @@
 		75D6805E28571E6A0097B97A /* SearchAddressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805D28571E6A0097B97A /* SearchAddressButton.swift */; };
 		75D6806028571EAC0097B97A /* AdressWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805F28571EAC0097B97A /* AdressWebView.swift */; };
 		75E65DD12859F5D600D92381 /* ModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E65DD02859F5D600D92381 /* ModifyView.swift */; };
-		A09DB8583B01A4B2E4388F3D /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FAA5D46AD3172154946160 /* Pods_HomeToGather.framework */; };
 		B93869D92855043500320855 /* HostedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869D82855043500320855 /* HostedListView.swift */; };
 		B93869DB2855044200320855 /* HostedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DA2855044200320855 /* HostedDetailView.swift */; };
 		B93869DD2855D8B100320855 /* FeedbackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DC2855D8B100320855 /* FeedbackCardView.swift */; };
@@ -42,6 +41,11 @@
 		D7A1253128585CE100F68084 /* RuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A1253028585CE100F68084 /* RuleView.swift */; };
 		E217AB4D28561F5B00242BAD /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217AB4C28561F5A00242BAD /* TicketView.swift */; };
 		E217AB4F28561F6300242BAD /* ExpanedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217AB4E28561F6300242BAD /* ExpanedTicketView.swift */; };
+		E252A785285AFBFE007EE497 /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E252A784285AFBFE007EE497 /* LicenseView.swift */; };
+		E252A789285AFF82007EE497 /* LicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E252A788285AFF82007EE497 /* LicenseModel.swift */; };
+		E252A78B285B1056007EE497 /* LicenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E252A78A285B1056007EE497 /* LicenseViewModel.swift */; };
+		E252A78D285B10C3007EE497 /* ApacheLicense.txt in Resources */ = {isa = PBXBuildFile; fileRef = E252A78C285B10C3007EE497 /* ApacheLicense.txt */; };
+		E252A791285B112A007EE497 /* MITLicense.txt in Resources */ = {isa = PBXBuildFile; fileRef = E252A790285B112A007EE497 /* MITLicense.txt */; };
 		E26A386F2851F40300AD8EFF /* AppleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A386E2851F40300AD8EFF /* AppleLogin.swift */; };
 		E26A38832851F50D00AD8EFF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A38822851F50D00AD8EFF /* MainView.swift */; };
 		E26A38852851F6E400AD8EFF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E26A38842851F6E400AD8EFF /* GoogleService-Info.plist */; };
@@ -108,6 +112,11 @@
 		D7A1253028585CE100F68084 /* RuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleView.swift; sourceTree = "<group>"; };
 		E217AB4C28561F5A00242BAD /* TicketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
 		E217AB4E28561F6300242BAD /* ExpanedTicketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpanedTicketView.swift; sourceTree = "<group>"; };
+		E252A784285AFBFE007EE497 /* LicenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
+		E252A788285AFF82007EE497 /* LicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseModel.swift; sourceTree = "<group>"; };
+		E252A78A285B1056007EE497 /* LicenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewModel.swift; sourceTree = "<group>"; };
+		E252A78C285B10C3007EE497 /* ApacheLicense.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ApacheLicense.txt; sourceTree = "<group>"; };
+		E252A790285B112A007EE497 /* MITLicense.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MITLicense.txt; sourceTree = "<group>"; };
 		E26A386E2851F40300AD8EFF /* AppleLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLogin.swift; sourceTree = "<group>"; };
 		E26A38822851F50D00AD8EFF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E26A38842851F6E400AD8EFF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -225,10 +234,21 @@
 			path = Hosted;
 			sourceTree = "<group>";
 		};
+		E252A783285AFB88007EE497 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E26A38C42853ABCA00AD8EFF /* SettingView.swift */,
+				E26A38C62853ABE800AD8EFF /* SettingDetailView.swift */,
+				E252A784285AFBFE007EE497 /* LicenseView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		E26A386C2851F3E000AD8EFF /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				E26A38892853077A00AD8EFF /* Model.swift */,
+				E252A788285AFF82007EE497 /* LicenseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +261,7 @@
 				345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */,
 				B9BF1D622858A8570081DC4A /* HostedViewModel.swift */,
 				B9BF1D642858A86D0081DC4A /* InvitedViewModel.swift */,
+				E252A78A285B1056007EE497 /* LicenseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -283,6 +304,8 @@
 				E26A386D2851F3E700AD8EFF /* ViewModel */,
 				E403DD712851DFE9004C8391 /* HomeToGatherApp.swift */,
 				E403DD732851DFE9004C8391 /* ContentView.swift */,
+				E252A78C285B10C3007EE497 /* ApacheLicense.txt */,
+				E252A790285B112A007EE497 /* MITLicense.txt */,
 				E403DD752851DFEA004C8391 /* Assets.xcassets */,
 				E26A38842851F6E400AD8EFF /* GoogleService-Info.plist */,
 				E47738A0285320B500C1403F /* Extensions */,
@@ -302,11 +325,10 @@
 		E477389D2853195400C1403F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E252A783285AFB88007EE497 /* Setting */,
 				E217AB4E28561F6300242BAD /* ExpanedTicketView.swift */,
 				E26A38822851F50D00AD8EFF /* MainView.swift */,
-				E26A38C42853ABCA00AD8EFF /* SettingView.swift */,
 				E217AB4C28561F5A00242BAD /* TicketView.swift */,
-				E26A38C62853ABE800AD8EFF /* SettingDetailView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -328,7 +350,6 @@
 			children = (
 				34E0F8532859AB15002A8A42 /* Share */,
 				E48CDB082858722400786DB2 /* Third */,
-				E48CDB082858722400786DB2 /* Last */,
 				75D6804C285711200097B97A /* Components */,
 				75D6804D285711280097B97A /* First */,
 				75D6804E285714190097B97A /* Second */,
@@ -467,9 +488,11 @@
 				E26A38B228539D2600AD8EFF /* Montserrat-Light.ttf in Resources */,
 				E26A38B128539D2600AD8EFF /* Montserrat-Thin.ttf in Resources */,
 				E403DD792851DFEA004C8391 /* Preview Assets.xcassets in Resources */,
+				E252A791285B112A007EE497 /* MITLicense.txt in Resources */,
 				E26A38C028539D4B00AD8EFF /* NotoSansKR-Regular.otf in Resources */,
 				E26A38BC28539D4B00AD8EFF /* NotoSansKR-Bold.otf in Resources */,
 				E26A38BE28539D4B00AD8EFF /* NotoSansKR-Light.otf in Resources */,
+				E252A78D285B10C3007EE497 /* ApacheLicense.txt in Resources */,
 				E26A38C128539D4B00AD8EFF /* NotoSansKR-Thin.otf in Resources */,
 				E403DD762851DFEA004C8391 /* Assets.xcassets in Resources */,
 				E26A38B028539D2600AD8EFF /* Montserrat-Medium.ttf in Resources */,
@@ -538,6 +561,7 @@
 				E26A38882853076800AD8EFF /* ViewModel.swift in Sources */,
 				E403DD742851DFE9004C8391 /* ContentView.swift in Sources */,
 				E26A38C72853ABE800AD8EFF /* SettingDetailView.swift in Sources */,
+				E252A78B285B1056007EE497 /* LicenseViewModel.swift in Sources */,
 				E477390428533A6900C1403F /* Color.swift in Sources */,
 				D760C181285857F6004D9D10 /* HideKeyboard.swift in Sources */,
 				34E0F8552859ABA8002A8A42 /* ShareCardView.swift in Sources */,
@@ -545,8 +569,10 @@
 				345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */,
 				75D6805C28571DD00097B97A /* PartyData.swift in Sources */,
 				D760C18328585861004D9D10 /* ProgressBar.swift in Sources */,
+				E252A789285AFF82007EE497 /* LicenseModel.swift in Sources */,
 				E217AB4D28561F5B00242BAD /* TicketView.swift in Sources */,
 				75D68050285714340097B97A /* SecondCreateView.swift in Sources */,
+				E252A785285AFBFE007EE497 /* LicenseView.swift in Sources */,
 				B95077FC28548D2C00F7825A /* InvitedListView.swift in Sources */,
 				75D6805228571C970097B97A /* FirstCreateView.swift in Sources */,
 				E47738A2285320F800C1403F /* Font.swift in Sources */,

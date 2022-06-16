@@ -31,11 +31,11 @@ struct SettingView: View {
 //                    Text("\(RelatedInformationList[0])")
 //                })
 //                .listRowSeparator(.hidden, edges: .top)
-//                NavigationLink(destination: {
-//                    SettingDetailView(title: RelatedInformationList[1])
-//                }, label: {
-//                    Text("\(RelatedInformationList[1])")
-//                })
+                NavigationLink(destination: {
+                    LicenseView()
+                }, label: {
+                    Text("오픈소스 라이선스")
+                })
 //                NavigationLink(destination: {
 //                    SettingDetailView(title: RelatedInformationList[2])
 //                }, label: {
