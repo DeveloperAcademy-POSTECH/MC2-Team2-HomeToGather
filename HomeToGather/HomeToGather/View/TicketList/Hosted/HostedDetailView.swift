@@ -60,6 +60,10 @@ struct HostedDetailView: View {
                                     .font(hostData.title.guessLanguage() == "한국어" ? .notoSans(withStyle: .Bold, size: 24) : .montserrat(withStyle: .Bold, size: 24))
                                     .padding(.top, 18)
                                 
+                                Text(hostData.description)
+                                    .font(hostData.place.guessLanguage() == "한국어" ? .notoSans(withStyle: .Light, size: 14) : .montserrat(withStyle: .Light, size: 14))
+                                    .padding(.top, 6)
+                                
                                 HStack(spacing: -5) {
                                     if let participants = hostData.participantName {
                                         if participants == [""] {
@@ -75,14 +79,14 @@ struct HostedDetailView: View {
                                         }
                                     }
                                 }
-                                .padding(.top, 7)
+                                .padding(.top, 14)
                                 
                                 HStack(spacing: 0) {
                                     Text("TIME: ")
                                     Text(hostData.date)
                                 }
                                 .font(.montserrat(withStyle: .Light, size: 14))
-                                .padding(.top, 50)
+                                .padding(.top, 30)
                                 
                                 HStack(alignment: .top, spacing: 0) {
                                     Text("PLACE: ")

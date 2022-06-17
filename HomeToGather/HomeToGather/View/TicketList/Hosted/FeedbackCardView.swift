@@ -50,11 +50,13 @@ struct FeedbackCardView: View {
                         .frame(maxWidth: screenWidth, maxHeight: 0.5)
                 
                     VStack(alignment: .leading, spacing: 0) {
-                        ForEach(feedbackContents!, id: \.self) { feedback in
-                            HStack(spacing: 0) {
-                                Text("· ")
-                                Text(feedback)
-                                    .font(feedback.guessLanguage() == "한국어" ? .notoSans(withStyle: .Medium, size: 12) : .montserrat(withStyle: .Medium, size: 12))
+                        if let feedback = feedbackContents! {
+                            ForEach(1..<feedback.count) { i in
+                                HStack(spacing: 0) {
+                                    Text("· ")
+                                    Text(feedback[i])
+                                        .font(feedback[i].guessLanguage() == "한국어" ? .notoSans(withStyle: .Medium, size: 12) : .montserrat(withStyle: .Medium, size: 12))
+                                }
                             }
                         }
                     }
