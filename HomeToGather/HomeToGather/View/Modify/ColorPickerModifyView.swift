@@ -1,30 +1,24 @@
 //
-//  ColorPickerView.swift
+//  ColorPickerModifyView.swift
 //  HomeToGather
 //
-//  Created by Doyun Park on 2022/06/13.
+//  Created by Park Sungmin on 2022/06/17.
 //
 
 import SwiftUI
 
-enum PartyColors:String,CaseIterable {
-    case red,blue,green,yellow
-}
-
-
-struct ColorPickerView: View {
-    @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
+struct ColorPickerModifyView: View {
     
     @State private var selectedColor = PartyColors.red
     
     @State private var viewModel = ViewModel()
-    @State private var isDoneCreate : Bool = false
-    @State private var newInvitation: Invitation = Invitation.dummyInvitation
-    
     @EnvironmentObject var partyData: PartyData
     @Environment(\.dismiss) var dismiss
     
-    init() {
+    @Binding var changeData : Bool
+    
+    init(changeData: Binding<Bool>) {
+        self._changeData = changeData
         viewModel.getUserName(getUserUid())
     }
     
@@ -32,7 +26,6 @@ struct ColorPickerView: View {
         ProgressBar(counter: 100.0)
         ZStack {
             Color.backgroundColor.ignoresSafeArea()
-            
             VStack(spacing:0){
                 HStack {
                     ForEach(PartyColors.allCases,id:\.self) { color in
@@ -51,33 +44,23 @@ struct ColorPickerView: View {
                 
                 Button {
                     if !partyData.isModifying {
-                        let newInvitation = Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color)
-                        
-                        self.newInvitation = newInvitation
-                        viewModel.uploadInvitation(newInvitation)
-                        self.isDoneCreate.toggle()
-                        
+                        viewModel.uploadInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color))
                     } else {
                         viewModel.correctionInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color), partyData.hostId)
                     }
                     
-                    
+                    if partyData.isModifying {
+                        print("DEBUG : 수정하기")
+                        self.changeData.toggle()
+                    }
                 } label: {
                     Text(partyData.isModifying ? "수정하기" : "만들기")
                         .font(.system(size: 18))
-                        .frame(width: 350, height: 50, alignment: .center)
-                        .background(Color.partyPurple)
-                        .cornerRadius(8)
-                        .foregroundColor(.white)
-                        .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
-                }
-                
-                NavigationLink(isActive: self.$isDoneCreate) {
-                    ShareCardView(newInvitaion: newInvitation)
-                        .environmentObject(partyData)
-                } label: {
-                    EmptyView()
-                }
+                }.frame(width: 350, height: 50, alignment: .center)
+                    .background(Color.partyPurple)
+                    .cornerRadius(8)
+                    .foregroundColor(.white)
+                    .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
             }
         }
         .navigationBarTitle("초대장 테마 설정", displayMode: .inline)
@@ -97,5 +80,4 @@ struct ColorPickerView: View {
             }
         }
     }
-    
 }

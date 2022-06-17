@@ -12,7 +12,10 @@ struct HostedListView: View {
     let screenWidth = UIScreen.main.bounds.width
     let uid = getUserUid()
     
+    @State var selected: Bool = false
+    @State var selectedHost: Invitation?
     @ObservedObject var hostedViewModel = HostedViewModel()
+    
     
     init() {
         hostedViewModel.fetchInvitationsReceived(uid)
@@ -20,19 +23,29 @@ struct HostedListView: View {
     
     var body: some View {
         ZStack {
+            NavigationLink (isActive: self.$selected){
+                HostedDetailView(hostData: self.selectedHost ?? hostedViewModel.invitationsReceived[0], backToRoot: self.$selected)
+            } label: {
+                EmptyView()
+            }
+            .isDetailLink(false)
+            
             Color.backgroundColor
                 .ignoresSafeArea()
             
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
                     ForEach(hostedViewModel.invitationsReceived, id: \.self) { host in
-                        NavigationLink {
-                            HostedDetailView(hostData: host)
+                        let _ = print(host)
+                        Button  {
+                            self.selectedHost = host
+                            self.selected = true
                         } label: {
                             ListTicketView(invitationData: host)
                                 .frame(maxWidth: screenWidth)
                                 .padding(.bottom, 20)
                         }
+
                     }
                 }
             }

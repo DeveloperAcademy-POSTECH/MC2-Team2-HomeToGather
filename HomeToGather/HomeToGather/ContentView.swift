@@ -23,6 +23,9 @@ struct ContentView: View {
     @State var isEnteredWithLink: Bool = false
     @State var invitationID: String?
     
+    @State private var isAddViewActive: Bool = false
+
+    
     @State private var invitationCardData: Invitation?
     @State private var invitationCardViewToggle = false
     
@@ -164,18 +167,15 @@ struct ContentView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing, content: {
-                        NavigationLink(destination: {
-                            FirstCreateView()
-                        }, label: {
+                        NavigationLink(destination: FirstCreateView(), isActive: self.$isAddViewActive) {
                             Image(systemName: "plus.square")
                                 .foregroundColor(.white)
-                        })
+                        }
                 })
             }
             .navigationBarTitle("", displayMode: .inline)
         }
-        
-        
+        .environment(\.rootPresentationMode, self.$isAddViewActive)
     }
     
     func appleLogin(isEnteredWithLink: Bool, invitationID: String?) {
