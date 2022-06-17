@@ -49,7 +49,7 @@ struct ShareCardView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-//                        self.rootPresentationMode.wrappedValue.dismissRoot()
+                        self.rootPresentationMode.wrappedValue.dismissRoot()
                     }, label: {
                         Image(systemName: "house.fill")
                     })
