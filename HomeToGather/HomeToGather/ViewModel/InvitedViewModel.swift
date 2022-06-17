@@ -13,7 +13,7 @@ class InvitedViewModel: ObservableObject {
     private var db = Firestore.firestore()
     private var storage = Storage.storage()
     
-    @Published var invitationsSent = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
+    @Published var invitationsSent = [Invitation(id: "", uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
     @Published var userName = ""
     
     func fetchInvitationsSent(_ invitationUid: String) {
@@ -22,7 +22,7 @@ class InvitedViewModel: ObservableObject {
                 print("No Documents")
                 return
             }
-            var sent = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
+            var sent = [Invitation(id: "", uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
             sent = documents.map({ (queryDocumentSnapshot) -> Invitation in
                 if (queryDocumentSnapshot.data()["participantUid"] as? [String] ?? [""]).contains(invitationUid) {
                     let data = queryDocumentSnapshot.data()

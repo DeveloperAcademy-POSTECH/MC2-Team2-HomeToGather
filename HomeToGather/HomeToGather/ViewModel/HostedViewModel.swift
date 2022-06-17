@@ -13,7 +13,7 @@ class HostedViewModel: ObservableObject {
     private var db = Firestore.firestore()
     private var storage = Storage.storage()
     
-    @Published var invitationsReceived = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
+    @Published var invitationsReceived = [Invitation(id: "", uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
     
     func fetchInvitationsReceived(_ invitationUid: String) {
         db.collection("ii").order(by: "date", descending: true).addSnapshotListener { (querySnapshot, error) in
@@ -22,7 +22,7 @@ class HostedViewModel: ObservableObject {
                 return
             }
             
-            var received = [Invitation(uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
+            var received = [Invitation(id: "", uid: "", organizerName: "", participantName: [""], participantUid: [""], title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")]
             
             received = documents.map({ (queryDocumentSnapshot) -> Invitation in
                 if queryDocumentSnapshot.data()["uid"] as? String ?? "" == invitationUid {
