@@ -12,12 +12,15 @@ struct HostedDetailView: View {
     @State private var isConfirmationDialogShow: Bool = false
     @State var viewModel = ViewModel()
     @State var changeData: Bool = false
+    @Binding var backToRoot: Bool
     @Environment(\.presentationMode) var presentationMode
     
     var partyData: PartyData = PartyData()
     
-    init(hostData: Invitation) {
+    
+    init(hostData: Invitation, backToRoot: Binding<Bool>) {
         self.hostData = hostData
+        self._backToRoot = backToRoot
         self.partyData = PartyData(rule: hostData.rule, food: hostData.food, cost: hostData.cost, title: hostData.title, date: hostData.date, place: hostData.place, description: hostData.description, color: hostData.color, isModifying: true, hostId: hostData.id)
     }
     
@@ -26,6 +29,16 @@ struct HostedDetailView: View {
     
     var body: some View {
         ZStack {
+            NavigationLink(isActive: self.$changeData) {
+                FirstModifyView(changeData: $backToRoot)
+                    .environmentObject(partyData)
+            } label: {
+                EmptyView()
+            }
+            .isDetailLink(false)
+            .disabled(true)
+            
+            
             Color.backgroundColor
                 .ignoresSafeArea()
             
@@ -82,8 +95,6 @@ struct HostedDetailView: View {
                     
                 }
                 .padding(20)
-                
-                NavigationLink(destination: ModifyView().environmentObject(partyData), isActive: self.$changeData){EmptyView()}.disabled(true)
             }
         }
         .toolbar {
@@ -95,7 +106,10 @@ struct HostedDetailView: View {
                         .foregroundColor(.white)
                 })
                 .confirmationDialog("confirmationDialog", isPresented: $isConfirmationDialogShow, titleVisibility: .hidden) {
-                    Button("공유하기") {}
+                    Button("공유하기") {
+                        let deeplinkManager = DeeplinkManager()
+                        deeplinkManager.shareLinkToKakao(invitationID: partyData.id)
+                    }
                     Button("수정하기") {
                         self.changeData = true
                     }

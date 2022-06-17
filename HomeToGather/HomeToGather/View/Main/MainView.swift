@@ -87,12 +87,13 @@ struct MainView: View {
                                         .foregroundColor(.white)
                                 }
                             }
+                            .isDetailLink(false)
+                            
                         })
                     }
                 }
+//                    .preferredColorScheme(.dark)
             }
-            .preferredColorScheme(.dark)
-            
         }
     }
 }

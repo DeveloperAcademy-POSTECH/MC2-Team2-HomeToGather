@@ -3,7 +3,7 @@ import Firebase
 import AuthenticationServices
 
 struct Invitation: Hashable {
-    var id = UUID().uuidString      // 초대장 고유 id
+    var id: String      // 초대장 고유 id
     var uid: String                 // 주최자 id
     var organizerName: String       // 주최자 이름
     var participantName: [String]?  // 참여자 이름
@@ -58,5 +58,5 @@ extension Invitation {
                                             etc: ["dummy_etc"],
                                             ruleFeedback: ["dummy_rulefeedback"],
                                             foodFeedback: ["dummy_foodfeedback"],
-                                            color: "dummy_color")
+                                            color: "red")
 }
