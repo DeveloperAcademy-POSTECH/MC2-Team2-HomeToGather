@@ -40,13 +40,13 @@ struct ColorPickerModifyView: View {
                 .padding(EdgeInsets(top: 13, leading: 20, bottom: 22, trailing: 20))
                 .background(Color.backgroundColor)
                 
-                TicketView(invitation: Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.color, food: partyData.food, etc: [], color: partyData.color))
+                TicketView(invitation: Invitation(id: partyData.id, uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.color, food: partyData.food, etc: [], color: partyData.color))
                 
                 Button {
                     if !partyData.isModifying {
-                        viewModel.uploadInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color))
+                        viewModel.uploadInvitation(Invitation(id: partyData.id, uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color))
                     } else {
-                        viewModel.correctionInvitation(Invitation(uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color), partyData.hostId)
+                        viewModel.correctionInvitation(Invitation(id: partyData.id, uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color), partyData.hostId)
                     }
                     
                     if partyData.isModifying {
