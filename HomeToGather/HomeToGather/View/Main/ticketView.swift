@@ -24,6 +24,7 @@ struct Triangle : Shape {
 
 struct TicketView: View {
     var ticketViewModel: TicketViewModel
+    var viewModel = ViewModel()
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     

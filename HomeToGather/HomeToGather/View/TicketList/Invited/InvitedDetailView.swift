@@ -15,6 +15,11 @@ struct InvitedDetailView: View {
     private let randomImageName: [String] = ["partyImage1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]
     let screenWidth = UIScreen.main.bounds.width
     
+    init(invitationData: Invitation) {
+        self.invitationData = invitationData
+        print(invitationData)
+    }
+    
     var body: some View {
         ZStack {
             Color.backgroundColor
@@ -40,9 +45,16 @@ struct InvitedDetailView: View {
                                 
                                 HStack(spacing: -5) {
                                     if let participants = invitationData.participantName {
-                                        ForEach(participants, id: \.self) { name in
-                                            let indexNum = invitationData.participantName?.firstIndex(of: name)
-                                            ParticipantView(name: name, indexNum: indexNum ?? 0)
+                                        if participants == [""] {
+                                            
+                                        } else {
+                                            ForEach(1..<participants.count) { i in
+                                                ParticipantView(name: participants[i], indexNum: i - 1)
+                                            }
+//                                            ForEach(participants, id: \.self) { name in
+//                                                let indexNum = invitationData.participantName?.firstIndex(of: name)
+//                                                ParticipantView(name: name, indexNum: indexNum ?? 0)
+//                                            }
                                         }
                                     }
                                 }

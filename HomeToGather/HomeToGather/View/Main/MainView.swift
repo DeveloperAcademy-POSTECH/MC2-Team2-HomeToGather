@@ -20,8 +20,13 @@ struct MainView: View {
     
     let userID = getUserUid()
     
-    init(isTouchedTicket: Binding<Bool>) {
+    init(isTouchedTicket: Binding<Bool>, shouldRefresh: Bool) {
         self._isTouchedTicket = isTouchedTicket
+//        if shouldRefresh {
+//            viewModel.getInvitationsSent(userID)
+//        } else {
+//            viewModel.fetchInvitation()
+//        }
         viewModel.getInvitationsSent(userID)
     }
     
