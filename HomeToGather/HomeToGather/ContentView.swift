@@ -36,7 +36,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                MainView(isTouchedTicket: $isTouchedTicket)
+                MainView(isTouchedTicket: $isTouchedTicket, shouldRefresh: invitationCardViewToggle)
                     .fullScreenCover(isPresented: $invitationCardViewToggle, content: {
                         VStack(spacing: 0) {
                             InvitedDetailView(invitationData: invitationCardData!)
@@ -74,6 +74,8 @@ struct ContentView: View {
                                         
                                     }
                                     // 참여한다고 데이터 전달하기
+                                    
+                                    
                                 }, label: {
                                     ZStack {
                                         RoundedRectangle(cornerRadius: 4)
