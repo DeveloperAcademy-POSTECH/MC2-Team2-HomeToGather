@@ -17,7 +17,7 @@ A brief description of what this project does and who it's for
 
 ## :people_hugging: Authors
 
-- [@D-Park](https://www.github.com/Junghoon-P) | [@Jayden](https://www.github.com/jayden000106) | [@Hatchling]([https://www.github.com/](https://github.com/woo0dev)) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/)
+- [@D-Park](https://www.github.com/Junghoon-P) | [@Jayden](https://www.github.com/jayden000106) | [@Hatchling](https://github.com/woo0dev) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/)
 
 
 ## :framed_picture: Demo
@@ -36,7 +36,8 @@ Insert gif or link to demo
 
 
 ## :sparkles: Skills & Tech Stack
-swiftUI ...
+SwiftUI
+Firebase
 
 ## :books: Documentation
 
