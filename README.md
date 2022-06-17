@@ -1,5 +1,5 @@
 
-![Logo](https://dummyimage.com/1000x300/000/fff.png)
+![sample](https://user-images.githubusercontent.com/77766769/174225268-a9b67a05-4d36-4d6d-b968-db9fb87153e3.jpg)
 
 
 # :iphone: Project Title
@@ -17,7 +17,7 @@ A brief description of what this project does and who it's for
 
 ## :people_hugging: Authors
 
-- [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/)
+- [@D-Park](https://www.github.com/Junghoon-P) | [@Jayden](https://www.github.com/jayden000106) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/)
 
 
 ## :framed_picture: Demo
