@@ -22,7 +22,7 @@ struct MainView: View {
     
     init(isTouchedTicket: Binding<Bool>) {
         self._isTouchedTicket = isTouchedTicket
-        viewModel.fetchInvitationsSent(userID)
+        viewModel.getInvitationsSent(userID)
     }
     
     var body: some View {
