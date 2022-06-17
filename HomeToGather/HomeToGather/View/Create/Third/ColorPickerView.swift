@@ -67,6 +67,7 @@ struct ColorPickerView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
+                    partyData.isNextView = false
                     dismiss()
                 }, label: {
                     Image(systemName: "chevron.backward")

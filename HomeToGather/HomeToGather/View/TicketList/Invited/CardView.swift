@@ -7,9 +7,56 @@
 
 import SwiftUI
 
+func getTextView(title: String, contents: Invitation) -> some View {
+    switch title {
+    case "규칙":
+        struct tmpView: View {
+            var contents: Invitation
+            
+            var body: some View {
+                
+                VStack {
+                    ForEach(contents.rule, id: \.self) { content in
+                        HStack(spacing: 0) {
+                            Text("· ")
+                            Text(content)
+                                .font(content.guessLanguage() == "한국어" ? .notoSans(withStyle: .Light, size: 14) : .montserrat(withStyle: .Light, size: 14))
+                        }
+                    }
+                }
+            }
+        }
+        return AnyView(tmpView(contents: contents))
+    case "메뉴":
+        struct tmpView: View {
+            var contents: Invitation
+            
+            var body: some View {
+                VStack {
+                    ForEach(contents.food, id: \.self) { content in
+                        HStack(spacing: 0) {
+                            Text("· ")
+                            Text(content)
+                                .font(content.guessLanguage() == "한국어" ? .notoSans(withStyle: .Light, size: 14) : .montserrat(withStyle: .Light, size: 14))
+                        }
+                    }
+                }
+            }
+        }
+        return AnyView(tmpView(contents: contents))
+    default:
+        struct tmpView: View {
+            var body: some View {
+                Text("Error")
+            }
+        }
+        return AnyView(tmpView())
+    }
+}
+
 struct CardView: View {
     var title: String
-    var contents: [String]?
+    var contents: Invitation
     @State var isModalPresent: Bool = false
     @State var feedback: String = ""
     
@@ -31,7 +78,6 @@ struct CardView: View {
                             .frame(width: 50, height: 15)
                         
                         Text(title)
-//                            .font(.system(size: 24, weight: .bold))
                             .font(.notoSans(withStyle: .Medium, size: 24))
                     }
                     Spacer()
@@ -46,15 +92,7 @@ struct CardView: View {
                 .padding(.top, 12)
                 
                 VStack(alignment: .leading, spacing: 0) {
-                    if contents != nil {
-                        ForEach(contents!, id: \.self) { content in
-                            HStack(spacing: 0) {
-                                Text("· ")
-                                Text(content)
-                                    .font(content.guessLanguage() == "한국어" ? .notoSans(withStyle: .Light, size: 14) : .montserrat(withStyle: .Light, size: 14))
-                            }
-                        }
-                    }
+                    getTextView(title: title, contents: contents)
                 }
                 .padding(.top, 28)
                 .padding(.bottom, 23)
@@ -80,7 +118,7 @@ struct CardView: View {
                             .strokeBorder()
                             .frame(maxWidth: screenWidth, maxHeight: 50)
                         
-                        FocusView(isModalPresent: $isModalPresent)
+                        FocusView(isModalPresent: $isModalPresent, title: title, contents: contents)
                     }
                     .padding(20)
                 }
@@ -111,6 +149,17 @@ struct FocusView: View {
     @FocusState private var isFocused: Bool
     @State private var feedback: String = ""
     @Binding var isModalPresent: Bool
+    @State var viewModel = ViewModel()
+    
+    var title: String
+    var contents: Invitation
+    @State var correctedInvitation = Invitation(id: "", uid: "", organizerName: "", title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: "")
+    
+    init(isModalPresent: Binding<Bool>, title: String, contents: Invitation) {
+        self._isModalPresent = isModalPresent
+        self.title = title
+        self.contents = contents
+    }
     
     var body: some View {
         HStack {
@@ -121,6 +170,20 @@ struct FocusView: View {
             Spacer()
             
             Button {
+                correctedInvitation = Invitation(id: contents.id, uid: contents.uid, organizerName: contents.organizerName, participantName: contents.participantName, participantUid: contents.participantUid, title: contents.title, date: contents.date, place: contents.place, description: contents.description, rule: contents.rule, cost: contents.cost, food: contents.food, etc: contents.etc, ruleFeedback: contents.ruleFeedback, foodFeedback: contents.foodFeedback, color: contents.color)
+                
+                switch title {
+                case "규칙":
+                    correctedInvitation.ruleFeedback.append(feedback)
+                    print(correctedInvitation)
+                case "메뉴":
+                    correctedInvitation.foodFeedback.append(feedback)
+                    print(correctedInvitation)
+                default:
+                    print("Error")
+                }
+                viewModel.correctionInvitation(correctedInvitation, correctedInvitation.id)
+                
                 isModalPresent = false
             } label: {
                 Image(systemName: "paperplane.circle.fill")
