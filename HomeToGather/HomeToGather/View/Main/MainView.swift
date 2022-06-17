@@ -33,8 +33,7 @@ struct MainView: View {
                 if isTouchedTicket {
                     VStack {
                         ExpanedTicketView(invitation: viewModel.recentInvitation)
-                            .offset(y: -50)
-                            .background(Color.white)
+                            .padding(20)
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarLeading) {
                                     Button {

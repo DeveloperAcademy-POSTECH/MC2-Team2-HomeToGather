@@ -15,6 +15,9 @@ struct ExpanedTicketView: View {
         self.ticketViewModel = TicketViewModel(invitation: invitation)
     }
     
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
+    
     @State var placeLabel = "PLACE"
     @State var timeLabel = "TIME"
 
@@ -23,140 +26,181 @@ struct ExpanedTicketView: View {
     @State var direction = false
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ZStack {
-                VStack(spacing:2) {
-                   
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 4)
-                            .fill(Color.white)
-                            .frame(width: 314, height: 514, alignment: .center)
-                        
-                        ZStack {
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(.white)
+                
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(LinearGradient(gradient: Gradient(colors: [.purple, ticketViewModel.color]), startPoint: .top, endPoint: .bottom))
+                    .padding(7)
+                
+                ZStack() {
+                    HStack(spacing: 0) {
+                        VStack(spacing: 0) {
+                            ZStack {
+                                HStack(spacing: 0) {
+                                    
+                                    VStack(alignment: .leading, spacing: 0) {
+                                        Text(ticketViewModel.partyTitle)
+                                            .font(.montserrat(withStyle: .Medium, size: 28))
+                                        
+                                        Text(ticketViewModel.subTitle)
+                                            .font(.montserrat(withStyle: .Medium, size: 24))
+                                            .padding(.top, 24)
+                                        
+                                        Text(ticketViewModel.dateTime)
+                                            .font(.montserrat(withStyle: .Medium, size: 12))
+                                            .padding(.top, 24)
+                                        
+                                        Text(ticketViewModel.location)
+                                            .font(.montserrat(withStyle: .Medium, size: 12))
+                                            .padding(.top, 30)
+                                    }
+                                }
+                            }
+                            .padding(10)
                             
-                            RoundedRectangle(cornerRadius: 4)
-                                .fill(LinearGradient(gradient: Gradient(colors: [.purple, ticketViewModel.color]),
-                                                     startPoint: .leading, endPoint: .trailing))
-                            VStack(alignment:.leading,spacing: 5) {
-                                
-                                Text(ticketViewModel.partyTitle)
-                                    .font(.notoSans(withStyle: .Bold, size: 28))
-                                    .foregroundColor(.white)
-                                Spacer()
-                                    .frame(width: 1, height: 20)
-                                Text(ticketViewModel.subTitle)
-                                    .font(.notoSans(withStyle: .Bold, size: 24))
-                                    .foregroundColor(.white)
-                                Spacer()
-                                    .frame(width: 1, height: 20)
-                                VStack(alignment:.leading,spacing: 3)  {
-                                    Text(ticketViewModel.yyyymmdd)
-                                        .font(.notoSans(withStyle: .Regular, size: 12))
-                                        .foregroundColor(.white)
-                                    Text(ticketViewModel.time)
-                                        .font(.notoSans(withStyle: .Regular, size: 12))
-                                        .foregroundColor(.white)
-                                    
-                                }
-                                Text(ticketViewModel.place)
-                                    .font(.notoSans(withStyle: .Regular, size: 12))
-                                    .foregroundColor(.white)
-                            }.offset(x: -150,y:-50)
-                        }.frame(width: 500, height: 300, alignment: .center)
-                            .rotationEffect(.degrees(90))
+                            Spacer()
+                        }
                         
-                        Image("mirrorBall")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 158, height: 316, alignment: .leading)
-                            .offset(x: -77, y: 73)
-                        
-                        Triangle()
-                            .fill(Color.white)
-                            .frame(width: 47, height: 47,alignment: .trailing)
-                            .rotationEffect(.degrees(-90))
-                            .offset(x: 132, y: 234)
-                        
-                        Triangle()
-                            .fill(Color.black)
-                            .frame(width: 35, height: 35,alignment: .trailing)
-                            .rotationEffect(.degrees(-90))
-                            .offset(x: 140, y: 240)
-                    }.frame(width: 136, height: 514, alignment: .center)
+                        Spacer()
+                    }
+                    .padding(10)
                     
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 4)
-                            .fill(Color.white)
-                        
-                        VStack(alignment:.leading,spacing:6) {
-                            Text(ticketViewModel.partyTitle)
-                                .font(.notoSans(withStyle: .Bold, size: 22))
-                                .foregroundColor(.black)
-                            Divider().frame(width: 234, height: 1, alignment: .center)
-                                .background(Color.black)
-                            HStack {
-                                VStack(alignment: .leading, spacing: 13) {
-                                    Text(timeLabel)
-                                        .font(.notoSans(withStyle: .Regular, size: 14))
-                                        .foregroundColor(.black)
-                                    Text(placeLabel)
-                                        .font(.notoSans(withStyle: .Regular, size: 14))
-                                        .foregroundColor(.black)
-                                }
-                                Spacer()
-                                    .frame(width: 30, height: 1, alignment: .trailing)
-                                Divider().frame(width: 1, height: 39, alignment: .center)
-                                    .background(Color.gray)
-                                Spacer()
-                                    .frame(width: 15, height: 1, alignment: .trailing)
-                                VStack(alignment: .leading, spacing: 13) {
-                                    Text(ticketViewModel.dateTime)
-                                        .font(.notoSans(withStyle: .Regular, size: 14))
-                                        .foregroundColor(.black)
-                                    Text(ticketViewModel.location)
-                                        .font(.notoSans(withStyle: .Regular, size: 14))
-                                        .foregroundColor(.black)
-                                }
+                    HStack(spacing: 0) {
+                        VStack(spacing: 0) {
+                            Spacer()
+                            
+                            ZStack {
+                                Image("mirrorBall")
+                                    .resizable()
+                                    .frame(width: 158, height: 316)
                             }
-                        }.padding(EdgeInsets(top: 18, leading: 18, bottom: 18, trailing: 18))
+                        }
                         
-                        Triangle()
-                            .fill(Color.black)
-                            .frame(width: 35, height: 35,alignment: .trailing)
-                            .rotationEffect(.degrees(-180))
-                            .offset(x: 140, y: -63)
+                        Spacer()
+                    }
+                    .padding(7)
+                }
+                
+                ZStack {
+                    HStack(spacing: 0) {
+                        Spacer()
                         
-                    }.frame(width: 314, height: 160, alignment: .center)
-                        .offset(x:isTearTicket ? 100 : 0, y: isTearTicket ? 150 : -2)
-                        .rotationEffect(.degrees(direction ? (isTearTicket ? 45 : 0) : (isTearTicket ? -45 : 0)))
-                        .opacity(isTearTicket ? 0 : 1)
-                    
-                }.frame(width: 314, height: 161, alignment: .center)
-                    .gesture(
-                        DragGesture()
-                            .onChanged { gesture in
+                        VStack(spacing: 0) {
+                            Spacer()
+                            
+                            ZStack(alignment: .bottomLeading) {
+                                Triangle()
+                                    .fill(Color.white)
+                                    .frame(width: 30, height: 30,alignment: .trailing)
                                 
-                                if gesture.translation.width > 0 {
-                                    direction = false
-                                    withAnimation(.easeInOut(duration: 0.8)) {
-                                        isTearTicket = true
-                                    }
-                                    
-                                } else {
-                                    direction = true
-                                    withAnimation(.easeInOut(duration: 0.8)) {
-                                        isTearTicket = true
-                                    }
-                                }
-                                
+                                Triangle()
+                                    .fill(Color.black)
+                                    .frame(width: 24, height: 24,alignment: .trailing)
                             }
-                    )
+                            .rotationEffect(.degrees(-90))
+                        }
+                    }
+                }
+                .frame(maxWidth: screenWidth, maxHeight: screenHeight)
             }
+            
+            ZStack {
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(.white)
+                
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(ticketViewModel.partyTitle)
+                        .foregroundColor(.black)
+                        .font(.montserrat(withStyle: .Medium, size: 16))
+                        .padding(.bottom, 17)
+                    
+                    Divider()
+                        .frame(width: 250, height: 1)
+                        .background(.black)
+                    
+                    HStack(spacing: 0) {
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text(timeLabel)
+                                .foregroundColor(.black)
+                                .font(.montserrat(withStyle: .Medium, size: 8))
+                                .padding(.bottom, 17)
+                            
+                            Text(placeLabel)
+                                .foregroundColor(.black)
+                                .font(.montserrat(withStyle: .Medium, size: 8))
+                        }
+                        .padding(.leading, 5)
+                        .padding(.trailing, 30)
+                        
+                        Divider()
+                            .frame(width: 1, height: 25)
+                            .background(.gray)
+                        
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text(ticketViewModel.dateTime)
+                                .foregroundColor(.black)
+                                .font(.montserrat(withStyle: .Medium, size: 8))
+                                .padding(.bottom, 17)
+                            
+                            Text(ticketViewModel.location)
+                                .foregroundColor(.black)
+                                .font(.montserrat(withStyle: .Medium, size: 8))
+                        }
+                        .padding(.leading, 15)
+                    }
+                    .padding(.top, 12)
+                }
+                
+                ZStack {
+                    HStack(spacing: 0) {
+                        Spacer()
+                        
+                        VStack(spacing: 0) {
+                            ZStack(alignment: .bottomLeading) {
+                                Triangle()
+                                    .fill(Color.white)
+                                    .frame(width: 30, height: 30,alignment: .trailing)
+                                
+                                Triangle()
+                                    .fill(Color.black)
+                                    .frame(width: 24, height: 24,alignment: .trailing)
+                            }
+                            .rotationEffect(.degrees(180))
+                            
+                            Spacer()
+                        }
+                    }
+                }
+                .frame(maxWidth: screenWidth, maxHeight: screenHeight)
+            }
+            .frame(height: 129)
+            .offset(x:isTearTicket ? 100 : 0, y: isTearTicket ? 150 : -2)
+            .rotationEffect(.degrees(direction ? (isTearTicket ? 45 : 0) : (isTearTicket ? -45 : 0)))
+            .opacity(isTearTicket ? 0 : 1)
         }
-        
-        
-        
-        
+        .padding(20)
+        .preferredColorScheme(.dark)
+        .gesture(
+            DragGesture()
+                .onChanged { gesture in
+                    
+                    if gesture.translation.width > 0 {
+                        direction = false
+                        withAnimation(.easeInOut(duration: 0.8)) {
+                            isTearTicket = true
+                        }
+                        
+                    } else {
+                        direction = true
+                        withAnimation(.easeInOut(duration: 0.8)) {
+                            isTearTicket = true
+                        }
+                    }
+                    
+                }
+        )
     }
 }
