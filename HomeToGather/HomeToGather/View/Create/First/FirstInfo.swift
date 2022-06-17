@@ -111,9 +111,3 @@ struct FirstInfo: View {
     }
 }
 
-
-struct FirstInfo_Previews: PreviewProvider {
-    static var previews: some View {
-        FirstInfo()
-    }
-}

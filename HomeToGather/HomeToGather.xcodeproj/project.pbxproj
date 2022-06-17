@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0782864534EDF3C1D24D0EBA /* Pods_HomeToGather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBB806C542816D734400C2B /* Pods_HomeToGather.framework */; };
 		345DE3A6285638B2007CEC3B /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */; };
+		34825826285C48B300C1C9A1 /* FirstModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34825825285C48B300C1C9A1 /* FirstModifyView.swift */; };
+		34825828285C48ED00C1C9A1 /* SecondModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34825827285C48ED00C1C9A1 /* SecondModifyView.swift */; };
+		3482582A285C4A3A00C1C9A1 /* ColorPickerModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34825829285C4A3A00C1C9A1 /* ColorPickerModifyView.swift */; };
 		34E0F8552859ABA8002A8A42 /* ShareCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F8542859ABA8002A8A42 /* ShareCardView.swift */; };
 		75D68050285714340097B97A /* SecondCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6804F285714340097B97A /* SecondCreateView.swift */; };
 		75D6805228571C970097B97A /* FirstCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805128571C970097B97A /* FirstCreateView.swift */; };
@@ -18,7 +21,6 @@
 		75D6805C28571DD00097B97A /* PartyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805B28571DD00097B97A /* PartyData.swift */; };
 		75D6805E28571E6A0097B97A /* SearchAddressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805D28571E6A0097B97A /* SearchAddressButton.swift */; };
 		75D6806028571EAC0097B97A /* AdressWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805F28571EAC0097B97A /* AdressWebView.swift */; };
-		75E65DD12859F5D600D92381 /* ModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E65DD02859F5D600D92381 /* ModifyView.swift */; };
 		B93869D92855043500320855 /* HostedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869D82855043500320855 /* HostedListView.swift */; };
 		B93869DB2855044200320855 /* HostedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DA2855044200320855 /* HostedDetailView.swift */; };
 		B93869DD2855D8B100320855 /* FeedbackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93869DC2855D8B100320855 /* FeedbackCardView.swift */; };
@@ -78,6 +80,9 @@
 
 /* Begin PBXFileReference section */
 		345DE3A5285638B2007CEC3B /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
+		34825825285C48B300C1C9A1 /* FirstModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModifyView.swift; sourceTree = "<group>"; };
+		34825827285C48ED00C1C9A1 /* SecondModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondModifyView.swift; sourceTree = "<group>"; };
+		34825829285C4A3A00C1C9A1 /* ColorPickerModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerModifyView.swift; sourceTree = "<group>"; };
 		34E0F8542859ABA8002A8A42 /* ShareCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardView.swift; sourceTree = "<group>"; };
 		75D6804F285714340097B97A /* SecondCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCreateView.swift; sourceTree = "<group>"; };
 		75D6805128571C970097B97A /* FirstCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCreateView.swift; sourceTree = "<group>"; };
@@ -87,7 +92,6 @@
 		75D6805B28571DD00097B97A /* PartyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyData.swift; sourceTree = "<group>"; };
 		75D6805D28571E6A0097B97A /* SearchAddressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressButton.swift; sourceTree = "<group>"; };
 		75D6805F28571EAC0097B97A /* AdressWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressWebView.swift; sourceTree = "<group>"; };
-		75E65DD02859F5D600D92381 /* ModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyView.swift; sourceTree = "<group>"; };
 		976B1D932D41BFC4BB9C857D /* Pods-HomeToGather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeToGather.release.xcconfig"; path = "Target Support Files/Pods-HomeToGather/Pods-HomeToGather.release.xcconfig"; sourceTree = "<group>"; };
 		AEBB806C542816D734400C2B /* Pods_HomeToGather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeToGather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93869D82855043500320855 /* HostedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedListView.swift; sourceTree = "<group>"; };
@@ -163,6 +167,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34825824285C48A600C1C9A1 /* Modify */ = {
+			isa = PBXGroup;
+			children = (
+				34825825285C48B300C1C9A1 /* FirstModifyView.swift */,
+				34825827285C48ED00C1C9A1 /* SecondModifyView.swift */,
+				34825829285C4A3A00C1C9A1 /* ColorPickerModifyView.swift */,
+			);
+			path = Modify;
+			sourceTree = "<group>";
+		};
 		34E0F8532859AB15002A8A42 /* Share */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,7 +210,6 @@
 			children = (
 				75D6805F28571EAC0097B97A /* AdressWebView.swift */,
 				75D6805128571C970097B97A /* FirstCreateView.swift */,
-				75E65DD02859F5D600D92381 /* ModifyView.swift */,
 				75D6805328571CD60097B97A /* FirstInfo.swift */,
 			);
 			path = First;
@@ -271,6 +284,7 @@
 		E26A38812851F4FB00AD8EFF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				34825824285C48A600C1C9A1 /* Modify */,
 				E477389F28531B9200C1403F /* Create */,
 				E477389E2853195C00C1403F /* TicketList */,
 				E477389D2853195400C1403F /* Main */,
@@ -350,8 +364,6 @@
 		E477389F28531B9200C1403F /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				34E0F8532859AB15002A8A42 /* Share */,
-				E48CDB082858722400786DB2 /* Third */,
 				75D6804C285711200097B97A /* Components */,
 				34E0F8532859AB15002A8A42 /* Share */,
 				75D6804D285711280097B97A /* First */,
@@ -558,10 +570,12 @@
 			files = (
 				D7A1252D28585CB600F68084 /* FoodView.swift in Sources */,
 				B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */,
+				34825828285C48ED00C1C9A1 /* SecondModifyView.swift in Sources */,
 				D7A1252928585C6300F68084 /* CostView.swift in Sources */,
 				B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */,
 				75D6805E28571E6A0097B97A /* SearchAddressButton.swift in Sources */,
 				B95077FE28548D3D00F7825A /* InvitedDetailView.swift in Sources */,
+				34825826285C48B300C1C9A1 /* FirstModifyView.swift in Sources */,
 				E26A38882853076800AD8EFF /* ViewModel.swift in Sources */,
 				E403DD742851DFE9004C8391 /* ContentView.swift in Sources */,
 				E26A38C72853ABE800AD8EFF /* SettingDetailView.swift in Sources */,
@@ -580,6 +594,7 @@
 				E252A785285AFBFE007EE497 /* LicenseView.swift in Sources */,
 				B95077FC28548D2C00F7825A /* InvitedListView.swift in Sources */,
 				75D6805228571C970097B97A /* FirstCreateView.swift in Sources */,
+				3482582A285C4A3A00C1C9A1 /* ColorPickerModifyView.swift in Sources */,
 				E47738A2285320F800C1403F /* Font.swift in Sources */,
 				B9BF1D632858A8570081DC4A /* HostedViewModel.swift in Sources */,
 				B95078002854992000F7825A /* ParticipantView.swift in Sources */,
@@ -591,7 +606,6 @@
 				B93869D92855043500320855 /* HostedListView.swift in Sources */,
 				B9BF1D652858A86D0081DC4A /* InvitedViewModel.swift in Sources */,
 				75D6805A28571D380097B97A /* SubTitleRow.swift in Sources */,
-				75E65DD12859F5D600D92381 /* ModifyView.swift in Sources */,
 				75D6805428571CD60097B97A /* FirstInfo.swift in Sources */,
 				B95078042854D9FA00F7825A /* View.swift in Sources */,
 				D7A1252F28585CCD00F68084 /* ListView.swift in Sources */,
