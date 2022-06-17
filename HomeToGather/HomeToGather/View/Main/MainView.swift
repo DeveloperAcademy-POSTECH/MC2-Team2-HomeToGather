@@ -33,8 +33,7 @@ struct MainView: View {
                 if isTouchedTicket {
                     VStack {
                         ExpanedTicketView(invitation: viewModel.recentInvitation)
-                            .offset(y: -50)
-                            .background(Color.white)
+                            .padding(.horizontal, 20)
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarLeading) {
                                     Button {
@@ -50,51 +49,51 @@ struct MainView: View {
                         
                     }
                 } else {
-                    TicketView(invitation: viewModel.recentInvitation)
-                        .offset(y: -100)
-                        .onTapGesture {
-                            withAnimation(.easeInOut(duration: 0.8)) {
-                                isTouchedTicket.toggle()
+                    VStack(spacing: 0) {
+                        TicketView(invitation: viewModel.recentInvitation)
+                            .padding(.horizontal, 40)
+                            .padding(.bottom, 30)
+                            .onTapGesture {
+                                withAnimation(.easeInOut(duration: 0.8)) {
+                                    isTouchedTicket.toggle()
+                                }
                             }
-
-                        }
-//
-                    HStack(alignment: .center, spacing: 10, content: {
                         
-                        NavigationLink {
-                            InvitedListView()
-                        } label: {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 4)
-                                    .fill(Color.buttonColor)
-                                    .frame(width: 170, height: 60)
-                                
-                                Text("초대된 파티")
-                                    .font(.notoSans(withStyle: .Bold, size: 17))
-                                    .foregroundColor(.white)
+                        HStack(spacing: 10, content: {
+                            NavigationLink {
+                                InvitedListView()
+                            } label: {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .fill(Color.buttonColor)
+                                        .frame(width: 170, height: 60)
+                                    
+                                    Text("초대된 파티")
+                                        .font(.notoSans(withStyle: .Bold, size: 17))
+                                        .foregroundColor(.white)
+                                }
                             }
-                        }
-                        
-                        NavigationLink {
-                            HostedListView()
-                        } label: {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 4)
-                                    .fill(Color.buttonColor)
-                                    .frame(width: 170, height: 60)
-                                
-                                Text("주최한 파티")
-                                    .font(.notoSans(withStyle: .Bold, size: 17))
-                                    .foregroundColor(.white)
+                            
+                            NavigationLink {
+                                HostedListView()
+                            } label: {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .fill(Color.buttonColor)
+                                        .frame(width: 170, height: 60)
+                                    
+                                    Text("주최한 파티")
+                                        .font(.notoSans(withStyle: .Bold, size: 17))
+                                        .foregroundColor(.white)
+                                }
                             }
-                        }
-                        .isDetailLink(false)
-                    })
+                            .isDetailLink(false)
+                            
+                        })
+                    }
                 }
+//                    .preferredColorScheme(.dark)
             }
-            .padding(.top, 100)
-            .preferredColorScheme(.dark)
-            
         }
     }
 }

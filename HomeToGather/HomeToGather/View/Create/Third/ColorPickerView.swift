@@ -48,6 +48,7 @@ struct ColorPickerView: View {
                 .background(Color.backgroundColor)
                 
                 TicketView(invitation: Invitation(id: partyData.id, uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.color, food: partyData.food, etc: [], color: partyData.color))
+                    .padding(.horizontal, 50)
                 
                 Button {
                     if !partyData.isModifying {
