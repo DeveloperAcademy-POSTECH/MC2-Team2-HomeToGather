@@ -17,7 +17,7 @@ A brief description of what this project does and who it's for
 
 ## :people_hugging: Authors
 
-- [@D-Park](https://www.github.com/Junghoon-P) | [@Jayden](https://www.github.com/jayden000106) | [@Hatchling](https://github.com/woo0dev) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/) | [@YourName](https://www.github.com/)
+- [@D-Park](https://www.github.com/Junghoon-P) | [@Jayden](https://www.github.com/jayden000106) | [@Hatchling](https://github.com/woo0dev) | [@Dino](https://github.com/d0yvn) | [@Journey](https://github.com/gojeongseog) | [@LED](https://www.github.com/sm-amoled) | [@Alice](https://github.com/ejalice)
 
 
 ## :framed_picture: Demo
