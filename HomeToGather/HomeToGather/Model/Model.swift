@@ -58,5 +58,5 @@ extension Invitation {
                                             etc: ["dummy_etc"],
                                             ruleFeedback: ["dummy_rulefeedback"],
                                             foodFeedback: ["dummy_foodfeedback"],
-                                            color: "dummy_color")
+                                            color: "red")
 }

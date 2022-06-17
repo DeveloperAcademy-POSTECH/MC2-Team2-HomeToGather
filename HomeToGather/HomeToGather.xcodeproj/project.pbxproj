@@ -12,6 +12,7 @@
 		34825826285C48B300C1C9A1 /* FirstModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34825825285C48B300C1C9A1 /* FirstModifyView.swift */; };
 		34825828285C48ED00C1C9A1 /* SecondModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34825827285C48ED00C1C9A1 /* SecondModifyView.swift */; };
 		3482582A285C4A3A00C1C9A1 /* ColorPickerModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34825829285C4A3A00C1C9A1 /* ColorPickerModifyView.swift */; };
+		3482582C285C5C6200C1C9A1 /* RootPresentationModeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3482582B285C5C6200C1C9A1 /* RootPresentationModeExtension.swift */; };
 		34E0F8552859ABA8002A8A42 /* ShareCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0F8542859ABA8002A8A42 /* ShareCardView.swift */; };
 		75D68050285714340097B97A /* SecondCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6804F285714340097B97A /* SecondCreateView.swift */; };
 		75D6805228571C970097B97A /* FirstCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D6805128571C970097B97A /* FirstCreateView.swift */; };
@@ -83,6 +84,7 @@
 		34825825285C48B300C1C9A1 /* FirstModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstModifyView.swift; sourceTree = "<group>"; };
 		34825827285C48ED00C1C9A1 /* SecondModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondModifyView.swift; sourceTree = "<group>"; };
 		34825829285C4A3A00C1C9A1 /* ColorPickerModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerModifyView.swift; sourceTree = "<group>"; };
+		3482582B285C5C6200C1C9A1 /* RootPresentationModeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresentationModeExtension.swift; sourceTree = "<group>"; };
 		34E0F8542859ABA8002A8A42 /* ShareCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardView.swift; sourceTree = "<group>"; };
 		75D6804F285714340097B97A /* SecondCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCreateView.swift; sourceTree = "<group>"; };
 		75D6805128571C970097B97A /* FirstCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCreateView.swift; sourceTree = "<group>"; };
@@ -365,10 +367,10 @@
 			isa = PBXGroup;
 			children = (
 				75D6804C285711200097B97A /* Components */,
-				34E0F8532859AB15002A8A42 /* Share */,
 				75D6804D285711280097B97A /* First */,
 				75D6804E285714190097B97A /* Second */,
 				E48CDB082858722400786DB2 /* Third */,
+				34E0F8532859AB15002A8A42 /* Share */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -381,6 +383,7 @@
 				B95078032854D9F900F7825A /* View.swift */,
 				D760C180285857F6004D9D10 /* HideKeyboard.swift */,
 				B9C1AA3C285AFDD1002C6516 /* Date.swift */,
+				3482582B285C5C6200C1C9A1 /* RootPresentationModeExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				B9BF1D652858A86D0081DC4A /* InvitedViewModel.swift in Sources */,
 				75D6805A28571D380097B97A /* SubTitleRow.swift in Sources */,
 				75D6805428571CD60097B97A /* FirstInfo.swift in Sources */,
+				3482582C285C5C6200C1C9A1 /* RootPresentationModeExtension.swift in Sources */,
 				B95078042854D9FA00F7825A /* View.swift in Sources */,
 				D7A1252F28585CCD00F68084 /* ListView.swift in Sources */,
 				B9CF5CA528572D50002B69FB /* ListTicketView.swift in Sources */,
