@@ -95,6 +95,9 @@ struct FirstInfo: View {
         .onTapGesture {
             hideKeyboard()
         }
+        .onAppear {
+            self.date = stringToDate(string: partyData.date)
+        }
     }
     
     func limitText(input: String, upper: Int) {
@@ -108,6 +111,13 @@ struct FirstInfo: View {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
         partyData.date = dateFormatter.string(from: date)
+    }
+    
+    func stringToDate(string: String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        
+        return dateFormatter.date(from: string) ?? Date()
     }
 }
 
