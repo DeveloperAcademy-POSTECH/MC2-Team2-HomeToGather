@@ -21,7 +21,7 @@ struct HostedDetailView: View {
     init(hostData: Invitation, backToRoot: Binding<Bool>) {
         self.hostData = hostData
         self._backToRoot = backToRoot
-        self.partyData = PartyData(rule: hostData.rule, food: hostData.food, cost: hostData.cost, title: hostData.title, date: hostData.date, place: hostData.place, description: hostData.description, color: hostData.color, isModifying: true, hostId: hostData.id)
+        self.partyData = PartyData(rule: hostData.rule, food: hostData.food, cost: hostData.cost, title: hostData.title, date: hostData.date, place: hostData.place, description: hostData.description, color: hostData.color, isModifying: true, hostId: hostData.id, participantName: hostData.participantName, participantUid: hostData.participantUid)
     }
     
     private let randomImageName: [String] = ["partyImage1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]

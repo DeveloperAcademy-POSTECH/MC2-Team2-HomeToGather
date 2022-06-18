@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct FirstModifyView: View {
+
     
     @EnvironmentObject var partyData: PartyData
     @State private var isDisabled = false
