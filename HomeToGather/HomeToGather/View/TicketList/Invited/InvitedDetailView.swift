@@ -49,11 +49,10 @@ struct InvitedDetailView: View {
                                 
                                 HStack(spacing: -5) {
                                     if let participants = invitationData.participantName {
-                                        if participants == [""] {
-                                            
-                                        } else {
-                                            ForEach(1..<participants.count) { i in
-                                                ParticipantView(name: participants[i], indexNum: i - 1)
+                                        ForEach(participants, id: \.self) { name in
+                                            if name != "" {
+                                                let indexNum = invitationData.participantName?.firstIndex(of: name)
+                                                ParticipantView(name: name, indexNum: indexNum ?? 0)
                                             }
                                         }
                                     }
