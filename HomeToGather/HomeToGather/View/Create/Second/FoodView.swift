@@ -11,7 +11,7 @@ struct FoodView: View {
 
     @EnvironmentObject var partyData: PartyData
     
-    let foodExample: [String] = ["카나페" ,"초코퐁듀", "연어초밥", "감바스", "치킨", "피자"]
+    let foodExample: [String] = ["감바스" ,"밀푀유 나베", "크림새우파스타", "통삼겹오븐구이", "와인", "치킨시켜먹기"]
 
     let size: CGFloat = UIScreen.main.bounds.width - 40
 

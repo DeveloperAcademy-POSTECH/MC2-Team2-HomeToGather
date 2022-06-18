@@ -10,7 +10,7 @@ struct RuleView: View {
 
     @EnvironmentObject var partyData: PartyData
     
-    let ruleExample: [String] = ["뒷정리는 가위바위보", "설거지는 게임으로 정하기", "어메니티 제공", "지각하면 엉덩이로 이름쓰기"]
+    let ruleExample: [String] = ["뒷정리는 가위바위보", "자기가 마실 술은 자기가 사오기", "어메니티 제공됨", "일찍 집가기 금지", "방음에 약하니 노래부르기 금지", "쓸데없는데 재밌는 선물 사오기"]
     
 
 
@@ -23,7 +23,7 @@ struct RuleView: View {
                 TitleRow(text: "홈파티 규칙")
                     .padding(EdgeInsets(top: 65, leading: 20, bottom: 36, trailing: 0))
 
-                AddListView(lists: $partyData.rule, item: $partyData.ruleItem, examples: ruleExample,  text: "홈파티 규칙을 작성해주세요.", placeholder: "ex)뒷정리는 가위바위보로")
+                AddListView(lists: $partyData.rule, item: $partyData.ruleItem, examples: ruleExample,  text: "홈파티 규칙을 작성해주세요.", placeholder: "ex)뒷정리는 가위바위보")
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                 
 
