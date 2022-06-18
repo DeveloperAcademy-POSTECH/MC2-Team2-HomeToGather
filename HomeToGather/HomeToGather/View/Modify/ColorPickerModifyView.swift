@@ -46,7 +46,7 @@ struct ColorPickerModifyView: View {
                     if !partyData.isModifying {
                         viewModel.uploadInvitation(Invitation(id: partyData.id, uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color))
                     } else {
-                        viewModel.correctionInvitation(Invitation(id: partyData.id, uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color), partyData.hostId)
+                        viewModel.correctionInvitation(Invitation(id: partyData.id, uid: getUserUid(), organizerName: viewModel.userName, participantName: partyData.participantName, participantUid: partyData.participantUid, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.cost, food: partyData.food, etc: [""], color: partyData.color), partyData.hostId)
                     }
                     
                     if partyData.isModifying {

@@ -23,10 +23,12 @@ class PartyData: ObservableObject {
     @Published var isNextView = true
     @Published var ruleItem = ""
     @Published var foodItem = ""
+    var participantName: [String]?
+    var participantUid: [String]?
     
     init() {}
     
-    init(rule: [String], food: [String], cost: String, title: String, date: String, place: String, description: String, color: String, isModifying: Bool, hostId: String) {
+    init(rule: [String], food: [String], cost: String, title: String, date: String, place: String, description: String, color: String, isModifying: Bool, hostId: String, participantName: [String]?, participantUid: [String]?) {
         self.rule = rule
         self.food = food
         self.cost = cost
@@ -37,5 +39,7 @@ class PartyData: ObservableObject {
         self.color = color
         self.isModifying = isModifying
         self.hostId = hostId
+        self.participantUid = participantUid
+        self.participantName = participantName
     }
 }
