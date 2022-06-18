@@ -24,7 +24,7 @@ struct HostedListView: View {
     var body: some View {
         ZStack {
             NavigationLink (isActive: self.$selected){
-                HostedDetailView(hostData: self.selectedHost ?? hostedViewModel.invitationsReceived[0], backToRoot: self.$selected)
+                HostedDetailView(hostData: self.selectedHost ?? Invitation(id: "", uid: "", organizerName: "", title: "", date: "", place: "", description: "", rule: [""], cost: "", food: [""], etc: [""], ruleFeedback: [""], foodFeedback: [""], color: ""), backToRoot: self.$selected)
             } label: {
                 EmptyView()
             }
