@@ -129,7 +129,9 @@ class ViewModel: ObservableObject {
     }
     
     func correctionInvitation(_ invitation: Invitation, _ id: String) {
-        db.collection("ii").document(id).setData(invitation.dictionary)
+        var modified = invitation
+        modified.id = id
+        db.collection("ii").document(id).setData(modified.dictionary)
     }
     
     func correctionRuleFeedback(_ invitation: Invitation,_ ruleFeedback: String) {
