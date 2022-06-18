@@ -12,10 +12,13 @@ struct AddListView: View {
     @EnvironmentObject var partyData: PartyData
     @Binding var lists: [String]
     @Binding var item: String
+    var examples: [String]
     var text: String
     var placeholder: String
     let size: CGFloat = UIScreen.main.bounds.width
     //        .font(.notoSans(withStyle: .Bold, size: 28))
+    
+    
     var body: some View {
         VStack {
             HStack {
@@ -24,6 +27,7 @@ struct AddListView: View {
                     .foregroundColor(.white)
 
                 Spacer()
+                ExampleButton(lists: $lists, examples: examples)
             }
             .padding(.bottom, 5)
 
