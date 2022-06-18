@@ -66,16 +66,11 @@ struct HostedDetailView: View {
                                 
                                 HStack(spacing: -5) {
                                     if let participants = hostData.participantName {
-                                        if participants == [""] {
-                                            
-                                        } else {
-                                            ForEach(1..<participants.count) { i in
-                                                ParticipantView(name: participants[i], indexNum: i - 1)
+                                        ForEach(participants, id: \.self) { name in
+                                            if name != "" {
+                                                let indexNum = hostData.participantName?.firstIndex(of: name)
+                                                ParticipantView(name: name, indexNum: indexNum ?? 0)
                                             }
-//                                            ForEach(participants, id: \.self) { name in
-//                                                let indexNum = invitationData.participantName?.firstIndex(of: name)
-//                                                ParticipantView(name: name, indexNum: indexNum ?? 0)
-//                                            }
                                         }
                                     }
                                 }
@@ -103,7 +98,6 @@ struct HostedDetailView: View {
                     FeedbackCardView(title: "규칙", contents: hostData.rule, feedbackContents: hostData.ruleFeedback)
                     
                     FeedbackCardView(title: "메뉴", contents: hostData.food, feedbackContents: hostData.foodFeedback)
-                    
                 }
                 .padding(20)
             }

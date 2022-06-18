@@ -27,6 +27,8 @@ struct ShareCardView: View {
             VStack(spacing:0){
                 
                 TicketView(invitation: newInvitation)
+                    .padding(.horizontal, 50)
+                    .padding(.vertical, 20)
                     .background(Color.clear)
                 
                 Button{
@@ -40,7 +42,7 @@ struct ShareCardView: View {
                         .background(Color.partyPurple)
                         .cornerRadius(8)
                         .foregroundColor(.white)
-                        .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
+                        .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
                 }
             }
             .navigationBarTitle("초대장", displayMode: .inline)
