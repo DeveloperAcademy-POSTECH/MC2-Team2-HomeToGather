@@ -113,7 +113,7 @@ struct HostedDetailView: View {
                 .confirmationDialog("confirmationDialog", isPresented: $isConfirmationDialogShow, titleVisibility: .hidden) {
                     Button("공유하기") {
                         let deeplinkManager = DeeplinkManager()
-                        deeplinkManager.shareLinkToKakao(invitationID: partyData.id)
+                        deeplinkManager.shareLinkToKakao(invitationID: hostData.id)
                     }
                     Button("수정하기") {
                         self.changeData = true
