@@ -34,7 +34,6 @@
 		B9BF1D652858A86D0081DC4A /* InvitedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BF1D642858A86D0081DC4A /* InvitedViewModel.swift */; };
 		B9C1AA3D285AFDD1002C6516 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1AA3C285AFDD1002C6516 /* Date.swift */; };
 		B9CF5CA528572D50002B69FB /* ListTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CF5CA428572D50002B69FB /* ListTicketView.swift */; };
-		B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0FC002856505500D5BCC3 /* InvitationView.swift */; };
 		D74BD8E4285DB43D002F83D8 /* ExampleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74BD8E3285DB43D002F83D8 /* ExampleButton.swift */; };
 		D760C181285857F6004D9D10 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760C180285857F6004D9D10 /* HideKeyboard.swift */; };
 		D760C18328585861004D9D10 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760C18228585861004D9D10 /* ProgressBar.swift */; };
@@ -109,7 +108,6 @@
 		B9BF1D642858A86D0081DC4A /* InvitedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedViewModel.swift; sourceTree = "<group>"; };
 		B9C1AA3C285AFDD1002C6516 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		B9CF5CA428572D50002B69FB /* ListTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTicketView.swift; sourceTree = "<group>"; };
-		B9D0FC002856505500D5BCC3 /* InvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
 		D74BD8E3285DB43D002F83D8 /* ExampleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleButton.swift; sourceTree = "<group>"; };
 		D760C180285857F6004D9D10 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		D760C18228585861004D9D10 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
@@ -360,7 +358,6 @@
 				B95078052855034900F7825A /* Hosted */,
 				B95077FA28548D0500F7825A /* Invited */,
 				B95077FF2854992000F7825A /* ParticipantView.swift */,
-				B9D0FC002856505500D5BCC3 /* InvitationView.swift */,
 				B9CF5CA428572D50002B69FB /* ListTicketView.swift */,
 			);
 			path = TicketList;
@@ -575,10 +572,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7A1252D28585CB600F68084 /* FoodView.swift in Sources */,
-				B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */,
 				34825828285C48ED00C1C9A1 /* SecondModifyView.swift in Sources */,
 				D7A1252928585C6300F68084 /* CostView.swift in Sources */,
-				B9D0FC012856505500D5BCC3 /* InvitationView.swift in Sources */,
 				75D6805E28571E6A0097B97A /* SearchAddressButton.swift in Sources */,
 				B95077FE28548D3D00F7825A /* InvitedDetailView.swift in Sources */,
 				34825826285C48B300C1C9A1 /* FirstModifyView.swift in Sources */,
