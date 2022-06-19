@@ -11,12 +11,14 @@ struct InvitedDetailView: View {
     @State private var buttonText = "doc.on.clipboard"
     
     var invitationData: Invitation
+    var shouldFeedbackPresented: Bool
     
     private let randomImageName: [String] = ["partyImage1", "partyImage2", "partyImage3", "partyImage4", "partyImage5"]
     let screenWidth = UIScreen.main.bounds.width
     
-    init(invitationData: Invitation) {
+    init(invitationData: Invitation, shoudFeedbackPresented: Bool) {
         self.invitationData = invitationData
+        self.shouldFeedbackPresented = shoudFeedbackPresented
         print(invitationData)
     }
     
@@ -86,9 +88,9 @@ struct InvitedDetailView: View {
                     }
                     .frame(maxWidth: screenWidth)
                     
-                    CardView(title: "규칙", contents: invitationData)
+                    CardView(title: "규칙", contents: invitationData, shouldFeedbackPresented: shouldFeedbackPresented)
                     
-                    CardView(title: "메뉴", contents: invitationData)
+                    CardView(title: "메뉴", contents: invitationData, shouldFeedbackPresented: shouldFeedbackPresented)
                 }
                 .padding(20)
             }

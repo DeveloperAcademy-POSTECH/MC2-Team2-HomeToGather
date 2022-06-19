@@ -39,7 +39,7 @@ struct ContentView: View {
                 MainView(isTouchedTicket: $isTouchedTicket, shouldRefresh: invitationCardViewToggle)
                     .fullScreenCover(isPresented: $invitationCardViewToggle, content: {
                         VStack(spacing: 0) {
-                            InvitedDetailView(invitationData: invitationCardData!)
+                            InvitedDetailView(invitationData: invitationCardData!, shoudFeedbackPresented: false)
                             
                             HStack(spacing: 0) {
                                 Button(action: {

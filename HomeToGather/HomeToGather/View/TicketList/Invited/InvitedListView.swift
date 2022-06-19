@@ -27,7 +27,7 @@ struct InvitedListView: View {
                 VStack(spacing: 0) {
                     ForEach(invitedViewModel.invitationsSent, id: \.self) { invitation in
                         NavigationLink {
-                            InvitedDetailView(invitationData: invitation)
+                            InvitedDetailView(invitationData: invitation, shoudFeedbackPresented: true)
                         } label: {
                             ListTicketView(invitationData: invitation)
                                 .frame(maxWidth: screenWidth)

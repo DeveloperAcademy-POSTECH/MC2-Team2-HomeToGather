@@ -21,7 +21,7 @@ struct InvitationView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            InvitedDetailView(invitationData: invitationData)
+            InvitedDetailView(invitationData: invitationData, shoudFeedbackPresented: false)
             
             HStack(spacing: 0) {
                 Button(action: {

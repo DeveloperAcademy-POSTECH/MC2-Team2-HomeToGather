@@ -15,7 +15,7 @@ func getTextView(title: String, contents: Invitation) -> some View {
             
             var body: some View {
                 
-                VStack {
+                VStack(alignment: .leading, spacing: 0) {
                     ForEach(contents.rule, id: \.self) { content in
                         HStack(spacing: 0) {
                             Text("· ")
@@ -32,7 +32,7 @@ func getTextView(title: String, contents: Invitation) -> some View {
             var contents: Invitation
             
             var body: some View {
-                VStack {
+                VStack(alignment: .leading, spacing: 0) {
                     ForEach(contents.food, id: \.self) { content in
                         HStack(spacing: 0) {
                             Text("· ")
@@ -57,6 +57,7 @@ func getTextView(title: String, contents: Invitation) -> some View {
 struct CardView: View {
     var title: String
     var contents: Invitation
+    var shouldFeedbackPresented: Bool
     @State var isModalPresent: Bool = false
     @State var feedback: String = ""
     
@@ -82,7 +83,9 @@ struct CardView: View {
                     }
                     Spacer()
                     Button(action: {
-                        isModalPresent.toggle()
+                        if shouldFeedbackPresented {
+                            isModalPresent.toggle()
+                        }
                     }, label: {
                         Image(systemName: "paperplane.circle.fill")
                             .font(.system(size: 20))
