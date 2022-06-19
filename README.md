@@ -1,6 +1,4 @@
-
-![sample](https://user-images.githubusercontent.com/77766769/174225268-a9b67a05-4d36-4d6d-b968-db9fb87153e3.jpg)
-
+<img src="https://user-images.githubusercontent.com/77766769/174481046-a8211934-782b-4536-ac36-3495c648a1d6.jpg" height="450"/>
 
 # 🥳 HomeToGather
 
