@@ -135,11 +135,11 @@ struct ContentView: View {
                     }
                 
                 // Deep Link로 들어왔을 때 초대장 뷰 띄우기
-                NavigationLink(isActive: $invitationCardViewToggle) {
-                    InvitationView(invitationData: self.invitationCardData ?? Invitation.dummyInvitation)
-                } label: {
-                    EmptyView()
-                }
+//                NavigationLink(isActive: $invitationCardViewToggle) {
+//                    InvitationView(invitationData: self.invitationCardData ?? Invitation.dummyInvitation)
+//                } label: {
+//                    EmptyView()
+//                }
             }
 //            .onAppear{
 //                UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation") //forcing the rotation to portrait
