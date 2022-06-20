@@ -81,6 +81,12 @@ struct InvitedDetailView: View {
                                     .padding(.leading, 6)
                                 }
                                 .font(invitationData.place.guessLanguage() == "한국어" ? .notoSans(withStyle: .Light, size: 14) : .montserrat(withStyle: .Light, size: 14))
+                                
+                                HStack(spacing: 0) {
+                                    Text("COST: ")
+                                    Text(invitationData.cost == "" ? "0원" : invitationData.cost)
+                                }
+                                .font(.montserrat(withStyle: .Light, size: 14))
                                 .padding(.bottom, 20)
                             }
                             .padding(20)

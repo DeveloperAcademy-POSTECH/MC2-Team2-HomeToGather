@@ -88,6 +88,12 @@ struct HostedDetailView: View {
                                     Text(hostData.place)
                                 }
                                 .font(hostData.place.guessLanguage() == "한국어" ? .notoSans(withStyle: .Light, size: 14) : .montserrat(withStyle: .Light, size: 14))
+                                
+                                HStack(spacing: 0) {
+                                    Text("COST: ")
+                                    Text(hostData.cost == "" ? "0원" : hostData.cost)
+                                }
+                                .font(.montserrat(withStyle: .Light, size: 14))
                                 .padding(.bottom, 20)
                             }
                             .padding(20)
