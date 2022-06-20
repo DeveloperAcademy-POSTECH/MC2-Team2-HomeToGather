@@ -54,9 +54,18 @@ class InvitedViewModel: ObservableObject {
     
     func acceptInvitation(_ uid: String, _ name: String, _ invitation: Invitation) {
         var acceptInvitation = invitation
-        acceptInvitation.participantUid?.append(getUserUid())
-        acceptInvitation.participantName?.append(name)
-        let _ = db.collection("ii").document(acceptInvitation.id).setData(acceptInvitation.dictionary)
+        
+        if invitation.uid != uid {
+            print("DEBUG: Checking Organizer")
+            if let participantNames = invitation.participantName, let participantUids = invitation.participantUid {
+                if !participantNames.contains(name) && !participantUids.contains(uid) {
+                    print("DEBUG: Checking Participant")
+                    acceptInvitation.participantUid?.append(getUserUid())
+                    acceptInvitation.participantName?.append(name)
+                    let _ = db.collection("ii").document(acceptInvitation.id).setData(acceptInvitation.dictionary)
+                }
+            }
+        }
     }
     
     func getUserName(_ uid: String, completion: @escaping (_ data: String) -> Void) {
