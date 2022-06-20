@@ -46,17 +46,19 @@ HomeToGatherApp은 1인가구의 홈파티를 위한 앱 입니다.<br/>
 
 ## :framed_picture: Demo
 
-Insert gif or link to demo
 
+<!-- ![App Screenshot](https://user-images.githubusercontent.com/77766769/174525276-7db044f5-0ea2-4461-8abe-f2323e0f9f80.gif)
+![App Screenshot](https://user-images.githubusercontent.com/77766769/174525118-9ecab697-a66c-4716-a3c7-a25d99de0a28.gif)
+![App Screenshot](https://user-images.githubusercontent.com/77766769/174525126-53ceb35f-0a06-45db-a172-c82a340dee14.gif)
+![App Screenshot](https://user-images.githubusercontent.com/77766769/174525134-488b26c8-c9ea-406a-9b03-dad3361156c0.gif)
+![App Screenshot](https://user-images.githubusercontent.com/77766769/174525139-0006a375-8d5a-4ec2-b3b1-24ac5909cb62.gif) -->
 
-## :fireworks: Screenshots
-
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
+| View | Demo ||
+|:---:|:---:|:---:|
+|홈파티 주최하기|<img src="https://user-images.githubusercontent.com/77766769/174525276-7db044f5-0ea2-4461-8abe-f2323e0f9f80.gif" width="200"/>|<img src="https://user-images.githubusercontent.com/77766769/174525118-9ecab697-a66c-4716-a3c7-a25d99de0a28.gif" width="200"/>|
+|초대자 수락하기 및 피드백|<img src="https://user-images.githubusercontent.com/77766769/174525126-53ceb35f-0a06-45db-a172-c82a340dee14.gif" width="200"/>||
+|주최자 수정하기|<img src="https://user-images.githubusercontent.com/77766769/174525134-488b26c8-c9ea-406a-9b03-dad3361156c0.gif" width="200"/>||
+|티켓 커팅|<img src="https://user-images.githubusercontent.com/77766769/174525139-0006a375-8d5a-4ec2-b3b1-24ac5909cb62.gif" width="200"/>||
 
 
 ## :books: Documentation
