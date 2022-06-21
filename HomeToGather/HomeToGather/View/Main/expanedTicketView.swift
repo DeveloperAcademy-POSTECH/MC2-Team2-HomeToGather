@@ -118,7 +118,7 @@ struct ExpanedTicketView: View {
                         .padding(.bottom, 17)
                     
                     Divider()
-                        .frame(width: 250, height: 1)
+                        .frame(width: screenWidth * 0.55, height: 1)
                         .background(.black)
                     
                     HStack(spacing: 0) {
