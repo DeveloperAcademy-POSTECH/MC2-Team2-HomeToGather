@@ -91,6 +91,7 @@ struct CardView: View {
                             .font(.system(size: 20))
                             .foregroundColor(.white)
                     })
+                    .opacity(shouldFeedbackPresented ? 1 : 0)
                 }
                 .padding(.top, 12)
                 
