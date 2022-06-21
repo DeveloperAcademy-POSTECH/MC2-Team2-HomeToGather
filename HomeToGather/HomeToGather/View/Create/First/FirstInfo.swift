@@ -78,8 +78,8 @@ struct FirstInfo: View {
                     .accentColor(Color.partyPurple)
                 
                 SubTitleRow(text: "장소")
-                SearchAddressButton()
-                TextField("ex) 상세주소를 입력해주세요.", text: $partyData.place)
+//                SearchAddressButton()
+                TextField("ex) 주소를 입력해주세요.", text: $partyData.place)
                     .foregroundColor(.white)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 7, trailing: 20))
                 Rectangle()
