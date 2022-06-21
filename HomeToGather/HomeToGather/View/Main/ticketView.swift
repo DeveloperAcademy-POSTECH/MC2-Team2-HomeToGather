@@ -127,8 +127,9 @@ struct TicketView: View {
                         .padding(.bottom, 17)
                     
                     Divider()
-                        .frame(width: screenWidth * 0.55, height: 1)
+                        .frame(height: 1)
                         .background(.black)
+
                     
                     HStack(spacing: 0) {
                         VStack(alignment: .leading, spacing: 0) {
@@ -162,6 +163,7 @@ struct TicketView: View {
                     }
                     .padding(.top, 12)
                 }
+                .padding(.horizontal)
                 
                 ZStack {
                     HStack(spacing: 0) {

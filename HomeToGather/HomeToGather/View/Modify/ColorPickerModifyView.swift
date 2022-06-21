@@ -57,11 +57,11 @@ struct ColorPickerModifyView: View {
                 } label: {
                     Text(partyData.isModifying ? "수정하기" : "만들기")
                         .font(.system(size: 18))
-                }.frame(width: 350, height: 50, alignment: .center)
-                    .background(Color.partyPurple)
-                    .cornerRadius(8)
-                    .foregroundColor(.white)
-                    .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
+                        .frame(width: 350, height: 50, alignment: .center)
+                        .background(Color.partyPurple)
+                        .cornerRadius(8)
+                        .foregroundColor(.white)
+                }
             }
         }
         .navigationBarTitle("초대장 테마 설정", displayMode: .inline)

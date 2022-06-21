@@ -24,8 +24,6 @@ struct ContentView: View {
     @State var invitationID: String?
     
     @State private var isAddViewActive: Bool = false
-
-    
     @State private var invitationCardData: Invitation?
     @State private var invitationCardViewToggle = false
     
