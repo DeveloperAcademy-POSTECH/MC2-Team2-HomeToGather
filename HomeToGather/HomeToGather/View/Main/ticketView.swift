@@ -84,7 +84,7 @@ struct TicketView: View {
                             ZStack {
                                 Image("mirrorBall")
                                     .resizable()
-                                    .frame(width: 158, height: 316)
+                                    .frame(maxWidth: 158, maxHeight: 316)
                             }
                         }
                         
@@ -187,7 +187,8 @@ struct TicketView: View {
                 }
                 .frame(maxWidth: screenWidth, maxHeight: screenHeight)
             }
-            .frame(height: 129)
+            .frame(height: 120)
+            .frame(maxWidth: screenWidth * 2/3)
         }
         .padding(20)
         .preferredColorScheme(.dark)
