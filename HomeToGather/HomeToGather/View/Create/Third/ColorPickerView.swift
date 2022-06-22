@@ -29,11 +29,13 @@ struct ColorPickerView: View {
     }
     
     var body: some View {
-        ProgressBar(counter: 100.0)
         ZStack {
             Color.backgroundColor.ignoresSafeArea()
             
             VStack(spacing:0){
+
+                ProgressBar(counter: 100.0)
+
                 HStack {
                     ForEach(PartyColors.allCases,id:\.self) { color in
                         ColorView(color: color, selectedColor: $selectedColor)
@@ -44,11 +46,12 @@ struct ColorPickerView: View {
                     }
                     Spacer()
                 }
-                .padding(EdgeInsets(top: 13, leading: 20, bottom: 22, trailing: 20))
+                .padding(EdgeInsets(top: 5, leading: 20, bottom: 10, trailing: 20))
                 .background(Color.backgroundColor)
                 
                 TicketView(invitation: Invitation(id: partyData.id, uid: getUserUid(), organizerName: viewModel.userName, title: partyData.title, date: partyData.date, place: partyData.place, description: partyData.description, rule: partyData.rule, cost: partyData.color, food: partyData.food, etc: [], color: partyData.color))
-                    .padding(.horizontal, 70)
+//                    .padding(.horizontal, 70)
+                
                 
                 Button {
                     if !partyData.isModifying {

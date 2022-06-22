@@ -16,11 +16,11 @@ struct ColorView: View {
             
             Circle()
                 .fill(Color.getColor(color: color))
-                .frame(width: 50, height: 50)
+                .frame(width: 40, height: 40)
             
             if selectedColor == color {
                 Image(systemName:"checkmark")
-                    .frame(width: 35, height: 35)
+                    .frame(width: 32, height: 32)
                     .clipShape(Circle())
                     .overlay(Circle().stroke(Color.black, lineWidth: 2))
             }
