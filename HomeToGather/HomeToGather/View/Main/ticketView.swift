@@ -192,8 +192,8 @@ struct TicketView: View {
             .frame(height: 120)
         }
         .padding(20)
-        .frame(minWidth: screenWidth * 3.7/5)
-        .frame(maxWidth: screenWidth * 5/6)
+        .frame(minWidth: screenWidth * 3.3/5)
+        .frame(maxWidth: screenWidth * 3.7/5)
         .preferredColorScheme(.dark)
     }
 }
