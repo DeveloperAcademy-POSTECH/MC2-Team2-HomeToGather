@@ -53,15 +53,15 @@ struct TicketView: View {
                                     VStack(alignment: .leading, spacing: 0) {
                                         Text(ticketViewModel.partyTitle)
                                             .font(.montserrat(withStyle: .Medium, size: 28))
-
+                                        
                                         Text(ticketViewModel.subTitle)
                                             .font(.montserrat(withStyle: .Medium, size: 24))
                                             .padding(.top, 24)
-
+                                        
                                         Text(ticketViewModel.dateTime)
                                             .font(.montserrat(withStyle: .Medium, size: 12))
                                             .padding(.top, 24)
-
+                                        
                                         Text(ticketViewModel.location)
                                             .font(.montserrat(withStyle: .Medium, size: 12))
                                             .padding(.top, 30)
@@ -81,11 +81,13 @@ struct TicketView: View {
                         VStack(spacing: 0) {
                             Spacer()
                             
-                            ZStack {
-                                Image("mirrorBall")
-                                    .resizable()
-                                    .frame(width: 158, height: 316)
-                            }
+                            Image("mirrorBall")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100)
+                            
+                            Spacer()
+                                .frame(height: 30)
                         }
                         
                         Spacer()
@@ -129,7 +131,7 @@ struct TicketView: View {
                     Divider()
                         .frame(height: 1)
                         .background(.black)
-
+                    
                     
                     HStack(spacing: 0) {
                         VStack(alignment: .leading, spacing: 0) {
@@ -187,9 +189,11 @@ struct TicketView: View {
                 }
                 .frame(maxWidth: screenWidth, maxHeight: screenHeight)
             }
-            .frame(height: 129)
+            .frame(height: 120)
         }
         .padding(20)
+        .frame(minWidth: screenWidth * 3.3/5)
+        .frame(maxWidth: screenWidth * 3.7/5)
         .preferredColorScheme(.dark)
     }
 }

@@ -34,10 +34,6 @@ struct ProgressBar: View {
                         }
                         
                         partyData.isNextView = true
-                            
-                       
-                        
-                        
                         
                     }
                 
@@ -73,7 +69,10 @@ struct ProgressBar: View {
                 }
             }
             .frame(width: (UIScreen.main.bounds.width - 40) * 0.6)
-            .padding(EdgeInsets(top: 47, leading: 20, bottom: 17, trailing: 20))
+//            .padding(EdgeInsets(top: 47, leading: 20, bottom: 17, trailing: 20))
+            .padding(.horizontal, 20)
+            .padding(.top, 5)
+            .padding(.bottom, 10)
             
             Spacer()
         }
