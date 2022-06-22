@@ -61,10 +61,6 @@ HomeToGatherApp은 1인가구의 홈파티를 위한 앱 입니다.<br/>
 |티켓 커팅|<img src="https://user-images.githubusercontent.com/77766769/174525139-0006a375-8d5a-4ec2-b3b1-24ac5909cb62.gif" width="200"/>||
 
 
-## :books: Documentation
-
-[Documentation](https://linktodocumentation)
-
 
 ## :lock_with_ink_pen: License
 
